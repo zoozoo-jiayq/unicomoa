@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText":"考勤打卡",
+  "usingComponents": {
+    "wux-card": "../../../wux/card/index",
+    "wux-wing-blank": "../../../wux/wing-blank/index",
+    "wux-dialog": "../../../wux/dialog/index"
+  }
+}

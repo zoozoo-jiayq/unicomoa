@@ -1,0 +1,7 @@
+<view class="page__bd">
+        <view class="sub-title"></view>
+        <wux-grids >
+            <wux-grid thumb="../../imgs/workplan.png" label="工作计划" bindtap="goworkplan" />
+            <wux-grid thumb="../../imgs/kaoqindaka.png" label="考勤打卡" bindtap="godaka" />
+        </wux-grids>
+</view>

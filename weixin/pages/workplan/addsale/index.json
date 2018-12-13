@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText":"考勤打卡",
   "usingComponents": {
     "wux-card": "../../../wux/card/index",
     "wux-cell-group": "../../../wux/cell-group/index",

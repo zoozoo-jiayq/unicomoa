@@ -1,5 +1,9 @@
 {
   "pages": [
+    "pages/login/index",
+    "pages/daka/view/index",
+    "pages/daka/index/index",
+    "pages/main/index",
     "pages/workplan/index/index",
     "pages/workplan/search/index",
     "pages/workplan/progress/index",
@@ -28,7 +32,7 @@
         "text": "消息"
       },
       {
-        "pagePath": "pages/workplan/index/index",
+        "pagePath": "pages/main/index",
         "iconPath": "imgs/work1.png",
         "selectedIconPath": "imgs/work.png",
         "text": "工作"

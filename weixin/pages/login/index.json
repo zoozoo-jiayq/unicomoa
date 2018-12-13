@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "wux-cell-group": "../../../wux/cell-group/index",
+    "wux-cell": "../../../wux/cell/index",
+    "wux-input": "../../../wux/input/index",
+    "wux-button": "../../wux/button/index",
+    "wux-checkbox-group": "../../wux/checkbox-group/index",
+    "wux-checkbox": "../../wux/checkbox/index"
+  }
+}

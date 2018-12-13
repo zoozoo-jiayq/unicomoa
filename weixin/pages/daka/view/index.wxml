@@ -1,0 +1,52 @@
+<view class="hd">
+  <image class="arrarow" style="left:-50px;" src="../../../imgs/left.png"/>
+  <view class="hdtext">
+    2018年11月
+  </view>
+  <image class="arrarow" style="left:50px" src="../../../imgs/right.png"/>
+</view>
+<view style="text-align:center">
+    <view class="grid">
+        <view class="tag">正常考勤</view>
+        <view class="content">0天</view>
+    </view>
+    <view class="grid">
+        <view class="tag">迟到</view>
+        <view class="content">1次</view>
+    </view>
+    <view class="grid">
+        <view class="tag">早退</view>
+        <view class="content">1次</view>
+    </view>
+    <view class="grid">
+        <view class="tag">缺卡</view>
+        <view class="content">20次</view>
+    </view>
+</view>
+<view>
+    <view class="head">
+        <view class="tablehead">日期</view>
+        <view class="tablehead">上班</view>
+        <view class="tablehead">下班</view>
+    </view>
+    <view class="listcontent">
+      <view class="list">12日(周一)</view>
+        <view class="list">缺卡</view>
+        <view class="list">15:00</view>
+    </view>
+    <view class="listcontent">
+      <view class="list">12日(周一)</view>
+        <view class="list">缺卡</view>
+        <view class="list">15:00</view>
+    </view>
+    <view class="listcontent">
+      <view class="list">12日(周一)</view>
+        <view class="list">缺卡</view>
+        <view class="list">15:00</view>
+    </view>
+    <view class="listcontent">
+      <view class="list">12日(周一)</view>
+        <view class="list">缺卡</view>
+        <view class="list">15:00</view>
+    </view>
+</view>

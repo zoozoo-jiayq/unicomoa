@@ -1,0 +1,75 @@
+.bg{
+  position: relative;
+  height:45vh;
+  width:100vw;
+  background: rgb(86, 183, 163);
+  margin-bottom: 10px;
+}
+.clock{
+  width:40vw;
+  height:40vw;
+  border-radius: 20vw;
+  border:2px solid rgb(253, 170, 6);
+  position:absolute;
+  top:50%;
+  left:50%;
+  color:#fff;
+  text-align: center;
+  transform: translate(-90%,-50%)
+}
+.clockcontent{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.time{
+  font-weight: 800;
+  font-size:26px;
+}
+.week{
+  margin:10px 0;
+  font-size: 14px;
+}
+.btn{
+    width: 80px;
+    background-color: rgb(253, 170, 6);
+    font-size: 14px;
+    color:#fff;
+    margin:20px 0;
+}
+.btngroup{
+  position: absolute;
+  top:50%;
+  right:1%;
+  transform: translate(-50%,-50%)
+}
+.addr{
+  position: absolute;
+  bottom:20px;
+  left:15px;
+  color:#fff;
+  font-size: 12px;
+  line-height: 20px;
+}
+.dingwei{
+  width:20px;
+  height:20px;
+  position: relative;
+  top:4px;
+}
+.viewlog{
+  color:#fff;
+  font-size: 16px;
+  position: relative;
+  top:10px;
+  left:85vw;
+}
+.fullbg{
+  background-color: #eee;
+  height: 100vh;
+}
+.redaka{
+  float:right;
+  color:rgb(86, 183, 163);
+}
