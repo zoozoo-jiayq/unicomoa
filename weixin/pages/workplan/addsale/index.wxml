@@ -1,0 +1,78 @@
+<view class="page">
+  <wux-cell-group title="请选择计划类型">
+    <wux-cell>
+      <radio-group>
+        <label class="radio">
+          <radio value="sale" checked="true" color="#1296db" />营销活动
+        </label>
+        <label class="radio">
+          <radio value="visit" checked="true" color="#1296db"/>外出拜访
+        </label>
+        <label class="radio">
+          <radio value="other" checked="true" color="#1296db"/>其它
+        </label>
+      </radio-group>
+    </wux-cell>
+  </wux-cell-group>
+  <view class="line"></view>
+  <wux-cell-group title="请选择活动时间">
+    <wux-cell hover-class="none">
+      <wux-row>
+        <wux-col span="3">
+          <view class="labeltext timelineheight">开始时间</view>
+        </wux-col>
+        <wux-col span="5">
+          <picker mode="date" value="{{beginDate}}" bindchange="changeBeginDate">
+            <view class="timelineheight">{{beginDate}}</view>
+          </picker>
+        </wux-col>
+        <wux-col span="4">
+          <picker mode="time" value="{{beginTime}}" bindchange="changeBeginTime">
+            <view class="timelineheight">{{beginTime}}</view>
+          </picker>
+        </wux-col>
+      </wux-row>
+      <wux-row>
+        <wux-col span="3">
+          <view class="labeltext timelineheight">结束时间</view>
+        </wux-col>
+        <wux-col span="5">
+          <picker mode="date" value="{{endDate}}" bindchange="changeEndDate">
+            <view class="timelineheight">{{endDate}}</view>
+          </picker>
+        </wux-col>
+        <wux-col span="4">
+          <picker mode="time" value="{{endTime}}" bindchange="changeEndTime">
+            <view class="timelineheight">{{endTime}}</view>
+          </picker>
+        </wux-col>
+      </wux-row>
+    </wux-cell>
+  </wux-cell-group>
+  <view class="line"></view>
+
+  <wux-cell-group>
+    <wux-cell hover-class="none">
+      <wux-input placeholder="请输入活动地址" />
+    </wux-cell>
+  </wux-cell-group>
+  <view class="line"></view>
+  <wux-cell-group>
+    <wux-cell title="请选择参与人" extra="{{ canyurennames }}" bind:click="showSelectUser"></wux-cell>
+  </wux-cell-group>
+  <view class="line"></view>
+  <wux-cell-group>
+    <wux-cell hover-class="none">
+      <wux-textarea hasCount rows="3" cursorSpacing="80" placeholder="请输入工作计划..." />
+    </wux-cell>
+  </wux-cell-group>
+  <view class="line"></view>
+  <wux-cell-group>
+    <wux-cell title="营销目标" hover-class="none">
+      <wux-input-number default-value="15" slot="footer" color="positive" />
+    </wux-cell>
+  </wux-cell-group>
+  <view class="line"></view>
+  <wux-select id="selectUser" />
+  <button class='btn'  hover-class='btn_hover'>提交</button>
+</view>

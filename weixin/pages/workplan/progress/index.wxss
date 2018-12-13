@@ -1,0 +1,15 @@
+/* pages/workplan/progress/index.wxss */
+.line{
+  height: 10px;
+  width: 100%;
+  background-color: #eee
+}
+.btn{
+  background-color: #1296db;
+  color:#fff;
+  margin-top:30px;
+}
+.btn_hover{
+  background-color: #1296db;
+  color:#fff  
+}

@@ -1,0 +1,11 @@
+/* pages/workplan/index/index.wxss */
+.add{
+  width:50px;
+  height:50px;
+  position:fixed;
+  bottom:30px;
+  right:10px
+}
+.add:hover{
+  cursor: pointer
+}

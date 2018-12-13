@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "wux-card": "../../../wux/card/index",
+    "wux-cell-group": "../../../wux/cell-group/index",
+    "wux-cell": "../../../wux/cell/index",
+    "wux-textarea": "../../../wux/textarea/index",
+    "wux-upload": "../../../wux/upload/index"
+  }
+}

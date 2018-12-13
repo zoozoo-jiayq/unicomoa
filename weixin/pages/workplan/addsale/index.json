@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "wux-card": "../../../wux/card/index",
+    "wux-cell-group": "../../../wux/cell-group/index",
+    "wux-cell": "../../../wux/cell/index",
+    "wux-textarea": "../../../wux/textarea/index",
+    "wux-row": "../../../wux/row/index",
+    "wux-col": "../../../wux/col/index",
+    "wux-input": "../../../wux/input/index",
+    "wux-select": "../../../wux/select/index",
+    "wux-input-number": "../../../wux/input-number/index"
+  }
+}

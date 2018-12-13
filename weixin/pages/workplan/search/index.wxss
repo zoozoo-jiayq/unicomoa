@@ -1,0 +1,32 @@
+/* pages/workplan/search/index.wxss */
+/* pages/workplan/detail/index.wxss */
+.rowheight{
+  line-height: 25px;
+  font-size: 12px;
+}
+.content{
+  color:#aeaeae;
+
+}
+.line{
+  height: 10px;
+  width: 100%;
+  background-color: #eee
+}
+.btn{
+  background-color: #1296db;
+  color:#fff;
+  margin-top:30px;
+}
+.btn_hover{
+  background-color: #1296db;
+  color:#fff  
+}
+.status{
+  margin:10px 20px;
+  background-color: #eee;
+}
+.active{
+  background-color: #1296db;
+  color:#fff;
+}

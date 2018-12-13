@@ -1,0 +1,54 @@
+<view class="page">
+  <view class="page__bd">
+    <wux-wing-blank size="default">
+      <wux-card bordered="{{ false }}" title="任务状态">
+        <view slot="body">
+          <wux-row style="text-align:center;line-height:30px;">
+            <wux-col span="4">
+              <view class="status active">未开始</view>
+            </wux-col>
+            <wux-col span="4">
+              <view class="status">未完成</view>
+            </wux-col>
+            <wux-col span="4">
+              <view class="status">已完成</view>
+            </wux-col>
+          </wux-row>
+          <wux-row style="text-align:center;line-height:30px;">
+            <wux-col span="4">
+              <view class="status">进行中</view>
+            </wux-col>
+            <wux-col span="4">
+              <view class="status">审批中</view>
+            </wux-col>
+            <wux-col span="4">
+              <view class="status">已撤回</view>
+            </wux-col>
+          </wux-row>
+        </view>
+      </wux-card>
+    </wux-wing-blank>
+        <wux-wing-blank size="default">
+      <wux-card bordered="{{ false }}" title="公司人员">
+        <view slot="body">
+          <wux-row style="text-align:center;line-height:30px;">
+            <wux-col span="4">
+              <view class="status active">张三</view>
+            </wux-col>
+            <wux-col span="4">
+              <view class="status">李四</view>
+            </wux-col>
+            <wux-col span="4">
+              <view class="status">王五</view>
+            </wux-col>
+          </wux-row>
+         
+        </view>
+      </wux-card>
+    </wux-wing-blank>
+    <view style="text-align:center;border-top:1px solid #eee;margin-top:10px;padding-top:10px;">
+        <button bindtap='progress' style="width:50%;display:inline;padding:5px 20px;margin:0 5px;font-size:18px" class='btn' hover-class='btn_hover'>完成</button>
+        <button style="width:50%;display:inline;padding:5px 20px;margin:0 5px;font-size:18px">清空</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents":{
+    "wux-calendar-plain":"../../../wux/calendar-plain/index",
+    "wux-cell-group": "../../../wux/cell-group/index",
+    "wux-cell": "../../../wux/cell/index"
+  }
+}

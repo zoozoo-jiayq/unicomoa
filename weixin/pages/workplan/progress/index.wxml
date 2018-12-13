@@ -1,0 +1,14 @@
+<view class="page">
+<view style="padding:10px">
+  <wux-cell-group>
+    <wux-cell hover-class="none">
+      <wux-textarea hasCount rows="3" cursorSpacing="80" placeholder="填写处理结果..." />
+    </wux-cell>
+  </wux-cell-group>
+  <view style="height:10px"></view>
+  <wux-upload  listType="picture-card" defaultFileList="{{ fileList }}" max="4" url="" bind:change="onChange" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:preview="onPreview">
+    <image src="../../../imgs/upload.png"></image>
+  </wux-upload>
+  <button class='btn' hover-class='btn_hover'>提交</button>
+  </view>
+</view>
