@@ -1,0 +1,25 @@
+<view class="row1">
+  <view class="head">佳伟</view>
+  <view class="info">
+    <view>谢佳伟</view>
+    <view style="font-size:12px;color:#aeaeae;">技术部</view>
+  </view>
+  <image src="../../imgs/rightarr.png" class="arraow"/>
+</view>
+<view class="line"></view>
+<view class="row">
+  <image src="../../imgs/pwd.png" class="arraow" style="left:20px;width:30px;height:30px;"/>
+  <view style="line-height:50px;margin-left:60px;">
+    修改密码
+  </view>
+  <image src="../../imgs/rightarr.png" class="arraow"/>
+</view>
+<view class="line"></view>
+<view class="row">
+ <image src="../../imgs/quit.png" class="arraow" style="left:20px;width:30px;height:30px;"/>
+  <view style="line-height:50px;margin-left:60px;">
+    退出登录
+  </view>
+  <image src="../../imgs/rightarr.png" class="arraow"/>
+</view>
+<view class="line"></view>

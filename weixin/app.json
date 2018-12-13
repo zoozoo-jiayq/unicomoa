@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/index",
+    "pages/my/index",
     "pages/daka/view/index",
     "pages/daka/index/index",
     "pages/main/index",
@@ -38,7 +39,7 @@
         "text": "工作"
       },
       {
-        "pagePath": "pages/workplan/index/index",
+        "pagePath": "pages/my/index",
         "iconPath": "imgs/my1.png",
         "selectedIconPath": "imgs/my.png",
         "text": "我的"

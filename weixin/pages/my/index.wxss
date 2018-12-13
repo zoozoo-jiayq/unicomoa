@@ -1,0 +1,40 @@
+.row1{
+  position:relative;
+  height: 80px;
+}
+.row{
+  position:relative;
+}
+.head{
+  position:absolute;
+width:60px;
+height:60px;
+background-color:#1296db;
+border-radius:30px;
+text-align:center;
+line-height:60px;
+color:#fff;
+top:50%;
+left:30px;
+transform: translateY(-50%);
+}
+.info{
+  position: absolute;
+  top:50%;
+  left:100px;
+  transform: translateY(-50%)
+}
+
+.line{
+  height: 10px;
+  width: 100%;
+  background-color: #eee
+}
+.arraow{
+  width:35px;
+  height:35px;
+  position: absolute;
+  top:50%;
+  right:10px;
+  transform: translateY(-50%);
+}
