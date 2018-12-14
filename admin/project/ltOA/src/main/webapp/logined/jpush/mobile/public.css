@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+.arrowbg{background:url(../images/arrow_right.png) no-repeat 98% center; background-size:auto 10px}
+.longWord{word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。IE, Safari (WebKit)*/
+    -o-text-overflow:ellipsis; /* 兼容Opera */}
+.roundbox{ background:#fff; border:1px solid #a3a3a3;border-radius:10px; overflow:hidden;}
+.inputTable{ width:100%; table-layout:fixed; font-size:13px; margin-top:-1px;}
+.inputTable th{border-top:1px solid #a3a3a3; width:95px; line-height:30px; padding:5px 0 5px 10px; color:#225884; text-align:right; vertical-align:top; font-weight:normal; font-size:17px;}
+.inputTable td{border-top:1px solid #a3a3a3; color:#000; padding:5px 10px 5px 0; line-height:30px; text-align:left; font-size:17px;}
+p.table_th{color:#225884;font-size:17px;}
+.inputTable td p{ font-size:17px;}
+
+/*news lists*/
+.news_list{ overflow:hidden;}
+.news_list dl{ padding:15px 0 15px 0; background:url(../images/arrow_right.png) no-repeat scroll right 55px; border-bottom:1px solid #dedede; background-size:16px 13px;}
+.news_list dl dt{ padding-left:5px; padding-right:20px; line-height:25px; font-size:18px; color:#000; font-weight:bold;}
+.news_list dl dt em{ float:right; line-height:30px; color:#8f8f8f;}
+.news_list dl dt span{ float:left; width:10px; height:12px; padding-right:5px; padding-top:9px;}
+.news_list dl dt span img{ float:left; width:11px; height:12px;}
+.news_list dl dd{ line-height:25px; padding-left:18px; padding-right:20px;  color:#8f8f8f;}
+.news_list dl dd p{ max-height:75px; overflow:hidden;}
+
+/*news show*/
+.news_show{ overflow:hidden; padding:10px;}
+.news_show h1{ font-size:18px; line-height:25px; text-align:center; color:#000; font-weight:bold;}
+.news_show h2{ font-size:14px; line-height:25px; text-align:center; color:#888888;}
+.news_show p{ line-height:30px; padding-top:5px; }
+.down_num{ background:url(../images/down_bj.png) ; height:30px; text-align:center; line-height:29px; color:#000; background-size:auto 30px; font-size:16px;}
+.down_num span{ padding-left:5px; padding-right:5px;}

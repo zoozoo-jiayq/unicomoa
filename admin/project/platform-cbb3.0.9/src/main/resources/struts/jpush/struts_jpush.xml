@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+    
+<struts>
+	<package name="push" namespace="/push" extends="struts-default">
+	    <!--添加推送-->
+        <action name="addPush" class="cn.com.qytx.cbb.jpush.action.PushAddAction" method="addPush">
+        </action>
+        <!--编辑推送-->
+        <action name="editPush" class="cn.com.qytx.cbb.jpush.action.PushEditAction" method="editPush">
+        </action>
+        <!--删除推送-->
+        <action name="deletePush" class="cn.com.qytx.cbb.jpush.action.PushListAction" method="deletePush">
+        </action>
+        <!--获取列表-->
+        <action name="findPushList" class="cn.com.qytx.cbb.jpush.action.PushListAction" method="findPushList">
+        </action>
+        <!--获取活动详细信息-->
+        <action name="viewPush" class="cn.com.qytx.cbb.jpush.action.PushViewAction" method="viewPush">
+        	<result name="detail">/logined/jpush/pushView.jsp</result>
+        	<result name="update">/logined/jpush/pushUpdate.jsp</result>
+        </action>
+        <!-- 推送接口 -->
+         <action name="sendPush" class="cn.com.qytx.cbb.jpush.action.PushAddAction" method="sendPush"/>
+    </package>
+    <package name="mobile" namespace="/mobile" extends="struts-default">
+        <!--获取列表-->
+        <action name="findMyPush" class="cn.com.qytx.cbb.jpush.action.PushListAction" method="findMyPush">
+        </action>
+        <!--获取活动详细信息-->
+        <action name="findById" class="cn.com.qytx.cbb.jpush.action.PushListAction" method="findPushInfo">
+            <result name="success">/logined/jpush/activityView.jsp</result>
+        </action>
+    </package>
+</struts>

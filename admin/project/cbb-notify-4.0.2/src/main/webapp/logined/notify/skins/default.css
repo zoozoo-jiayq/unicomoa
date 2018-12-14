@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+/*公文详情*/
+.viewInfo h1{padding:5px 10px;line-height:20px;text-align:left;font-size:18px;color:#333;}
+.viewInfo h2{color:#888;font-size:12px;padding:0 10px 0 10px;line-height:18px;}
+.viewInfo .info{text-indent:2em;color:#555;font-size:13px;padding:0 10px 10px 10px;line-height:20px;}
+.info img{display:block;max-width:100%;margin:10px auto;}
+.info div{text-indent:2em;color:#555;font-size:13px;line-height:20px;}
+.info p{text-indent:2em;color:#555;font-size:13px;line-height:20px;}
+/*附件*/
+.fileList h2{font-size:13px;color:#555;padding:0 10px;height:33px;line-height:33px;border-bottom:1px solid #c1c1c1;}
+.fileList h2 i{color:#888;font-size:13px;}
+.fileList ul li{height:35px;padding:5px 10px;border-bottom:1px solid #c1c1c1;background:#f8f8f8;}
+.fileList li{height:35px; padding:10px;}
+.fileList li img{ width:auto;height:33px; float:left; margin-right:10px;}
+.fileList li .fileInfo{ float:left;font-size:13px;line-height:18px; max-width:60%;}
+.fileList li .fileInfo p{word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。IE, Safari (WebKit)*/
+    -o-text-overflow:ellipsis; /* 兼容Opera */ height:18px;word-wrap : break-word}
+.fileList li .fileInfo span{color:#888;font-size:12px;}
+.btnDown{width:25px;height:100%;background:url(default/btn_down.png) no-repeat center; background-size:5px auto;}
+
+
+

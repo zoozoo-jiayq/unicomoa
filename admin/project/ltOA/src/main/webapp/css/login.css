@@ -1,0 +1,28 @@
+@charset "utf-8";
+body{ background:#ffffff; margin:0;}
+/*head*/
+.login_head{ margin:0 auto; width:1050px; height:85px;}
+.login_head .logo{ float:left; padding-top:15px; height:52px; line-height:52px; font-size:30px; color:#333;}
+.login_head .logo img{height: 51px; margin-right: 8px; float:left;}
+.login_head .help{ float:right; padding-top:15px; height:52px; line-height:52px;color:#999; }
+.login_head .help a{color:#999; padding:0 10px;}
+/*cont*/
+.login_cont{ width:100%; height:541px; background:url(../images/login/cont_bj_b.png);}
+.login_cont .main_lc{ margin:0 auto; width:1075px; background:url(../images/login/cont_main_bj_b.png) no-repeat; height:543px;}
+.login_cont .main_lc .login_box{ float:right; margin-top:75px; margin-right:95px; width:285px; height:388px; border:1px solid #d4d4d4; background:#FFF; padding:0 30px;}
+.login_box h2{ font-size:16px; padding-top:20px; color:#333;}
+.login_box li{ height:37px; margin-top:20px;vertical-align:middle; position:relative;}
+.login_box li .ipt{ height:35px; width:280px; border:1px solid #b9b9b9; line-height:35px; text-indent: 5px;}
+.login_box li .yzm{ width:90px; height:37px; margin-right:12px;}
+.login_box li label{ top:7px; left:5px;}
+label.radio{margin-right:8px; float:left; color:#000;}
+label.radio input{margin-right:10px; vertical-align:middle; margin-top:-3px;*margin-top: -1px;}
+.login_box li.operate{ height:20px; margin-top:10px;}
+.login_box li.error{padding:0;height:25px;line-height:25px;font-size:12px;color:#888;background:#fff2f2;border:1px solid #FE8083; margin-top:15px;}
+.login_box li.error em{float:left;width:16px;height:25px;background:url(../images/login/error_bg.png) no-repeat left center;margin:0 5px;}
+
+.login_box .login_btn{text-align: center; margin-top:25px;}
+.login_box .login_btn  .bt_logo{ background: url("../images/login/dl_bj_b.png") no-repeat;border: medium none;color: #FFFFFF;cursor: pointer; font-size: 16px;   font-weight: bold;  height: 41px; width: 282px;}
+
+/*foot*/
+.login_foot{ padding-top:35px; padding-bottom:35px; text-align:center; color:#999999;}

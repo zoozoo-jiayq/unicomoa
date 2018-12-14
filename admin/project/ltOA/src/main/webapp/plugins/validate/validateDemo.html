@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>表单验证提示效果</title>
+	<link rel="stylesheet" href="valdate.css" />
+	<script language="JavaScript" src="validate.js" type="text/javascript"></script>
+</head>
+<body>
+<h1>表单验证提示效果</h1>
+<form action="" method="post" onsubmit="return validator(this)">
+<dl>
+	<dt><label for="name">帐号:</label></dt>
+	<dd>
+		<input name="name" id="name"type="text" min="6" max="10" valid="required|limit" errmsg="用户名不能为空!|输入6-10位长度的账号" />
+		<span class="hint" id="errMsg_name">注册帐号（只支持数字和字母,如:love,love520）
+			<span class="hint-pointer"></span>
+		</span>
+    </dd>
+	
+
+	<dt><label for="password">密码：</label></dt>
+	<dd>
+		<input name="password" id="password" type="password" valid="required" errmsg="密码不能为空!" />
+		<span class="hint"  id="errMsg_password">请输入密码,请最少输入最少6位最多12位密码
+			<span class="hint-pointer">    </span>
+		</span>	
+	</dd>
+	
+	<dt><label for="password2">确认密码：</label></dt>
+	<dd>
+		<input name="password2" id="password2"  type="password" valid="eqaul" eqaulname="password" errmsg="两次密码不同!" />
+		<span class="hint" id="errMsg_password2">请再输入一次上面的密码
+			<span class="hint-pointer"></span>
+		</span>
+	</dd>
+	
+	<dt><label for="email">邮箱:</label></dt>
+	<dd>
+		<input name="email" id="email"type="text" valid="required|isEmail" errmsg="Email不能为空|Email格式不对!"/>
+		<span class="hint" id="errMsg_email">请输入邮箱(Email),推荐使用网易邮箱@163.com
+			<span class="hint-pointer"></span>
+		</span>	
+	</dd>
+	
+	<dt><label for="year">生日:</label></dt>
+	<dd>
+		<select id="year" name="year">
+			<option value="1983">1983</option>
+			<option value="1984">1984</option>
+			<option value="1985">1985</option>
+		</select>
+		年
+		<select name="m" id="m">
+	      <option value="5">5</option>
+	      <option value="6">6</option>
+	      <option value="7">7</option>
+	      <option value="12">12</option>
+        </select>
+		月
+		<select name="d" id="d">
+	      <option value="5">5</option>
+	      <option value="6">6</option>
+	      <option value="7">7</option>
+	      <option value="12">12</option>
+        </select>
+		日
+		<span class="hint">请输入你的生日
+			<span class="hint-pointer"></span>
+		</span>      
+	</dd>
+
+	<dt><label for="qq">QQ/MSN:</label></dt>
+	<dd>
+		<input name="qq" id="qq" type="text" valid="required|isQQ" errmsg="没有填写QQ或MSN|QQ格式不对!"/>
+		<span class="hint" id="errMsg_qq">请输入你的QQ或MSN号码
+			<span class="hint-pointer"></span>
+		</span>
+	</dd>
+
+	<dt><label for="tel">电话:</label></dt>
+	<dd>
+		<input name="tel" id="tel" type="text" valid="required|isMobile" errmsg="手机不能为空|手机格式不对!" />
+		<span class="hint" id="errMsg_tel">请输入你的电话
+			<span class="hint-pointer"></span>
+		</span>	
+	</dd>
+	<dt class="button">
+	</dt>
+	<dd class="button">
+		<input type="submit" name="Submit" value=" 提 交 " class="button2"/>
+	</dd>
+</dl>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+@charset "utf-8";
+.myWorkcon{background:url(../images/myWorkTitle_bg.gif) repeat-x left -45px #fff;padding:5px 0;}
+.myWorkcon .tabContent{background:#fff;padding-left:20px;}
+.myWorkcon .annex{overflow:hidden;}
+.myWorkcon .pageTitle{padding:6px 0;}
+.myWorkcon .pageTitle em.iconAdd{font-size:16px;color:#333;background:url(../images/annex_tit.png) no-repeat left center;font-weight:normal;}
+.myWorkcon .annex ul li{border:none;background:#e5ecf6;}
+.contentTitle{color:#1b8fd8;margin-bottom:15px; padding-bottom:10px;padding-top:5px;overflow:hidden;text-align:center; height:31px; font-size:24px; line-height:24px;border-bottom:2px #49a3df solid;}
+.contentTitle_con{border:none;text-align:center;color:#1b8fd8;}
+.con_explain{border:1px solid #f1ddc9;background:#fff8f1;padding:15px 10px;line-height:25px;margin-top:15px;}
+.document .BlockTop {border:0px;font-size:14px; width:100%;}
+.document .BlockTop TD {TEXT-ALIGN: center; BACKGROUND: url(../images/public/block_top_bg2.png) no-repeat; HEIGHT: 32px; line-height:32px; COLOR: #333; FONT-WEIGHT: bold}
+.document .BlockTop TD.left {WIDTH: 5px; BACKGROUND-POSITION: left 0px}
+.document .BlockTop TD.center {BACKGROUND-REPEAT: repeat-x; BACKGROUND-POSITION: 0px -32px;}
+.document .BlockTop TD.right {WIDTH: 5px; BACKGROUND-POSITION: right -64px}
+.document .BlockTop td.center h2,.document .BlockTop td.center h3{background:none;color:#fff;}
+.document .blockBox{border:1px solid #4ca7e0;border-top:none;border-radius:0 0 5px 5px; overflow:hidden;}
+.document .blockBox h3{background:#58b0e7;border-top:1px solid #dfeffb;color:#fff;}
+.document .blockBox #more{border-top:none;}
+.document .blockBox #more em{display:inline-block;width:12px;height:8px}
+.document .leftMenu ul.menuList li{background:#f7fbfe;border-bottom:1px solid #ced4e3;text-align:center;color:#555;font-weight:bold;}
+.document .leftMenu ul.menuList li a{padding:0;font-size:14px;}
+.document .leftMenu ul.menuList li a:hover{background:#daf0fe;color:#358;}
+.document .leftMenu ul.menuList li.current{background:#daf0fe;color:#358;}
+.document .leftMenu ul.menuList li.current a{color:#358;}
+/*发文*/
+.doc_wrap{background:url(../images/doc_topbg.png) repeat-x top #f6f7f9;overflow:hidden;}
+.doc_wrap .contentTitle{width:80%;margin:0 auto;padding-top:25px;}
+.doc_wrap .input_new{background:none;padding-top:10px;margin-top:5px;}
+.doc_wrap .inputTable{border-right: 1px solid #D6D6D6;}
+.doc_wrap .inputTable th{background:#f0f5ee;border-right:none;text-align:left;font-size:18px;color:#000;padding:25px 10px 25px 25px; }
+.doc_wrap .inputTable td{background:#f0f5ee;vertical-align: middle;border-right:none;padding:0}
+.doc_wrap .inputTable td a{color:#06c;font-size:14px;margin-right:0}
+.leftHide_icon{width:24px;height:24px;BACKGROUND: url(../images/icon_doc.png) no-repeat;display:inline-block;}
+/*附件*/
+.no_acc{height:100%;vertical-align: middle;text-align:center;}
+/*新闻详情页*/
+.news{margin:15px;}
+.news h1{font-size:22px; color:#316698; text-align:center; height:38px; line-height:38px; overflow:hidden;}
+.news .info{ text-align:center;position:relative; color:#999292; line-height:22px; padding:10px 0;margin-bottom:20px;border-bottom:2px solid #dce5ec;}
+.news .info span{margin-right:10px;}
+.news .info em{position:absolute;right:15px;}
+.news p{text-indent:2em; line-height:30px; color:#141515;padding:0 20px;}
+.news a{color:#0066cc;}
+.news .bq_p{padding:3px 0;border-top:1px dashed #ccc;border-bottom:1px dashed #ccc;margin:20px 0;}
+.news .bq_p span{color:#0066cc;}
+.btmBtnArea{background:none;}
+.cy_h1{font-size:22px; color:#316698; text-align:center; height:38px; line-height:38px; overflow:hidden;}

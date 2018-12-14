@@ -1,0 +1,105 @@
+/* CSS Document */
+/*
+@Author:	王心卫
+*/
+*{margin: 0; padding: 0;}
+html, body, section, article, nav, header,table,textarea,input, footer, form, div, em, span, a, label, p, h1, h2, h3, h4, h5, h6, dl, ul, ol, li, dt, dd, select,th,i{font-style: normal; font-weight:normal;}
+body, select, input, option,textarea {  font-family: "Microsoft YaHei",Arial,Simsun; }
+body{background:#fff;color: #353535; vertical-align:middle; font-size:16px;}
+html{-webkit-tap-highlight-color: transparent;}
+form{border:0;margin:0;padding:1px}
+img{border:0;vertical-align:middle}
+textarea{width:95%;}
+body > header, body > section { clear: both; }
+li,dt,dd,div{ list-style-type: none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+a:link{color: #444; text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0);outline: 0;}
+a:hover {color: #aaa; text-decoration: none;outline: 0;}
+a:active{color: #0a0a0a; text-decoration:none;}
+a:visited{color: #444; text-decoration:none;}
+.inputTable td{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.fl {float: left}
+.fr {float: right}
+.f12 {font-size: 12px}
+.f14 {font-size: 14px}
+.f16 {font-size: 16px}
+.f17 {font-size: 17px}
+.f12b {font-size: 12px; font-weight: bold}
+.f14b {font-size: 14px; font-weight: bold}
+.f16b {font-size: 16px; font-weight: bold}
+.no_bdbot{border-bottom:none;}
+.m_all_5 {margin: 5px}
+.p_all_5 {padding: 5px;}
+.m_all_10 {margin: 10px}
+.p_all_10 {padding: 10px;}
+.m_all_20 {margin: 20px}
+.p_all_20 {padding: 20px;}
+.mt5 {margin-top: 5px}
+.mr5 {margin-right: 5px}
+.mb5 {margin-bottom: 5px}
+.ml5 {margin-left: 5px}
+.pt5 {padding-top: 5px}
+.pr5 {padding-right: 5px}
+.pb5 {padding-bottom: 5px}
+.pl5 {padding-left: 5px}
+.mt10 {margin-top: 10px}
+.mr10 {margin-right: 10px}
+.mb10 {margin-bottom: 10px}
+.ml10 {margin-left: 10px}
+.pt10 {padding-top: 10px}
+.pr10 {padding-right: 10px}
+.pb10 {padding-bottom: 10px}
+.pl10 {padding-left: 10px}
+.mt20 {margin-top: 20px}
+.mr20 {margin-right: 20px}
+.mb20 {margin-bottom: 20px}
+.ml20 {margin-left: 20px}
+.mt15 {margin-top: 15px}
+.pt20 {margin-top: 20px}
+.pr20 {padding-right: 20px}
+.pb20 {padding-bottom: 20px}
+.pl20 {padding-left: 20px}
+.center {text-align: center}
+.right {text-align: right}
+.l22 {line-height: 22px}
+.l26 {line-height: 26px}
+.l25 {line-height: 25px}
+.l30 {line-height: 30px}
+.nocenter {text-align: left}
+.top0 {clear: both; padding-top: 0px}
+.top1 {clear: both; padding-top: 1px}
+.top4 {clear: both; padding-top: 4px}
+.top5 {clear: both; padding-top: 5px}
+.top10 {clear: both; padding-top: 10px}
+.top15 {clear: both; padding-top: 15px}
+.clear {line-height: 0px; height: 0px; clear: both; font-size: 0px}
+input[type=text]:focus::-webkit-input-placeholder, input[type=search]:focus::-webkit-input-placeholder,textarea:focus::-webkit-textarea-placeholder { color:#aaa;outline:none;}
+input[type=text]{color:#353535;}
+input:focus,textarea:focus,textarea:hover,textarea:click{ outline: none; background:none; }
+textarea,input{ background:none;-webkit-tap-highlight-color: rgba(0,0,0,0); outline: none; }
+input:hover{background:none;border:none;outline:none}
+.red{ color:#ff0000}
+.green{ color:#339900;}
+.orange{color:#ff6600}
+.blue{ color:#0066cc;}
+.black{ color:#000}
+.yellow{ color:#ffc000;}
+.gray{ color:#888}
+
+.choose p {position: relative;width: 100%;margin-top:0px;}
+.choose p:after {content: "";top: 7px;right: 7px;position: absolute;display: inline-block;font-size: 0;border-top: 2px solid #666;border-left: 2px solid #666;width: 6px;height: 6px;background-color: transparent;-webkit-transform: rotate(225deg);
+}
+.choose p select {-webkit-appearance: none;width: 100%;height:25px;-webkit-border-radius: 0;border: solid 1px #D5D5D5;border-top-color: #BDBDBD;border-width: 1px;color: #000;font-size: 16px;padding-right: 16px;background: #fff; padding-left:5px;
+}
+.choose p select option {white-space: nowrap;text-overflow: ellipsis;overflow: hidden; color:#000
+}
+.choose p select:focus {outline: none;
+}
+.choose p:after {right: 10px;
+}
+.choose p select {font-size: 16px;
+}
+.bg_wite{ background:#FFF;}
+.bg_grey{ background:#ebebeb;}
+header{
+	display: none
+}

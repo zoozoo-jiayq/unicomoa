@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 部门/群组管理所有action -->
+    <package name="group" namespace="/group" extends="struts-default">
+        <!--增加部门-->
+        <action name="addGroup" class="cn.com.qytx.cbb.org.action.GroupAddAction" method="addGroup">
+
+        </action>
+        <!--修改部门-->
+        <action name="updateGroup" class="cn.com.qytx.cbb.org.action.GroupUpdateAction" method="updateGroup">
+
+        </action>
+        <!--删除部门-->
+        <action name="deleteGroup" class="cn.com.qytx.cbb.org.action.GroupDeleteAction" method="deleteGroup">
+
+        </action>
+        <!--得到部门详情-->
+        <action name="loadGroupInfo" class="cn.com.qytx.cbb.org.action.GroupViewAction" method="loadGroupInfo">
+             <result name="success">/logined/group/groupUpdate.jsp</result>
+        </action>
+        
+         <!--得到部门详情-->
+        <action name="preUpdateGroup" class="cn.com.qytx.cbb.org.action.GroupViewAction" method="loadGroupInfo">
+             <result name="success">/logined/group_ext/groupUpdate.jsp</result>
+        </action>
+        
+        <!--得到部门列表-->
+        <action name="findGradeGroupTree" class="cn.com.qytx.cbb.org.action.GroupListAction" method="findGradeGroupTree">
+             <result name="success">/logined/group/groupList.jsp</result>
+        </action>
+        
+        <action name="getGroupList" class="cn.com.qytx.cbb.org.action.GroupListAction" method="getGroupList">
+        </action>
+        <action name="findUsersByGroupId" class="cn.com.qytx.cbb.org.action.GroupListAction" method="findUsersByGroupId">
+        </action>
+        <action name="moveUserToGroup" class="cn.com.qytx.cbb.org.action.MoveUserToGroupAction" method="moveUserToGroup">
+        </action>
+    </package>
+
+
+</struts>

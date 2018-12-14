@@ -1,0 +1,243 @@
+﻿*{ font-family: "Microsoft YaHei",Arial,Simsun; outline:none !important}
+html, body, section, article, nav, header,table,textarea,input, footer, form, div, em, span, a, label, p, h1, h2, h3, h4, h5, h6, dl, ul, ol, li, dt, dd, select,th,i{font-style: normal; font-weight:normal;}
+.bg_grey {background: #ebebeb;}
+.red {color: #ff0000;}
+.blueC{/* color:#25b6ed*/ color:#353535; font-weight:normal}
+
+.pl10{ padding-left:10px;}
+.mt20{ margin-top:20px;}
+.mt10{ margin-top:10px;}
+.mt5{ margin-top:5px;}
+
+/*样式重构*/
+.media-heading{ font-weight:normal;}
+
+.container-fluid{ padding:0}
+/*选项卡*/
+.tab-ques{ border-bottom:none;}
+.tab-ques li{height:41px; width:50%;font-size:16px;}
+.tab-ques li a{border:none;border-bottom:1px solid #d9d9d9; padding:0; text-align:center;color: #999999;font-size:16px;height:40px;line-height:33px; margin:0}
+.tab-ques > li > a:focus, .tab-ques > li > a:hover{ background:none}
+.tab-ques > li.active > a, .tab-ques > li.active > a:focus, .tab-ques > li.active > a:hover{ border:none;color:#25b6ed; border-bottom:2px solid #25b6ed;}
+.tabContent{ display:none;}
+
+/*带图片的列表*/
+.peoList{ padding:8px 10px; color:#353535; border-bottom:1px solid #e0e0e0; margin-top:0;position:relative}
+.peoList .time{ float:right; margin-right:10px;font-size:12px; color:#bbb}
+.peoList .media-object{ width:48px; height:48px;}
+.peoList .media-heading{ color:#353535; font-size:16px; padding-top:3px; }
+.peoList .media-heading time{  color: #bbb;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 10px;}
+.peoList p{ margin-bottom:0;color: #aaaaaa;font-size: 14px;}
+.peoList p.txt{ color:#353535;}
+
+/*没有数据*/
+.nodata {color: #aaa;font-size:16px;line-height: 30px;padding-top: 110px;text-align: center;}
+.nodata p{ margin-bottom:0}
+
+/*发布问卷*/
+.issue .form-group ,.issue .form-group-add{border-bottom: 1px solid #e0e0e0;color: #353535;font-size: 16px;padding-right:30px; margin-bottom:0; min-height:45px; background:#fff; position:relative;}
+.issue label{ font-size:16px; line-height:45px; color:#353535; margin-bottom:0; padding-left:10px;}
+.issue .form-control{ border:none; height:45px; font-size:16px;color:#353535; box-shadow:none; border-radius:0;}
+.issue .addBtn{ position:absolute; width:30px; top:0; right:0; text-align:left; height:50px; line-height:38px; color:#25b6ed; font-size:20px;}
+.issue .addBtn.active, .issue .addBtn:active, .issue .addBtn:focus, .issue .addBtn:hover{ color:#0e9ece;}
+.issue .addBtn .icon-plus::before{ content:""; }
+.issue .addBtn .icon-plus{width:22px; height:22px;background:url(../images/btn_add_member.png) no-repeat; background-size:100%; display:inline-block; vertical-align:middle}
+.issue .addBtn .icon-plus:active ,.issue .addBtn .icon-plus.active{ background-position:0 -53px;}
+.issue .minus{ position:absolute; width:30px; top:0; right:0; text-align:left; height:45px; line-height:45px; color:#ff5454; font-size:20px;}
+.issue .minus.active, .issue .minus:active, .issue .minus:focus, .issue .minus:hover{ color:#d24242;}
+.issue .minus .icon-minus::before{content:"";}
+.issue .minus .icon-minus{display:inline-block; position:absolute;background:url(../images/del-icon.png) no-repeat 0 13px; width:26px; height:100%;background-size:13px auto;right:0px; top:0px;}
+.issue .minus .icon-minus:active , .issue .minus .icon-minus.active{ background-position: 0 -46px;}
+
+.select_person{width: 100%; max-height:93px;overflow-y:auto; line-height:26px; padding:5px 0 10px 10px}
+.select_person a{ position:relative; display:inline-block;font-size: 14px;margin-right: 5px; margin-top: 5px; padding:0 6px;  height:26px; border-radius:5px; line-height: 26px; background-color: #dfedfe;word-break:keep-all; white-space:nowrap; color:#25b6ed }
+.select_person a:visited,.select_person a:hover{ color:#353535}
+.select_person a.delet{ padding-right:15px;}
+.select_person a.delet i.cls{ display:block;}
+.select_person a i.cls{ position:absolute; top:10px; right:0px; display:none; width:6px; height: 6px;margin-left: 5px; margin-right: 5px; background: url(../images/icon_cls.png) no-repeat; background-size:100%; margin-left:5px; vertical-align: middle;}
+
+.issue .chkBtn{ position:absolute; right:10px; top:10px; }
+.issue .bootstrap-tagsinput{ margin-bottom:0;border:none; padding-left:10px;}
+.issue .bootstrap-tagsinput .tag{ top:5px;}
+.issue .bootstrap-tagsinput .tag:hover ,.issue .bootstrap-tagsinput .tag.active ,.issue .bootstrap-tagsinput .tag:active{ background:#25b6ed}
+.issue .bootstrap-tagsinput input{ top:5px; position:relative; display:none}
+.issue .personList{ color: #353535;font-size: 16px;line-height: 50px; margin-bottom:0; padding:0 10px;}
+.issue .personList i{font-style: normal;}
+
+/*填写问题*/
+.editing .form-group{ padding-left:30px; background:#fff; padding-left:35px;}
+.editing .other{ line-height:48px; padding-left:10px;}
+.editing label{position:absolute; text-align:right; font-size:16px; padding:0; left:20px; top:0}
+.editing .chk{background:url("../images/chk2.png") no-repeat 0 -18px; background-size:18px;color: #aaaaaa; height: 18px;left: 12px;line-height:16px;position: absolute;text-indent: 26px;top:13px;z-index: 9;}
+.editing .chk.on{background-position: 0 0px;}
+.editing .form-group-title{ padding-left:24px;}
+.editing .form-group-title label{ left:10px;}
+
+/*添加新选项*/
+.newly{ height:42px; line-height:42px; font-size:16px; color:#25b6ed; text-align:center; margin-bottom:0;}
+.newly .icon{ background:url(../images/btn_add_member.png) no-repeat; display:inline-block; position:relative; height:20px; width:20px; background-size:100%; top:5px; margin-right:7px;}
+
+/*新增问卷*/
+.addIssue{ background:#fff;}
+.addIssue label{font-size:16px; position:absolute; left:0}
+.addIssue .form-group{ padding:0 10px 0 83px;}
+.addIssue textarea.form-control{ height:150px; border:none; padding:10px 0; font-size:15px;}
+.addIssue .form-control{ padding-left:0; padding-right:0}
+
+.editingDown label{ left:10px;}
+.editingDown .form-group{ padding:0 10px;}
+.editingDown .slugBtn{float:right;height: 29px;vertical-align: middle;width:80px; margin-top:10px;}
+.editingDown .labelNum{ font-size:16px;color:#898989;}
+
+.num{ position:absolute; right:10px; top:10px; height:28px; width:120px; border:1px solid #d9d9d9; border-radius:3px;}
+.num .minusBtn{float:left; background:url("../images/am_btn.png") no-repeat 6px -219px; width:28px; height:100%; background-size:25px; border-right:1px solid #d9d9d9;}
+.num .minusBtn:active ,.num .minusBtn.active ,.num .minusBtn:hover{ background-position:6px -275px; background-color:#ebebeb;}
+.num .plusBtn{float:right; background:url("../images/am_btn.png") no-repeat 6px 0px; height:100%; width:28px; background-size:25px;border-left:1px solid #d9d9d9;}
+.num .plusBtn:active ,.num .plusBtn.active ,.num .plusBtn:hover{ background-position:6px -55px;background-color:#ebebeb;} 
+.num .ipt{ float:left; border:none; font-size:14px; color:#353535; text-align:center; width:61px; height:100%;}
+
+
+
+/*开始答卷*/
+.star_dj{padding:10px 10px 0 10px; color:#353535; margin-bottom:15px;}
+.star_dj dt{ font-size:18px;  line-height:25px; font-weight:normal; padding-bottom:6px; color:#000;}
+.star_dj dd{ font-size:14px; color:#353535; line-height:22px;}
+.star_dj dd.info{ color:#353535; padding-top:5px;font-size:16px;}
+
+/*按钮*/
+.buttonArea{text-align:center; padding:10px;}
+.buttonArea .btn{ width:75%; height:44px; font-size:16px; border:1px solid #d9d9d9; background:#fff; color:#353535} 
+.buttonArea .btn:active , .buttonArea .btn.active{ background:#ebebeb; box-shadow:none !important}
+.buttonArea .blue{background:#5fc2e7; color:#fff; border:none;}
+.buttonArea .blue:active ,.buttonArea .blue.active{ background:#43a8cf;}
+.buttonArea .NoBtn{color:#aaaaaa;}
+.buttonArea .NoBtn:active ,.buttonArea .NoBtn.active{ background:#fff;}
+.buttonArea .btn-primary{ background:#a2d7e9; border:none; color:#fff;}
+.buttonArea .btn-primary:active , .buttonArea .btn-primary.active{ background:#92c1d1;}
+.buttonArea .btn-warning{ background:#b4e3ad; border:none; color:#fff;}
+.buttonArea .btn-warning:active ,.buttonArea .btn-warning.active{background:#a3cc9b;}
+.buttonArea .btn-brown{ background:rgb(205,199,108); border:none; color:#fff;}
+.buttonArea .btn-brown:active{ background-color: rgb(177,170,57)}
+.buttonArea .disabled{ background:#5fc3e7; color:#9cd4ed;}
+.buttonArea  table{ table-layout:fixed; width:100%}
+.buttonArea  table td{ width:50%; }
+.buttonArea  table td:last-child{ padding-left:5px;}
+.buttonArea  table td:first-child{ padding-right:5px;}
+.buttonAreaTow .btn{ width:100%;}
+
+/*底部按钮*/
+.buttonBottom{  background:#fff; padding:0 10px 10px 10px;}
+
+/*试卷*/
+/*.questions{ border:none; box-shadow:none;}
+.questions .panel-heading{ background:none; border:none; font-size:16px; color:#353535; padding-bottom:0}
+.questions .panel-body{ padding:0;}
+.questions dl{ margin-bottom:0}
+.questions dd{font-size:14px; position:relative;margin-bottom:3px; color:#353535;}
+.questions dd label{padding:10px 35px 10px 45px; margin:0}
+.checkbox input[type=checkbox].custom-checkbox:checked+.icons .icon-checked, .radio input[type=checkbox].custom-checkbox:checked+.icons .icon-checked, .checkbox input[type=radio].custom-radio:checked+.icons .icon-checked, .radio input[type=radio].custom-radio:checked+.icons .icon-checked{color:#25b6ed}
+.questions dd p{border:1px solid #25b6ed; border-top:none; height:5px; position:relative; 
+margin:24px 35px 0px 60px}
+.questions dd .ipt{ position:absolute; width:100%; height:22px; border:none; background:none; font-size:14px; color:#aaaaaa; left:65px; bottom:15px; left:0; top:-22px; text-indent:7px;}
+.questions dd .chk{ position:absolute; background:url(../images/chk.png) no-repeat; right:10px; top:10px; background-size:20px; width:20px; height:20px;}
+.questions dd.on{ background:#f4ffef;}*/
+
+/*试题*/
+.questions{ margin-bottom:0px; width:100%; }
+.questions{ border:none; box-shadow:none;}
+.questions .panel-heading{ background:none; border:none; font-size:18px; color:#353535;  line-height:25px; word-wrap:break-word;padding:10px;}
+.questions .panel-body{ padding:0;}
+.buttonArea2{ width:100%; padding:5px 0 5px 0; position:fixed; left:0px; bottom:0; border-top:1px solid #c0c0c0; background:#fff;z-index:999; margin:0}
+.questions dt{padding:9px 10px; font-size:14px; color:#353535; line-height:22px; padding-left:38px; position:relative;}
+.questions dl{ margin-bottom:0}
+.questions dt em{display:inline-block; width:30px; line-height:22px; position:absolute; top:10px; left:10px;}
+.questions dt span{ color:#25b6ed; padding-left:10px; font-weight:bold}
+.questions dd{font-size:14px;line-height:20px;  position:relative;margin-bottom:10px; color:#353535;}
+.questions dd a{ display:block;padding:10px 44px 10px 44px;color:#353535;word-wrap:break-word; text-decoration:none}
+.questions dd em{display:inline-block; width:25px; line-height:22px; padding-left:14px; position:absolute; top:10px; left:25px;}
+/*.questions dd p{border:1px solid #25b6ed; border-top:none; height:5px; position:relative; 
+margin:24px 35px 0px 60px}
+.questions dd .ipt{ position:absolute; width:100%; height:22px; border:none; background:none; font-size:14px; color:#aaaaaa; left:65px; bottom:15px; left:0; top:-22px; text-indent:7px;}*/
+.questions .oper{padding:10px 35px 10px 65px; margin-bottom:0}
+.questions .textarea{ border:1px solid #d9d9d9; width:100%; border-radius:3px; background:#fff; font-size:16px;}
+.questions .iptTxt{ text-align:right; font-size:16px; color:#d9d9d9; margin-bottom:0}
+.questions dd .chk{ position:absolute; background:url(../images/chk.png) no-repeat; right:10px; top:8px; background-size:23px; width:23px; height:23px;}
+.questions dd.on{ background:#e9f8fd;}
+.questions dd.on .chk{ background-position:0 -23px;}
+
+
+/*试卷查看*/
+.carries{ margin-bottom:0px !important; border-bottom:1px solid #e0e0e0}
+.carries dl{ padding:0px 0 10px 0; margin-bottom:0}
+.carries dd{ padding:2px 50px 2px 35px;}
+.carries dd .chk{ display:none; background:none}
+.carries dd.on{color: #55cd55; background:none}
+.carries dd.on .chk{ display:block;background:url("../images/dh_btn.png") no-repeat; width:16px; background-size:100%}
+.carries dd.on .chk .icon-ok::before{ content:"";}
+.carries2 dd{ margin-bottom:0} 
+
+/*进度条*/
+/*.barBox{ padding-right:25px; position:relative; padding-left:21px; margin-top:3px;}
+.barBox .progress{ width:80%; display:inline-block; margin-bottom:0; height:12px;}
+.barBox .progress .progress-bar{ font-size:12px;}
+.barBox .progress .progress-bar-info{ background:#00bff3}
+.barBox .per{ float:none;}*/
+.barBox .digit{ position:absolute; right:-38px; top:2px;color: #bbbbbb; float: right; font-size: 12px;}
+
+
+.achieve{background:url(../images/success.png) no-repeat center 0; background-size:75px; margin-top:35px; padding-top:88px; padding-bottom:20px; text-align:center; font-size:18px; color:#aaaaaa; margin-bottom:0}
+
+/*问卷列表*/
+.que_list{ margin-top:0; border-bottom:1px solid #e0e0e0; position:relative}
+.que_list a{ display:block;padding:5px 10px; text-decoration:none; position:relative}
+.que_list a.active ,.que_list a:active{ background:#e0e0e0}
+.que_list .media-heading{color: #353535;font-size:16px;height: 26px;line-height: 28px; overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap;word-break: keep-all;}
+.que_list p{ margin-bottom:0;color: #aaaaaa;font-size:14px;}
+.que_list p .state{ float:right;}
+.que_list p .state.on{ color:#25b6ed}
+.que_list .hot{ position:absolute; left:3px; top:18px; background:#ff5454; display:none; height:5px; width:5px; border-radius:50%; z-index:9}
+.que_list.current .hot{ display:block}
+.que_list .media-body, .que_list .media-left, .que_list .media-right{display:inline}
+
+
+.switchBtn{display:inline-block; line-height:23px; position:absolute; right:10px;height:25px; width:85px; border-radius:3px; padding:1px; background:#25b6ed; vertical-align:middle; margin-top:12px;}
+.switchBtn a{ display:inline-block; width:50%; background:#fff;  color:#25b6ed; font-size:16px; text-align:center; height:23px; border-radius:3px; color:#fff}
+.switchBtn a.on{ background:#25b6ed; color:#fff;}
+.switchBtn.on , .switchBtn.on a.on{ background:#c1c1c1; color:#fff;}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control, .select2-search input[type="text"][disabled], .select2-search input[type="text"][readonly], fieldset[disabled] .select2-search input[type="text"]{ background:#fff;}
+
+
+/*loading*/
+.loading{height:35px; text-align:center; line-height:25px; color:#999999; font-size:18px;}
+.loading em{ display:inline-block; width:23px; height:23px; background:url(../images/loading.png) no-repeat; background-size:100%; margin-right:5px; position:relative; top:4px; animation:1.5s linear 0s normal none infinite running rotate ; -webkit-animation: rotate 1.5s linear 0s infinite;}
+@keyframes rotate {
+  0% { transform: rotateZ(0deg); opacity:1}
+  100% {transform: rotateZ(360deg); opacity:1}
+}
+@-webkit-keyframes rotate {
+  0% { -webkit-transform: rotateZ(0deg); opacity:1}
+  100% { -webkit-transform: rotateZ(360deg); opacity:1}
+}
+
+
+/*进度条*/
+.barBox{ padding-right:70px; position:relative; height:20px; line-height:22px; margin-top:0; padding-left:18px; margin-bottom:5px; padding-left:20px;}
+.barBox .digit{ position:absolute; right:-38px; top:2px;color: #bbbbbb; float: right; font-size: 12px;}
+.bar{float:left;position:relative;width:100px; height:8px;overflow:hidden; border-radius:10px; margin-top:7px;}
+.barColor1{ background:#00bff3;}
+.barColor2{ background:#efb935}
+.barColor3{ background:#ea68a2}
+.barColor4{ background:#88cb5a}
+.per{position:absolute; padding-left:4px; font-size:12px;}
+.perColor1{ color:#00bff3;}
+.perColor2{ color:#efb935}
+.perColor3{ color:#ea68a2}
+.perColor4{ color:#88cb5a}
+
+/*参与人数*/
+.perNum{ height:28px; width:100%; background:#ebebeb; line-height:28px; text-indent:10px; color:#888; font-size:14px; margin:0}

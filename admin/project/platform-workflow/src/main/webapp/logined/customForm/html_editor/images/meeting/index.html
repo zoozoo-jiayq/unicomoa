@@ -1,0 +1,130 @@
+<!DOCTYPE htm>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新东方会议室</title>
+<link href="style/css/global.css" rel="stylesheet" type="text/css" />
+<link href="style/css/index.css" rel="stylesheet" type="text/css" />
+<link href="style/css/other.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="inc/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="inc/js/jquery.ux.borderlayout.js"></script>
+<style type="text/css">
+<!--
+html,body,ul,li {margin:0; padding:0; font-family:"微软雅黑"; font-size:15px; }
+ul,li {list-style-type:none;}
+.clear {clear:both;}
+
+#workspace {
+  height: 100%;
+  width: 100%;
+}
+-->
+</style>
+<script type="text/javascript">
+function initMenu(menuId) {
+  $("#" + menuId + " li a").click(function() {
+    $("#" + menuId + " li a.current").removeClass("current");
+    $(this).addClass("current");
+  });
+}
+
+function doLayout() {
+  $("body").layout({
+    north: {
+      size: "auto"
+    },
+    center: {
+      size: "auto"
+    },
+    south: {
+      size: "auto"
+    }
+  });
+}
+
+$(function() {
+  initMenu("nav");
+  doLayout();
+});
+
+</script>
+</head>
+<body>
+	<div class="ui-layout-north">
+		<div id="top">
+			<div class="logo"></div>
+			<div style="clear: left"></div>
+			<div id="nav_out">
+				<div id="nav_in">
+					<div id="nav">
+						<ul>
+							<li><a href="apply/index.html" target="workspace"
+								class="current"><span>查询申请</span></a></li>
+							<li><a href="javascript:void(0)"><span>待批会议</span></a></li>
+							<li><a href="javascript:void(0)"><span>已批会议</span></a></li>
+							<li><a href="javascript:void(0)"><span>进行中会议</span></a></li>
+							<li><a href="javascript:void(0)"><span>未批准会议</span></a></li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="arealine"></div>
+	</div>
+	<div class="ui-layout-center">
+		<iframe id="workspace" name="workspace" allowTransparency="true"
+			border="0" frameborder="0" cellspacing="0" src="apply/index.html"></iframe>
+	</div>
+	<div class="ui-layout-south">
+		<div id="footer">
+			<div class="name">
+				<a href="javascript:viod(0)">zongmeng@xdf.cn</a>
+			</div>
+			<div class="disktop">
+				<a href="javascript:viod(0)">桌面</a>
+			</div>
+			<div id="nav_out2">
+				<div id="nav_in2">
+					<div id="nav2">
+						<ul>
+							<li><a href="javascript:void(0)"
+								onclick="javascript:fotBg(0)" id="myfot0" class="current2"><span>会议室共享查询</span></a></li>
+							<li><a href="javascript:void(0)"
+								onclick="javascript:fotBg(1)" id="myfot1"><span>审批合同-总法98579号</span></a></li>
+							<li><a href="javascript:void(0)"
+								onclick="javascript:fotBg(2)" id="myfot2"><span>搜索结果</span></a></li>
+							<li><a href="javascript:void(0)"
+								onclick="javascript:fotBg(3)" id="myfot3"><span>添加便签</span></a></li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="small-button">
+				<ul>
+					<li><a href="javascript:viod(0)"><img
+							src="style/images/room/add.jpg" /></a></li>
+					<li><a href="javascript:viod(0)"><img
+							src="style/images/room/setting.jpg" /></a></li>
+					<li><a href="javascript:viod(0)"><img
+							src="style/images/room/help.jpg" /></a></li>
+					<li><a href="javascript:viod(0)"><img
+							src="style/images/room/exit.jpg" /></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script language="javascript">
+    function fotBg(num) {
+      for ( var id = 0; id <= 3; id++) {
+        if (id == num) {
+          document.getElementById("myfot" + id).className = "current2";
+        } else {
+          document.getElementById("myfot" + id).className = "";
+        }
+      }
+    }
+  </script>
+</body>

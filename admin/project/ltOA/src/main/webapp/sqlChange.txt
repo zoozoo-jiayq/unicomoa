@@ -1,0 +1,98 @@
+日期：2014-10-09 增加公司ID
+alter table tb_role_info add company_id int;
+日期：2014-09-26消息推送增加阅读状态标记
+ALTER TABLE tb_cbb_jpush_user ADD is_read INT
+
+日期：2014-09-22 （增加手机端权限设置）
+CREATE TABLE [dbo].[tb_module_info_mobile](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](50) NULL,
+	[code] [varchar](150) NULL,
+	[url] [varchar](250) NULL,
+	[order_list] [varchar](50) NULL,
+	[icon] [varchar](500) NULL,
+	[statue] [int] NULL,
+	[parent_id] [int] NULL,
+ CONSTRAINT [PK__tb_modul__3213E83F7148A383] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[tb_role_module_mobile](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[module_id] [int] NULL,
+	[role_id] [int] NULL
+) ON [PRIMARY]
+
+GO
+
+
+
+日期：2014-09-17
+alter table tb_oab_address alter column remark varchar(2500)
+alter table tb_user_info add groupname varchar(200);
+ 
+ 
+INSERT INTO [dbo].[tb_data_filter_rule] ([company_id], [condition_jpql], [model_class_name], [name], [operation_type], [relation_id]) VALUES ( N'1', N'publishGroupId=:groupId', N'cn.com.qytx.cbb.notify.domain.Notify', N'只能读取本部门数据', N'READ', N'all');
+
+update tb_group_info set grade = 0 where parent_id = 0
+update tb_group_info set grade = 1 where group_id in (select group_id from tb_group_info where parent_id in (select group_id from tb_group_info where grade = 0) )
+update tb_group_info set grade = 2 where group_id in (select group_id from tb_group_info where parent_id in (select group_id from tb_group_info where grade = 1) )
+update tb_group_info set grade = 3 where group_id in (select group_id from tb_group_info where parent_id in (select group_id from tb_group_info where grade = 2) )
+update tb_group_info set grade = 4 where group_id in (select group_id from tb_group_info where parent_id in (select group_id from tb_group_info where grade = 3) )
+
+insert into tb_om_affair_setting (affair_priv,module_name,push_priv,sms_priv,module_code) values (1,'日程管理',0,0,'rcgl')
+
+日期： 2014-09-03
+alter table tb_cbb_form_authority alter column candidate varchar(5000);
+ alter table tb_cbb_notify alter column subject varchar(300)
+日期： 2014-09-04
+update tb_group_info set group_type = 4 where group_type = 6 
+日期： 2014-09-09 数据字典
+alter table tb_cbb_dict add info_order int
+update tb_cbb_dict set info_order =1
+alter table  tb_user_info alter column last_login_time datetime
+alter table tb_cbb_my_started alter column title nvarchar(300)
+
+日期： 2014-09-11 数据字典
+/*新增申请的桌面图标没有设置*/
+update tb_module_info set module_name = '工作申请' where module_id = 91;
+update tb_module_info set module_name = '新增申请',module_class ='xzsq',module_type= 1 where module_id= 92; 
+update tb_module_info set module_name = '申请列表' where module_id = 93;
+update tb_module_info set module_name = '工作审批',parent_id =0,module_level=1,url = null,module_class='gzsp' where module_id = 94;
+insert into tb_module_info(module_id,module_code,module_level,module_name,module_type,order_index,parent_id,url,is_delete,module_class)
+values(170,170,2,'工作审批',1,4,94,'/logined/jbpmApp/myjob/management.jsp',0,'wdsp');
+
+2014-09-15 
+  alter table tb_user_info add create_user_id int;
+  alter table tb_user_info add turn_list varchar(100);
+
+添加表
+CREATE TABLE [dbo].[tb_user_group] (
+[id] int NOT NULL IDENTITY(1,1) ,
+[user_id] int NULL ,
+[company_id] int NULL ,
+[group_power] varchar(2000) NULL 
+)
+
+
+GO
+DBCC CHECKIDENT(N'[dbo].[tb_user_group]', RESEED, 17)
+GO
+ 
+SET IDENTITY_INSERT [dbo].[tb_user_group] ON
+GO
+SET IDENTITY_INSERT [dbo].[tb_user_group] OFF
+GO
+ 
+-- Indexes structure for table tb_user_group
+ 
+-- Primary Key structure for table [dbo].[tb_user_group]
+-- ----------------------------
+ALTER TABLE [dbo].[tb_user_group] ADD PRIMARY KEY ([id])
+GO
+
+
+

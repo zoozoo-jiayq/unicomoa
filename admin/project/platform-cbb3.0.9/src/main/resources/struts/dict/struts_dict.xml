@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+	<package name="dict" namespace="/dict" extends="struts-default">
+		<action name="getDicts" class="cn.com.qytx.cbb.dict.action.DictAction" method="getDicts"></action>
+		<action name="getMoblieDicts" class="cn.com.qytx.cbb.dict.action.DictAction" method="getMoblieDicts"></action>
+		<action name="getSysDicts" class="cn.com.qytx.cbb.dict.action.DictAction" method="getSysDicts"></action>
+		<action name="setup_*" class="cn.com.qytx.cbb.dict.action.DictAction" method="{1}">	</action>
+	</package>
+</struts>

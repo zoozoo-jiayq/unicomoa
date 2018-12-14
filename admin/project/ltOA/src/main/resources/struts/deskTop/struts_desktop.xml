@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="desktop" namespace="/logined/desktop" extends="struts-default">
+        <default-action-ref name="mainPage"/>
+        <action name="mainPage" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="mainPage">
+            <result name="success">/logined/desktop/main.jsp</result>
+        </action>
+        <action name="appBoxPage" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="appBoxPage">
+            <result name="success">/logined/desktop/appBox.jsp</result>
+        </action>
+        <action name="deleteDesktopModule" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="deleteDesktopModule"/>
+        <action name="deleteDesktopPage" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="deleteDesktopPage"/>
+        <action name="reorderDesktopModule" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="reorderDesktopModule"/>
+        <action name="reorderDesktopPage" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="reorderDesktopPage"/>
+        <action name="addDesktopPage" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="addDesktopPage"/>
+        <action name="addDesktopModule" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="addDesktopModule"/>
+        <action name="getNotInDesktopModules" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="getNotInDesktopModules"/>
+        <action name="getDesktopTasks" class="cn.com.qytx.oa.deskTop.action.DesktopAction" method="getDesktopTasks"/>
+        
+        <action name="toDealWith" class="cn.com.qytx.oa.deskTop.action.ToDealWithAction" method="dealWith"></action>
+        <action name="deskka_*" class="cn.com.qytx.oa.deskTop.action.DeskKaAction" method="{1}"></action>
+    </package>
+</struts>

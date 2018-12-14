@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+    
+<struts>
+	<package name="myapply" namespace="/myapply/mobile" extends="struts-default">
+	    <!--手机端接口我的申请-->
+        <action name="myStarted" class="cn.com.qytx.cbb.myapply.action.MyStartedAction" method="myStarted"/>
+         <!--手机端接口我的待办-->
+        <action name="myWait" class="cn.com.qytx.cbb.myapply.action.MyWaitProcessAction" method="myWait"/>
+         <!--手机端接口我的已办-->
+        <action name="myProcess" class="cn.com.qytx.cbb.myapply.action.MyProcessAction" method="myProcess"/>
+    </package>
+</struts>

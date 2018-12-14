@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="notify" namespace="/notify" extends="struts-default">
+		
+		<!-- 通知公告 -->
+		<action name="notify_*" class="cn.com.qytx.cbb.notify.action.NotifyAction" method="{1}">
+			<result name="success">/logined/notify/{1}.jsp</result>
+		</action>
+		
+		<!-- 评论 -->
+		<action name="comment_*" class="cn.com.qytx.cbb.notify.action.NotifyCommentAction" method="{1}">
+			<result name="success">/logined/notify/{1}.jsp</result>
+		</action>
+		
+		<!-- 浏览操作 -->
+		<action name="view_*" class="cn.com.qytx.cbb.notify.action.NotifyViewAction" method="{1}">
+			<result name="success">/logined/notify/{1}.jsp</result>
+		</action>
+		
+		<action name="getGroupColumn" class="cn.com.qytx.cbb.notify.action.ColumnAction" method="getGroupColumn">
+		</action>
+		
+		<!-- 部门专栏查看列表 -->
+		<action name="clmViewList" class="cn.com.qytx.cbb.notify.action.NotifyAction" method="clmViewList">
+			<result name="success">/logined/column/viewList.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="notifyInterface" namespace="/syncNotify" extends="struts-default">
+		<action name="createNotify" class="cn.com.qytx.cbb.notify.action.SyncNotifyForKXH" method="createNotify">
+		</action>
+		<action name="broadcaseNotify" class="cn.com.qytx.cbb.notify.action.SyncNotifyForKXH" method="broadcaseNotify"></action>
+	</package>
+	
+</struts>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/work.css" />
+		<script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+		<style>
+			
+			.clear-bor{border-right: none !important;}
+		</style>
+	</head>
+	<body style="background: white;">
+		<header class="mui-bar mui-bar-nav qy-head">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">审批</h1>
+		</header>
+		<div class="mui-content">	
+			<div class="indexTop">
+ 	<div><button id="myStartList" class="i01"><em></em><p>我发起的</p></button></div><div><button href="javascript:void(0);" id="myApproveList" class="i02"><em><i id="approveRound"></i></em><p>待我审批</p></button></div>
+ </div>
+			<div class="mui-scroll-wrapper" style="top:230px;">
+				<div class="mui-scroll" >
+					<ul class="mui-table-view mui-grid-view mui-grid-9 grid-9-white" id="freeflow" style="display: none;">
+						<!--自由流程-->
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:void(0);" id="qingjia">
+								<span class="icon flow flow-1"></span>
+								<div class="mui-media-body">请假</div>
+							</a>
+						</li>
+						
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:void(0);" id="baoxiao">
+								<span class="icon flow flow-2"></span>
+								<div class="mui-media-body">报销</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:void(0);" id="chuchai">
+								<span class="icon flow flow-3"></span>
+								<div class="mui-media-body">出差</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:void(0);" id="waichu">
+								<span class="icon flow flow-4"></span>
+								<div class="mui-media-body">外出</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							<a href="javascript:void(0);" id="lingyong">
+								<span class="icon flow flow-5"></span>
+								<div class="mui-media-body">物品领用</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"> 
+							<a href="javascript:void(0);" id="tongyong">
+								<span class="icon flow flow-6"></span>
+								<div class="mui-media-body">通用</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			gestureConfig:{
+				tap:true,
+				hold:true,
+				release:true
+			},
+			beforeback: function(){
+				if(plus.os.name=='iOS'){
+					plus.qytxplugin.goBackDesk();
+				}else{
+					plus.runtime.quit();
+				}
+			}
+		});
+	</script>
+	
+	<script type="text/javascript" src="../../js/qytxplugin.js"></script>
+	<script type="text/javascript" src="../../js/logined/fixedflow/baseData.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/updateVersion.js"></script>
+	<script type="text/javascript" src="../../js/logined/fixedflow/index.js"></script>
+</html>

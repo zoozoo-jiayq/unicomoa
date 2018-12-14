@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+	<package name="datafilter" namespace="/datafilter" extends="struts-default">
+		<action name="main" class="cn.com.qytx.cbb.datafilter.action.DataFilterAction" method="main">
+			<result name="main">/logined/datafilter/moduleDataFilter.jsp</result>
+		</action>
+		<action name="manager" class="cn.com.qytx.cbb.datafilter.action.DataFilterAction" method="manager">
+			<result name="configManager">/logined/datafilter/configDataFilter.jsp</result>
+		</action>
+		<action name="addDatafilter" class="cn.com.qytx.cbb.datafilter.action.DataFilterAction" method="addDatafilter"></action>
+		<action name="delete" class="cn.com.qytx.cbb.datafilter.action.DataFilterAction" method="delete">
+			<result name="configManager" type="redirect">manager.action?moduleClassName=${moduleClassName}</result>
+		</action>
+		<action name="test" class="cn.com.qytx.cbb.datafilter.action.DataFilterAction" method="test"></action>
+		<action name="getUserInfo" class="cn.com.qytx.cbb.datafilter.action.DataFilterAction" method="getUserInfo"></action>
+	</package>
+</struts>

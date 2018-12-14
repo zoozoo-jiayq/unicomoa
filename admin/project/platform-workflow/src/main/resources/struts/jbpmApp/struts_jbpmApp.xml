@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+    
+<struts>
+
+    <package name="jbpmFlow" namespace="/jbpmflow" extends="struts-default">
+            
+            <!-- 列表查询 -->
+            <action name="listSearch" class="cn.com.qytx.cbb.jbpmApp.action.WorkflowListAction">
+                <result name="often">/logined/jbpmApp/apply/often.jsp</result>
+                <result name="categorylist">/logined/jbpmApp/apply/categorylist.jsp</result>
+            </action>
+            
+            <!-- 其它查询和跳转 -->
+            <action name="detailSearch" class="cn.com.qytx.cbb.jbpmApp.action.WorkflowDetailAction">
+                 <result name="processDefineDetail">/logined/jbpmApp/apply/processDefineDetail.jsp</result>
+                 <result name="applyBefore">/logined/jbpmApp/apply/applyBefore.jsp</result>
+                 <result name="print">/logined/jbpmApp/apply/printView.jsp</result>
+                 <result name="view">/logined/jbpmApp/apply/view.jsp</result>
+                 <result name="adviceHistoryShowList">/logined/jbpmApp/apply/adviceHistoryShowList.jsp</result>
+                 <result name="apply">/logined/jbpmApp/apply/apply.jsp</result>
+                 <!-- 事物提醒的设置 -->
+                 <result name="has_completed">/logined/jbpmApp/myjob/hasCompleted.jsp</result>
+                <result name="has_deleted">/logined/jbpmApp/myjob/hasDeleted.jsp</result>
+                <result name="viewHistory">/logined/jbpmApp/apply/viewHistoryDialog.jsp</result>
+            </action>
+            
+            <!-- 操作 -->
+            <action name="operation" class="cn.com.qytx.cbb.jbpmApp.action.WorkflowOperationAction">
+            	<result name="assigneeOther">/logined/jbpmApp/apply/assigneeOther.jsp</result>
+            </action>
+            
+            <action name="getUser" class="cn.com.qytx.cbb.jbpmApp.action.JbpmUserSelectAction" method="getUser">
+        </action>
+         <action name="step_*" class="cn.com.qytx.cbb.jbpmApp.action.WorkflowLeaveAction" method="{1}"></action>
+    </package>
+
+</struts>

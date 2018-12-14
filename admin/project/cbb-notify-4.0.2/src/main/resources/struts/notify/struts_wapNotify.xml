@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="wapNotify" namespace="/wapNotify" extends="struts-default">
+		<action name="viewList" class="cn.com.qytx.cbb.notify.action.WapNotifyAction" method="viewList">
+		</action>
+		<action name="viewInfo" class="cn.com.qytx.cbb.notify.action.WapNotifyAction" method="viewInfo">
+		</action>
+		<action name="attachList" class="cn.com.qytx.cbb.notify.action.WapNotifyAction" method="attachList">
+		</action>
+		<action name="mobileInfo" class="cn.com.qytx.cbb.notify.action.WapNotifyAction" method="mobileInfo">
+		</action>
+		<action name="mobileFlow" class="cn.com.qytx.cbb.notify.action.WapNotifyAction" method="mobileFlow">
+		</action>
+		<action name="mobileApprove" class="cn.com.qytx.cbb.notify.action.WapNotifyAction" method="mobileApprove">
+		</action>
+		<action name="viewNotify" class="cn.com.qytx.cbb.notify.action.WapNotifyViewAction" method="viewNotify">
+		</action>
+		<action name="mobileView" class="cn.com.qytx.cbb.notify.action.WapNotifyViewAction" method="mobileView">
+		</action>
+		<action name="mobileRead" class="cn.com.qytx.cbb.notify.action.WapNotifyViewAction" method="mobileRead">
+		</action>
+		<action name="mobileUnread" class="cn.com.qytx.cbb.notify.action.WapNotifyViewAction" method="mobileUnread">
+		</action>
+		<action name="commentList" class="cn.com.qytx.cbb.notify.action.WapNotifyCommentAction" method="commentList">
+		</action>
+		<action name="saveComment" class="cn.com.qytx.cbb.notify.action.WapNotifyCommentAction" method="save">
+		</action>		
+		<action name="del" class="cn.com.qytx.cbb.notify.action.WapNotifyCommentAction" method="del"></action>
+		<!-- 部门专栏列表 -->
+		<action name="clmViewList" class="cn.com.qytx.cbb.notify.action.WapColumnAction" method="clmViewList">
+		</action>
+		<!-- 部门专栏栏目列表 -->
+		<action name="getGroupColumn" class="cn.com.qytx.cbb.notify.action.WapColumnAction" method="getGroupColumn">
+		</action>
+		<action name="columnList" class="cn.com.qytx.cbb.notify.action.WapNotifyAction" method="columnList">
+		</action>
+		<action name="mobileViewById"  class="cn.com.qytx.cbb.notify.action.WapNotifyViewAction" method="viewById">
+		</action>
+		<!-- 获得公告未读数量 -->
+		<action name="getNotifyUnReadCount" class="cn.com.qytx.cbb.notify.action.RPNotify" method="getNotifyUnReadCount"></action>
+		<!-- 获得公告待审批数量 -->
+		<action name="getNotifyApproveCount" class="cn.com.qytx.cbb.notify.action.RPNotify" method="getNotifyApproveCount"></action>
+		<!-- 获得手机端公告显示风格 -->
+		<action name="getClientStyle" class="cn.com.qytx.cbb.notify.action.WapNotifyAction" method="getClientStyle">
+		</action>
+		<action name="save" class="cn.com.qytx.cbb.notify.action.WapNotifyAction" method="save">
+		</action>
+	</package>
+	
+</struts>

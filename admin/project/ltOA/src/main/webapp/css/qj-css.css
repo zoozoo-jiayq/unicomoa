@@ -1,0 +1,13 @@
+.fileWord {background:url(../images/public/word.png) no-repeat center left; padding-left:20px; height:20px; line-height:20px; display:block;color:#666}
+.fileExcel {background:url(../images/public/excel.png) no-repeat center left; padding-left:20px; height:20px;  line-height:20px;display:block;color:#666}
+.fileTxt {background:url(../images/public/text.png) no-repeat center left; padding-left:20px; height:20px; line-height:20px; display:block;color:#666}
+.filePPT {background:url(../images/public/powerpoint.png) no-repeat center left; padding-left:20px; height:20px; line-height:20px; display:block;color:#666}
+.filePicture {background:url(../images/public/picture.png) no-repeat center left; padding-left:20px; height:20px;  line-height:20px;display:block;color:#666}
+.fileRar {background:url(../images/public/compress.png) no-repeat center left; padding-left:20px; height:20px;  line-height:20px;display:block;color:#666}
+.fileWord {background:url(../images/public/word.png) no-repeat center left; padding-left:20px; height:20px;  line-height:20px;display:block;color:#666}
+
+.pageTitle .setAccess {background: url(../images/public/setAccess.png) no-repeat center left;}
+
+.inputTable .filesIco {padding-left:18px; background:url(../images/affix.png) no-repeat 6px center; }
+
+.inputTable .filesIco a.xxx{display: inline-block; width:16px; height:16px; background:url(../images/public/remove.png) no-repeat;}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文本域</title>
+<link href="../style/css/global.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/index.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/other.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../inc/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/mwheelIntent.js"></script>
+<script language="javascript">
+$(function() {
+  $.fn.jScrollPaneArea = function(cfg) {
+    var area = this.find("textarea");
+    area.length && area.css({
+      height: area[0].scrollHeight + "px",
+      width: area[0].scrollWidth + "px",
+      overflow: "hidden"
+    });
+    return $.fn.jScrollPane.apply(this, arguments);
+  }
+  $("#test").jScrollPaneArea();
+  doFancy();
+});
+
+var d = document;
+var safari = (navigator.userAgent.toLowerCase().indexOf('safari') != -1) ? true : false;
+var gebtn = function(parEl,child) { return parEl.getElementsByTagName(child); };
+function doFancy() {
+
+    var body = gebtn(d,'body')[0];
+    body.className = body.className && body.className != '' ? body.className + ' has-js' : 'has-js';
+
+    if (!d.getElementById || !d.createTextNode) return;
+    var ls = gebtn(d,'label');
+    for (var i = 0; i < ls.length; i++) {
+        var l = ls[i];
+        if (l.className.indexOf('label_') == -1) continue;
+        var inp = gebtn(l,'input')[0];
+        if (l.className == 'label_check') {
+            l.className = (safari && inp.checked == true || inp.checked) ? 'label_check c_on' : 'label_check c_off';
+            l.onclick = check_it;
+        };
+        if (l.className == 'label_radio') {
+            l.className = (safari && inp.checked == true || inp.checked) ? 'label_radio r_on' : 'label_radio r_off';
+            l.onclick = turn_radio;
+        };
+    };
+};
+var check_it = function() {
+    var inp = gebtn(this,'input')[0];
+    if (this.className == 'label_check c_off' || (!safari && inp.checked)) {
+        this.className = 'label_check c_on';
+        if (safari) inp.click();
+    } else {
+        this.className = 'label_check c_off';
+        if (safari) inp.click();
+    };
+};
+var turn_radio = function() {
+    var inp = gebtn(this,'input')[0];
+    if (this.className == 'label_radio r_off' || inp.checked) {
+        var ls = gebtn(this.parentNode,'label');
+        for (var i = 0; i < ls.length; i++) {
+            var l = ls[i];
+            if (l.className.indexOf('label_radio') == -1)  continue;
+            l.className = 'label_radio r_off';
+        };
+        this.className = 'label_radio r_on';
+        if (safari) inp.click();
+    } else {
+        this.className = 'label_radio r_off';
+        if (safari) inp.click();
+    };
+};
+</script>
+<style>
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+textarea {
+  width: 300px;
+  overflow: visible;
+}
+
+.has-js .label_check,
+.has-js .label_radio { padding-left: 34px; }
+.has-js .label_radio { background: url(radio-off.png) no-repeat; }
+.has-js .label_check { background: url(check-off.png) no-repeat; }
+.has-js label.c_on { background: url(check-on.png) no-repeat; }
+.has-js label.r_on { background: url(radio-on.png) no-repeat; }
+.has-js .label_check input,
+.has-js .label_radio input { position: absolute; left: -9999px; }
+</style>
+</head>
+<body>
+	 <label class="label_check" for="sample-check">
+	    <input name="sample-check" id="sample-check" value="1" type="checkbox" />
+	    Sample Label
+	</label>
+	
+	<label class="label_radio" for="sample-radio">
+	    <input name="sample-radio" id="sample-radio" value="1" type="radio" />
+	    Sample Label
+	</label>
+</body>
+</html>

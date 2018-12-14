@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+*{padding:0px;margin:0px;}
+body {font-family:"Microsoft YaHei","微软雅黑",Simsun; color:#555555; font-size:14px; background:#f6f7f9}
+a,a:visited{color:#0066cc;text-decoration:none;}
+a:hover {color: #0066cc;text-decoration: underline}
+ul,li{ list-style: none outside none;}
+fieldset, img {border: 0;}
+address, caption, cite, code, dfn,em,i, th, var, optgroup {font-style: normal;font-weight: normal;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: normal;}
+abbr, acronym {border: 0;font-variant: normal;}
+input, button, textarea,select, optgroup, option {font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;}
+input, button, textarea, select {*font-size: 100%;}
+.bg_white{ background:#FFF;}
+
+select{border:1px solid #e4e4e4;;color:#555555;height:29px; background:#fff; padding:4px 8px 1px 1px;vertical-align:middle;}
+input.formText{border:1px solid #e4e4e4;line-height:26px;color:#555555;height:26px; text-indent:10px;background:#fff;vertical-align:middle;}
+textarea.formTextarea{min-height:100px;padding:10px 0;border:1px solid #e4e4e4;color:#555555;text-indent:10px;background:#fff;text-indent:10px;vertical-align:middle;}
+input.formText:hover , textarea.formTextarea:hover{border:1px solid #cecece;}
+input.formText:focus , textarea.formTextarea:focus{border:1px solid #459fd2;}
+input.readOnlyText{border:1px solid #e4e4e4;line-height:30px;color:#c2c2c2;height:30px; text-indent:10px;background:#fafafa;vertical-align:middle;}
+textarea.readOnlyText{min-height:40px;padding:10px 0;border:1px solid #e4e4e4;line-height:30px;color:#c2c2c2;height:30px; text-indent:10px;background:#fafafa;vertical-align:middle;}

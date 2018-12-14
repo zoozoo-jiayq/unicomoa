@@ -1,0 +1,175 @@
+/* CSS Document */
+
+/*通用样式*/
+html {
+	color:#333;
+	background:#FFF;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+	padding:0;
+	margin:0;
+	border:none;
+}
+tr, td {
+	border:none;
+}
+fieldset, img {
+	border:0;
+}
+
+del, ins {
+	text-decoration:none;
+}
+li {
+	list-style:none;
+}
+caption, th {
+	text-align:left;
+}
+
+q:before, q:after {
+	content:'';
+}
+legend {
+	color:#000;
+}
+hr{ display:block;margin:0.5em auto; border-style:inset; border-width:1px;}
+abbr,acronym { border:0;}
+map{ display:inline;}
+label{ cursor:default;}
+.clearfloat{height:0;font-size:1px;clear:both;line-height:0;}
+input, button, textarea, select, optgroup, option {
+	font-family:inherit;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+}
+input, button, textarea, select {
+*font-size:100%;
+}
+select, input, button, textarea, button {
+	font:99% arial, helvetica, clean, sans-serif;
+}
+table {
+	font-size:inherit;
+	font:100%;
+}
+body {
+	text-align:center;
+	font-family: "宋体";
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+.clear {
+	height:0px;
+	line-height:0px;
+	font-size:0px;
+	clear:both
+}
+a{
+	color:#333333;
+	text-decoration:none;
+}
+a:hover{
+	color:#1546A5;
+	text-decoration:underline;
+}
+#contains{
+	margin:0px auto;
+	height:auto;
+	text-align:left;
+}
+#contains .head{
+   background:url(../../images/luntanimages/headbg.jpg) repeat-x;
+   height:25px;
+   line-height:25px;
+   }
+.headtop{
+   width:975px;
+   margin:0px auto;
+  }
+.headtopleft{float:left;}
+.headtopright{float:right;}
+.inputstyle{width:110px; height:14px; line-height:14px; border:1px solid #CCCCCC}
+#content{
+   background:url(../../images/luntanimages/bybg.jpg) no-repeat;
+   height:auto;
+   }
+#content .logo{
+   width:980px;
+   margin:0px auto;
+   padding:10px 0px 0px 0px;
+   }
+.logoleft{
+   float:left;
+   padding-left:10px;
+   }
+.logoright{
+   float:right;
+   width:300px;
+   padding-right:10px;
+   }
+.logoright p a{
+   font-size:14px;
+   margin:0px 5px;
+   }
+.logoright p{
+   text-align:center;
+   margin:10px auto;
+   }
+.inputStyle{
+    width:180px; 
+	height:21px; 
+	line-height:21px;
+	background:url(../../images/luntanimages/fdj.jpg) no-repeat left #FFFFFF;
+	border:1px solid #CCCCCC;
+	padding-left:20px;
+	}
+.nav{
+    background:url(../../images/luntanimages/nav.jpg) no-repeat;
+	height:33px;
+	line-height:33px;
+	color:#FFFFFF;
+	}
+.nav p{
+    padding-left:20px;
+	}
+.nav p span{
+    float:right;
+	padding-right:20px;
+	}
+.nav p a{
+   color:#FFFFFF;
+   font-weight:bold;
+   }
+   
+#foot{
+  width:975px;
+  margin:10px auto;
+  background-color:#FFFFFF;
+  }
+#foot .friend{
+    height:50px;
+    line-height:50px;
+    text-align:left;
+    border:1px solid #CDCDCD;
+  }
+#foot .friend a{
+    margin:0px 5px;
+	display:inline;
+  }
+#foot .xia{
+   text-align:center;
+   line-height:25px;
+   padding-top:10px;
+   }

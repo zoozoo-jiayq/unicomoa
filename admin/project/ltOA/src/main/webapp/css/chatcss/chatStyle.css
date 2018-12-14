@@ -1,0 +1,151 @@
+/* CSS Document */
+
+/*chatOne.htmlҳ����ʽ*/
+.room{
+   margin:5px auto;
+   border:1px solid #CDCDCD;
+   background-color:#FFFFFF;
+   line-height:25px;
+   font-size:13px;
+   }
+.room h2{
+   background:url(../images/luntanimages/h2.jpg) repeat-x;
+   height:32px;
+   line-height:32px;
+   font-weight:bold;
+   padding-left:20px;
+   color:#336699;
+   font-size:13px;
+   }
+.room h2 span{
+   float:right;
+   color:#333333;
+   font-weight:normal;
+   padding-right:20px;
+   }
+.one{
+   width:950px;
+   height:65px;
+   margin:0px auto;
+   border-bottom:1px dotted #CDCDCD;
+   }
+.oneleft{
+   float:left;
+   margin-top:20px;
+   }
+.oneright{
+   float:right;
+   width:910px;
+   margin-top:10px;
+   }
+.oneright ul li span{float:right; padding-right:15px;} 
+.oneright ul li font{font-weight:bold; font-size:13px;}
+.oneright ul li a{color:#336699;}
+.two{
+   width:950px;
+   height:65px;
+   margin:0px auto;
+   }
+.twoleft{
+   float:left;
+   margin-top:20px;
+   }
+.tworight{
+   float:right;
+   width:910px;
+   margin-top:10px;
+   }
+.tworight ul li span{float:right; padding-right:15px;}
+.tworight ul li font{font-weight:bold; font-size:13px;}
+.tworight ul li a{color:#336699;}
+
+
+/*chatTwo.htmlҳ����ʽ*/
+.fangjian{
+   margin:5px auto;
+   line-height:25px;
+   background-color:#FFFFFF;
+   border:1px solid #85BAD8;
+   }
+.fangjianLeft{
+   float:left;
+   border-right:1px solid #85BAD8;  
+   width:785px;
+   }
+.fangjianLeft h2{
+   background:url(../../images/luntanimages/h2.jpg) repeat-x;
+   height:32px;
+   line-height:32px;
+   font-weight:bold;
+   padding-left:10px;
+   color:#336699;
+   font-size:13px;
+   _padding-top:8px;
+   }
+.fangjianLeft h3{
+   height:35px;
+   line-height:35px;
+   padding-left:20px;
+   font-size:13px;
+   border-bottom:1px solid #CDCDCD;
+   _padding-top:8px;
+   word-break : normal | break-all | keep-all  
+   }
+.fangjianLeft ul li{
+    border-bottom:1px dotted #CDCDCD;
+    padding-left:10px;
+	padding-top:5px;
+	line-height:25px;
+	padding-right:10px;
+   }
+   
+   .chat{
+   height:240px;
+   border:0px dotted #8593A0;
+   margin:10px;
+   overflow:auto;
+   overflow-x:hidden;
+   }
+   .chat ul li p{line-height:26px;color:#000;padding-left:20px;}
+   .chat ul li p img{vertical-align:middle;margin-right:5px;}
+   .chat ul li p.blue{color:#0a7ed7;font-size:12px;padding-left:0px;}
+   .chat ul li p.green{color:#18a557;font-size:12px;padding-left:0px;}
+.toos{
+   width:100%;
+  /* height:160px;*/
+   border:0px solid #8593A0;
+   margin:0px auto;
+   }
+.took{
+   width:100%;
+   text-align:right;
+   padding:5px 0;
+    margin:0px auto;
+    background:#F0F0EE;
+   } 
+ .btnSubmit{width:91px; height:36px;margin-right:5px; display:inline-block; background:url(../../images/luntanimages/room_r10_c6.jpg); cursor:pointer }
+ .btnSubmit:hover{background:url(../../images/luntanimages/btnSubmitHover.jpg);} 
+.fangjianRight{
+	width:192px;float:left
+   }
+.fangjianRight h2{
+   background:url(../../images/luntanimages/h2.jpg) repeat-x;
+   height:32px;
+   text-align:center;
+   line-height:32px;
+   font-weight:bold;
+   color:#336699;
+   font-size:13px;
+   _padding-top:8px;
+   }
+.fangjianRight ul li span{float:right; padding-right:15px;padding-top:5px;vertical-align:middle;display:inline-block}
+.fangjianRight ul{margin:0 5px;}
+.fangjianRight ul li{
+    border-bottom:1px dotted #CDCDCD;
+/*	background:url(../../images/luntanimages/room_r6_c6.jpg) 10px center no-repeat;*/
+	padding-left:35px;
+	line-height:24px;
+	height:24px;overflow:hidden;
+	
+	}
+.fangjianRight ul li img{vertical-align:middle}

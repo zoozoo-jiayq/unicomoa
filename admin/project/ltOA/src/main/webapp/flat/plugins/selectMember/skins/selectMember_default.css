@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+.selectMember{padding:8px;}
+.selectMember .search{ height:30px; border:1px solid #e4e4e4; text-indent:10px; line-height:30px; width:auto; background:#FFF; width:100%;}
+.selectMember .search:hover{border:1px solid #cecece;}
+.selectMember .search:focus{border:1px solid #459fd2;}
+.selectMember .member{ padding-top:9px;}
+.member .tab{background: url(default/tab_bj.png) repeat-x scroll left bottom; overflow:hidden; width:100%;}
+.member .tab ul{ float:left;border-left:1px solid #e4e4e4;}
+.member .tab li{float: left;height: 30px; border:1px solid #e4e4e4;  color:#012f61; border-left:none; background:#efefef;}
+.member .tab li a{color:#888; text-decoration:none; float: left; padding:0 25px 0 25px; height: 30px;line-height:30px; }
+.member .tab .current{background:#fff; border-bottom:1px solid #FFF;}
+.member .tab .current a{ color:#017a8f;}
+.member .tabContent{background:#FFF; border:1px solid #e4e4e4; border-top:none; height:290px; overflow:auto;}
+.member .tabContent .ztree{ width:auto; height:auto;overflow:visible; margin:0; padding:5px 20px;}
+
+

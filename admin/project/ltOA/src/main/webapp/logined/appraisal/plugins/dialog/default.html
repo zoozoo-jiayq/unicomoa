@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>弹窗示例</title>
+<script type="text/javascript" src="jquery-1.6.min.js"></script>
+<script type="text/javascript" src="artDialog.js?skin=default"></script>
+<script type="text/javascript" src="iframeTools.js"></script>
+<script type="text/javascript">
+   function disp_alert1()
+	{
+		art.dialog.open('http://www.baidu.com', {title: '温馨提醒' ,width:800,height:450,button: [
+        {
+            name: '同意',
+            callback: function () {
+                this.content('你同意了').time(2);
+                return false;
+            },
+            focus: true
+        },
+        {
+            name: '不同意',
+            callback: function () {
+                alert('你不同意')
+            }
+        },
+        {
+            name: '无效按钮',
+            disabled: true
+        },
+        {
+            name: '关闭我'
+        }
+    ]});
+
+	}
+	function test()
+	{
+		
+		art.dialog.confirm('确认要删除该问卷吗？', {width: 1320, height: 400}, function(){}, function(){
+			art.dialog.tips('你取消了操作');
+			});
+	}
+</script>
+</head>
+<body>
+         <input type="submit" class="formButton_green" value="弹窗页面"  onclick="disp_alert1()" />
+         <input type="submit" class="formButton_grey" value="提示消息" onclick="test()" />
+
+</body>
+</html>

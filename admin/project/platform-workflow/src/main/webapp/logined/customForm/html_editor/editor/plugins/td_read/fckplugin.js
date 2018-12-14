@@ -1,0 +1,1 @@
+﻿FCKCommands.RegisterCommand( 'td_read', new FCKDialogCommand( 'td_read', "阅读控件", FCKPlugins.Items['td_read'].Path + 'td_read.html', 380, 210 ) ) ;

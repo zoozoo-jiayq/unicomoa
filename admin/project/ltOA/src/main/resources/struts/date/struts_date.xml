@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+    
+<struts>
+    <!-- 获得服务器时间 -->
+	<package name="date" namespace="/date" extends="struts-default">
+		<action name="getNowDate" class="cn.com.qytx.oa.date.action.DateAction" method="getNowDate"></action>
+	</package>
+	
+</struts>

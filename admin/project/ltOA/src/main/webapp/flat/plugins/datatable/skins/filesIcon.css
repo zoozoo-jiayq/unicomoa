@@ -1,0 +1,14 @@
+/*链接图标*/
+.fileWord {background:url(default/word.png) no-repeat center left; padding-left:20px; height:30px; line-height:30px; display:block;color:#666;text-overflow:ellipsis; overflow:hidden;}
+.fileExcel {background:url(default/excel.png) no-repeat center left; padding-left:20px; height:30px;  line-height:30px;display:block;color:#666;text-overflow:ellipsis; overflow:hidden;}
+.fileTxt {background:url(default/text.png) no-repeat center left; padding-left:20px; height:30px; line-height:30px; display:block;color:#666;text-overflow:ellipsis; overflow:hidden;}
+.filePPT {background:url(default/powerpoint.png) no-repeat center left; padding-left:20px; height:30px; line-height:30px; display:block;color:#666;text-overflow:ellipsis; overflow:hidden;}
+.filePicture {background:url(default/picture.png) no-repeat center left; padding-left:20px; height:30px;  line-height:30px;display:block;color:#666;text-overflow:ellipsis; overflow:hidden;}
+.fileRar {background:url(default/compress.png) no-repeat center left; padding-left:20px; height:30px;  line-height:30px;display:block;color:#666;text-overflow:ellipsis; overflow:hidden;}
+/*公文*/
+.title_gw{height:30px;line-height:29px;}
+.title_gw .name{ background:url(default/authority_icon.png) no-repeat left center; color:#333; padding-left:28px; font-weight:bold; float:left; height:30px; margin-right:20px;}
+.title_gw .formButton_green{width:79px; height:27px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#fff;font-size:14px;border:0; background:#7bbf70;margin-right:5px;}
+.title_gw .formButton_green:hover{ background:#61a655;}
+.title_gw .formButton_grey{width:79px; height:27px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#555;font-size:14px;border:0;background:#dce7e9;}
+.title_gw .formButton_grey:hover{background:#c0dadf;}

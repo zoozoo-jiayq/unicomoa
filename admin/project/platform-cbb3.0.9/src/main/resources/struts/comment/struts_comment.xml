@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="comment" namespace="/comment" extends="struts-default">
+		<action name="comment_*" class="cn.com.qytx.cbb.comment.action.CommentAction" method="{1}">
+		</action> 
+		
+		<action name="wapSave" class="cn.com.qytx.cbb.comment.action.WapCommentAction" method="save"></action>  
+		<action name="wapTwo" class="cn.com.qytx.cbb.comment.action.WapCommentAction" method="two"></action>  
+		<action name="wapList" class="cn.com.qytx.cbb.comment.action.WapCommentAction" method="list"></action>  
+		<action name="wapDel" class="cn.com.qytx.cbb.comment.action.WapCommentAction" method="del"></action>  
+	</package>
+</struts>

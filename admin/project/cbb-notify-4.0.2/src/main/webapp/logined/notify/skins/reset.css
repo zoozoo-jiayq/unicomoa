@@ -1,0 +1,65 @@
+/* CSS Document */
+/*
+@Author:	王心卫
+*/
+html, body, section, article, nav, header,table,textarea,input, footer, form, div, em, span, a, label, p, h1, h2, h3, h4, h5, h6, dl, ul, ol, li, dt, dd, select th{ margin: 0; padding: 0; font-size:medium;font-style: normal; font-weight:normal;font-size:14px;}
+body, select, input, option,i{  font-family: "Microsoft YaHei",Arial,Simsun; }
+body{background:#f4f4f4;color: #555; font-size:14px;}
+form{border:0;margin:0;padding:1px}
+img{border:0;vertical-align:middle}
+textarea{width:100%;}
+body > header, body > section, body > article{ clear: both; }
+input{ vertical-align:middle}
+i{font-style:normal;}
+li { list-style-type: none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+a:link{ text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0); }
+a:active{ text-decoration:none;}
+a:visited{ text-decoration:none;}
+.fl {float: left}
+.fr {float: right}
+.f12 {font-size: 12px}
+.f14 {font-size: 14px}
+.f16 {font-size: 16px}
+.f12b {font-size: 12px; font-weight: bold}
+.f14b {font-size: 14px; font-weight: bold}
+.f16b {font-size: 16px; font-weight: bold}
+.m_all_5 {margin: 5px}
+.p_all_5 {padding: 5px;}
+.m_all_10 {margin: 10px}
+.p_all_10 {padding: 10px;}
+.m_all_20 {margin: 20px}
+.p_all_20 {padding: 20px;}
+.mt5 {margin-top: 5px}
+.mr5 {margin-right: 5px}
+.mb5 {margin-bottom: 5px}
+.ml5 {margin-left: 5px}
+.pt5 {padding-top: 5px}
+.pr5 {padding-right: 5px}
+.pb5 {padding-bottom: 5px}
+.pl5 {padding-left: 5px}
+.mt10 {margin-top: 10px}
+.mr10 {margin-right: 10px}
+.mb10 {margin-bottom: 10px}
+.ml10 {margin-left: 10px}
+.pt10 {padding-top: 10px}
+.pr10 {padding-right: 10px}
+.pb10 {padding-bottom: 10px}
+.pl10 {padding-left: 10px}
+.mt20 {margin-top: 20px}
+.mr20 {margin-right: 20px}
+.mb20 {margin-bottom: 20px}
+.ml20 {margin-left: 20px}
+.mt15 {margin-top: 15px}
+.pt20 {margin-top: 20px}
+.pr20 {padding-right: 20px}
+.pb20 {padding-bottom: 20px}
+.pl20 {padding-left: 20px}
+.center {text-align: center}
+.right {text-align: right}
+.l22 {line-height: 22px}
+.l26 {line-height: 26px}
+.l25 {line-height: 25px}
+.l30 {line-height: 30px}
+.clear {line-height: 0px; height: 0px; clear: both; font-size: 0px}
+input[type=text]:focus::-webkit-input-placeholder, input[type=search]:focus::-webkit-input-placeholder { color: rgba(0,0,0,0); }
+input:focus,:active, :focus { outline: 0 none; background-color:transparent; }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 日程 -->
+    <package name="schedule" namespace="/schedule" extends="struts-default">
+   		<!-- 导出日程内容记录 -->
+   		<action name="export" class="cn.com.qytx.cbb.schedule.action.ExportScheduleAction" method="exportAttendance"></action>
+    </package>
+</struts>

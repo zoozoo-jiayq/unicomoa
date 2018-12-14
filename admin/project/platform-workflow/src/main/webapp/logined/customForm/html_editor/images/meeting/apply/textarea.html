@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文本域</title>
+<link href="../style/css/global.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/index.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/other.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../inc/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/mwheelIntent.js"></script>
+<script language="javascript">
+$(function() {
+  $.fn.jScrollPaneArea = function(cfg) {
+    var area = this.find("textarea");
+    area.length && area.css({
+      height: area[0].scrollHeight + "px",
+      width: area[0].scrollWidth + "px",
+      overflow: "hidden"
+    });
+    return $.fn.jScrollPane.apply(this, arguments);
+  }
+  $("#test").jScrollPaneArea();
+  
+});
+</script>
+<style>
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+textarea {
+  width: 300px;
+  overflow: visible;
+}
+</style>
+</head>
+<body>
+	  <div id="test" style="height: 80px; width: 150px;">
+	  <textarea>
+	  sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf
+	  sdfsdfsdf
+	  sdfsdfsdf
+	  sdfsdfsdf
+	  sdfsdfsdf
+	  sdfsdfsdf
+	  sdfsdfsdf
+	  sdfsdfsdf
+    sdfsdfsdf
+    sdfsdfsdf
+    sdfsdfsdf
+    sdfsdfsdf
+    sdfsdfsdf
+    sdfsdfsdf
+    sdfsdfsdf
+    sdfsdfsdf
+    <textarea>
+    </div>
+</body>
+</html>

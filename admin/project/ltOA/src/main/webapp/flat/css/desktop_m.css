@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {height: 100%;overflow: hidden;}
+.desktop{ padding:10px;}
+.home{background:url(../images/home/homebg.png) no-repeat left bottom #f8f8f8; }
+.desktop .pretty{ border:none;}
+.desktop .pretty thead tr th{ font-size:16px; padding:8px 10px;}
+.desktop .title_desktop{height:36px; line-height:36px; text-indent:15px; font-size:16px; color:#017a8f; border:1px solid #e6eaeb; border-bottom:none; background:#FFF;}
+.desktop .title_desktop em{ display:inline-block;  height:20px; background:url(../images/main/desktop_icon.png) no-repeat; margin-right:5px; vertical-align:middle;}
+.desktop .title_desktop em.tzgg{ background-position:0 0; width:16px;}/*通知公告*/
+.desktop .title_desktop em.xxjl{ background-position:0 -48px;  width:18px;}/*消息记录*/
+.desktop .title_desktop em.dbsx{ background-position:0 -95px;  width:14px;}/*待办事项*/
+.desktop .title_desktop em.gzrz{ background-position:0 -143px; width:16px;}/*工作日志*/
+.desktop .title_desktop em.xwzx{ background-position:0 -231px; width:16px;}/*新闻中心*/
+.desktop .title_desktop em.yqlj{ background-position:0 -263px; width:16px;}/*友情链接*/
+.desktop .title_desktop em.gwyd{ background-position:0 -304px; width:16px;}/*公文阅读*/
+.desktop .title_desktop em.bmzl{ background-position:0 -344px; width:16px;}/*部门专栏*/
+.desktop .title_desktop .check{ float:right;}
+.title_desktop .check .radio {color: #333; margin-right: 20px;}
+.title_desktop .check .radio input {margin-right: 5px;margin-top: -3px;vertical-align: middle;}
+.title_desktop .more{float: right;height: 36px;margin-right: 15px;width: 54px;  background:url(../images/main/desktop_icon.png) no-repeat 46px -176px; color:#39a5ca; font-size:14px; padding-right:5px;}
+.desktop .cont_desktop{border-top:1px solid #ececec; overflow:hidden; background:#FFF; border:1px solid #e6eaeb; border-top:none; padding-bottom:8px;}
+.cont_desktop li{ height:30px; line-height:30px; padding:0 135px 0 15px; color:#333; position:relative; text-overflow:ellipsis; overflow:hidden;}
+.cont_desktop li.gray{ background:#fbfbfb}
+.cont_desktop li a{color:#555;}
+.cont_desktop li a:hover{color:#0591aa;}
+.cont_desktop li span{ position:absolute; right:10px; height:40px; line-height:40px;  top:0;}
+.cont_desktop li .time{ color:#999999;}
+
+.desktop .cont_link{border-top:1px solid #ececec; overflow:hidden; background:#FFF; border:1px solid #e6eaeb; border-top:none; padding-bottom:8px;}
+.cont_link .top_ul{ height:50px; overflow:hidden; padding-top:5px;}
+.cont_link .top_ul li{ float:left; width:198px; height:48px; border:1px solid #e6e6e6; overflow:hidden; margin-left:14px;}
+.cont_link .down_ul{height:180px; overflow:hidden; padding-top:5px;}
+.cont_link .down_ul li{float:left; width:33%; text-align:center; font-size:14px; color:#555555; line-height:30px;}
+.cont_link .down_ul li a{color:#555555;  }

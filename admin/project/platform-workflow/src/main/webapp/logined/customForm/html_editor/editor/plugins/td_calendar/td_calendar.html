@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * Text field dialog window.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="noindex, nofollow" name="robots" />
+	<script src="../../dialog/common/fck_dialog_common.js" type="text/javascript"></script>
+  <script src="../utility.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/cn_spell.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+var dialog	= window.parent ;
+var oEditor = dialog.InnerDialogLoaded() ;
+
+// Gets the document DOM
+var oDOM = oEditor.FCK.EditorDocument ;
+var oActiveEl = dialog.Selection.GetSelectedElement() ;
+//var oActiveE2=dialog.Selection.GetSelectedElement();
+
+var item_id = "";
+window.onload = function()
+{
+	if ( oActiveEl && oActiveEl.tagName == 'INPUT')
+	{
+		GetE('ITEM_NAME').value	= oActiveEl.getAttribute('title') ;
+		var dateFmt = oActiveEl.getAttribute('date_format');
+		if(dateFmt == null)
+		{
+		    GetE('DATE_FORMAT').value = "yyyy-MM-dd";
+		}
+		else if(dateFmt=="yyyy-MM-dd")
+		{
+		    GetE('DATE_FORMAT').options[0].selected = true;
+		}
+		else if(dateFmt=="yyyy-MM-dd HH:mm:ss")
+		{
+		    GetE('DATE_FORMAT').options[1].selected = true;
+		}
+		else 
+		{
+		    GetE('DATE_FORMAT').value = "";
+		    GetE('DEF_FORMAT').value = dateFmt;
+		    GetE('DEF_FORMAT').style.display = "";
+		}
+		// var defaultValue = oActiveEl.getAttribute("initDate");
+		// setRadioValue(defaultValue);
+		//手机端是否显示
+		var clientShow =  oActiveEl.getAttribute('clientShow');
+		$("input[value="+clientShow+"]").attr("checked","checked");
+		
+		//获取手机端是否必填
+		var isRequired = oActiveEl.getAttribute('required');
+		$("input[value="+isRequired+"][name='isRequired']").attr("checked","checked");
+	}
+	else
+	    oActiveEl = null ;
+	
+	dialog.SetOkButton( true ) ;
+	dialog.SetAutoSize( true ) ;
+	SelectField( 'ITEM_NAME' ) ;
+}
+
+function Ok()
+{
+	//验证名称中不能包含空格
+    if(document.getElementById("ITEM_NAME").value.indexOf(" ") >=0){
+    	alert("控件名称中不能包含空格，请去掉空格！");
+    	return false;
+    }
+	oEditor.FCKUndo.SaveUndoStep() ;
+    
+    if(GetE("ITEM_NAME").value=="")
+    {
+        alert("控件名称不能为空");
+        return;
+    }
+  	var sbHTML = [];
+	sbHTML.push(GetE("ITEM_NAME").value+':');
+	/**
+	var oNode=oEditor.FCK.EditorDocument.createTextNode(sbHTML);    					
+ 	oEditor.FCK.InsertElement( oNode );
+    */
+    /**为后台保存创建命名规范*/
+	item_id="_"+shareConvert(GetE("ITEM_NAME").value)+"_";
+	// var defaultValue = getRadioValue();
+	oActiveEl = CreateNamedElement( oEditor, oActiveEl, 'INPUT', {name:item_id , title:GetE("ITEM_NAME").value,value:'', type: 'text' } ) ;
+	// if(defaultValue==0){
+ //    }else if(defaultValue == 1){
+ //    	SetAttribute( oActiveEl, 'value', getDefaultDate());
+ //    }
+	/**控件创建不成功*/
+	if(oActiveEl==undefined){
+    	return false;
+    }
+	// SetAttribute(oActiveEl, 'initDate', defaultValue) ;
+	SetAttribute(oActiveEl, 'class', 'Wdate' ) ;
+	SetAttribute(oActiveEl,'cnName',"%"+GetE("ITEM_NAME").value+"%") ;
+	//oActiveEl = CreateNamedElement( oEditor, oActiveEl, 'img', {title: '日期控件:' + GetE("ITEM_NAME").value.replace("\"","&quot;") } ) ;
+
+	//SetAttribute( oActiveEl, 'value', GetE("ITEM_NAME").value.replace("\"","&quot;") ) ;
+	//SetAttribute( oActiveEl, 'des', GetE("ITEM_NAME").value ) ;
+	//日期类型
+	if(GetE("DATE_FORMAT").value=="")
+	{
+	    SetAttribute( oActiveEl, 'DATE_FORMAT', GetE("DEF_FORMAT").value ) ;
+	}
+	else
+	   SetAttribute( oActiveEl, 'DATE_FORMAT', GetE("DATE_FORMAT").value ) ;
+	    
+	SetAttribute( oActiveEl, 'dateWidget', "dateWidget" ) ;
+	//获取手机端是否显示设置
+	var clientShow = $("input[name='clientShow']:checked").val();
+	SetAttribute( oActiveEl, 'clientShow', clientShow ) ;
+	
+	//获取手机端是否必填
+	var isRequired = $("input[name='isRequired']:checked").val();
+	SetAttribute( oActiveEl, 'required', isRequired ) ;
+    return true;
+}
+function show_def(val)
+{
+    GetE("DEF_FORMAT").style.display = val=="" ? "" : "none";
+}
+
+function getRadioValue(){
+	var docs = document.getElementsByName("isDefault");
+	for (var i = docs.length - 1; i >= 0; i--) {
+		if(docs[i].checked){
+			return docs[i].value;
+		}
+	};
+}
+
+function setRadioValue(val){
+	var docs = document.getElementsByName("isDefault");
+	for (var i = docs.length - 1; i >= 0; i--) {
+		if(docs[i].value == val){
+			docs[i].checked = "checked";
+		}
+	};
+}
+
+
+</script>
+</head>
+<body style="overflow-x: hidden">
+
+<table width="100%" style="height: 100%">
+    <tr>
+		<td align="center">
+			<table cellspacing="3" cellpadding="0" border="0">
+                <tr>
+                    <td nowrap align="right"><b>输入框控件名称</b>：</td>
+                    <td nowrap>
+                        <Input id="ITEM_NAME" type="text" size="20" maxlength="15">
+                    </td>
+                </tr>
+                <tr>
+                    <td nowrap align="right"><b>选择格式类型</b>：
+                    </td>
+                    <td nowrap>
+                        <select id="DATE_FORMAT" onchange="show_def(this.value);">
+                            <option value="yyyy-MM">日期，形如：2010-09</option>
+                            <option value="yyyy-MM-dd">日期，形如：2010-09-09</option>
+                            <option value="yyyy-MM-dd HH:mm">日期，形如：2010-09-09 09:25</option>
+                            <option value="yyyy-MM-dd HH:mm:ss">日期，形如：2010-09-09 09:25:00</option>
+                            <option value="yyyy-MM-dd AM/PM">日期，形如：2010-09-09 上午</option>
+                            <!-- <option value="">自定义格式</option> -->
+                        </select>
+                        <br/><input type="text" style="display:none;" id="DEF_FORMAT" value="">
+                    </td>
+                </tr>
+              <!--   <tr>
+                	<td nowrap align="right"><b>是否显示默认值</b>：</td>
+                	<td nowrap>
+                        <label><Input name="isDefault"  type="radio" size="20" maxlength="15" checked value="1">是</label>
+                        <label><Input name="isDefault" type="radio" size="20" maxlength="15"  value="0">否</label>
+                    </td>
+                </tr> -->
+                <tr style="display:none">
+                    <td nowrap align="right"><b>说明</b>：</td>
+                    <td>                
+              	        日历控件选择的日期、时间将回填到该输入框中，自定义格式详见《工作流使用详解》
+                    </td>
+                </tr>
+                 <tr>
+						<td colspan="3">
+							<span>手机端是否显示</span>
+							<span><input type="radio" name="clientShow" value="yes" checked="checked"/>是<input type="radio" name="clientShow" value="no"/>否</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<span>是否必填</span>
+							<span><input type="radio" name="isRequired" value="true" />是<input type="radio" name="isRequired" checked value="false"/>否</span>
+						</td>
+					</tr>	
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+
+

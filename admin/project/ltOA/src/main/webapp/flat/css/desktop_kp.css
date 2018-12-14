@@ -1,0 +1,57 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.item_list{position:relative; padding:0 25px; width:1250px; margin:0 auto;}
+.item_list .item{width:400px;overflow:hidden; margin-top:15px; border:1px solid #dfdedc; overflow:hidden; background:#ffffff;}
+.item .title{ float:left; width:100%; height:40px; background:#fafafa; font-size:16px; color:#0591aa; line-height:40px; border-bottom:1px solid #f2f2f2;}
+.item .title .more{float:right; background:url(../images/icon/add_more.png) no-repeat right center; line-height:40px; margin-right:20px; padding-right:18px; font-size:14px; color:#555; }
+.item .title em{ float:left; width:30px; height:40px; background:url(../images/main/menu_kp.png) no-repeat; margin-left:10px; display:inline;}
+.item .title em.wdsp{ background-position:6px 10px;}
+.item .title em.ggck{ background-position:5px -37px;}
+.item .title em.gzrz{ background-position:7px -83px;}
+.item .title em.xwck{ background-position:8px -133px;}
+.item .title em.swtx{ background-position:5px -183px;}
+.item .title em.wjlb{ background-position:8px -230px;}
+.item .title em.wdrw{ background-position:5px -325px;}
+.item .title em.kqjl{ background-position:8px -279px;}
+.item .title em.zlcy{ background-position:6px -371px;}
+.item .title em.gsln{ background-position:6px -420px;}
+
+
+.item .cont{ padding:15px; overflow:hidden;}
+
+/*我的审批*/
+.approval li{float:left; width:50%; font-size:14px; color:#555555; background:url(../images/icon/kp_dian.png) no-repeat 5px center;  line-height:35px; font-weight:bold; overflow:hidden; text-indent:20px; height:35px;}
+.approval li .num{ color:#ff5454; padding-left:13px; padding-right:10px;}
+
+/*新闻方式*/
+.news li{ height:30px; line-height:30px; padding:0 110px 0 0px; color:#333; position:relative; text-overflow:ellipsis; overflow:hidden; word-break:keep-all;}
+.news li a{color:#555;}
+.news li a:hover{color:#0591aa;}
+.news li .time{ position:absolute; right:10px; height:30px; line-height:30px;  top:0;color:#999999;}
+
+/*事务提醒*/
+.warn{ padding-left:5px;}
+.warn li{ padding:10px 20px; margin-right:20px; width:122px; height:160px; overflow:hidden; float:left;}
+.warn li h2{font-weight:bold;} 
+.warn li p{ color:#555555; padding:5px 0;}
+.warn li p .num{color:#555555; padding-left:10px;}
+.warn li.box1{ background:#f7faf4;}
+.warn li.box1 h2{ color:#588d3e; }
+.warn li.box2{ background:#eff8f9;margin-right:0}
+.warn li.box2 h2{ color:#3d94a3;}
+
+/*考勤记录*/
+.punch_time{padding:0 0 15px 0; border-bottom:1px dashed #e4e4e4; background:url(../images/main/time.png) no-repeat; height:43px; padding-left:50px; line-height:35px;}
+.punch_time .while{ font-size:40px; color:#555555; font-weight:bold;}
+.punch_time .dk_btn{ float:right; background:url(../images/main/kp_btn.png) no-repeat; width:160px; height:43px; line-height:40px; text-align:center; color:#fff; font-size:20px; cursor:pointer;}
+.punch_time .dk_btn.nodk{ background:url(../images/main/kp_btn_no.png) no-repeat;}
+.punch{padding-top:10px;}
+.punch dt{color:#5ba330; padding-bottom:8px;}
+.punch dd{color:#555555; line-height:25px; text-overflow:ellipsis; overflow:hidden; word-break:keep-all;}
+.punch dd .time{ padding-right:5px;}
+.punch dd .num{padding-right:15px;}
+.punch dd .add{ color:#999999;}
+
+/*公司理念*/
+.idea{ font-size:20px; padding:10px 0; text-align:left;color:#3ca5a5; font-weight:bold;}
+

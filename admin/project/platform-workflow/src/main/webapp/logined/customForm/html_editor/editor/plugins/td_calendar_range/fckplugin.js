@@ -1,0 +1,1 @@
+﻿FCKCommands.RegisterCommand( 'td_calendar_range', new FCKDialogCommand( 'td_calendar_range', "日期范围控件属性", FCKPlugins.Items['td_calendar_range'].Path + 'td_calendar_range.html', 380, 210 ) ) ;

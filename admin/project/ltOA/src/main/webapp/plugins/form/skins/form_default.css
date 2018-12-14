@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+.formPage{width:1030px; margin:0 auto; clear:both; padding-top:20px;}
+/*@media screen and (min-width:1280px) and (max-width:1360px){
+  .formPage{width:1000px; margin:0 auto; clear:both; padding-top:20px;}
+}
+@media screen and (min-width:1361px) and (max-width:1440px){
+  .formPage{width:1001px; margin:0 auto; clear:both; padding-top:20px;}
+}
+@media screen and (min-width:1441px) and (max-width:1600px){
+  .formPage{width:1002px; margin:0 auto; clear:both; padding-top:20px;}
+}
+@media screen and (min-width:1601px){
+  .formPage{width:1003px; margin:0 auto; clear:both; padding-top:20px;}
+}*/
+
+.formbg{background:#fff;}
+.formPage .pretty{ margin-top:20px;}
+
+/*弹窗*/
+.elasticFrame{padding:10px; margin:0 auto; background:#fff; width:auto}
+.elasticFrame .inputTable{ padding-top:0;}
+
+/*标题*/
+.big_title{height:40px; border-bottom:1px solid #017a8f; overflow:hidden; text-align:left; line-height:45px; color:#017a8f; font-size:16px; padding:0 10px;}
+.big_title em{ font-size:14px; padding-left:10px; color:#888;}
+.small_title{color:#017a8f; font-size:14px; padding-top:10px;}
+.small_title .upload{ vertical-align:middle; margin-left:10px;}
+
+.small_title a{color:#017a8f;display:inline-block;/*padding-right:20px;*/}
+.small_title a.shareShow{background:url(default/arrow_down.png) no-repeat right center; padding-right:20px;}
+.small_title a.shareCls{background:url(default/arrow_up.png) no-repeat right center; padding-right:20px;}
+
+.content_form{ padding:5px 20px 20px;}
+
+.inputTable {border-top:none; table-layout:fixed;word-break:break-all; padding-top:10px; width:100%;}
+.inputTable th {width: 90px;line-height:27px; vertical-align:top; text-align:right;color:#888;padding:5px 0px 5px 10px; height:30px;}
+.inputTable th label{white-space: nowrap;}
+.inputTable tr.firstEmpty td,.inputTable tr.firstEmpty th{padding:0;}
+.inputTable td {line-height:30px;color: #333; padding:5px 10px; position:relative; vertical-align:top;}
+.inputTable td .look_ls{position: absolute; right: 13px;  top: 6px;}
+.inputTable td a{ margin-left:5px; color:#0647a8; vertical-align:middle;}
+.inputTable td .formText{width:100%;}
+.inputTable td .formTextarea{ width:95%;} 
+.inputTable td .Wdate{width:150px; text-indent:5px; background:url(default/wdat.png) no-repeat right center !important;}
+.inputTable td .title{ padding-left:20px; padding-right:8px;}
+.inputTable td .city{ width:90px;}
+.inputTable td .iconTree {background: url("default/icon_tree.png") no-repeat scroll right center #fff; cursor: pointer;}
+
+/*con_explain*/
+.con_explain{ margin-top:15px;}
+.con_explain ul{background:#f7f7f7; padding:15px 20px;}
+.con_explain ul li{ line-height:25px; color:#ff7200;}
+
+.formPage select{/*border:1px solid #e4e4e4;;color:#555555;height:29px; background:#fff; padding:1px;vertical-align:middle;*/border:1px solid #e4e4e4;color:#555555;background:#fff;  padding:3px;padding:2px\0;  vertical-align:middle;}
+.formPage .formText{border:1px solid #e4e4e4;line-height:26px;color:#555555;height:26px; text-indent:10px;background:#fff;vertical-align:middle;}
+.formPage .formTextarea{min-height:70px;padding:8px 10px;border:1px solid #e4e4e4;color:#555555;text-indent:10px;background:#fff;text-indent:10px;vertical-align:middle; line-height:22px;}
+.formPage .formText:hover , .formPage .formTextarea:hover{border:1px solid #cecece;}
+.formPage .formText:focus , .formPage .formTextarea:focus{border:1px solid #459fd2;}
+.formPage .readOnlyText{border:1px solid #e4e4e4;line-height:26px;color:#c2c2c2;height:26px; text-indent:10px;background:#fafafa;vertical-align:middle;}
+.formPage .readOnlyTree{background: url("default/icon_tree.png") no-repeat scroll right center #fafafa; cursor: pointer;border:1px solid #e4e4e4;line-height:26px;color:#c2c2c2;height:26px; text-indent:10px;vertical-align:middle;}
+.formPage .readOnlyTextarea{min-height:40px;padding:8px 10px;border:1px solid #e4e4e4;line-height:26px;color:#c2c2c2;height:26px; text-indent:10px;background:#fafafa;vertical-align:middle; width:85%;}
+
+.formPage .inputError{border:1px solid #fadfb4;}
+
+label.radio{ margin-right:20px; color:#333}
+label.radio input{ margin-right:5px; vertical-align:middle; margin-top:-3px; /*border:1px solid #707070*/}
+
+/*添加、清空*/
+.addMember{ display:inline-block;  width:75px; text-align:center;vertical-align:middle;}
+.addMember a{margin:2px 0 2px 5px; color:#0066cc; padding-left:20px;vertical-align:middle;display:inline-block;width:34px; height:25px;line-height:25px;}
+.addMember a.icon_add{ background:url(default/s_add.png) no-repeat left center;}
+.addMember a.icon_clear{background:url(default/icon_clear.png) no-repeat left center;}
+.auto_addMember{ width:auto;}
+
+/*设置标题颜色*/
+.morebtn{ width:90px; height:28px; vertical-align:middle; display:inline-block; position:relative; z-index:1;}
+.morebtn .m_btnlist{position:absolute; border:1px solid #e4e4e4; z-index:50; top:25px; left:5px; display:none; background:#fff; width:85px;}
+.morebtn .m_btnlist ul{ padding:0 0 5px 5px; overflow:hidden;}
+.morebtn .m_btnlist li{ float:left;width: 15px; height: 15px; margin:5px 5px 0 0;}
+.morebtn .m_btnlist li.black{background: #000;}
+.morebtn .m_btnlist li.cyan{background-color: #78B800;}
+.morebtn .m_btnlist li.blue{background-color: #0159DF;}
+.morebtn .m_btnlist li.red{background-color: red;}
+.morebtnHover{ z-index:2;}
+.morebtnHover .m_btnlist{display:block;}
+
+/*建议*/
+.tip{padding-left:8px; vertical-align:middle; color:#adadad;}
+
+/*图片操作*/
+.img_operate{ margin-right:5px; cursor:pointer; display:inline; margin-left:10px; vertical-align:middle;}
+
+/*上传头像*/
+.myphoto{background:#fff; overflow:hidden;}
+.myphoto dt{ float:left; width:107px; height:107px; overflow:hidden; cursor:pointer; position:relative;}
+.myphoto dt img{ width:105px; height:105px;}
+.myphoto dt .close{background:url(default/picDelete.png)no-repeat; height: 14px; position: absolute; right: 5px; top: 5px; width: 14px; display:none;}
+.myphoto dd{ padding-left:117px;}
+.myphoto dd h3{padding-top:20px; color:#555; line-height:22px;}
+.myphoto dd p{ color:#adadad; padding-top:5px; line-height:22px;}
+
+/*buttonArea*/
+.buttonArea {text-align:left; clear:both; margin-top:20px; padding-bottom:20px;}
+.buttonArea .formButton_green{min-width:100px; _width:100px;height:30px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#fff;font-size:16px;border:0; background:#61b6c5; border-radius:3px; margin-right:20px;padding:0 10px;}
+.buttonArea .formButton_green:hover{ background:#49a4b4;}
+.buttonArea .formButton_grey{min-width:100px; _width:100px; padding:0 10px;height:30px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#555;font-size:16px;border:0; background:#dce7e9; border-radius:3px;margin-right:20px;}
+.buttonArea .formButton_grey:hover{background:#c0dadf;}
+/*必填项*/
+.requireField {color: #fe0000; margin: 0 5px 0 0;}
+/*按钮*/
+.blueBtn{padding:0 15px;height:27px;line-height:25px;background:#3da8b9;border:none;cursor:pointer;color:#fff;}
+
+/*更多记录*/
+.recordMore{border:1px solid #ececec;border-top:none;height:35px;line-height:35px;text-align:center;color:#adadad;font-weight:bold;background:#fbfbfb;cursor:pointer;}
+.recordMore img{margin-left:5px;}
+.recordMore:hover{background:#eee;color:#888;}
+
+
+.fButton{float:left;display:inline;cursor:pointer;margin-left:10px;width:auto;padding:0 18px;height:28px;line-height:28px;font-size:14px;color:#fff;}
+.greenBtn{background:#61b6c5;}
+.greenBtn:hover{background:#49a4b4;}
+.orangeBtn{background:#fca455;}
+.orangeBtn:hover{background:#fa8638;}
+.blueBtn{background:#61b6c5;}
+.blueBtn:hover{background:#49a4b4;}
+.notOperBtn{background:#e6e6e6;color:#adadad;}
+.add{float:left;padding-left:18px;line-height:28px;background:url(default/add.png) left center no-repeat;}/*新增*/
+
+/*下拉树*/
+.menuContent{border:1px solid #e4e4e4;}
+
+/*暂无数据*/
+.none_wrap {background:#fff;color: #888;height: 220px;margin: 100px auto 0;width: 730px; border:1px solid #e8e8e8;}
+.none_title {font-size: 24px;color:#c1c1c1;margin:75px 35px 25px 35px;padding-bottom: 35px;padding-left: 160px;text-align: center;overflow:hidden;}
+.none_title em {background:url(default/none_tit.png) no-repeat;float: left;height: 65px;width: 65px;}
+.none_title span {float: left;padding-left: 20px;padding-top: 15px;}
+
+/*暂无报表*/
+.none_report{background:#fff; width:640px; height:125px; background:url(default/bb_nobj.png) no-repeat left center; margin:200px auto 0;}
+.none_report h1{ padding-left:115px; font-size:30px; color:#555555;}
+.none_report p{ padding-left:115px; font-size:16px; color:#888888; padding-top:20px; line-height:25px;}
+
+
+
+

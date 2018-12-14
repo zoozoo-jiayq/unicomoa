@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>会议室列表</title>
+<link href="../style/css/global.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/index.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/other.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/ezmark.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../inc/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../inc/js/jquery.ezmark.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/mwheelIntent.js"></script>
+<style type="text/css">
+	table{table-layout:fixed;word-break:break-all;word-wrap:break-word;}
+	td{word-break:break-all;}
+</style>
+<script language="javascript">
+$(function() {
+  $("body").jScrollPane();
+  $(window).resize(function() {
+    $("body").jScrollPane();
+  });
+  
+  $("#selAll").click(function() {
+    if (this.checked) {
+      $("#grid .sel input").attr("checked", true);
+      $("#grid .sel .ez-checkbox").addClass("ez-checked");
+    }
+    else {
+      $("#grid .sel input").removeAttr("checked");
+      $("#grid .sel .ez-checkbox").removeClass("ez-checked");
+    }
+  });
+  
+  $('input').ezMark();
+  senfe("grid","#ffffff","#f6f7f9","#ecfbd4","#ccddff");
+});
+function senfe(o,a,b,c,d){
+  var t=document.getElementById(o).getElementsByTagName("tr");
+  for(var i=0;i<t.length;i++){
+   t[i].style.backgroundColor=(t[i].sectionRowIndex%2==0)?a:b;
+   t[i].onmouseover=function(){
+    if(this.x!="1")this.style.backgroundColor=c;
+   }
+   t[i].onmouseout=function(){
+    if(this.x!="1")this.style.backgroundColor=(this.sectionRowIndex%2==0)?a:b;
+   }
+  }
+ }
+</script>
+<style>
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+</style>
+</head>
+<body>
+		<div class="content">
+			<div class="table-name">
+				<span class="table-h4">会议室列表</span><span class="table-r"></span>
+			</div>
+			<div class="table-title">
+				<ul>
+					<li class="gray-checkbox" style="width: 75px"><span><label for=""><input type="checkbox" id="selAll"/>选择</label></span></li>
+					<li style="width: 166px"><span>所属机构</span></li>
+					<li style="width: 194px"><span>名称</span></li>
+					<li style="width: 224px"><span>所在地点</span></li>
+					<li style="width: 91px"><span>座位数</span></li>
+					<li style="width: 153px"><span>可容纳人数</span></li>
+					<li style="width: 283px"><span>设备情况</span></li>
+					<li style="width: 93px"><span>会议桌形</span></li>
+					<li style="width: 93px"><span>视频会议</span></li>
+					<li style="width: 93px"><span>电话会议</span></li>
+					<li style="width: 198px"><span>保洁方</span></li>
+					<li style="width: 344px"><span>管理员</span></li>
+				</ul>
+			</div>
+	
+			<div class="roomstep1">
+				<table class="warp_table" id="grid" border="0" cellspacing="0"
+					cellpadding="0">
+					<tr>
+						<td width="83px" class="sel">
+							<label for="">
+							  <input type="checkbox">
+							</label>
+						</td>
+						<td width="174px">集团总公司</td>
+						<td width="202px">8层第一会议室</td>
+						<td width="232px">新东方大厦</td>
+						<td width="99px">12</td>
+						<td width="161px">12</td>
+						<td width="291px" >有吊装投影、wqerqwetqwertwqertwertertwertwert配幕布及音响</td>
+						<td width="101px">椭圆形</td>
+						<td width="101px">支持</td>
+						<td width="101px">支持</td>
+						<td width="206px">物业负责</td>
+						<td width="352px">李阳626262612-8133</td>
+					</tr>
+					<tr>
+						<td width="83px" class="sel">
+							<label for="">
+							  <input type="checkbox">
+							</label>
+						</td>
+						<td width="174px">集团总公司</td>
+						<td width="202px">8层第一会议室</td>
+						<td width="232px">新东方大厦</td>
+						<td width="99px">12</td>
+						<td width="161px">12</td>
+						<td width="291px">有吊装投影、配幕布及音响</td>
+						<td width="101px">椭圆形</td>
+						<td width="101px">支持</td>
+						<td width="101px">支持</td>
+						<td width="206px">物业负责</td>
+						<td width="352px">李阳626262612-8133</td>
+					</tr>
+					<tr>
+						<td width="83px" class="sel">
+							<label for="">
+							  <input type="checkbox">
+							</label>
+						</td>
+						<td width="174px">集团总公司</td>
+						<td width="202px">8层第一会议室</td>
+						<td width="232px">新东方大厦</td>
+						<td width="99px">12</td>
+						<td width="161px">12</td>
+						<td width="291px">有吊装投影、配幕布及音响</td>
+						<td width="101px">椭圆形</td>
+						<td width="101px">支持</td>
+						<td width="101px">支持</td>
+						<td width="206px">物业负责</td>
+						<td width="352px">李阳626262612-8133</td>
+					</tr>
+					<tr>
+						<td width="83px" class="sel">
+							<label for="">
+							  <input type="checkbox">
+							</label>
+						</td>
+						<td width="174px">集团总公司</td>
+						<td width="202px">8层第一会议室</td>
+						<td width="232px">新东方大厦</td>
+						<td width="99px">12</td>
+						<td width="161px">12</td>
+						<td width="291px">有吊装投影、配幕布及音响</td>
+						<td width="101px">椭圆形</td>
+						<td width="101px">支持</td>
+						<td width="101px">支持</td>
+						<td width="206px">物业负责</td>
+						<td width="352px">李阳626262612-8133</td>
+					</tr>
+					<tr>
+						<td width="83px" class="sel">
+							<label for="">
+							  <input type="checkbox">
+							</label>
+						</td>
+						<td width="174px">集团总公司</td>
+						<td width="202px">8层第一会议室</td>
+						<td width="232px">新东方大厦</td>
+						<td width="99px">12</td>
+						<td width="161px">12</td>
+						<td width="291px">有吊装投影、配幕布及音响</td>
+						<td width="101px">椭圆形</td>
+						<td width="101px">支持</td>
+						<td width="101px">支持</td>
+						<td width="206px">物业负责</td>
+						<td width="352px">李阳626262612-8133</td>
+					</tr>
+					<tr>
+						<td width="83px" class="sel">
+							<label for="">
+							  <input type="checkbox">
+							</label>
+						</td>
+						<td width="174px">集团总公司</td>
+						<td width="202px">8层第一会议室</td>
+						<td width="232px">新东方大厦</td>
+						<td width="99px">12</td>
+						<td width="161px">12</td>
+						<td width="291px">有吊装投影、配幕布及音响</td>
+						<td width="101px">椭圆形</td>
+						<td width="101px">支持</td>
+						<td width="101px">支持</td>
+						<td width="206px">物业负责</td>
+						<td width="352px">李阳626262612-8133</td>
+					</tr>
+					<tr>
+						<td width="83px" class="sel">
+							<label for="">
+							  <input type="checkbox">
+							</label>
+						</td>
+						<td width="174px">集团总公司</td>
+						<td width="202px">8层第一会议室</td>
+						<td width="232px">新东方大厦</td>
+						<td width="99px">12</td>
+						<td width="161px">12</td>
+						<td width="291px">有吊装投影、配幕布及音响</td>
+						<td width="101px">椭圆形</td>
+						<td width="101px">支持</td>
+						<td width="101px">支持</td>
+						<td width="206px">物业负责</td>
+						<td width="352px">李阳626262612-8133</td>
+					</tr>
+					<tr>
+						<td width="83px" class="sel">
+							<label for="">
+							  <input type="checkbox">
+							</label>
+						</td>
+						<td width="174px">集团总公司</td>
+						<td width="202px">8层第一会议室</td>
+						<td width="232px">新东方大厦</td>
+						<td width="99px">12</td>
+						<td width="161px">12</td>
+						<td width="291px">有吊装投影、配幕布及音响</td>
+						<td width="101px">椭圆形</td>
+						<td width="101px">支持</td>
+						<td width="101px">支持</td>
+						<td width="206px">物业负责</td>
+						<td width="352px">李阳626262612-8133</td>
+					</tr>
+					<tr>
+						<td width="83px" class="sel">
+							<label for="">
+							  <input type="checkbox">
+							</label>
+						</td>
+						<td width="174px">集团总公司</td>
+						<td width="202px">8层第一会议室</td>
+						<td width="232px">新东方大厦</td>
+						<td width="99px">12</td>
+						<td width="161px">12</td>
+						<td width="291px">有吊装投影、配幕布及音响</td>
+						<td width="101px">椭圆形</td>
+						<td width="101px">支持</td>
+						<td width="101px">支持</td>
+						<td width="206px">物业负责</td>
+						<td width="352px">李阳626262612-8133</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	
+		<div class="table-down">
+			<div class="table-button">
+				<a href="javascript: void(0)" class="inquiry"></a>
+			</div>
+			<div class="table-h3">
+				<span style="color: red">*</span><span>预定会议室时请您详细阅读</span><span><a
+					href="#"><img src="../style/images/room/iconword.jpg" />在京机构会议室使用细则</a></span><span>相关内容，并严格遵守相关规定</span>
+			</div>
+		</div>
+</body>
+</html>

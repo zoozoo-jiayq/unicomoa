@@ -1,0 +1,22 @@
+a:link{color: #444; text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0);outline: 0;}
+a:hover {color: #aaa; text-decoration: none;outline: 0;}
+a:active{color: #0a0a0a; text-decoration:none;}
+a:visited{color: #444; text-decoration:none;}
+header{ width:100%;height:48px; background:#25b6ed;line-height:50px; text-align:center; color:#fff; font-size:18px; position:fixed;top:0px; left:0px; z-index:999;}
+body > header .return{ position:absolute; background:url(../images/return.png) no-repeat 5px center; width:48px; height:48px;line-height:48px;top:0px; left:0px;cursor:pointer; background-size:30px; display:inline-block;}
+body > header .add{ position:absolute; background:url(../images/add_btn1.png) no-repeat center center;width:48px;  height:48px;line-height:48px;top:0px; right:0px; cursor:pointer; background-size:30px;display:inline-block;}
+body > header .txt{ position:absolute;top:0; right:0px; cursor:pointer; background-size:100%;display:inline-block; padding:0px 10px;height:48px; line-height:50px; color:#fff; font-size:16px}
+body > header a:active,body > header a.active{ background-color:#3eb8b8;}
+
+/*�����ʾ��б�*/
+.que_list{ margin:0; padding: 0; border-bottom:1px solid #e0e0e0; position:relative}
+.que_list a{ display:block;padding:5px 10px; text-decoration:none; position:relative}
+.que_list a.active ,.que_list a:active{ background:#e0e0e0}
+.que_list .media-heading{color: #353535;font-size:16px;height: 26px;line-height: 28px; overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap;word-break: keep-all;}
+.que_list p{ margin-bottom:0;color: #aaa4aa;font-size:14px;}
+.que_list p .state{ float:right;}
+.que_list p .state.on{ color:#25b6ed}
+.que_list .hot{ position:absolute; left:3px; top:18px; background:#ff5454; display:none; height:5px; width:5px; border-radius:50%; z-index:9}
+.que_list.current .hot{ display:block}
+.que_list .media-body, .que_list .media-left, .que_list .media-right{display:inline}
+

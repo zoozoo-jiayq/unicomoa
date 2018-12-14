@@ -1,0 +1,148 @@
+@charset "utf-8";
+.blue_skin .blue{ color:#4cafe3 ;}
+/*header*/
+.blue_skin .headbg{background:#3eaeef url(images/headbg.png) no-repeat right top ;}
+.blue_skin .index_nav .index_menu{ color:#0179a5 ;}
+.blue_skin #div_tab li{ background:#4cc8ff;border:none ;}
+/*.blue_skin .menu_right em{ background:url(images/icon_head.png) no-repeat;}*/
+.blue_skin .head_nav li p.user font{color:#FFF ;}
+
+.blue_skin .menu_right span.on{background:#2398dc; border:1px solid #118cd3;}
+
+/*foot*/
+.blue_skin .bottom{color:#3bb7f4;}
+.blue_skin .exBot em.icon_work{ background:url(images/swtx.png) no-repeat;}
+.blue_skin .exBot em.messageBox{background:url(images/jsxx.png) no-repeat;}
+.blue_skin .exBot em.icon_group{background:url(images/zzjg.png) no-repeat;}
+.blue_skin .exBot em.icon_work_on{ background:url(images/swtx.gif) no-repeat;}
+.blue_skin .exBot em.messageBox_on{ background:url(images/jsxx.gif) no-repeat;}
+
+/*menu*/
+.blue_skin .m_left{ border-right:none ;}
+.blue_skin .m_right{ border-left:none ; width:201px ;}
+.blue_skin .popTop{ background:url(images/top_bg.png) no-repeat ;}
+.blue_skin .organi_box .tab{ background:url(images/orangz_topbg.png) ;}
+.blue_skin .organi_box .tab li.one { color:#4cafe3;}
+.blue_skin .organi_box .tab_cur li.one { color:#fff;}
+.blue_skin .organi_box .tab li.two{color:#fff;}
+.blue_skin .organi_box .tab_cur li.two{color:#4cafe3;}
+.blue_skin .organi_box .tab_cur{ background:url(images/orangz_topbg_2.png) no-repeat ;}
+.blue_skin .organi_box .organi_middle{ background:url(images/orangz_middlebg.png) repeat-y;}
+.blue_skin .organi_box .organi_footer{background:url(images/orangz_footbg.png)}
+.blue_skin .m_left li em{ background:url(images/menu.png) no-repeat;}
+.blue_skin .m_left li.current{ background:url(images/menu_bj.jpg) no-repeat ;}
+.blue_skin .m_left li.current em{background:url(images/menu_on.png) no-repeat ;}
+.blue_skin .m_right li em{ background:url(images/two_menu.png) no-repeat;}
+.blue_skin .m_right li dl dd a{ background:url(images/graydot.png) no-repeat scroll left center ;}
+.blue_skin .m_right li dl dd a:hover, .blue_skin .m_right li dl dd a.on{ color:#4cafe3 ; background:url(images/bluedot.png) no-repeat scroll left center ;}
+
+/*左侧menu*/
+.blue_skin .menu_l .s_menu ul.l_f_menu em{background:url(images/menu.png) no-repeat;}
+.blue_skin .menu_l .s_menu h3.on , .blue_skin .menu_l .s_menu h3.off{ background-color:#35a6e3}
+.blue_skin .menu_l .s_menu dt{background:url(images/graydot.png) no-repeat scroll left center ;}
+.blue_skin .menu_l .s_menu dt.on{color:#4cafe3 ; background:url(images/bluedot.png) no-repeat scroll left center ;}
+
+
+/*桌面*/
+.blue_skin .popMidRight ul li h3 , .blue_skin .popMidRight ul li h3 a ,.blue_skin .popMiddle a.readed, .blue_skin .popMiddle a.deleted{color:#4cafe3 ;}
+.blue_skin .popMidLeft ul li.current{ background:url(images/menu_bj.jpg) no-repeat right 0 ;}
+.blue_skin .submitArea p .formButton_green{ background:#4cafe3 }
+.blue_skin .popMiddle a.readed{ background:url(images/readed.png) no-repeat scroll left center ;}
+.blue_skin .popMiddle a.deleted{ background:url(images/delete.png) no-repeat scroll left center ;}
+.blue_skin .popMidLeft .up .next{ background:url(images/up.png) no-repeat scroll center center / 19px auto ;}
+.blue_skin .popMidLeft .down .prev{ background:url(images/down.png) no-repeat scroll center center / 19px auto ;}
+
+.blue_skin #app_cate_list ul li em{background:url(images/menu.png) no-repeat ;}
+.blue_skin #app_cate_list ul li.current{ background:url(images/menu_bj.jpg) no-repeat right top ;}
+.blue_skin #app_cate_list ul li.current em{background:url(images/menu_on.png) no-repeat ;}
+
+.blue_skin #portalSetting #bar span{color:#4cafe3;}
+.blue_skin #portalSetting #bar .on{ color:#4cafe3;}
+.blue_skin #portalSetting #bar #btnAppSet{ background:url(images/iysz_icon.png) no-repeat scroll left center ;}
+.blue_skin #portalSetting #bar #btnScreenSet{ background:url(images/fpsz_icon.png) no-repeat scroll left center;}
+
+.blue_skin #control a.active{ background:url(images/btn_active.png) no-repeat scroll center top;}
+.blue_skin #control a.cfg:hover{background: url(images/btn_cfg_hover.png) no-repeat center top;}
+
+.blue_skin #app_cate_list .scroll-up{ background:url(images/up_small.png) no-repeat scroll center center;}
+.blue_skin #app_cate_list .scroll-down{ background:url(images/down_small.png) no-repeat scroll center center;}
+
+
+/*新建收文/发文*/
+.blue_skin .header_hd{ background:url(images/headerbj_hd.png) repeat-x scroll left bottom ;}
+.blue_skin .operate .tab ul{ border-left:1px solid #4cafe3 ;}
+.blue_skin .operate .tab li{border:1px solid #4cafe3 ; border-left:none ;}
+.blue_skin .operate .tab .current a{ color:#4cafe3 }
+.blue_skin .operate .btn .formButton{ background:#4cafe3 ; }
+.blue_skin .operate .btn .formButton:hover{background:#38afed;}
+
+.blue_skin .mainpage .openMenu h2{ background:url(images/open_hd.png) no-repeat scroll 11px center ;border-bottom:2px solid #4cafe3 ; color:#4cafe3 ;}
+.blue_skin .mainpage .openMenu h3{color:#4cafe3 ;}
+
+/*日志*/
+.blue_skin .blockTitle{border-bottom:2px solid #4cafe3 ; color:#4cafe3 }
+.blue_skin .txtlist li a:hover{color:#4cafe3 ;}
+.blue_skin .dailyPage .small_title a{color:#4cafe3 ;}
+.blue_skin .dailyPage .small_title a.shareShow{ background:url(images/arrow_down.png) no-repeat scroll right center ;}
+.blue_skin .dailyPage .buttonArea .formButton_green{background:#4cafe3 ;}
+.blue_skin .dailyPage .buttonArea .formButton_green:hover{ background:#268d22 ;}
+
+/*内部邮件*/
+.blue_skin .meilTitle{ background:#d9effb; border-bottom:2px solid #3aaff0}
+.blue_skin .meil_wrap li.current, .blue_skin .meil_wrap li:hover{background:#dbeef9}
+.blue_skin .meil_wrap h2{ background:url(images/down_mail.png) no-repeat 16px center ;}
+.blue_skin .meil_wrap h2.on{background:url(images/left_mail.png) no-repeat 16px center ;}
+
+/*日程管理*/
+.blue_skin .day .date_top{ color:#4cafe3;}
+.blue_skin .day .red{ color:#d13939;}
+.blue_skin .day .gray{color:#c5c5c5}
+.blue_skin  .schedule table.pretty tbody td.on_day{ background:#dbeef9;}
+
+
+/*Accormenus*/
+.blue_skin .service-menu h1{border-bottom:2px solid #4cafe3 ;color:#4cafe3 ;}
+.blue_skin .search input{ background:url(images/icon_search.png) no-repeat scroll 95% center #fff ;}
+.blue_skin .service-menu .menu-p:hover , .blue_skin .service-menu .menu-p.on{background:#e5f7ff ; }
+
+
+/*datatable*/
+.blue_skin .greenBtn , .blue_skin .blueBtn{background:#4cafe3 ;}
+.blue_skin .greenBtn:hover , .blue_skin .blueBtn:hover{background:#38afed ;}
+
+/*form*/
+.blue_skin .big_title{border-bottom:1px solid #4cafe3 ; color:#4cafe3 ;}
+.blue_skin .small_title{color:#4cafe3 ;}
+.blue_skin .blueBtn:hover{background:#38afed ;}
+.blue_skin .buttonArea .formButton_green{background:#4cafe3 ;}
+.blue_skin .buttonArea .formButton_green:hover{ background:#38afed ;}
+.blue_skin .buttonArea .formButton_grey{background:#e3f1f7 ;}
+.blue_skin .buttonArea .formButton_grey:hover{background:#cae4ef ;}
+
+/*infoDetail*/
+.blue_skin .detailsPage .buttonArea .formButton_grey{background:#e3f1f7 ;}
+.blue_skin .detailsPage .buttonArea .formButton_grey:hover{background:#cae4ef ;}
+
+/*peopleTree*/
+.blue_skin .ztree li span.button{background:url(images/zTreeStandard.gif) ;}
+.blue_skin .ztree li a.curSelectedNode{ color:#4cafe3;}
+
+/*selectMember*/
+.blue_skin .member .tab .current a{ color:#4cafe3 ;}
+
+/*smallTab*/
+.blue_skin .smallTab .tab .current a{color:#4cafe3 ;}
+
+.blue_skin .item .title{color:#4cafe3;}
+.blue_skin .item .title em{ background:url(images/menu_kp.png) no-repeat;}
+
+.blue_skin .ui-widget-content{color:#4cafe3 ;}
+
+/*中间固定宽度*/
+.blue_skin .head_door{ background:url(images/headerBJ_door.png);}
+.blue_skin .head_door .index_menu{background:url(images/menuBtn_bj.png) no-repeat 7px center; color:#0a8fdc;}
+.blue_skin .head_door .index_menu:hover{background:url(images/menuBtn_bj.png) no-repeat 7px center #ddeded;}
+.blue_skin .indexTop .operate{ border:1px solid #118cd3;}
+.blue_skin .operate span.on{ background:#2398dc;}
+
+

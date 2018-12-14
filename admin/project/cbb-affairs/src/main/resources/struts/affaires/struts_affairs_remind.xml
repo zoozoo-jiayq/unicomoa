@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+<!-- 设置重复提醒 -->
+	<package name="affairsRemind" namespace="/affairsRemind" extends="struts-default">
+		<!-- 到设置重复提醒页面 -->
+		<action name="load" class="cn.com.qytx.cbb.affairsRemind.action.AffairsRemindAction" method="load">
+		</action>
+		<!-- 保存或修改重复提醒设置 -->
+		<action name="save" class="cn.com.qytx.cbb.affairsRemind.action.AffairsRemindAction" method="save"></action>
+    </package>
+</struts>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+    
+<struts>
+<!--  文档类别管理 -->
+    <package name="documentType" namespace="/documentType" extends="struts-default">
+         <action name="ajax_*" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeAction" method="{1}">	
+        </action>
+          <action name="docType_*" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeAction" method="{1}">	
+             <result name="success">/logined/documenttype/{1}.jsp</result>
+        </action>
+        
+           <action name="docTypeSave" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeManageAction" method="save">	
+             <result name="success" type="redirect">/documentType/docType_docTypeList.action</result>
+        </action>
+        
+         <action name="docTypeUpdate" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeManageAction" method="update">	
+             <result name="success" type="redirect">/logined/documenttype/docTypeList.jsp</result>
+        </action>
+         <action name="docTypeDelete" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeManageAction" method="delete">	
+        </action>
+        
+         <action name="docTypeMan_*" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeManageAction"  method="{1}">	
+            <result name="success">/logined/documenttype/{1}.jsp</result>
+        </action>
+        
+        <action name="checkDocNameIsRepeat" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeManageAction" method="checkDocNameIsRepeat"></action>
+        
+        <action name="getRedTemplateType" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeManageAction" method="getRedTemplateType">
+        </action>	
+        
+        <action name="setUpGongwen" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeManageAction" method="setUpGongwen">
+        	<result name="nodeEdit">/logined/documenttype/nodeList.jsp</result>
+        </action>
+        
+        <action name="setUpNode" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeManageAction" method="setUpNode">
+        	<result name="nodeSetUp">/logined/documenttype/toNodeEdit.jsp</result>
+        </action>
+        
+        <action name="updateNode" class="cn.com.qytx.cbb.publicDom.action.DocumentTypeManageAction" method="updateNode">
+        	<result name="nodeEdit">/logined/documenttype/nodeList.jsp</result>
+        </action>
+    </package>
+
+</struts>

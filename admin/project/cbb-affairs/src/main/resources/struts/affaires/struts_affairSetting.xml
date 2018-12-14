@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+<!-- 事务提醒设置 -->
+	<package name="affairSetting" namespace="/affairSetting" extends="struts-default">
+		<!-- 获取设置信息列表 -->
+		<action name="getAffairSettingList" class="cn.com.qytx.cbb.affairSetting.action.AffairSettingAction" method="getAffairSettingList">
+		</action>
+		<!-- 保存更新信息 -->
+		<action name="update" class="cn.com.qytx.cbb.affairSetting.action.AffairSettingAction" method="update">
+		</action>
+
+    </package>
+</struts>

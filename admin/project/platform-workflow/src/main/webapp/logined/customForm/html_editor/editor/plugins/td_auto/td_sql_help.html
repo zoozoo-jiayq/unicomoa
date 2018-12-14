@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0073)http://localhost/general/system/workflow/flow_form/cool_form/sql_help.php -->
+<HTML><HEAD><TITLE>SQL查询语句书写指导</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.2900.3492" name=GENERATOR></HEAD>
+<BODY><B>来自SQL查询语句 
+宏控件</B><BR>来自SQL语句的宏控件，因其定义格式比较复杂，需要具备SQL语言的专业知识，并了解OA系统数据库结构，建议在技术支持人员指导下完成。可以参照以下格式书写SQL语句：<BR><BR><B>下拉菜单型语句如：</B><BR>SELECT 
+URL_DESC from URL where USER=`` order by 
+URL_NO<BR>该语句表示列出全部公共网址，并按序号排序显示<BR><BR><B>单行输入框语句如：</B><BR>select USER_NAME 
+from USER where USER_ID=`admin`<BR>该语句表示查询用户名为admin的用户的姓名<BR><BR><FONT 
+color=red>注意：SQL语句中的单引号请用符号`替换（该符号在键盘TAB上方）。</FONT><BR>
+<HR>
+<B>目前，SQL语句中已支持以下宏变量，更加方便用户使用：</B><BR>[SYS_USER_ID], 
+表示当前用户的用户ID<BR>[SYS_DEPT_ID]，表示当前用户的部门ID<BR>[SYS_PRIV_ID]，表示当前用户角色ID<BR>[SYS_PRIV_NO]，表示当前用户角色排序号<BR>[SYS_RUN_ID], 
+表示当前的工作流水号，可用于FLOW_RUN_DATA等表单数据表的查询<BR><BR><B>例如：</B><BR>select USER_NAME from 
+USER where USER_ID=`[SYS_USER_ID]`<BR>此句表示查询当前用户的姓名<BR><BR>select USER_NAME from 
+USER where DEPT_ID=`[SYS_DEPT_ID]`<BR>此句表示查询当前部门所有用户的姓名<BR><BR>select USER_NAME 
+from USER,USER_PRIV where USER.USER_PRIV= USER_PRIV.USER_PRIV AND 
+DEPT_ID=`[SYS_DEPT_ID]` order by PRIV_NO<BR>此句表示查询当前部门所有用户的姓名，并按角色序号排序<BR>
+<HR>
+<B>可以利用SQL语句查询系统代码设置中所设置的代码，实现下拉菜单根据代码定义动态变化：</B><BR><BR><B>例如：</B><BR>select 
+CODE_NAME from SYS_CODE where PARENT_NO=`AREA` order by 
+CODE_ORDER<BR>此句表示列出系统代码“地区”的全部值，“地区”的代码编号是“AREA”。<BR><BR></BODY></HTML>

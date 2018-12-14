@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>表格</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="container">
+        <h2>基本实例</h2>
+        <table class="table">
+            <thead>
+               <tr>
+                  <th>序号</th><th>名字</th><th>年龄</th> <th>邮箱</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>1</td><td>刘曦</td><td>12</td><td>1064974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>2</td><td>李连杰</td><td>42</td><td>10649701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>3</td><td>蛤蜊</td><td>13</td><td>64974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>4</td><td>陆仟</td><td>11</td><td>1064974701@qq.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>条纹状表格</h2>
+        <table class="table table-striped">
+            <thead>
+               <tr>
+                  <th>序号</th><th>名字</th><th>年龄</th> <th>邮箱</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>1</td><td>刘曦</td><td>12</td><td>1064974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>2</td><td>李连杰</td><td>42</td><td>10649701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>3</td><td>蛤蜊</td><td>13</td><td>64974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>4</td><td>陆仟</td><td>11</td><td>1064974701@qq.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>带边框的表格</h2>
+        <table class="table table-bordered">
+            <thead>
+               <tr>
+                  <th>序号</th><th>名字</th><th>年龄</th> <th>邮箱</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>1</td><td>刘曦</td><td>12</td><td>1064974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>2</td><td>李连杰</td><td>42</td><td>10649701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>3</td><td>蛤蜊</td><td>13</td><td>64974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>4</td><td>陆仟</td><td>11</td><td>1064974701@qq.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>鼠标悬停</h2>
+        <table class="table table-bordered table-hover">
+            <thead>
+               <tr>
+                  <th>序号</th><th>名字</th><th>年龄</th> <th>邮箱</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>1</td><td>刘曦</td><td>12</td><td>1064974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>2</td><td>李连杰</td><td>42</td><td>10649701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>3</td><td>蛤蜊</td><td>13</td><td>64974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>4</td><td>陆仟</td><td>11</td><td>1064974701@qq.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>紧缩表格</h2>
+        <table class="table table-condensed">
+            <thead>
+               <tr>
+                  <th>序号</th><th>名字</th><th>年龄</th> <th>邮箱</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>1</td><td>刘曦</td><td>12</td><td>1064974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>2</td><td>李连杰</td><td>42</td><td>10649701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>3</td><td>蛤蜊</td><td>13</td><td>64974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>4</td><td>陆仟</td><td>11</td><td>1064974701@qq.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>各种状态的表格</h2>
+        <h4>.active:鼠标悬停在行或单元格上时所设置的颜色 ;.success:标识成功或积极的动作 ; .info:标识普通的提示信息或动作 ; .warning:标识警告或需要用户注意 ;.danger:标识危险或潜在的带来负面影响的动作</h4>
+         <table class="table">
+            <thead>
+               <tr>
+                  <th>序号</th><th>名字</th><th>年龄</th> <th>邮箱</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr class="active">
+                  <td>1</td><td>刘曦</td><td>12</td><td>1064974701@qq.com</td>
+                </tr>
+                 <tr class="success">
+                  <td>2</td><td>李连杰</td><td>42</td><td>10649701@qq.com</td>
+                </tr>
+                 <tr class="warning">
+                  <td>3</td><td>蛤蜊</td><td>13</td><td>64974701@qq.com</td>
+                </tr>
+                <tr class="danger">
+                  <td>4</td><td>陆仟</td><td>11</td><td>1064974701@qq.com</td>
+                </tr>
+                <tr class="info">
+                  <td>5</td><td>陆仟</td><td>11</td><td>1064974701@qq.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>响应式布局</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+            <thead>
+               <tr>
+                  <th>序号</th><th>名字</th><th>年龄</th> <th>邮箱</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>1</td><td>刘曦</td><td>12</td><td>1064974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>2</td><td>李连杰</td><td>42</td><td>10649701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>3</td><td>蛤蜊</td><td>13</td><td>64974701@qq.com</td>
+                </tr>
+                 <tr>
+                  <td>4</td><td>陆仟</td><td>11</td><td>1064974701@qq.com</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        
+  </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <package name="filemanager" namespace="/filemanager" extends="struts-default">
+        <!--上传文件 -->
+        <action name="uploadfile" class="cn.com.qytx.cbb.file.action.UploadAction" method="uploadFile">
+        </action>
+
+        <!--上传文件 -->
+        <action name="uploadImage" class="cn.com.qytx.cbb.file.action.UploadAction" method="uploadImage">
+        </action>
+
+        <!--下载文件 -->
+        <action name="downfile" class="cn.com.qytx.cbb.file.action.UploadAction" method="downFile">
+        </action>
+        <!-- 预览文件 -->
+        <action name="prevView" class="cn.com.qytx.cbb.file.action.UploadAction" method="prevView">
+        </action>
+        <action name="prevViewByPath" class="cn.com.qytx.cbb.file.action.UploadAction" method="prevViewByPath"></action>
+        <!--下载多个 zip压缩-->
+        <action name="downZipFile" class="cn.com.qytx.cbb.file.action.UploadAction" method="downZipFile">
+        </action>
+
+        <!--下载文件，适用于未保存数据库的附件 -->
+        <action name="downFileByFilePath" class="cn.com.qytx.cbb.file.action.UploadAction" method="downFileByFilePath" />
+
+        <!--下载所有文件，适用于未保存数据库的附件 -->
+        <action name="downZipFileByFilesJson" class="cn.com.qytx.cbb.file.action.UploadAction" method="downZipFileByFilesJson" />
+
+        <!--保存附件 -->
+        <action name="addAttachment" class="cn.com.qytx.cbb.file.action.UploadAction" method="addAttachment">
+        </action>
+
+        <!--删除附件 -->
+        <action name="delAttachment" class="cn.com.qytx.cbb.file.action.UploadAction" method="delAttachment">
+        </action>
+
+        <!-- 清除附件缓存 -->
+        <action name="removeAttachmentSession" class="cn.com.qytx.cbb.file.action.UploadAction" method="removeAttachmentSession">
+        </action>
+
+        <!--下载错误信息文件 -->
+        <action name="downErrorFile" class="cn.com.qytx.cbb.file.action.UploadAction" method="downErrorFile" />
+
+        <!--下载导入通讯簿 -->
+        <action name="downProjectFile" class="cn.com.qytx.cbb.file.action.UploadAction" method="downProjectFile" />
+
+         <!--doc  excel预览文件
+        <action name="viewfile" class="cn.com.qytx.oa.action.upload.NtkoManagerAction" method="getOfficeContent">
+        </action>
+        
+        
+        <action name="downviewByPath" class="cn.com.qytx.oa.action.upload.NtkoManagerAction" method="downViewByPath">
+        </action>
+           -->
+          
+         <!--文件预览 -->
+	    <action name="htmlPreview" class="cn.com.qytx.cbb.file.action.FilePreviewAction"  method="htmlPreview">
+	    	<result name="success">/logined/preview/preview.jsp</result>
+        </action>
+        
+        <!--文件预览 -->
+	    <action name="htmlPreviewWap" class="cn.com.qytx.cbb.file.action.FilePreviewAction"  method="htmlPreviewWap">
+	    	<result name="success">/logined/preview/preview.jsp</result>
+        </action>
+        <!--文件预览 -->
+	    <action name="htmlPreviewByPath" class="cn.com.qytx.cbb.file.action.FilePreviewAction"  method="htmlPreviewByPath">
+	    	<result name="success">/logined/preview/preview.jsp</result>
+         </action> 
+         
+         <action name="downview" class="cn.com.qytx.cbb.file.action.FilePreviewAction" method="downFile">
+        </action>
+         <action name="previewDoc" class="cn.com.qytx.cbb.file.action.PreviewAction" method="previewFile">
+        </action>
+    </package>
+
+</struts>

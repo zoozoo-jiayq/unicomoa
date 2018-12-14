@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+body{ padding-top:0px;}
+/*nav*/
+body > header{ width:100%;height:44px; line-height:44px; padding-top:20px; display:none}
+body > header .return{ width:44px; height:44px;line-height:44px; top:20px;}
+body > header .add{ width:44px;  height:44px; line-height:44px; top:20px; }
+body > header .txt{ height:44px; line-height:44px;top:20px;}
+.issue{top:0px;}
+.questions{ top:0px;}
+.vote{ top:0px;}
+.swiper-container{ top:0px;}
+.memberList .tab{ top:0px;}
+.memberList .tabContent{ top:38px;}
+.editingbox{top: 0px;}

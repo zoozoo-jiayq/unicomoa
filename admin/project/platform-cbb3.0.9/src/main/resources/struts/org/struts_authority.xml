@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+    <!-- 权限基本信息 -->
+	<package name="authority" namespace="/authority" extends="struts-default">
+	    <!-- 角色列表 -->
+		<action name="findRoleList" class="cn.com.qytx.cbb.org.action.RoleListAction" method="findRoleList"></action>
+		 <!-- 角色用户 -->
+		<action name="findRoleUser" class="cn.com.qytx.cbb.org.action.RoleListAction" method="findRoleUser">
+				<result name="success">/logined/authority/roleUserView.jsp</result>
+		</action>
+		<!-- 角色用户 -->
+		<action name="findRoleUserAjax" class="cn.com.qytx.cbb.org.action.RoleListAction" method="findRoleUserAjax">
+		</action>
+		
+		<!-- 添加角色-->
+		<action name="addRole" class="cn.com.qytx.cbb.org.action.RoleAddAction" method="addRole"></action>
+		<!-- 删除角色-->
+		<action name="deleteRole" class="cn.com.qytx.cbb.org.action.RoleDelAction" method="deleteRole"></action>
+		<!-- 编辑查看角色-->
+		<action name="loadRoleUpdateView" class="cn.com.qytx.cbb.org.action.RoleViewAction" method="loadRoleUpdateView">
+			<result name="success">/logined/authority/roleUpdate.jsp</result>
+		</action>
+		<!-- 编辑角色-->
+		<action name="updateRole" class="cn.com.qytx.cbb.org.action.RoleUpdateAction" method="updateRole"></action>
+		<!-- 增加角色人员-->
+		<action name="addRoleUser" class="cn.com.qytx.cbb.org.action.RoleUserAddAction" method="addRoleUser"></action>
+		<!-- 角色模版信息-->
+		<action name="loadRoleModuleView" class="cn.com.qytx.cbb.org.action.RoleModuleViewAction" method="loadRoleModuleView">
+		    <result name="success">/logined/authority/roleModuleAdd.jsp</result>
+		</action>
+		<!-- 角色模版信息-->
+		<action name="RoleModuleView" class="cn.com.qytx.cbb.org.action.RoleModuleViewAction" method="loadRoleModuleView">
+		    <result name="success">/logined/systemset/sysDesk.jsp</result>
+		</action>
+		<!-- 增加角色模版-->
+		<action name="addRoleModule" class="cn.com.qytx.cbb.org.action.RoleModuleAddAction" method="addRoleModule"></action>
+	    
+	    <!-- 管理范围管理-->
+	     <action name="userGroupPower_*" class="cn.com.qytx.cbb.org.action.UserGroupAction" method="{1}">
+			<result name="success">/logined/authority/{1}.jsp</result>
+	   </action>
+	</package>
+	
+</struts>

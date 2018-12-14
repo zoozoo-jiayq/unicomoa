@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>填写表单</title>
+    <link rel="stylesheet" href="../../css/mui.min.css" />
+	<link rel="stylesheet" href="../../css/work.css" />
+	<script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left mui-b"></a>
+		<h1 class="mui-title"><span id="title"></span></h1>
+	</header>
+	<input type="hidden" value="" id="nextAction" />
+	<input type="hidden" value="" id="nextUsers" />
+	<div class="mui-content" id="formDiv">
+		<ul class="mui-table-view mui-my-from">
+		 	<!--<li class="mui-table-view-cell">
+		    	<label class="title" id="title"></label>
+			</li>-->
+		</ul>
+		<div class="block-item bt10 addExaPer">
+			审批人
+			<span class="gray correct">(长按头像可删除，点击头像可替换)</span>
+			<div class="swiper-container-header">
+				<div class="head" id="addHead">
+					
+					<a href="javascript:void(0);" name="userSelect" id="userSelect"> 
+						<div class="round"><img src="../../images/round_plus.png"/></div>
+						<p class="center">请选择</p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="buttonArea">
+			<button class="mui-btn mui-btn-blue mui-btn-block" id="saveApply">提交</button>
+		</div>
+	</div>
+	<div class="mui-popover mui-top-zero" id="userList" >
+		<header class="mui-bar mui-bar-nav qy-head">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left qy-back" id="iconClose"></a>
+			<h1 class="mui-title">选择审批人员</h1>
+		</header>
+		<div class="mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view mui-user"></ul>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab fixed-btn sel-user" id="oper" style="display: none;">
+			<button class="mui-btn" id="userCancle">取消</button>
+			<button class="mui-btn mui-btn-blue" id="userSure">确定</button>
+		</nav>
+	</div>
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			gestureConfig:{
+				tap:true,
+				longtap:true,
+				hold:true,
+				release:true
+			},
+			swipeBack: false //启用右滑关闭功能
+		});
+	</script>
+	<script type="text/javascript" src="../../js/qytxplugin.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/fixed.js"></script>
+	<script type="text/javascript" src="../../js/letterCode.js"></script>
+	<script type="text/javascript" src="../../js/map.js"></script>
+	<script type="text/javascript" src="../../js/jQuery.timeDate.js"></script>
+	<script type="text/javascript" src="../../js/dateview.js"></script>
+	<script type="text/javascript" src="../../js/logined/freeflow/workflowBase.js"></script>
+	<script type="text/javascript" src="../../js/logined/fixedflow/formEvent.js"></script>
+    <script type="text/javascript" src="../../js/logined/fixedflow/apply.js"></script>
+</body>
+</html>

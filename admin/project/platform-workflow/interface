@@ -1,0 +1,44 @@
+--------------------------------------6个自由流程的接口----------------------------------------
+
+1,我的申请列表
+	http://10.100.6.140:10000/txzlbmc/baseworkflow/myStarted.c?userId=xx
+2,待审批列表
+	http://10.100.6.140:10000/txzlbmc/baseworkflow/myWaitProcess.c?userId=xx
+3,已审批列表
+	http://10.100.6.140:10000/txzlbmc/baseworkflow/myProcessed.c?userId=xx
+4,发起申请
+	http://10.100.6.140:10000/txzlbmc/baseworkflow/start.c
+5,审批
+	http://10.100.6.140:10000/txzlbmc/approve.c?approveResult=0/1/2
+6,查看详情
+	http://10.100.6.140:10000/txzlbmc/view.c
+7,删除流程
+	http://10.100.6.140:10000/txzlbmc/delete.c	
+8,转交
+	http://10.100.6.140:10000/txzlbmc/turn.c							
+
+-------------------------------------JBPM固定流程的接口------------------------------------------
+
+1,获取流程分类
+	http://10.100.6.140:10000/txzlbmc/workflow/option!getProcessCategoryList.action
+2,获取分类下的流程
+	http://10.100.6.140:10000/txzlbmc/workflow/option!getProcessAttributeList.action
+3,申请
+	http://10.100.6.140:10000/txzlbmc/workflow/option!startProcess.action		
+4,审批
+	http://10.100.6.140:10000/txzlbmc/workflow/option!approve.action
+5,获取下一步信息，包括申请人及流程走向
+	http://10.100.6.140:10000/txzlbmc/workflow/option!getNextTaskInfo.action
+6,获取发起流程信息
+	http://10.100.6.140:10000/txzlbmc/workflow/option!getStartNextTaskInfo.action				
+7,查看详情
+	http://10.100.6.140:10000/txzlbmc/workflow/detail!view.action?instanceId=jiayq测试固定流程.160001&_clientType=wap
+8,删除流程
+	http://10.100.6.140:10000/txzlbmc/workflow/option!delete.action	
+9,保存审批控件的审批意见
+	http://10.100.6.140:10000/txzlbmc/customWidget/manager!saveAdvice.action?editorName=xxx&advice=xxx&taskId=xx&instanceId=xx
+10,获取审批控件的审批意见
+	http://10.100.6.140:10000/txzlbmc/customWidget/manager!getTdAdvice.action?instanceId=xxx	
+11，申请流程的时候获取申请名称
+    http://10.100.6.140:10000/txzlbmc/workflow/option!getStartProcessTitle.action?userId=xx&processId		
+

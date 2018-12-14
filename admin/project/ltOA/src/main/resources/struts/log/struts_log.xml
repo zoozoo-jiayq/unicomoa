@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 用户管理所有action -->
+    <package name="log" namespace="/log" extends="struts-default">
+    	<!-- 日志Action -->  
+	    <action name="log_*" class="cn.com.qytx.cbb.log.action.LogAction" method="{1}"></action>
+        </package>
+</struts>

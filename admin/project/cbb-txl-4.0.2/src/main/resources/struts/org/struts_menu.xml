@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 菜单 -->
+    <package name="menu" namespace="/menu" extends="struts-default">
+        <!-- 标准菜单 -->
+      	<action name="menulist" class="cn.com.qytx.cbb.org.action.ModuleAction" method="getMenuList">
+      	</action>
+      	<!-- 左侧菜单 -->
+      	 <action name="menulistLeft" class="cn.com.qytx.cbb.org.action.ModuleAction" method="getMenuListLeft">
+      	</action>
+      	
+    </package>
+
+
+</struts>

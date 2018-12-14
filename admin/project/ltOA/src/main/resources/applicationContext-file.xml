@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="filePathConfig" class="cn.com.qytx.cbb.file.config.FilePathConfig">
+    	
+    	<!-- 文件上传路径，生成的大数据文件也放在此目录下 -->
+        <property name="fileUploadPath" value="${fileUploadPath}"></property>
+        <!-- 文件查看地址，http地址 -->
+        <property name="fileViewPath" value="${fileViewPath}"></property>
+        <!-- 大数据的标准 -->
+        <property name="bigDataStand" value="${bigDataStand}"></property>
+        <!-- 本地临时文件目录 -->
+        <property name="fileLocalPath" value="${fileLocalPath}"></property>
+    </bean>
+</beans>

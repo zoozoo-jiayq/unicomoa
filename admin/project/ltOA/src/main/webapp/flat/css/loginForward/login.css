@@ -1,0 +1,60 @@
+@charset "utf-8";
+body{ background:#ffffff; margin:0;}
+/*head*/
+.login_head{ overflow:hidden;}
+.login_head .logo{ float:left;  padding-bottom:10px; padding-top:10px; height:52px; line-height:52px; font-size:35px; color:#555; padding-left:18px;}
+.login_head .logo img{height: 36px; margin-right:10px; float:left; margin-top:9px;}
+.login_head .help{ float:right; padding-top:25px; height:52px; line-height:28px;color:#999; padding-right:10px;}
+.login_head .help a{color:#999; padding:0 10px;}
+/*cont*/
+.login_cont{ width:100%; height:607px; background:url(../../images/loginForward/login_bj.png) center 0;}
+.login_cont .main_lc{ margin:0 auto; width: 1024px; /* width:980px; */}
+.login_cont .main_lc .login_box{ float:right; margin-top:60px;/* margin-right:95px; */ /*margin-right: 150px;*/ width:300px; height:445px;  background:#FFF; padding:0 40px; display: inline;}
+.login_cont .left_upload{ float:left; width:230px;padding-left:33px;}
+.login_cont .left_upload a{ display:inline-block;padding-left:60px;width:170px; height:65px;text-decoration:none;}
+.login_cont .left_upload a h3{font-size:16px;color:#555555;padding-top:5px;}
+.login_cont .left_upload a p{font-size:12px;color:#888;line-height:16px;}
+.login_cont .left_upload .az_xz{ float:left; margin-top:360px; background:url(../../images/loginForward/icon_android.png) no-repeat; width: 231px; height: 68px;}
+.login_cont .left_upload .iphone_xz{ float:left; margin-top:25px;background:url(../../images/loginForward/icon_iphone.png) no-repeat; width: 231px; height: 68px;}
+.erweima{ padding-top:360px; padding-left:20px; float:left}
+.erweima a{ display:block; padding:15px; width:125px; height:125px; background:#fff;}
+.erweima a img{ width:125px; height:126px;}
+
+.login_box h2{ font-size:20px; padding-top:25px; color:#555;}
+.login_box li{ height:42px; margin-top:20px;vertical-align:middle; position:relative; overflow:hidden;}
+.login_box li .ipt{ height:40px; width:298px; border:1px solid #dde2e4; line-height:40px; text-indent:20px; font-size:16px; float:left;}
+.login_box li .ipt:hover{border:1px solid #cecece;}
+.login_box li .ipt:focus{border:1px solid #459fd2;}
+.login_box li .yzm{ width:90px; height:37px; margin-right:12px;}
+.login_box li label{ top:7px; left:5px;}
+label.radio{margin-right:8px; float:left; color:#888;}
+label.radio input{margin-right:10px; vertical-align:middle; margin-top:-3px;*margin-top: -1px;}
+.login_box li.operate{ height:20px; margin-top:20px; color:#888;}
+.login_box li.operate a{color:#199da7}
+.login_box li.error{padding:0;height:25px;line-height:25px;font-size:14px;color:#ff0000;margin-top:10px;}
+.login_box li.error em{float:left;width:16px;height:25px;background:url(../../images/loginForward/error_bg.png) no-repeat left center;margin:0 5px;}
+
+.login_box .login_btn{text-align: center; margin-top:20px;}
+.login_box .login_btn  .bt_logo{ background:#6fcbac; border-radius:3px;border: medium none;color: #FFFFFF;cursor: pointer; font-size: 18px;  height: 40px; width: 306px;}
+
+/*系统列表*/
+.system_list{ width:100%;height:110px;padding:15px 0;overflow:hidden;}
+.system_list .cont_sys{  width:980px;margin:0 auto; height:110px;}
+.cont_sys li {width:275px; float:left; border-right:1px #e7e7e7 solid;  margin-top:40px; padding:0 25px;}
+.cont_sys li h3 { color:#0179a5; font-size:24px; line-height:30px;}
+.cont_sys li .fontl { float:left; margin-right:20px; margin-left:30px;} 
+.cont_sys li img { vertical-align:middle; margin-top:12px;}
+.cont_sys li p { color:#888888; font-size:14px; line-height:24px; }
+/*foot*/
+.login_foot{ padding-top:25px; padding-bottom:35px; text-align:center; color:#adadad; font-size:12px;}
+
+/*placeholder颜色 兼容的游览器*/
+::-webkit-input-placeholder { /* WebKit browsers */color:#b5bdbe;}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */color:#b5bdbe;}
+::-moz-placeholder { /* Mozilla Firefox 19+ */color:#b5bdbe;}
+:-ms-input-placeholder { /* Internet Explorer 10+ */color: #b5bdbe;}
+
+/*提示*/
+.prompt{float:left; width:100%; height:45px; background:#fff3d9; overflow:hidden; line-height:45px; color:#555555;}
+.prompt em{ background:url(../../images/loginForward/ts_error.png) no-repeat; display:inline-block; width:18px; height:18px; margin-top:13px; float:left; margin-left:10px; margin-right:5px;}
+.prompt a{display:inline-block; height:30px; background:#4abcb8; padding:0 10px; line-height:30px; color:#FFF; border-radius:3px; margin-left:5px;}

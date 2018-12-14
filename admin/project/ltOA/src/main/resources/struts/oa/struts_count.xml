@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 首页板块统计 -->
+    <package name="count" namespace="/count" extends="struts-default">
+     <!-- 系统pc端使用次数统计 -->
+   	 <action name="countLogin" class="cn.com.qytx.oa.count.action.LoginCountAction" method="countLogin"></action>
+   	 
+     <!-- 考勤端使用次数统计 -->
+   	 <action name="countAttendacne" class="cn.com.qytx.oa.count.action.AttendanceCountAction" method="countAttendacne"></action>
+   	 
+     <!-- 流程使用次数统计 -->
+   	 <action name="processUseCount" class="cn.com.qytx.oa.count.action.ProcessCountAction" method="processUseCount"></action>
+   	 
+     <!-- 流程申请量排名 -->
+   	 <action name="processApplyCount" class="cn.com.qytx.oa.count.action.ProcessCountAction" method="processApplyCount"></action>
+   	 
+     <!-- 使用频率排名 -->
+   	 <action name="getProcessFrequencyCount" class="cn.com.qytx.oa.count.action.ProcessCountAction" method="getProcessFrequencyCount"></action>
+   	 
+     <!-- 用户申请总量 -->
+   	 <action name="getProcessApplyCount" class="cn.com.qytx.oa.count.action.ProcessCountAction" method="getProcessApplyCount"></action>
+  </package>
+</struts>

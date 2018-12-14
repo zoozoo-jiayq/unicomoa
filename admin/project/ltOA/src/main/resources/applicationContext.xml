@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <!-- 定义aop Aspect自动代理 -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    <context:property-placeholder
+            ignore-unresolvable="true"
+            location="classpath*:*.properties" />
+
+    <context:component-scan base-package="cn.com.qytx">
+        <context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect" />
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+
+    <cache:annotation-driven cache-manager="ehCacheManager" />
+
+    <!-- spring对ehcache的缓存工厂支持 -->
+    <bean id="ehCacheManagerFactory"
+          class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:${ehcache.configFile}" />
+        <property name="shared" value="false" />
+    </bean>
+
+    <!-- spring对ehcache的缓存管理 -->
+    <bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="transactionAware" value="true"/>
+        <property name="cacheManager" ref="ehCacheManagerFactory"></property>
+    </bean>
+
+    <bean id="springContextHolder" class="cn.com.qytx.platform.base.application.SpringContextHolder"/>
+	 <bean id = "jdbcTemplate"
+          class = "org.springframework.jdbc.core.JdbcTemplate">
+        <property name = "dataSource" ref="dataSource"/>
+    </bean>
+    
+      
+</beans>

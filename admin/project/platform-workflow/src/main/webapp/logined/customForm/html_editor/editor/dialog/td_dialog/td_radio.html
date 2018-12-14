@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * Text field dialog window.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<meta content="noindex, nofollow" name="robots" />
+	<script src="../../dialog/common/fck_dialog_common.js" type="text/javascript"></script>
+  <script src="/inc/js/utility.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+var dialog	= window.parent ;//应该是对话框外壳所对应的窗口 by dq 090520
+var oEditor = dialog.InnerDialogLoaded() ;//获得最外层界面所对应的window，该函数在对话框外壳程序中(fckdialog.html)定义 by dq 090520
+
+// Gets the document DOM
+var oDOM = oEditor.FCK.EditorDocument ;//获得编辑区域的iframe对应的窗口的document（定义及赋值：fck.js第942行-->114行-->fc,editingarea.js第28行-->220行），它是直接可编辑的 by dq 090520
+//Selection是什么？(在fckselection.js第24行定义)，GetSelectedElement函数在哪定义？(在fckselection_ie.js第48行定义) by dq 090520
+var oActiveEl = dialog.Selection.GetSelectedElement() ;//获得编辑区域里被选中的控件对象 by dq 090520
+var item_id = "";
+window.onload = function()//对话框弹出时，最内层的对话框显示完成后，执行这个onload函数 by dq 090520
+{
+    window.resizeTo(300, 235);
+
+	// First of all, translate the dialog box texts
+	oEditor.FCKLanguageManager.TranslatePage(document) ;//如果这句话注释掉，则最内层的iframe（当前控件的对话框内容）界面为英文  by dq 090520
+
+	if ( oActiveEl && oActiveEl.tagName == 'INPUT' && oActiveEl.type == 'radio')//编辑一个编辑区域内的控件时，走这个分支 by dq 090520
+	{
+		GetE('txtName').value	= oActiveEl.title ;
+		GetE('txtValue').value	= oActiveEl.value ;
+		GetE('txtMax').value	= GetAttribute( oActiveEl, 'maxLength' ) ;
+		item_id = oActiveEl.name.substr(5);
+		
+		var txtFontSizeFull = oActiveEl.getAttribute('style').fontSize;
+		GetE('txtFontSize').value = txtFontSizeFull.substr(0, txtFontSizeFull.length - 2);//这里的substr是为了去掉末尾的'px' by dq 090522
+		
+	}
+	else//在编辑区域内新建一个控件时，走这个分支 by dq 090520
+		oActiveEl = null ;
+
+	dialog.SetOkButton( true ) ;//该函数在fckdialog.html 683行定义 by dq 090520
+	dialog.SetAutoSize( true ) ;//该函数在fckdialog.html 213行定义 by dq 090520
+	SelectField( 'txtName' ) ;//在编辑区域设置刚创建的控件为选中状态，该函数在fck_dialog_common.js 第100行定义 by dq 090520
+}
+
+function Ok()
+{
+  //为“撤销”操作做准备，记录当前编辑区域的状态（猜的） by dq 090520
+	oEditor.FCKUndo.SaveUndoStep() ;
+
+	if(oActiveEl == null){
+	  _get("/general/system/workflow/flow_form/cool_form/get_item.php","FORM_ID="+ oEditor.parent.form_id,function(req){item_id = req.responseText;},false);
+	}
+	
+  //在编辑区域实际创建一个input控件，CreateNamedElement函数定义位置：fck_dialog_common.js（203行） by dq 090520
+  var item;
+  var check_item;
+  for(var i=1;i< 16;i++)
+  {
+     item="item"+i;
+     check_item="check_item"+i;
+     if(GetE(item).value!="")
+     {
+        if(GetE(check_item).checked==ture)
+           oActiveEl = CreateNamedElement( oEditor, '', 'INPUT', {name:"DATA_"+item_id, title: GetE('txtName').value, type: 'radio',checked:'true' } ) ;
+        else
+	         oActiveEl = CreateNamedElement( oEditor, '', 'INPUT', {name:"DATA_"+item_id, title: GetE('txtName').value, type: 'radio' } ) ;
+	      //CreateNamedElement( oEditor, '', 'LABEL', {name:"DATAasdfs", title: GetE('txtName').value} ) ;
+	      //alert(oActiveEl);
+	   }
+  }
+  //设置这个刚创建的input框的各个属性（根据创建时对话框里填写的内容） by dq 090520
+	//SetAttribute( oActiveEl, 'value'	, GetE('txtValue').value ) ;
+	//if(GetE('txtFontSize').value!="")
+	   //oActiveEl.style.fontSize=GetE('txtFontSize').value + 'px';//加上px可能在firefox也会正确显示 by dq 090522
+	return true ;
+}
+function check(val)
+{
+   var item_check="item_check"+val;
+   for(var i=1;i<16;i++)
+   {
+      if(val==i)
+         continue;
+      else
+         document.getElementById(item_check).checked=false;
+   }
+}
+
+	</script>
+</head>
+<body style="overflow-x: hidden">
+
+<table width="100%" style="height: 100%">
+		<tr>
+			<td align="center">
+				<table border="0">
+					<tr>
+						<td>
+							<span>输入框名称</span>
+						</td>
+						<td>
+							<input id="txtName" type="text" size="20" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>字体大小</span>
+						</td>
+						<td>
+							<input id="txtFontSize" type="text" size="20" />
+						</td>
+					</tr>		
+					<tr>
+						<td>
+							<b>单选框菜单项目</b>
+						</td>
+						<td align="center">
+							<b>设置默认选中</b>
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item1">
+						</td>
+						<td align="center">
+						  <input type="checkbox" name="item_check" id="item_check1" onclick="check(1)">
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item2">
+						</td>
+						<td align="center">
+							<input type="checkbox" name="item_check" id="item_check2" onclick="check(2)">
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item3">
+						</td>
+						<td align="center">
+							<input type="checkbox" name="item_check" id="item_check3" onclick="check(3)">
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item4">
+						</td>
+						<td align="center">
+							<input type="checkbox" name="item_check" id="item_check4" onclick="check(4)">
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item5">
+						</td>
+						<td align="center">
+							<input type="checkbox" name="item_check" id="item_check5" onclick="check(5)">
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item6">
+						</td>
+						<td align="center">
+							<input type="checkbox" name="item_check" id="item_check6" onclick="check(6)">
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item7">
+						</td>
+						<td align="center">
+							<input type="checkbox" name="item_check" id="item_check7" onclick="check(7)">
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item8">
+						</td>
+						<td align="center">
+							<input type="checkbox" name="item_check" id="item_check8" onclick="check(8)">
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item9">
+						</td>
+						<td align="center">
+							<input type="checkbox" name="item_check" id="item_check9" onclick="check(9)">
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<input type="text" id="item10">
+						</td>
+						<td align="center">
+							<input type="checkbox" name="item_check" id="item_check10" onclick="check(10)">
+						</td>
+					</tr>	
+				</table>
+			</td>
+		</tr>
+</table>
+</body>
+</html>
+
+

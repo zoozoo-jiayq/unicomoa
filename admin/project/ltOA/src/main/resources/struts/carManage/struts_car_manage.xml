@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+   	<!-- 车辆对接 -->
+	<package name="carManage" namespace="/carManage" extends="struts-default">
+		<!-- 开通VIP接口 -->
+		<action name="openVipTicket" class="cn.com.qytx.oa.carManage.action.CarVipAction" method="openVipTicket"></action>
+		<!-- 关闭VIP接口 -->
+		<action name="closeVipTicket" class="cn.com.qytx.oa.carManage.action.CarVipAction" method="closeVipTicket"></action>
+		<!-- 车辆进场 / 出场-->
+		<action name="carInOut" class="cn.com.qytx.oa.carManage.action.CarInOutAction" method="carInOut">
+		</action>
+	</package>
+</struts>

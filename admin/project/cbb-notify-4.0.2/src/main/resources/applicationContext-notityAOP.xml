@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+	
+	<!-- 公告新增切面 -->
+	<bean id="notifyAddAspect" class="cn.com.qytx.cbb.notify.aspect.NotifyAddAspect" />
+	<!-- 公告修改切面 -->
+	<bean id="notifyUpdateAspect" class="cn.com.qytx.cbb.notify.aspect.NotifyUpdateAspect" />
+	<!-- 公告删除切面 -->
+	<bean id="notifyDeleteAspect" class="cn.com.qytx.cbb.notify.aspect.NotifyDeleteAspect" />
+	<!-- pc端公告查看切面 -->
+	<bean id="notifyViewAddAspect" class="cn.com.qytx.cbb.notify.aspect.NotifyViewAddAspect" />
+	<!-- 公告审批切面 -->
+	<bean id="notifyApproveAspect" class="cn.com.qytx.cbb.notify.aspect.NotifyApproveAspect" />
+	
+	<aop:config>
+		<!-- 公告新增切面 -->
+		<aop:aspect ref="notifyAddAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.notify.service.impl.NotifyImpl.save(..))"
+				id="notifyAddCut" />
+			<aop:around pointcut-ref="notifyAddCut" method="doAround"/>
+		</aop:aspect>
+		<!-- 公告新增切面  end -->
+		
+		<!-- 公告修改切面 -->
+		<aop:aspect ref="notifyUpdateAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.notify.service.impl.NotifyImpl.update(..))"
+				id="notifyUpdateCut" />
+			<aop:around pointcut-ref="notifyUpdateCut" method="doAround"/>
+		</aop:aspect>
+		<!-- 公告修改切面  end -->
+		
+		<!-- 公告删除切面 -->
+		<aop:aspect ref="notifyDeleteAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.notify.service.impl.NotifyImpl.delByIds(..))"
+				id="notifyDeleteCut" />
+			<aop:around pointcut-ref="notifyDeleteCut" method="doAround"/>
+		</aop:aspect>
+		<!-- 公告删除切面  end -->
+		
+		<!-- pc端公告查看切面 -->
+		<aop:aspect ref="notifyViewAddAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.notify.service.impl.NotifyViewImpl.saveNV(..))"
+				id="notifyViewAddCut" />
+			<aop:around pointcut-ref="notifyViewAddCut" method="doAround"/>
+		</aop:aspect>
+		<!-- pc端公告查看切面   end -->
+		
+		<!-- 公告审批切面 -->
+		<aop:aspect ref="notifyApproveAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.notify.service.impl.NotifyImpl.approveNotify(..))"
+				id="notifyApproveCut" />
+			<aop:around pointcut-ref="notifyApproveCut" method="doAround"/>
+		</aop:aspect>
+		<!-- 公告审批切面  end -->
+	
+	</aop:config>
+
+      
+</beans>

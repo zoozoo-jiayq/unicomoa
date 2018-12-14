@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 自定义表单 -->
+    <package name="customerForm" namespace="/workflowForm" extends="struts-default">
+      	
+      	<!-- 新增表单 -->
+      	<action name="addForm" class="cn.com.qytx.cbb.customForm.action.FormAction" method="addForm">
+      	</action>
+      	<!-- 编辑表单 -->
+      	<action name="loadForm" class="cn.com.qytx.cbb.customForm.action.FormAction" method="loadForm">
+      		<result name="success">/logined/customForm/editForm.jsp</result>
+      	</action>
+      	<!-- 修改表单 -->
+      	<action name="editForm" class="cn.com.qytx.cbb.customForm.action.FormAction" method="editForm">
+      	</action>
+      	<!-- 删除表单 -->
+      	<action name="deleteForm" class="cn.com.qytx.cbb.customForm.action.FormAction" method="deleteForm">
+      	</action>
+      	<!-- 表单列表 -->
+      	<action name="findFormList" class="cn.com.qytx.cbb.customForm.action.FormAction" method="findFormList">
+      	</action>
+      	<!-- 表单设计器 -->
+      	<action name="loadFormDesigner" class="cn.com.qytx.cbb.customForm.action.FormAction" method="loadFormDesigner">
+      	</action>
+      	<!-- 表单控件属性保存 -->
+      	<action name="saveFormProperties" class="cn.com.qytx.cbb.customForm.action.FormAction" method="saveFormProperties">
+      	</action>
+      	<!-- 表单预览 -->
+      	<action name="viewForm" class="cn.com.qytx.cbb.customForm.action.FormAction" method="viewForm">
+      		<result name="success">/logined/customForm/html_editor/viewForm.jsp</result>
+      	</action>
+      	<!-- 表单导出 -->
+      	<action name="reportForm" class="cn.com.qytx.cbb.customForm.action.FormAction" method="reportForm">
+      	</action>
+      	<!-- 表单导入-->
+      	<action name="importForm" class="cn.com.qytx.cbb.customForm.action.FormAction" method="importForm">
+      	</action>
+      	<!-- 分类列表-->
+      	<action name="findCategoryList" class="cn.com.qytx.cbb.customForm.action.CategoryAction" method="findCategoryList">
+      	</action>
+      	<!-- 增加分类-->
+      	<action name="addCategory" class="cn.com.qytx.cbb.customForm.action.CategoryAction" method="addCategory">
+      	</action>
+      	<!-- 编辑分类 -->
+      	<action name="loadCategory" class="cn.com.qytx.cbb.customForm.action.CategoryAction" method="loadCategory">
+      		<result name="process">/logined/customForm/editProcessCategory.jsp</result>
+      		<result name="form">/logined/customForm/editFormCategory.jsp</result>
+      		<result name="doc">/logined/docTemplate/editDocCategory.jsp</result>
+      	</action>
+      	<!-- 修改分类 -->
+      	<action name="editCategory" class="cn.com.qytx.cbb.customForm.action.CategoryAction" method="editCategory">
+      	</action>
+      	<!-- 删除分类 -->
+      	<action name="deleteCategory" class="cn.com.qytx.cbb.customForm.action.CategoryAction" method="deleteCategory">
+      	</action>
+      	<!-- 得到所有列表分类 -->
+      	<action name="findAllCategory" class="cn.com.qytx.cbb.customForm.action.CategoryAction" method="findAllCategory">
+      	</action>
+      	<!-- 得到所有分类 -->
+      	<action name="getFormCategorys" class="cn.com.qytx.cbb.customForm.action.CategoryAction" method="getFormCategorys">
+      		<result name="index">/logined/customForm/index.jsp</result>
+      	</action>
+      	<!-- 得到所有候选人列表 -->
+      	<action name="getUserWap" class="cn.com.qytx.cbb.customForm.action.CategoryAction" method="getUserWap">
+      	</action>
+      	
+      	<action name="defaultData" class="cn.com.qytx.cbb.customForm.action.DefaultDataAction">
+      	</action>
+      	 
+      	<action name="toEditor" class="cn.com.qytx.cbb.customForm.action.FormAction" method="toEditor">
+      		<result name="editor">/logined/customForm/html_editor/editor.jsp</result>
+      	</action> 
+    </package>
+
+
+</struts>

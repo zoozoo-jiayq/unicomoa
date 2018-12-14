@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 用户管理所有action -->
+    <package name="sysset" namespace="/sysset" extends="struts-default">
+    	<!-- 日志Action -->  
+	    <action name="sysset_*" class="cn.com.qytx.cbb.systemSet.action.SystemSetAction" method="{1}"></action>
+	    
+        <action name="toRecordSet" class="cn.com.qytx.cbb.systemSet.action.SystemSetAction" method="toRecordSet">
+        	<result name="success">/logined/systemset/recordset.jsp</result>
+        </action>
+        
+        <action name="toPwdSet" class="cn.com.qytx.cbb.systemSet.action.SystemSetAction" method="toPwdSet">
+        	<result name="success">/logined/systemset/pwdset.jsp</result>
+        </action>
+        
+        <!-- 通用设置 -->
+        <action name="toCommonSet" class="cn.com.qytx.cbb.systemSet.action.CommonSet" method="toCommonSet">
+            <result name="success">/logined/systemset/commonSet.jsp</result>
+        </action>
+        <action name="saveSet" class="cn.com.qytx.cbb.systemSet.action.CommonSet" method="saveSet">
+            <result name="success">/logined/systemset/commonSet.jsp</result>
+        </action>
+        <!-- 获取通用设置 -->
+        <action name="getCommonSet" class="cn.com.qytx.cbb.systemSet.action.CommonSet" method="getCommonSet">
+        </action>
+        <action name="isDefaultPwd" class="cn.com.qytx.cbb.systemSet.action.CommonSet" method="isDefaultPwd"></action>
+        </package>
+        
+        <!-- add by jiayq -->
+        <package name="abc" namespace="/a/b" extends="struts-default">
+	         <!-- 系统的通用配置 -->
+	        <action name="c" class="cn.com.qytx.cbb.systemSet.action.CommonSet" method="toDomConfig">
+	        	<result name="domConfig">/logined/systemset/domConfig.jsp</result>
+	        </action>
+	        <action name="saveDom" class="cn.com.qytx.cbb.systemSet.action.CommonSet" method="saveDomConfig">
+	        	<result name="domConfig" type="redirect">/a/b/c.action</result>
+	        </action>
+        </package>
+</struts>

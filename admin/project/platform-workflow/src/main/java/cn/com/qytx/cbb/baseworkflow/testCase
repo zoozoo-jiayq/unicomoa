@@ -1,0 +1,10 @@
+测试数据准备：
+	1，使用请假流程，code="qingjia"
+	2,人员列表使用：11612964,11612965,11612966
+	3,审批人：11612967
+待测试接口：
+	1,/baseworkflow/getBaseWorflowList.c
+	2,/baseworkflow/start.c?formData=&userIds=11612964,11612965,11612966&code=qingjia&userId=11612967
+	3,/baseworkflow/approve.c?instanceId=?&approveResult=0&userId=11612964&advice=同意
+	4,/baseworkflow/view.c?instanceId=?
+	5,/baseworkflow/delete.c?instanceId=?	

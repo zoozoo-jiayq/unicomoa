@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="recordOther" extends="struts-default" namespace="/logined/recordOther">
+        <!-- 关系开始-->
+        <!-- 关系信息查询-->
+        <action name="findlistRelation" class="cn.com.qytx.oa.record.action.RecordRelationAction" method="findlistRelation"/>
+          <!-- 关系详情查询 -->
+        <action name="findRelationDetail" class="cn.com.qytx.oa.record.action.RecordRelationAction" method="findRelationDetail">
+            <result name="toDetail">/logined/record/other/relationDetail.jsp</result>
+            <result name="toUpdate">/logined/record/other/relationAddOrUpdate.jsp</result>
+            <result name="toWap">/logined/wapRecord/relationDetail.jsp</result>
+        </action>
+           <!-- 新增关系信息-->
+        <action name="saveOrUpdateRelation" class="cn.com.qytx.oa.record.action.RecordRelationAction" method="saveOrUpdateRelation"/>
+        <!-- 关系结束-->
+        
+        
+     
+        <!-- 工作开始-->
+        <!-- 工作信息查询-->
+        <action name="findlistByPage" class="cn.com.qytx.oa.record.action.RecordWorkAction" method="findlistByPage"/>
+         <!-- 新增工作信息-->
+        <action name="saveOrUpdateWork" class="cn.com.qytx.oa.record.action.RecordWorkAction" method="saveOrUpdateWork"/>
+        <!-- 工作详情查询 -->
+        <action name="findDetail" class="cn.com.qytx.oa.record.action.RecordWorkAction" method="findDetail">
+            <result name="toDetail">/logined/record/other/workDetail.jsp</result>
+            <result name="toUpdate">/logined/record/other/workAddOrUpdate.jsp</result>
+             <result name="wapDetail">/logined/wapRecord/workDetail.jsp</result>
+        </action>
+        <!-- 跳转到添加页面 -->
+        <action name="toAddView" class="cn.com.qytx.oa.record.action.RecordWorkAction" method="toAddView">
+            <result name="success">/logined/record/other/workAddOrUpdate.jsp</result>
+        </action>
+        <!-- 工作结束-->
+        
+        <!-- 李涛添加开始 -->
+        <!-- 新增或修改学习信息 -->
+       <action name="savelearn" class="cn.com.qytx.oa.record.action.LearnAction" method="save"/>
+        <!-- 学习信息分页列表 -->
+        <action name="listlearn" class="cn.com.qytx.oa.record.action.LearnAction" method="list"/>
+        <!-- 学习信息详情查询 -->
+        <action name="findByIdlearn" class="cn.com.qytx.oa.record.action.LearnAction" method="findById">
+            <result name="success">/logined/record/other/learnDetail.jsp</result>
+        </action>
+        
+        <!-- 手机端学习信息详情查询 -->
+        <action name="findByIdlearnWap" class="cn.com.qytx.oa.record.action.LearnAction" method="findById">
+            <result name="success">/logined/wapRecord/studyDetail.jsp</result>
+        </action>
+        <!-- 跳转到添加页面 -->
+        <action name="toAddlearn" class="cn.com.qytx.oa.record.action.LearnAction" method="tosave">
+            <result name="success">/logined/record/other/learnAddOrUpdate.jsp</result>
+        </action>
+        <!-- 李涛添加结束 -->
+        
+        <!-- 潘博添加开始 -->
+        <!-- 调动列表-->
+        <action name="transferList" class="cn.com.qytx.oa.record.action.TransferAction" method="transferList"/>
+        <!-- 去添加-->
+        <action name="toAddTransfer" class="cn.com.qytx.oa.record.action.TransferAction" method="toAddTransfer">
+        	<result name="success">/logined/record/other/transferAddOrUpdate.jsp</result>
+        	<result name="detail">/logined/record/other/transferDetail.jsp</result>
+        	<result name="wap">/logined/wapRecord/moveDetail.jsp</result>
+        </action>
+         <!-- 添加或修改调动-->
+        <action name="saveOrUpdate" class="cn.com.qytx.oa.record.action.TransferAction" method="saveOrUpdate"/>
+        
+        <!-- 职称列表-->
+        <action name="titleList" class="cn.com.qytx.oa.record.action.RecordTitleAction" method="titleList"/>
+        <!-- 去添加职称-->
+        <action name="toAddTitle" class="cn.com.qytx.oa.record.action.RecordTitleAction" method="toAddTitle">
+        	<result name="success">/logined/record/other/titleAddOrUpdate.jsp</result>
+        	<result name="detail">/logined/record/other/titleDetail.jsp</result>
+        	<result name="wap">/logined/wapRecord/positionDetail.jsp</result>
+        </action>
+         <!-- 添加或修改职称-->
+        <action name="saveOrUpdateTitle" class="cn.com.qytx.oa.record.action.RecordTitleAction" method="saveOrUpdate"/>
+        
+        <!-- 职称列表-->
+        <action name="trainingList" class="cn.com.qytx.oa.record.action.RecordTrainingAction" method="trainingList"/>
+        <!-- 去添加职称-->
+        <action name="toAddTraining" class="cn.com.qytx.oa.record.action.RecordTrainingAction" method="toAddTraining">
+        	<result name="success">/logined/record/other/trainingAddOrUpdate.jsp</result>
+        	<result name="detail">/logined/record/other/trainingDetail.jsp</result>
+        	<result name="wap">/logined/wapRecord/trainDetail.jsp</result>
+        </action>
+         <!-- 添加或修改职称-->
+        <action name="saveOrUpdateTraining" class="cn.com.qytx.oa.record.action.RecordTrainingAction" method="saveOrUpdate"/>
+        
+        
+        
+        
+        <!-- 潘博添加结束 -->
+
+        <!-- 李自立添加开始 -->
+        <!-- 个人奖惩列表 -->
+        <action name="penaltiesList" class="cn.com.qytx.oa.record.action.PenaltiesAction" method="findAllByUserId"/>
+        <!-- 手机端个人奖惩列表 -->
+        <action name="penaltiesListWap" class="cn.com.qytx.oa.record.action.PenaltiesAction" method="findAllByUserId"/>
+        <!-- 去添加-->
+        <action name="toAddPenalties" class="cn.com.qytx.oa.record.action.PenaltiesAction" method="toAddOrUpdate">
+            <result name="success">/logined/record/other/penaltiesAddOrUpdate.jsp</result>
+        </action>
+        <!-- 添加或修改-->
+        <action name="penaltiesSaveOrUpdate" class="cn.com.qytx.oa.record.action.PenaltiesAction" method="saveOrUpdate"/>
+        <!-- 修改或详情-->
+        <action name="penaltiesFindDetail" class="cn.com.qytx.oa.record.action.PenaltiesAction" method="findDetail">
+            <result name="toUpdate">/logined/record/other/penaltiesAddOrUpdate.jsp</result>
+            <result name="toDetail">/logined/record/other/penaltiesDetail.jsp</result>
+           <result name="toDetailWap">/logined/wapRecord/rewardDetail.jsp</result>
+        </action>
+
+        <!-- 个人离职列表 -->
+        <action name="leaveList" class="cn.com.qytx.oa.record.action.RecordLeaveAction" method="findlistByPage"/>
+        <action name="checkLeave" class="cn.com.qytx.oa.record.action.RecordLeaveAction" method="checkLeave"/>
+        <!-- 去添加-->
+        <action name="toAddLeave" class="cn.com.qytx.oa.record.action.RecordLeaveAction" method="toAddOrUpdate">
+            <result name="success">/logined/record/other/leaveAddOrUpdate.jsp</result>
+        </action>
+        <!-- 添加或修改-->
+        <action name="leaveSaveOrUpdate" class="cn.com.qytx.oa.record.action.RecordLeaveAction" method="saveOrUpdateLeave"/>
+        <!-- 修改或详情-->
+        <action name="leaveDetail" class="cn.com.qytx.oa.record.action.RecordLeaveAction" method="findDetail">
+            <result name="toUpdate">/logined/record/other/leaveAddOrUpdate.jsp</result>
+            <result name="toDetail">/logined/record/other/leaveDetail.jsp</result>
+            <result name="wap">/logined/wapRecord/leaveDetail.jsp</result>
+        </action>
+
+        <!-- 李自立添加结束 -->
+
+
+    </package>
+</struts>

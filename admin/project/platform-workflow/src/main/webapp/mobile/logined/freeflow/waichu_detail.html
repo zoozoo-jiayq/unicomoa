@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>请假详情</title>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link href="../../css/work.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">申请详情</h1>
+	</header>
+	<div class="mui-content">
+		<div class="showBox">
+            <div class="faceBox">
+               <div class="imgBox" id="imgDiv"><img src="" id="photo"/><span id="imgName"></span></div>
+               <h2 class="name" id="userName"></h2>
+            </div>
+            <dl>
+               <dt id="outTime"></dt>
+               <dd class="time" id="beginAndEndTime"></dd>
+               <dd id="reason"></dd>
+               <dd class="imgList" style="display: none;">
+                  <img src="../images/tx1.jpg">
+                  <img src="../images/tx2.jpg">
+                  <img src="../images/tx1.jpg">
+               </dd>
+            </dl>
+        </div>
+        <div class="showList">
+        </div>
+		<nav class="btn-group threebtn" id="approveOper" style="display: none;">
+			<button class="mui-btn" id="noagree"><span class="icon-x"><i class="icon icon1" ></i>拒绝</span></button>
+			<button class="mui-btn" id="agree"><span class="icon-x"><i class="icon icon2" ></i>同意</span></button>
+			<button class="mui-btn" id="turn"><span class="icon-x"><i class="icon icon3" ></i>转交</span></button>
+		</nav>
+		<nav class="btn-group onebtn" id="viewOper" style="display: none;">
+			<button class="mui-btn mui-btn-block" id="dischargeBut">撤销</button>
+		</nav>
+	</div>
+	</div>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+	    mui.init({
+			gestureConfig:{
+				tap:true
+			},
+			swipeBack: false //启用右滑关闭功能
+		});
+		mui('.mui-scroll-wrapper').scroll();
+    </script>
+    <script type="text/javascript" src="../../js/qytxplugin.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/fixed.js"></script>
+	<script type="text/javascript" src="../../js/letterCode.js"></script>
+	<script type="text/javascript" src="../../js/logined/freeflow/selectUser_detail.js"></script>
+	<script type="text/javascript" src="../../js/logined/freeflow/operation.js"></script>
+    <script type="text/javascript" src="../../js/logined/freeflow/waichu_detail.js"></script>
+</body>
+</html>

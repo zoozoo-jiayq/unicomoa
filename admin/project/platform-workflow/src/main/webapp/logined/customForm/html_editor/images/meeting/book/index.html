@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>会议室预定</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../inc/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../inc/js/jquery-ui-1.8.17.custom.min.js"></script>
+<script type="text/javascript" src="js/book.js"></script>
+<script type="text/javascript" src="../inc/js/jquery.ezmark.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../inc/js/scroll/mwheelIntent.js"></script>
+<link rel="stylesheet" href="../style/css/uicore/jquery.ui.all.css">
+<link href="../style/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/index.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/global.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/other.css" rel="stylesheet" type="text/css" />
+<link href="../style/css/ezmark.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../style/css/book.css">
+<style>
+
+</style>
+<script type="text/javascript">
+$(function() {
+  //do active
+  $(".meeting").live("mousedown", function() {
+	  $(".active.meeting").removeClass("active");
+	  $(this).addClass("active");
+  });
+  
+  $('input[type=checkbox]').ezMark();
+  initMeetings();
+  initAxisX();
+  initScroll();
+});
+
+/**
+ * 初始化x轴
+ */
+function initAxisX() {
+  function number2Time(n) {
+    var h = Math.floor(n);
+    return (h < 10 ? ("0" + h) : h) + ":" + (n - h ? "30" : "00")
+  }
+  $(".axis-x div").each(function(i, e) {
+    $(e).html(number2Time(i/2 + 9) + "<br/>" + number2Time(i/2 + 9.5));
+  });
+}
+
+function initScroll() {
+  $("body").jScrollPane();
+  var api = $("body").data('jsp');
+  var throttleTimeout;
+  $(window).resize(function() {
+    if ($.browser.msie) {
+      if (!throttleTimeout) {
+        throttleTimeout = setTimeout(function() {
+          api.reinitialise();
+          throttleTimeout = null;
+        }, 50);
+      }
+    }
+    else {
+      api.reinitialise();
+    }
+  });
+}
+
+function initMeetings() {
+  var wb = new WeekBooker({renderTo: "#meeting"});
+  for (var i = 0; i < 7; i++) {
+    var meeting = new Meeting({
+      content: "会议" + i,
+      start: 9 * 60 + (i + 1) * 20,
+      limit: 60 + i * 60,
+      id: "meeting" + i,
+      ppm: 2
+    });
+    wb.bookers[i].add(meeting);
+  }
+}
+</script>
+</head>
+<body class="scroller-left">
+  <div class="content">
+    <div class="table-name">
+      <span class="table-h4">会议室预定情况</span><span class="table-r"></span>
+    </div>
+	  <div class="top-l">
+		  <div class="top-r">
+			  <div class="top-c gray-checkbox">
+			    <label for=""><input type="checkbox" id=""/><span>高级查询</span></label>
+			    <p>
+			      会议室选择&nbsp;<span class="text-left"><span class="text-right"><input size="10" type="text"></span></span>
+			      &nbsp;&nbsp;开始时间&nbsp;<span class="text-left"><span class="text-right"><input size="15" type="text"></span></span>
+			      &nbsp;&nbsp;截止时间&nbsp;<span class="text-left"><span class="text-right"><input size="15" type="text"></span></span>
+			   &nbsp;&nbsp;&nbsp;<button class="top-query-btn"></button>
+			    </p>
+			  </div>
+		  </div>
+	  </div>
+	  
+	  <div class="legend">
+	    <b>图例说明：</b>
+	    <label for=""><img src="../style/images/book/explain-a.jpg"><span>未预约</span></label>
+	    <label for=""><img src="../style/images/book/explain-b.jpg"><span>待批准</span></label>
+	    <label for=""><img src="../style/images/book/explain-c.jpg"><span>已批准</span></label>
+	    <label for=""><img src="../style/images/book/explain-d.jpg"><span>进行中</span></label>
+	    <label for=""><img src="../style/images/book/explain-e.jpg"><span>已结束</span></label>
+	  </div>
+	  
+	  <div class="booker-title" style="width: 1480px">
+		  <div class="table-title" style="width:326px; float: left;">
+	      <ul>
+	        <li style="width: 168px"><span>会议室名称</span></li>
+	        <li style="width: 148px"><span>日期</span></li>
+	      </ul>
+	     </div>
+		  <div class="axis-x">
+		    <div class="first"></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div class="last"></div>
+		  </div>
+	  </div>
+	  <div style="clear:left;"></div>
+	  <div id="meeting"></div>
+  </div>
+</body>
+</html>

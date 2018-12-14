@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+    
+<struts>
+    
+    <package name="jbapmMobile" namespace="/workflow" extends="struts-default">
+    	<action name="searchList" class="cn.com.qytx.cbb.jbpmApp.action.mobile.SearchListAction"></action>
+    	<action name="option" class="cn.com.qytx.cbb.jbpmApp.action.mobile.OptionAction"></action>
+    	<action name="detail" class="cn.com.qytx.cbb.jbpmApp.action.mobile.DetailAction"></action>
+    	<action name="formView" 
+    	    class="cn.com.qytx.cbb.jbpmApp.action.mobile.SearchListAction"  method="formView">
+    	   <result name="success">/logined/jbpmApp/apply/formView.jsp</result>
+		</action>
+    	<!-- 获得工作流待审批数量 -->
+    	<action name="getWorkflowApproveCount" class="cn.com.qytx.cbb.jbpmApp.action.mobile.RPWorkflow" method="getWorkflowApproveCount"></action>
+    </package>
+
+</struts>

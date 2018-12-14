@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+
+    <!-- 微讯 -->
+	<package name="message" namespace="/message" extends="struts-default">
+		<action name="setup_*" class="cn.com.qytx.oa.message.action.MessageAction" method="{1}">	</action>
+		<action name="replyMessage" class="cn.com.qytx.oa.message.action.MessageAction" method="replyMessage">
+		    <result name="success">/logined/message/alert_send_message.jsp</result>
+		</action>
+		<action name="sendMessageByGroupId" class="cn.com.qytx.oa.message.action.MessageAction" method="sendMessageByGroupId">
+		</action>
+		<action name="chatSendMessageByIdStr" class="cn.com.qytx.oa.message.action.MessageAction" method="chatSendMessage">
+		</action>
+	</package>
+</struts>
