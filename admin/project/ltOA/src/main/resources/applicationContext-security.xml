@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:s="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd"
+       default-lazy-init="true">
+
+    <description>SpringSecurity安全配置</description>
+    <!-- http安全配置 -->
+    <s:http auto-config="true" use-expressions="true" access-denied-page="/common/403.jsp">
+        <s:form-login login-page="/login.jsp"  default-target-url="/login/loginForward.action"
+                      authentication-failure-handler-ref="authenticationFailureHandler"  />
+        <s:custom-filter ref="myFilter" position="PRE_AUTH_FILTER"/>
+        <!--不过滤以下文件夹下面的文件-->
+        <s:intercept-url pattern="/css/**" access="permitAll" />
+        <s:intercept-url pattern="/ydzj/**" access="permitAll" />
+        <s:intercept-url pattern="/images/**" access="permitAll" />
+        <s:intercept-url pattern="/js/**" access="permitAll" />
+        <s:intercept-url pattern="/plugins/**" access="permitAll" />
+        <s:intercept-url pattern="/login.jsp" access="permitAll" />
+        <s:intercept-url pattern="/logout.jsp" access="permitAll" />
+        <s:intercept-url pattern="/sessionout.jsp" access="permitAll" />
+        <s:intercept-url pattern="/upload/prevViewByPath.action" access="permitAll"/>
+        <s:intercept-url pattern="/sso/*" access="permitAll"/>
+        <s:intercept-url pattern="/filemanager/htmlPreview.action" access="permitAll"/>
+        <s:intercept-url pattern="/preview/*" access="permitAll"/>
+        <s:intercept-url pattern="/**" access="isFullyAuthenticated"/>
+        <s:session-management invalid-session-url="/login.jsp"></s:session-management>
+    </s:http>
+    <!-- 认证配置, 使用userDetailsService提供的用户信息 -->
+    <s:authentication-manager alias="authenticationManager">
+        <s:authentication-provider user-service-ref="userDetailServiceImpl">
+            <s:password-encoder hash="md5">
+            </s:password-encoder>
+        </s:authentication-provider>
+    </s:authentication-manager>
+    <!--自定义Spring Security 登陆异常处理-->
+    <bean id="authenticationFailureHandler" class="cn.com.qytx.platform.security.AccessAuthenticationFailureHandler">
+        <property name="defaultFailureUrl" value="/login.jsp"/>
+    </bean>
+    <!-- 配置过滤器 -->
+    <bean id="myFilter" class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
+        <!--用户权限获得-->
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <!--访问决策器-->
+        <property name="accessDecisionManager" ref="accessDecisionManager" />
+        <!--资源和权限列表-->
+        <property name="securityMetadataSource" ref="securityMetadataSource"/>
+    </bean>
+    <!-- 项目实现的用户查询服务 -->
+    <bean id="userDetailServiceImpl" class="cn.com.qytx.platform.security.UserDetailServiceImpl" >
+    </bean>
+    <!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源 -->
+    <bean id="accessDecisionManager" class="cn.com.qytx.platform.security.AccessDecision">
+    </bean>
+    <bean id="securityMetadataSource" class="cn.com.qytx.platform.security.SecurityMetadataSource">
+    </bean>
+</beans>

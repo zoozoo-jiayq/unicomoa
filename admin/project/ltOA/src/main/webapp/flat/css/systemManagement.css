@@ -1,0 +1,9 @@
+@charset "utf-8";
+/*组织机构管理-部门列表*/
+.Categorybg{background:url("../images/treeChildbg.png") no-repeat;display:inline-block;padding-left:35px;}
+/*导出弹框*/
+.importBox{padding-top:20px;}
+.importBox h4{padding-left:30px;color:#555;font-size:16px;text-align:left;padding-bottom:10px;}
+.importBox h4 img{margin:0 5px;cursor:pointer;}
+.importBox p{color:#888;text-align:center;font-size:14px;}
+.importBox p a{color:#ff0000;}

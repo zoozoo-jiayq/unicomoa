@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 考勤 -->
+    <package name="attendance" namespace="/attendance" extends="struts-default">
+    <!-- wangtian -->
+    <!-- 获取服务器时间 -->
+    <action name="getServiceTime" class="cn.com.qytx.cbb.attendance.action.AttendanceRegisterAction"
+    	method="getServiceTime"></action>
+    <!-- 打卡 -->
+    <action name="punchCard" class="cn.com.qytx.cbb.attendance.action.AttendanceRegisterAction"
+    	method="punchCard"></action>
+    <!-- 打卡记录 -->
+    <action name="punchReport" class="cn.com.qytx.cbb.attendance.action.AttendanceRegisterAction"
+    	 method="punchReport"></action>
+    	<!-- 考勤管理 -->
+    	<!-- 获取人员列表 -->
+    	<action name="listRecords" class="cn.com.qytx.cbb.attendance.action.AttendanceManagerAction" 
+    		method="listRecords"></action>
+   	
+    	<!-- panbo -->
+   		<!-- 获取IP段列表 -->
+   		<action name="getIPList" class="cn.com.qytx.cbb.attendance.action.AttendanceIpSetAction" method="getIPList">
+   			<result name="success">/logined/attendance/ipList.jsp</result>
+   		</action>
+   		<action name="addIp" class="cn.com.qytx.cbb.attendance.action.AttendanceIpSetAction" method="addIp">
+   		</action>
+   		<action name="preUpdateIp" class="cn.com.qytx.cbb.attendance.action.AttendanceIpSetAction" method="preUpdateIp">
+   		</action>
+   		<action name="updateIp" class="cn.com.qytx.cbb.attendance.action.AttendanceIpSetAction" method="updateIp">
+   		</action>
+   		<action name="deleteIp" class="cn.com.qytx.cbb.attendance.action.AttendanceIpSetAction" method="deleteIp">
+   		</action>
+    		
+    	<!-- panbo -->
+    	<!-- 考勤查看 -->
+    	<action name="getRecode" class="cn.com.qytx.cbb.attendance.action.AttendanceRecodeAction" method="getRecode"></action>
+       <!-- 考勤查询导出 -->
+         <action name="exportAttendance" class="cn.com.qytx.cbb.attendance.action.AttendanceExportAction" method="exportAttendance"></action>
+   
+   	
+   		<!-- 考勤方案列表 -->
+   		<action name="planList" class="cn.com.qytx.cbb.attendance.action.AttendancePlanAction" method="list"></action>
+   		<!-- 删除考勤方案 -->
+   		<action name="delPlan" class="cn.com.qytx.cbb.attendance.action.AttendancePlanAction" method="del"></action>
+   		<!-- 保存考勤方案 -->
+   		<action name="savePlan" class="cn.com.qytx.cbb.attendance.action.AttendancePlanAction" method="save"></action>
+   		<!-- 检查人员是否已在其他考勤方案内 -->
+   		<action name="checkUserIds" class="cn.com.qytx.cbb.attendance.action.AttendancePlanAction" method="checkUserIds"></action>
+   		<!-- 修改方案 -->
+   		<action name="toEditPlan" class="cn.com.qytx.cbb.attendance.action.AttendancePlanAction" method="toEditPlan">
+   			<result name="success">/logined/attendance/updatePlan.jsp</result>
+   		</action>
+   		<!-- 导出打卡记录 -->
+   		<action name="export" class="cn.com.qytx.cbb.attendance.action.ExportAttendanceAction" method="exportAttendance"></action>
+   		<!-- 考勤组人员变更 -->
+   		<action name="changeUsers" class="cn.com.qytx.cbb.attendance.action.AttendancePlanAction" method="changeUsers"></action>
+   		<!-- 获得考勤组人员名 -->
+   		<action name="getUserNames" class="cn.com.qytx.cbb.attendance.action.AttendancePlanAction" method="getUserNames"></action>
+   		<!-- 考勤统计 -->
+   		<action name="statistics_*" class="cn.com.qytx.cbb.attendance.action.AttendanceStatisticsAction" method="{1}"></action>
+   		
+   		
+   		
+    </package>
+    
+    
+    
+     <package name="attendanceWap" namespace="/wap/attendance" extends="struts-default">
+        <!--  -->
+       <action name="getServiceTime" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction"
+    	  method="getServiceTime"></action>
+        <!-- 打卡 -->
+       <action name="punchCard" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction"
+    	   method="punchCard"></action>
+        <!-- 打卡记录 -->
+        <action name="punchReport" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction"
+    	                  method="punchReport"></action>
+    	<!-- 请求返回打过卡的天 -->
+    	<action name="getRecordDays" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction" method="getRecordDays"></action>
+    
+    </package>
+    
+</struts>

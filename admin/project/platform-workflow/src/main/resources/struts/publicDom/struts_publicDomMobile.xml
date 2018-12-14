@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 移动手机端控制器 -->
+    <package name="wapPublicDom" namespace="/dom/mobile" extends="struts-default">
+    	
+    	<!-- 查询统计ACTION -->
+    	<action name="searchList" class="cn.com.qytx.cbb.publicDom.action.mobile.MobileSearchListAction"></action>
+    	
+    	<!-- 查询公文详情  -->
+    	<action name="detail" class="cn.com.qytx.cbb.publicDom.action.mobile.MobileDetailAction"></action>
+    	
+    	<!-- 公文操作 -->
+    	<action name="option" class="cn.com.qytx.cbb.publicDom.action.mobile.MobileOptionAction"></action>
+	</package>
+</struts>

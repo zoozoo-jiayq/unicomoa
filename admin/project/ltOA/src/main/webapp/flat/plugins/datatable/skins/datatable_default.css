@@ -1,0 +1,681 @@
+@charset "utf-8";
+/* CSS Document */
+/*表格操作区*/
+.f12{font-size:12px;}
+.grey_9{color:#999;}
+.orange{color:#f60;}
+.green{color:green;}
+
+.list select{border:1px solid #e4e4e4;;color:#555555;/*height:29px;*/ background:#fff; padding:2px;vertical-align:middle; line-height:22px; }
+.list .formText{border:1px solid #e4e4e4;line-height:26px;color:#555555;height:26px; text-indent:10px;background:#fff;vertical-align:middle;}
+.list .formTextarea{min-height:100px;padding:10px 0;border:1px solid #e4e4e4;color:#555555;text-indent:10px;background:#fff;text-indent:10px;vertical-align:middle;}
+.list .formText:hover , .list .formTextarea:hover{border:1px solid #cecece;}
+.list .formText:focus , .list .formTextarea:focus{border:1px solid #459fd2;}
+.list .readOnlyText{border:1px solid #e4e4e4;line-height:26px;color:#c2c2c2;height:26px; text-indent:10px;background:#fafafa;vertical-align:middle;}
+.list .readOnlyTextarea{min-height:40px;padding:10px 0;border:1px solid #e4e4e4;line-height:26px;color:#c2c2c2;height:26px; text-indent:10px;background:#fafafa;vertical-align:middle;}
+
+.list{padding:5px;overflow: hidden}
+.searchArea {position: relative;_position:none;z-index:2; padding:0 0 5px 0;overflow:hidden;}
+.searchArea table{font-size:14px;width:100%;table-layout:auto;}
+.searchArea .Wdate{width:150px;text-indent:5px; background:url(default/wdat.png) no-repeat #fff right center !important;}
+.searchArea table td.right label{padding-left:12px; vertical-align:middle;}
+.searchArea .searchkey{width:220px; }
+
+.fButton{float:left;display:inline;cursor:pointer;margin-left:10px;width:auto;padding:0 18px;height:28px;line-height:28px;font-size:14px;color:#fff;}
+.greenBtn{background:#61b6c5;}
+.greenBtn:hover{background:#49a4b4;}
+.orangeBtn{background:#fca455;}
+.orangeBtn:hover{background:#fa8638;}
+.blueBtn{background:#61b6c5;}
+.blueBtn:hover{background:#49a4b4;}
+.notOperBtn{background:#e6e6e6;color:#adadad;}
+.add{float:left;padding-left:18px;line-height:28px;background:url(default/add.png) left center no-repeat;}/*新增*/
+.refresh{float:left;padding-left:18px;line-height:28px;background:url(default/refresh.png) left center no-repeat;}/*刷新*/
+.load{float:left;padding-left:18px;line-height:28px;background:url(default/load.png) left center no-repeat;}/*下载*/
+.upload{float:left;padding-left:18px;line-height:28px;background:url(default/upload.png) left center no-repeat;}/*上传*/
+.batch{float:left;padding-left:18px;line-height:28px;background:url(default/batch.png) left center no-repeat;}/*批量归档*/
+.delete{float:left;padding-left:18px;line-height:28px;background:url(default/del.png) left center no-repeat;}/*删除*/
+.import{float:left;padding-left:18px;line-height:28px;background:url(default/import.png) left center no-repeat;}/*导入*/
+.export{float:left;padding-left:18px;line-height:28px;background:url(default/export.png) left center no-repeat;}/*导出*/
+.setTop{float:left;padding-left:18px;line-height:28px;background:url(default/setTop.png) left center no-repeat;}/*置顶*/
+.add{float:left;padding-left:18px;line-height:28px;background:url(default/add.png) left center no-repeat;}/*新增*/
+.cancelTop{float:left;padding-left:18px;line-height:28px;background:url(default/cancelTop.png) left center no-repeat;}/*取消置顶*/
+.move{float:left;padding-left:18px;line-height:28px;background:url(default/move.png) left center no-repeat;}/*移动*/
+.batch_dzh{float:left;padding-left:18px;line-height:28px;background:url(default/batch_dzh.png) left center no-repeat;}/*批量发送客户端地址*/
+.show{float:left;padding-left:18px;line-height:28px;background:url(default/show.png) left center no-repeat;}/*仅显示信息隐藏人员*/
+.batch_shq{float:left;padding-left:18px;line-height:28px;background:url(default/batch_shq.png) left center no-repeat;}/*批量授权*/
+.batch_set{float:left;padding-left:18px;line-height:28px;background:url(default/batch_set.png) left center no-repeat;}/*发送范围批量设置*/
+.batch_tel{float:left;padding-left:18px;line-height:28px;background:url(default/batch_tel.png) left center no-repeat;}/*批量漏话提醒设置*/
+.synchro{float:left;padding-left:18px;line-height:28px;background:url(default/synchro.png) left center no-repeat;}/*同步到客户端*/
+.batch_xx{float:left;padding-left:18px;line-height:28px;background:url(default/batch_xx.png) left center no-repeat;}/*批量漏话提醒设置*/
+.batch_switch{float:left;padding-left:18px;line-height:28px;background:url(default/batch_switch.png) left center no-repeat;}/*批量转接*/
+.batch_revise{float:left;padding-left:18px;line-height:28px;background:url(default/batch_revise.png) left center no-repeat;}/*修改*/
+
+.defaultButton{width:80px;height:28px;border:none;background:#e1e4e6;color:#333;cursor:pointer;margin-left:6px;}
+.defaultButton:hover{background-color:#e8eaeb;}
+.searchButton{width:80px;padding-left:10px;height:28px;border:none;background:url(default/search.png) no-repeat 15px center #e1e4e6;color:#333;cursor:pointer;margin-left:6px;}
+.searchButton:hover{background-color:#e8eaeb;}
+.oper_btn{padding:3px 8px;background:#2ca1b3;color:#fff;}
+.oper_btn:hover{background:#3da8b9;text-decoration:none;}
+/* Header cells */
+table.pretty{width:100%;clear:both; table-layout:fixed;border:1px solid #ececec;}
+table.pretty thead{background:#fafafa;}
+table.pretty thead tr th{line-height:20px;text-align:center;padding:5px 10px;border-right:#ececec 1px solid; border-bottom: 1px solid #ececec; border-collapse:collapse;color:#000;}
+table.pretty thead tr th i{ font-weight:normal}
+table.pretty thead th.num{width:30px;}
+table.pretty thead th.chk{width:20px;}
+table.pretty thead th.Img{width:80px;}
+table.pretty thead th.chk input{vertical-align: middle;}
+table.pretty thead tr th select{width: 95%;}
+table.pretty .right_bdr0{border-right: 0px !important;}
+table.pretty .bottom_bdr0 td{border-bottom: 0px !important;}
+table.pretty tbody td{line-height:24px;color:#000;text-align:center;padding:8px 10px;border-right:#ececec 1px solid; word-break:break-all;}
+table.pretty tbody td a{color:#369; margin: 0 5px;}
+table.pretty tbody td a.oper_btn{color:#fff;}
+table.pretty tbody td img{vertical-align:middle}
+table.pretty tbody td .formText{ width:100%; float:left;}
+table.pretty tbody td .tableImg{width:80px;height:60px;}
+table.pretty tbody tr.even td{ background:#f9f9f9;}
+table.pretty tbody tr.odd td{background:#fff;}
+/*table.pretty tbody tr:hover{background:#dddddd;}*/
+/* Footer cells */
+table.pretty tfoot th{background:#fff;text-align:left}
+table.pretty tfoot td{background:#f3f4f6;border-top:1px solid #e7e7e9;font-weight:bold;line-height:26px;}
+table tbody td.longTxt  {
+	text-align: left;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。IE, Safari (WebKit)*/
+    -o-text-overflow:ellipsis; /* 兼容Opera */
+}
+table tbody td.longTxt a{margin:0;}
+table tbody td.data_l{ text-align:left}
+table tbody td.oper{ text-align:left}
+table tbody td.data_r{ text-align:right; /*padding-right:15px;*/ padding-right:28px;}
+table td.right{ text-align:right}
+table td.center{ text-align:center}
+/*
+ *  File:         demo_table.css
+ *  CVS:          $Id$
+ *  Description:  CSS descriptions for DataTables demo pages
+ *  Author:       Allan Jardine
+ *  Created:      Tue May 12 06:47:22 BST 2009
+ *  Modified:     $Date$ by $Author$
+ *  Language:     CSS
+ *  Project:      DataTables
+ *
+ *  Copyright 2009 Allan Jardine. All Rights Reserved.
+ *
+ * ***************************************************************************
+ * DESCRIPTION
+ *
+ * The styles given here are suitable for the demos that are used with the standard DataTables
+ * distribution (see www.datatables.net). You will most likely wish to modify these styles to
+ * meet the layout requirements of your site.
+ *
+ * Common issues:
+ *   'full_numbers' pagination - I use an extra selector on the body tag to ensure that there is
+ *     no conflict between the two pagination types. If you want to use full_numbers pagination
+ *     ensure that you either have "example_alt_pagination" as a body class name, or better yet,
+ *     modify that selector.
+ *   Note that the path used for Images is relative. All images are by default located in
+ *     default/ - relative to this CSS file.
+ */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables features
+ */
+
+.dataTables_wrapper {
+	position: relative;
+	clear: both;
+	zoom: 1; /* Feeling sorry for IE */
+}
+
+.dataTables_processing {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 30px;
+	margin-left: -125px;
+	margin-top: -15px;
+	padding: 14px 0 2px 0;
+	border: 1px solid #ddd;
+	text-align: center;
+	color: #999;
+	font-size: 14px;
+	background-color: white;
+}
+
+.dataTables_length {
+	width: 40%;
+	float: left;
+}
+
+.dataTables_filter {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+
+.dataTables_info {width: 30%;height:26px; margin-top:15px;float: left; color:#888;}
+
+.dataTables_paginate {
+	float: right;
+	text-align: right;
+}
+
+/* Pagination nested */
+.paginate_disabled_previous, .paginate_enabled_previous,
+.paginate_disabled_next, .paginate_enabled_next {
+	height: 19px;
+	float: left;
+	cursor: pointer;
+	*cursor: hand;
+	color: #111 !important;
+}
+.paginate_disabled_previous:hover, .paginate_enabled_previous:hover,
+.paginate_disabled_next:hover, .paginate_enabled_next:hover {
+	text-decoration: none !important;
+}
+.paginate_disabled_previous:active, .paginate_enabled_previous:active,
+.paginate_disabled_next:active, .paginate_enabled_next:active {
+	outline: none;
+}
+
+.paginate_disabled_previous,
+.paginate_disabled_next {
+	color: #666 !important;
+}
+.paginate_disabled_previous, .paginate_enabled_previous {
+	padding-left: 23px;
+}
+.paginate_disabled_next, .paginate_enabled_next {
+	padding-right: 23px;
+	margin-left: 10px;
+}
+
+.paginate_disabled_previous {
+	background: url('default/back_disabled.png') no-repeat top left;
+}
+
+.paginate_enabled_previous {
+	background: url('default/back_enabled.png') no-repeat top left;
+}
+.paginate_enabled_previous:hover {
+	background: url('default/back_enabled_hover.png') no-repeat top left;
+}
+
+.paginate_disabled_next {
+	background: url('default/forward_disabled.png') no-repeat top right;
+}
+
+.paginate_enabled_next {
+	background: url('default/forward_enabled.png') no-repeat top right;
+}
+.paginate_enabled_next:hover {
+	background: url('default/forward_enabled_hover.png') no-repeat top right;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables display
+ */
+table.display {
+	margin: 0 auto;
+	clear: both;
+	width: 100%;
+	
+	/* Note Firefox 3.5 and before have a bug with border-collapse
+	 * ( https://bugzilla.mozilla.org/show%5Fbug.cgi?id=155955 ) 
+	 * border-spacing: 0; is one possible option. Conditional-css.com is
+	 * useful for this kind of thing
+	 *
+	 * Further note IE 6/7 has problems when calculating widths with border width.
+	 * It subtracts one px relative to the other browsers from the first column, and
+	 * adds one to the end...
+	 *
+	 * If you want that effect I'd suggest setting a border-top/left on th/td's and 
+
+	 * then filling in the gaps with other borders.
+	 */
+}
+
+table.display thead th {
+	padding: 3px 18px 3px 10px;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	cursor: pointer;
+	* cursor: hand;
+}
+
+table.display tfoot th {
+	padding: 3px 18px 3px 10px;
+	border-top: 1px solid black;
+	font-weight: bold;
+}
+
+table.display tr.heading2 td {
+	border-bottom: 1px solid #aaa;
+}
+
+table.display td {
+	padding: 3px 10px;
+}
+
+table.display td.center {
+	text-align: center;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables sorting
+ */
+
+.sorting_asc {
+	background: url('default/sort_asc.png') no-repeat center right;
+}
+
+.sorting_desc {
+	background: url('default/sort_desc.png') no-repeat center right;
+}
+
+.sorting {
+	background: url('default/sort_both.png') no-repeat center right;
+}
+
+.sorting_asc_disabled {
+	background: url('default/sort_asc_disabled.png') no-repeat center right;
+}
+
+.sorting_desc_disabled {
+	background: url('default/sort_desc_disabled.png') no-repeat center right;
+}
+ 
+th:active {
+	outline: none;
+}
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables row classes
+ */
+table.display tr.odd.gradeA {
+	background-color: #ddffdd;
+}
+
+table.display tr.even.gradeA {
+	background-color: #eeffee;
+}
+
+table.display tr.odd.gradeC {
+	background-color: #ddddff;
+}
+
+table.display tr.even.gradeC {
+	background-color: #eeeeff;
+}
+
+table.display tr.odd.gradeX {
+	background-color: #ffdddd;
+}
+
+table.display tr.even.gradeX {
+	background-color: #ffeeee;
+}
+
+table.display tr.odd.gradeU {
+	background-color: #ddd;
+}
+
+table.display tr.even.gradeU {
+	background-color: #eee;
+}
+
+
+/*tr.odd {
+	background-color: #E2E4FF;
+}
+
+tr.even {
+	background-color: white;
+}*/
+
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Misc
+ */
+.dataTables_scroll {
+	clear: both;
+}
+
+.dataTables_scrollBody {
+	*margin-top: -1px;
+	-webkit-overflow-scrolling: touch;
+}
+
+.top, .bottom {
+	padding: 15px;
+	background-color: #F5F5F5;
+	border: 1px solid #CCCCCC;
+}
+
+.top .dataTables_info {
+	float: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.dataTables_empty {
+	text-align: center;
+}
+
+tfoot input {
+	margin: 0.5em 0;
+	width: 100%;
+	color: #444;
+}
+
+tfoot input.search_init {
+	color: #999;
+}
+
+td.group {
+	background-color: #d1cfd0;
+	border-bottom: 2px solid #A19B9E;
+	border-top: 2px solid #A19B9E;
+}
+
+td.details {
+	background-color: #d1cfd0;
+	border: 2px solid #A19B9E;
+}
+
+
+.example_alt_pagination div.dataTables_info {
+	width: 40%;
+}
+
+.paging_full_numbers {width: 500px;	height: 26px;line-height: 26px;	margin-top:15px;}
+
+.paging_full_numbers a:active {
+	outline: none
+}
+
+.paging_full_numbers a:hover {
+	text-decoration: none;
+}
+
+.paging_full_numbers a.paginate_button,
+ 	.paging_full_numbers a.paginate_active {
+	border: 1px solid #d7d7d7;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	padding: 2px 8px;
+	margin: 0 2px;
+	cursor: pointer;
+	*cursor: hand;
+	color: #333;
+}
+
+.paging_full_numbers a.paginate_button {
+	background-color: #fff;
+}
+
+.paging_full_numbers a.paginate_button:hover {
+	text-decoration: none !important;
+}
+
+.paging_full_numbers a.paginate_active {
+	background: none; border:none; color:#017a8f;
+}
+
+table.display tr.even.row_selected td {
+	background-color: #B0BED9;
+}
+
+table.display tr.odd.row_selected td {
+	background-color: #9FAFD1;
+}
+.paging_full_numbers a.previous{ background:#fff url(default/page_l.png) no-repeat 5px 8px; padding-left:15px;} 
+.paging_full_numbers a.next { background:#fff url(default/page_r.png) no-repeat 55px 8px; padding-right:15px;} 
+
+/*
+ * Sorting classes for columns
+ */
+/* For the standard odd/even */
+tr.odd td.sorting_1 {
+	background-color: #D3D6FF;
+}
+
+tr.odd td.sorting_2 {
+	background-color: #DADCFF;
+}
+
+tr.odd td.sorting_3 {
+	background-color: #E0E2FF;
+}
+
+tr.even td.sorting_1 {
+	background-color: #EAEBFF;
+}
+
+tr.even td.sorting_2 {
+	background-color: #F2F3FF;
+}
+
+tr.even td.sorting_3 {
+	background-color: #F9F9FF;
+}
+
+
+/* For the Conditional-CSS grading rows */
+/*
+ 	Colour calculations (based off the main row colours)
+  Level 1:
+		dd > c4
+		ee > d5
+	Level 2:
+	  dd > d1
+	  ee > e2
+ */
+tr.odd.gradeA td.sorting_1 {
+	background-color: #c4ffc4;
+}
+
+tr.odd.gradeA td.sorting_2 {
+	background-color: #d1ffd1;
+}
+
+tr.odd.gradeA td.sorting_3 {
+	background-color: #d1ffd1;
+}
+
+tr.even.gradeA td.sorting_1 {
+	background-color: #d5ffd5;
+}
+
+tr.even.gradeA td.sorting_2 {
+	background-color: #e2ffe2;
+}
+
+tr.even.gradeA td.sorting_3 {
+	background-color: #e2ffe2;
+}
+
+tr.odd.gradeC td.sorting_1 {
+	background-color: #c4c4ff;
+}
+
+tr.odd.gradeC td.sorting_2 {
+	background-color: #d1d1ff;
+}
+
+tr.odd.gradeC td.sorting_3 {
+	background-color: #d1d1ff;
+}
+
+tr.even.gradeC td.sorting_1 {
+	background-color: #d5d5ff;
+}
+
+tr.even.gradeC td.sorting_2 {
+	background-color: #e2e2ff;
+}
+
+tr.even.gradeC td.sorting_3 {
+	background-color: #e2e2ff;
+}
+
+tr.odd.gradeX td.sorting_1 {
+	background-color: #ffc4c4;
+}
+
+tr.odd.gradeX td.sorting_2 {
+	background-color: #ffd1d1;
+}
+
+tr.odd.gradeX td.sorting_3 {
+	background-color: #ffd1d1;
+}
+
+tr.even.gradeX td.sorting_1 {
+	background-color: #ffd5d5;
+}
+
+tr.even.gradeX td.sorting_2 {
+	background-color: #ffe2e2;
+}
+
+tr.even.gradeX td.sorting_3 {
+	background-color: #ffe2e2;
+}
+
+tr.odd.gradeU td.sorting_1 {
+	background-color: #c4c4c4;
+}
+
+tr.odd.gradeU td.sorting_2 {
+	background-color: #d1d1d1;
+}
+
+tr.odd.gradeU td.sorting_3 {
+	background-color: #d1d1d1;
+}
+
+tr.even.gradeU td.sorting_1 {
+	background-color: #d5d5d5;
+}
+
+tr.even.gradeU td.sorting_2 {
+	background-color: #e2e2e2;
+}
+
+tr.even.gradeU td.sorting_3 {
+	background-color: #e2e2e2;
+}
+
+
+/*
+ * Row highlighting example
+ */
+.ex_highlight #example tbody tr.even:hover, #example tbody tr.even td.highlighted {
+	background-color: #ECFFB3;
+}
+
+.ex_highlight #example tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+	background-color: #E6FF99;
+}
+
+.ex_highlight_row #example tr.even:hover {
+	background-color: #ECFFB3;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_1 {
+	background-color: #DDFF75;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_2 {
+	background-color: #E7FF9E;
+}
+
+.ex_highlight_row #example tr.even:hover td.sorting_3 {
+	background-color: #E2FF89;
+}
+
+.ex_highlight_row #example tr.odd:hover {
+	background-color: #E6FF99;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_1 {
+	background-color: #D6FF5C;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_2 {
+	background-color: #E0FF84;
+}
+
+.ex_highlight_row #example tr.odd:hover td.sorting_3 {
+	background-color: #DBFF70;
+}
+
+
+/*
+ * KeyTable
+ */
+table.KeyTable td {
+	border: 3px solid transparent;
+}
+
+table.KeyTable td.focus {
+	border: 3px solid #3366FF;
+}
+
+table.display tr.gradeA {
+	background-color: #eeffee;
+}
+
+table.display tr.gradeC {
+	background-color: #ddddff;
+}
+
+table.display tr.gradeX {
+	background-color: #ffdddd;
+}
+
+table.display tr.gradeU {
+	background-color: #ddd;
+}
+
+div.box {
+	height: 100px;
+	padding: 10px;
+	overflow: auto;
+	border: 1px solid #8080FF;
+	background-color: #E5E5FF;
+}
+/*链接图标*/
+.fileWord {background:url(default/word.png) no-repeat center left; padding-left:20px; height:20px; line-height:20px; display:block;color:#666}
+.fileExcel {background:url(default/excel.png) no-repeat center left; padding-left:20px; height:20px;  line-height:20px;display:block;color:#666}
+.fileTxt {background:url(default/text.png) no-repeat center left; padding-left:20px; height:20px; line-height:20px; display:block;color:#666}
+.filePPT {background:url(default/powerpoint.png) no-repeat center left; padding-left:20px; height:20px; line-height:20px; display:block;color:#666}
+.filePicture {background:url(default/picture.png) no-repeat center left; padding-left:20px; height:20px;  line-height:20px;display:block;color:#666}
+.fileRar {background:url(default/compress.png) no-repeat center left; padding-left:20px; height:20px;  line-height:20px;display:block;color:#666}
+/*公文*/
+.title_gw{height:30px;line-height:29px;}
+.title_gw .name{ background:url(default/authority_icon.png) no-repeat left center; color:#333; padding-left:28px; font-weight:bold; float:left; height:30px; margin-right:20px;}
+.title_gw .formButton_green{width:79px; height:27px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#fff;font-size:14px;border:0; background:#7bbf70;margin-right:5px;}
+.title_gw .formButton_green:hover{ background:#61a655;}
+.title_gw .formButton_grey{width:79px; height:27px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#555;font-size:14px;border:0;background:#dce7e9;}
+.title_gw .formButton_grey:hover{background:#c0dadf;}

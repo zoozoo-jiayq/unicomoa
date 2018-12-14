@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+   <!-- 企业管理包 -->
+	<package name="company" namespace="/company" extends="struts-default">
+       <!-- 获取公司信息 -->
+       <action name="view" class="cn.com.qytx.cbb.org.action.CompanyAction" method="viewCompanyInfo">
+           <result name="success"  >/logined/systemset/companySet.jsp</result>
+       </action>
+       <action name="update" class="cn.com.qytx.cbb.org.action.CompanyAction" method="updateCompanyInfo">
+       </action>
+    </package>
+</struts>

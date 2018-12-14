@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/mui.min.css" />
+    <link rel="stylesheet" href="../../css/work.css"/>
+    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+</head>
+<body style="padding-bottom: 40px;"> 
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title" id="title"></h1>
+	</header>
+	<input type="hidden" value="" id="taskId">
+	<div class="mui-content">
+		<!--新详情-->
+	<div class="detailTop">
+		<div class="showBox headPic">
+          <div class="faceBox" >
+            <div class="imgBox" id="imgDiv"><img src="" id="photo"/><span  id="imgName"></span></div>
+          </div>
+          <h2 class="name" id="userName"></h2>
+          <p class="currentState" id="state"></p>
+        </div>
+        <div class="detailInfo" id="detailInfo">
+         
+        </div>
+    </div> 
+    <!--新详情end-->
+		<div class="mui-row mui-content" id="formDiv">
+			<ul class="mui-table-view mui-my-from">
+				<!--<li class="mui-table-view-cell">
+				    <label class="title" ></label>
+				</li>-->
+			</ul>
+			<div class="showList" id="historyData">
+        	</div>
+		</div>
+		<nav class="btn-group twobtn" id="approveOper" style="display:none;">
+			<button class="mui-btn" id="rejectApply"><span class="icon-x"><i class="icon icon1" ></i>拒绝</span></button>
+			<button class="mui-btn" id="agreeApply"><span class="icon-x"><i class="icon icon2" ></i>同意</span></button>
+		</nav>
+		
+		<nav class="btn-group onebtn" id="viewOper" style="display:none;">
+			<button class="mui-btn mui-btn-block" id="revokeApply">撤销</button>
+		</nav>
+	</div>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init({
+			gestureConfig:{
+				tap:true,
+				longtap:true,
+				hold:true,
+				release:true
+			},
+			beforeback: function(){
+				plus.webview.close("qingjia");
+				plus.webview.close("baoxiao");
+				plus.webview.close("chuchai");
+				plus.webview.close("waichu");
+				plus.webview.close("lingyong");
+				plus.webview.close("tongyong");
+				plus.webview.close("apply");
+			}
+		});
+    </script>
+    <script type="text/javascript" src="../../js/qytxplugin.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/fixed.js"></script>
+	<script type="text/javascript" src="../../js/letterCode.js"></script>
+    <script type="text/javascript" src="../../js/map.js"></script>
+    <script type="text/javascript" src="../../js/logined/fixedflow/formEvent.js"></script>
+    <script type="text/javascript" src="../../js/jQuery.timeDate.js"></script>
+    <script type="text/javascript" src="../../js/dateview.js"></script>
+    <script type="text/javascript" src="../../js/logined/fixedflow/detail.js"></script>
+</body>
+</html>

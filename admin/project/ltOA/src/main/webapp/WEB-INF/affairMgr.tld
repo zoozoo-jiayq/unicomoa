@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+<jsp-version>2.0</jsp-version>
+<short-name>affairShow</short-name>
+<uri>/affairShow</uri>
+<tag>
+    <name>affairShow</name>
+    <tag-class>cn.com.qytx.cbb.affairSetting.tag.AffairShowTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+        <name>moduleCode</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>         
+    </attribute>
+    <!-- 发送类型 -->
+        <attribute>
+        <name>sendType</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>         
+    </attribute>
+            <attribute>
+            <!-- 标签前缀名称 -->
+        <name>affairName</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>         
+    </attribute>
+ </tag>
+</taglib>

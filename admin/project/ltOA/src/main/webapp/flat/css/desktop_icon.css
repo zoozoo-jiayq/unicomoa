@@ -1,0 +1,392 @@
+*{padding: 0px;margin: 0px;}
+html, body {height: 100%;overflow: hidden;}
+body {background: transparent; cursor: default; font-size: 14px;}
+.background {position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
+.home{background:url(../images/home/homebg.png) no-repeat center bottom #f8f8f8; }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .background {
+        width: 0;
+    }
+}
+.screen ul {
+    padding: 60px 0 0 22px;
+    height: 100%;
+}
+
+#container {
+    height: 100%;
+}
+
+.screen ul li {
+    width: 125px;
+    padding-bottom:25px;
+}
+
+.block {
+    float: left;
+    display: block;
+    height: 122px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.block .count {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+    width: 35px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-image: url('../images/home/count_bg.png');
+    behavior: url("../iepngfix.htc");
+    
+}
+
+.icon-text {
+    cursor: pointer;
+    margin-top: 3px;
+    height: 25px;
+	line-height:25px;
+    font-size:16px;
+    display: inline-block;
+	color:#333;
+}
+A.icon-text:Hover{text-decoration:none}
+
+li.block .img {
+    height: 86px;
+    width: 86px;
+    line-height: 86px;
+    cursor: pointer;
+    position: relative;
+    margin: 0px auto;
+    text-align: center;
+}
+
+li.block .img p {
+    position: static;
++ position : absolute;
+    top: 50%
+}
+
+li.block .img p img {
+    max-height: 86px;
+    max-width: 86px;
+    position: static;
++ position : relative;
+    top: -50%;
+    left: -50%;
+    vertical-align: middle
+}
+
+li.block .img p:after {
+    content: ".";
+    font-size: 1px;
+    visibility: hidden
+}
+
+.block .count1 {
+    background-position: -12px -32px;
+}
+
+.block .count2 {
+    background-position: -12px -66px;
+}
+
+.block .count3 {
+    background-position: -12px -99px;
+}
+
+.block .count4 {
+    background-position: -12px -134px;
+}
+
+.block .count5 {
+    background-position: -12px -167px;
+}
+
+.block .count6 {
+    background-position: -12px -201px;
+}
+
+.block .count7 {
+    background-position: -12px -235px;
+}
+
+.block .count8 {
+    background-position: -12px -268px;
+}
+
+.block .count9 {
+    background-position: -12px -302px;
+}
+
+.block .count10 {
+    background-position: -12px -336px;
+}
+
+#trash {
+    position: absolute;
+    left: 50%;
+    width: 128px;
+    height: 128px;
+    bottom: 10px;
+    display: none;
+    background: url(../images/home/trash.png) no-repeat center top transparent;
+}
+
+#trash.hover {
+    background: url(../images/home/trash_hover.png) no-repeat center top transparent;
+}
+
+#pageUp {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 10px;
+    width: 61px;
+    height: 99px;
+    margin-top: -50px;
+    background: url(../images/home/page_up.png) no-repeat left top transparent;
+}
+
+#pageDown {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 10px;
+    width: 61px;
+    height: 99px;
+    margin-top: -50px;
+    background: url(../images/home/page_down.png) no-repeat left top transparent;
+}
+
+#control {
+    height: 26px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+}
+
+#control table {
+    margin: 0 auto;
+}
+
+.control-r {
+    padding-right: 11px;
+    height: 26px;
+    width: 26px;
+    background: url(../images/home/slide_bar_r.png) no-repeat right top transparent;
+}
+
+.control-l {
+    width: 14px;
+    height: 25px;
+    background: url(../images/home/slide_bar_l.png) no-repeat left top transparent;
+}
+
+#control a {
+    top: 0px;
+    float: left;
+    width: 25px;
+    height: 26px;
+    background: url(../images/home/btn.png) no-repeat center top transparent;
+    display: block;
+}
+
+#control a.active {
+    background: url(../images/home/btn_active.png) no-repeat center top transparent;
+}
+
+#control a.cfg {
+    height: 26px;
+    width:28px;
+    float: right;
+    background: url(../images/home/btn_cfg.png) no-repeat center top transparent;
+}
+
+#control a.cfg:hover {
+    background: url(../images/home/btn_cfg_hover.png) no-repeat center top transparent;
+}
+
+.slidebox {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+}
+
+.add {
+    background: url(../images/home/add.png) no-repeat center top transparent;
+}
+
+.add:hover {
+    background: url(../images/home/add_hover.png) no-repeat center top transparent;
+}
+
+/**** end ****/
+#overlay {
+    background: #000;
+    filter: alpha(opacity = 60);
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+}
+
+.table-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.dialog .head {
+    cursor: move;
+}
+
+.dialog .msg-content {
+    overflow-y: auto;
+}
+
+.TableTop {
+    border: 0px;
+    font-size: 12px;
+}
+
+.TableTop td {
+    height: 32px;
+    font-weight: bold;
+    color: #383838;
+    /*  background:url('../images/home/table_top_bg.png') 0px -32px no-repeat;*/
+}
+
+.TableTop td.head-left {
+    width: 5px !important;
+    background-position: left 0px;
+}
+
+.TableTop td.head-center {
+    background-position: 0px -32px;
+    background-repeat: repeat-x;
+}
+
+.TableTop td.head-right {
+    width: 5px !important;
+    background-position: right -64px;
+}
+
+.dialog .head .left, .dialog .top .left, .dialog .body .left, .dialog .foot .left {
+    width: 10px;
+}
+
+.dialog .body .center .msg-content {
+    margin: 5px 0px 0px 3px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.extDialog .dialog .head {
+    cursor: default;
+}
+
+/* lp Ӧ�ú�����ʽ */
+.clearfix {
+    border-top: 1px solid transparent !important;
+    margin-top: -1px !important;
+    border-top: 0;
+    margin-top: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/*应用盒子*/
+#portalSetting {height: 450px;overflow: hidden;}
+#portalSetting #bar{height: 35px;overflow: hidden; line-height:35px; background:#e7eff1; padding-left:10px;}
+#portalSetting #bar span{height:35px; line-height:35px;display: block;float: left; margin-right: 10px;cursor: pointer;padding-left:25px; color:#017a8f;}
+#portalSetting #bar .on{ color:#014b58;}
+#portalSetting #bar #btnAppSet{ background:url(../images/home/iysz_icon.png) no-repeat left center;}
+#portalSetting #bar #btnScreenSet {background:url(../images/home/fpsz_icon.png) no-repeat left center;}
+
+#portalSetting #appPageAll{ height:415px; overflow:hidden;}
+
+/*APP*/
+#appPageAll #appPageDom{background:#f8f8f8; overflow:hidden;}
+#appPageAll #app_cate_list{width: 140px;height: 100%; background: #f5f5f5;float: left; overflow: hidden;}
+#app_cate_list .scroll-up{ height:25px; float:left; width:140px; background:url(../images/up_small.png) no-repeat center center; cursor:pointer;}
+#app_cate_list .scroll-down{ height:25px; float:left; width:140px; background:url(../images/down_small.png) no-repeat center center ; cursor:pointer;}
+#app_cate_list .bd{ float:left; width:140px; height:365px; overflow:hidden;}
+
+#app_cate_list ul li{ height:40px; line-height:40px;cursor:pointer; color:#000;}
+#app_cate_list ul li em{ display:inline-block; width:23px; height:21px; background:url(../images/main/menu.png) no-repeat; margin:0 10px; vertical-align:middle;}
+#app_cate_list ul li.current{background:url(../images/main/menu_bj.png) no-repeat right top; color:#fff; font-weight:bold; text-decoration:none;padding-right:14px; margin-right:0px; border-bottom:none;}
+/*#app_cate_list ul li.current em{background:url(../images/main/menu_on.png) no-repeat;}
+#app_cate_list ul li em.gwgl{ background-position:0px 1px}
+#app_cate_list ul li em.gzl{ background-position:0px -47px}
+#app_cate_list ul li em.grsw{ background-position:0px -96px}
+#app_cate_list ul li em.xzbg{ background-position:0px -144px}
+#app_cate_list ul li em.ywyz{ background-position:0px -199px;}
+#app_cate_list ul li em.zcztc{ background-position:0px -247px}
+#app_cate_list ul li em.sqfc{ background-position:0px -293px}
+#app_cate_list ul li em.xph{ background-position:-1px -344px}
+#app_cate_list ul li em.zsgl{ background-position:0 -397px}
+#app_cate_list ul li em.rlzy{ background-position:0 -448px}
+#app_cate_list ul li em.txl{ background-position:0 -495px}
+#app_cate_list ul li em.xtgl{ background-position:0 -606px}
+#app_cate_list ul li em.xtsz{ background-position:0 -550px}
+#app_cate_list ul li em.grsz{ background-position:0 -658px}*/
+#app_cate_list ul li.current em{background:url(../images/main/menu_on.png) no-repeat;}
+#app_cate_list ul li em.gwgl{ background-position:0px 1px}/*公文管理*/
+#app_cate_list ul li em.gzsq{ background-position:0px -865px}/*工作申请*/
+#app_cate_list ul li em.gzsp{ background-position:0px -905px}/*工作审批*/
+#app_cate_list ul li em.grsw{ background-position:0px -96px}/*个人事务*/
+#app_cate_list ul li em.xzbg{ background-position:0px -144px}/*行政办公*/
+#app_cate_list ul li em.ywyz{ background-position:0px -199px;}/*邮文驿站*/
+#app_cate_list ul li em.zcztc{ background-position:0px -247px}/*政策直通车*/
+#app_cate_list ul li em.sqfc{ background-position:0px -293px}/**/
+#app_cate_list ul li em.xph{ background-position:-1px -344px}/*新品汇*/
+#app_cate_list ul li em.zsgl{ background-position:0 -397px}/*知识管理*/
+#app_cate_list ul li em.rlzy{ background-position:0 -448px}/*人力资源*/
+#app_cate_list ul li em.txl{ background-position:0 -495px}/*通讯录*/
+#app_cate_list ul li em.xtgl{ background-position:0 -606px}/*系统管理*/
+#app_cate_list ul li em.xtsz{ background-position:0 -550px}/*系统设置*/
+#app_cate_list ul li em.grsz{ background-position:0 -658px}/*个人事务*/
+#app_cate_list ul li em.tpdc{ background-position:0 -711px}/*投票调查*/
+#app_cate_list ul li em.cjgl{ background-position:0 -765px}/*抽奖管理*/
+#app_cate_list ul li em.rwgl{ background-position:0 -819px}/*任务管理*/
+#app_cate_list ul li em.bbgl{ background-position:0 -942px}/*报表管理*/
+#app_cate_list ul li em.bmzl{ background-position:0 -984px}/*部门专栏*/
+
+#app_cate_list ul li em.rsjc{ background-position:0 -1390px}/*人事-奖惩*/
+#app_cate_list ul li em.rsxx{ background-position:0 -1429px}/*人事-学习*/
+#app_cate_list ul li em.rsgz{ background-position:0 -1465px}/*人事-工作*/
+#app_cate_list ul li em.rsgx{ background-position:0 -1499px}/*人事-关系*/
+#app_cate_list ul li em.rsdd{ background-position:0 -1542px}/*人事-调动*/
+#app_cate_list ul li em.rszc{ background-position:0 -1582px}/*人事-职称*/
+#app_cate_list ul li em.rspx{ background-position:0 -1622px}/*人事-培训*/
+#app_cate_list ul li em.rslz{ background-position:0 -1667px}/*人事-离职*/
+
+#app_cate_list ul li.current em.rsjc{ background-position:0 -1392px}/*人事-奖惩*/
+#app_cate_list ul li.current em.rsxx{ background-position:0 -1429px}/*人事-学习*/
+#app_cate_list ul li.current em.rsgz{ background-position:0 -1465px}/*人事-工作*/
+#app_cate_list ul li.current em.rsgx{ background-position:0 -1499px}/*人事-关系*/
+#app_cate_list ul li.current em.rsdd{ background-position:0 -1542px}/*人事-调动*/
+#app_cate_list ul li.current em.rszc{ background-position:0 -1582px}/*人事-职称*/
+#app_cate_list ul li.current em.rspx{ background-position:0 -1622px}/*人事-培训*/
+#app_cate_list ul li.current em.rslz{ background-position:0 -1667px}/*人事-离职*/
+
+
+#appPageAll #app_list_box{ float:left;height: 500px;width: 647px; }
+#app_list_box ul{ padding:0 10px 10px 10px; overflow:hidden;}
+#app_list_box ul li{cursor: pointer;float: left;margin-top: 10px; margin-right: 10px; text-align: center; width: 85px;}
+#app_list_box ul li img{ width:48px; height:48px;}
+#app_list_box ul li p{ color: #333; height: 40px; line-height: 20px; overflow: hidden; padding-top: 5px; text-align: center;}
+
+/*分屏*/
+#screenPageDom ul{padding:10px 5px; overflow:hidden;}
+#screenPageDom ul li{float:left; background:url(../images/home/min_screen_bg.png) no-repeat; width:215px; height:80px; margin-left:10px; margin-bottom:10px; font-size:36px; text-align:center; line-height:80px;color:#888; cursor:pointer; position:relative;}
+#screenPageDom ul li .closebtn{ position:absolute; background:url(../images/home/close.png) no-repeat; width:18px; height:18px; right:-4px; top:-6px; cursor:pointer; display:none;}
+#screenPageDom ul li:hover{ background:url(../images/home/min_screen_bgon.png) no-repeat;}
+#screenPageDom ul li:hover .closebtn{ display:block;}
+#screenPageDom ul li.add{ background:url(../images/home/min_screen_bg_add.png) no-repeat;}

@@ -1,0 +1,172 @@
+{
+	"logined/fixedflow/index.html": {
+		"resources": [
+			"images/back.png",
+			"images/wdsp_icon.png",
+			"js/common.js",
+			"js/qytxplugin.js",
+			"css/work.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/wosq_icon.png",
+			"js/jquery-2.1.4.min.js",
+			"js/logined/fixedflow/index.js",
+			"js/logined/fixedflow/baseData.js",
+			"images/wdsq.png",
+			"images/wdsp.png",
+			"images/noNetworkBackground@2x.png",
+			"js/updateVersion.js",
+			"js/map.js"
+		],
+		"refer": [
+			"logined/fixedflow/myApproveListLeft.html",
+			"logined/fixedflow/apply.html",
+			"logined/fixedflow/myStartList.html"
+		]
+	},
+	"logined/fixedflow/myApproveListLeft.html": {
+		"resources": [
+			"js/mui.pullToRefresh.js",
+			"js/letterCode.js",
+			"js/mui.pullToRefresh.material.js",
+			"js/logined/fixedflow/myApproveList.js",
+			"images/back.png",
+			"js/common.js",
+			"js/qytxplugin.js",
+			"css/work.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/jquery-2.1.4.min.js",
+			"images/noNetworkBackground@2x.png"
+		],
+		"refer": [
+			"logined/fixedflow/detail.html"
+		]
+	},
+	"logined/fixedflow/detail.html": {
+		"resources": [
+			"images/jt.png",
+			"js/logined/fixedflow/formEvent.js",
+			"images/btn-group.png",
+			"js/logined/fixedflow/detail.js",
+			"images/state.png",
+			"images/l.png",
+			"js/dateview.js",
+			"js/fixed.js",
+			"js/jQuery.timeDate.js",
+			"js/map.js",
+			"js/qytxplugin.js",
+			"fonts/mui.ttf",
+			"js/jquery-2.1.4.min.js",
+			"images/back.png",
+			"js/common.js",
+			"css/work.css",
+			"js/mui.min.js",
+			"js/letterCode.js",
+			"css/mui.min.css",
+			"images/shuidi_03.png",
+			"images/noNetworkBackground@2x.png"
+		],
+		"refer": [
+			"logined/fixedflow/operate.html"
+		]
+	},
+	"logined/fixedflow/operate.html": {
+		"resources": [
+			"js/logined/fixedflow/operate.js",
+			"images/round_plus.png",
+			"images/chk.png",
+			"images/back.png",
+			"js/logined/fixedflow/formEvent.js",
+			"js/letterCode.js",
+			"js/common.js",
+			"js/qytxplugin.js",
+			"css/work.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/jquery-2.1.4.min.js",
+			"images/noNetworkBackground@2x.png"
+		],
+		"refer": [
+			"logined/fixedflow/myStartList.html"
+		]
+	},
+	"logined/fixedflow/apply.html": {
+		"resources": [
+			"images/chk.png",
+			"images/round_plus.png",
+			"js/logined/freeflow/workflowBase.js",
+			"js/logined/fixedflow/apply.js",
+			"js/qytxplugin.js",
+			"fonts/mui.ttf",
+			"js/jQuery.timeDate.js",
+			"js/jquery-2.1.4.min.js",
+			"images/back.png",
+			"js/logined/fixedflow/formEvent.js",
+			"js/common.js",
+			"css/work.css",
+			"js/mui.min.js",
+			"js/letterCode.js",
+			"css/mui.min.css",
+			"js/fixed.js",
+			"js/dateview.js",
+			"js/map.js",
+			"images/close_btn.png",
+			"images/noNetworkBackground@2x.png"
+		],
+		"refer": [
+			"logined/fixedflow/detail.html",
+			"logined/fixedflow/select.html"
+		]
+	},
+	"logined/fixedflow/myStart_pullrefresh_sub.html": {
+		"resources": [
+			"images/shuidi_03.png",
+			"js/logined/fixedflow/myStartList.js",
+			"js/common.js",
+			"js/qytxplugin.js",
+			"css/work.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/jquery-2.1.4.min.js",
+			"images/noNetworkBackground@2x.png"
+		],
+		"refer": [
+			"logined/fixedflow/detail.html"
+		]
+	},
+	"logined/fixedflow/myStartList.html": {
+		"resources": [
+			"logined/fixedflow/myStart_pullrefresh_sub.html",
+			"images/back.png",
+			"js/common.js",
+			"css/work.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/jquery-2.1.4.min.js",
+			"images/noNetworkBackground@2x.png"
+		],
+		"refer": [
+			"logined/fixedflow/myStart_pullrefresh_sub.html"
+		]
+	},
+	"logined/fixedflow/select.html": {
+		"resources": [
+			"js/logined/fixedflow/select.js",
+			"images/chk.png",
+			"images/back.png",
+			"js/common.js",
+			"css/work.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/jquery-2.1.4.min.js",
+			"images/noNetworkBackground@2x.png"
+		]
+	}
+}

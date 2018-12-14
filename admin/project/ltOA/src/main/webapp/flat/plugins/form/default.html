@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>表单</title>
+<link href="skins/reset.css" rel="stylesheet" type="text/css" />
+<link href="skins/form_default.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="formPage">
+   <div class="formbg">
+        <div class="big_title">新增</div>
+        <div class="content_form">
+             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="inputTable">
+                <tbody>
+                  <tr>
+                    <th><em class="requireField">*</em><label>类型：</label></th>
+                    <td><select><option>请选择</option></select></td>
+                  </tr>
+                  <tr>
+                    <th><em class="requireField">*</em><label>户籍：</label></th>
+                    <td><input type="text" class="formText inputError" />
+                      <p class="requireField">请输入户口所在地！</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><label>标题：</label></th>
+                    <td><input type="text" class="formText" style="width:80%"/>
+                    <span class="morebtn morebtnHover">
+                        <a href="javascript:void(0);">设置标题颜色</a>
+                        <div class="m_btnlist">
+                           <ul>
+                              <li class="black"></li>
+                              <li class="cyan"></li>
+                              <li class="blue"></li>
+                              <li class="red"></li> 
+                           </ul>
+                        </div>
+                    </span></td>
+                  </tr>
+                  <tr>
+                    <th><label>发布对象：</label></th>
+                    <td>
+                        <textarea class="readOnlyTextarea"></textarea>
+                        <span class="addMember"><a href="#" class="icon_add">添加</a><a href="#" class="icon_clear">清空</a></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><label>置顶：</label></th>
+                    <td><label class="radio"><input  type="checkbox" />置顶公告通知，置顶时间为2天</label><input type="button" class="blueBtn" value="更换"/></td>
+                  </tr>
+                  <tr>
+                    <th><label>提示设置：</label></th>
+                    <td><label class="radio"><input  type="checkbox" />短信提示</label><label class="radio"><input  type="checkbox" />语音提示</label></td>
+                  </tr>
+                  <tr>
+                    <th><label>图片：</label></th>
+                    <td><img src="skins/default/upload.png"></td>
+                  </tr>
+                  <tr>
+                    <th><label>内容：</label></th>
+                    <td>
+                        <textarea class="formTextarea" rows="8"></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><label>附件：</label></th>
+                    <td><img src="skins/default/upload.png"></td>
+                  </tr>
+                  <tr>
+                    <th><label>有效时间：</label></th>
+                    <td><input type="text" class="formText Wdate" /> - <input type="text" class="formText Wdate" /><em class="tip">不选择结束日期为手动终止</em></td>
+                  </tr>
+                  <tr>
+                    <th><label>内容简介：</label></th>
+                    <td><input type="text" class="formText" style="width:80%"/><em class="tip">(最多输入30个字)</em></td>
+                  </tr>
+                  <tr>
+                    <th><label>下一步：</label></th>
+                    <td><select><option>请选择</option></select><label class="title">办理人</label><input type="text" class="readOnlyText" /><span class="addMember"><a href="#" class="icon_add">添加</a></span></td>
+                  </tr>
+                  <tr>
+                    <th><label>标题：</label></th>
+                    <td><input type="text" class="formText" /><img src="skins/default/pirnter.png" class="img_operate"></td>
+                  </tr>
+               </tbody>
+        </table>
+        <div class="con_explain">
+           <ul>
+            <li>1、文号自动生成，生成规则可进行配置；</li>
+            <li>2、点击“下一步”进入公文详情页面，公文基本信息不能进行修改；</li>
+           </ul> 
+        </div>
+       </div> 
+        <div class="big_title">新增档案</div>
+        <div class="content_form">
+                <h2 class="small_title">基本信息</h2>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="inputTable">
+                    <tbody>
+                        <tr>
+                            <th>姓名：</th>
+                            <td><input type="text" class="readOnlyText" /><span class="addMember"><a href="#" class="icon_add">添加</a></span></td>
+                            <th rowspan="3">头像：</th>
+                            <td rowspan="3">
+                                 <dl class="myphoto">
+                                       <dt><img  src="skins/default/meeting.png"></dt>
+                                       <dd><h3>点击修改头像</h3></dd>
+                                       <dd><p>支持 .jpg .png格式图片</p></dd>
+                                 </dl>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>工号：</th>
+                            <td><input type="text" class="formText iconTree" /></td>
+                        </tr>
+                        <tr>
+                            <th>民族：</th>
+                            <td><input type="text" class="formText" /></td>
+                        </tr>
+                        <tr>
+                            <th>曾用名：</th>
+                            <td><input type="text" class="formText" /></td>
+                            <th>身份证号：</th>
+                            <td><input type="text" class="formText" /></td>
+                        </tr>
+                         <tr>
+                            <th>户口所在地：</th>
+                            <td colspan="3"><input type="text" class="formText" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 class="small_title">附件<img src="skins/default/upload.png" class="upload"></h2>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="inputTable">
+                    <tbody>
+                        <tr>
+                            <th>姓名：</th>
+                            <td><input type="text" class="readOnlyText" /><span class="addMember"><a href="#" class="icon_add">添加</a></span></td>
+                            <th>部门：</th>
+                            <td><input type="text" class="formText"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+   </div>
+    <div class="buttonArea"> 
+			<input type="button"class="formButton_green" value="确定" hidefocus=""/>
+			<input type="button" value="取消" class="formButton_grey"  hidefocus=""/>
+</div>
+   </div>
+
+</body>
+</html>

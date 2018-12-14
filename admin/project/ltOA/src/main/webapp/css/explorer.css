@@ -1,0 +1,84 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.explorer-list-group {position: relative}
+.explorer-list-group > h2 {font-size: 12px; }
+.explorer-list-group .no-data-msg {text-align: center; padding-bottom: 2em; padding-left: 2em; padding-right: 2em; color: #cacaca; font-size: 12px; padding-top: 2em; text-shadow: 0px 1px 1px white}
+.explorer-list-group > h2 > a {position: relative; outline-style: none; outline-color: invert; outline-width: medium; width: 16px; display: inline-block; background: url(../images/public/icon_op.png) no-repeat; height: 16px; top: 2px}
+.explorer-list-group hr {
+	border-bottom: white 1px solid; border-left: 0px; margin: 5px; border-top: #dbdbdb 1px solid; border-right: 0px
+}
+.explorer-list-group .list-show-arrow {
+	background-position:center center;
+}
+.explorer-list-group .list-show-arrow:hover {
+	filter: Alpha(Opacity=50);	
+}
+.explorer-list-group .list-hide-arrow {
+	background: url(../images/public/icon_cls.png) no-repeat center center;
+}
+.explorer-list-group .list-hide-arrow:hover {
+	filter: Alpha(Opacity=50);	
+}
+ul.ico-list {
+	padding-bottom: 0px; list-style-type: none; margin: 0px; min-height: 100px; padding-left: 0px; padding-right: 0px; clear: both; padding-top: 0px
+}
+ul.ico-list li a:hover {
+	color: #3a3a3a; text-decoration: none
+}
+ul.ico-list li a:visited {
+	color: #3a3a3a; text-decoration: none
+}
+ul.ico-list li a:active {
+	color: #3a3a3a; text-decoration: none
+}
+.icon48 ul.ico-list > li {
+	text-align: center; width: 87px; margin-bottom: 5px; float: left; height: 87px; cursor: pointer; margin-right: 9px
+}
+.icon48 ul.ico-list > li > .icocontainer {
+	margin-top: 3px; width: 87px; height: 87px; overflow: hidden
+}
+.icon48 ul.ico-list > li.icon-hover {
+	text-align: center; width: 87px; margin-bottom: 5px; background: url(../images/workFlow/hover_top.png) no-repeat center top; float: left; height: 87px; cursor: pointer
+}
+.icon48 ul.ico-list > li.icon-hover .selectcontainer {
+	width: 87px; background: url(../images/workFlow/hover_bottom.png) no-repeat center bottom; height: 87px; overflow: hidden
+}
+.icon48 ul.ico-list > li.icon-selected {
+	text-align: center; width: 87px; margin-bottom: 5px; background: url(../images/workFlow/selected_top.png) no-repeat center top; float: left; height: 87px; cursor: pointer
+}
+.icon48 ul.ico-list > li.icon-selected .selectcontainer {
+	width: 87px; background: url(../images/workFlow/selected_bottom.png) no-repeat center bottom; height: 87px; overflow: hidden
+}
+.icon48 ul.ico-list > li a {
+	position: relative; text-align: center; line-height: 16px; outline-style: none; outline-color: invert; outline-width: medium; width: 85px; display: inline-block; word-wrap: break-word; color: #888; word-break: break-all; text-decoration: none; top: -8px
+}
+.icon48 ul.ico-list .ico {
+	z-index: 500; border-bottom: #9e9e9e 0px solid; border-left: #9e9e9e 0px solid; margin: 5px auto; width: 48px; display: block; height: 48px; border-top: #9e9e9e 0px solid; border-right: #9e9e9e 0px solid
+}
+ul.ico-list > li {
+	text-align: center; margin: 5px 3px; width: 100px; float: left; height: 30px; cursor: pointer
+}
+ul.ico-list > li > .icocontainer {
+	margin-top: 3px; overflow: hidden
+}
+ul.ico-list > li.icon-hover {
+	background: url(../images/workFlow/hover_top.png) no-repeat center top
+}
+ul.ico-list > li.icon-hover .selectcontainer {
+	background: url(../images/workFlow/hover_bottom.png) no-repeat center bottom
+}
+ul.ico-list > li.icon-selected {
+	background: url(../images/workFlow/selected_top.png) no-repeat center top
+}
+ul.ico-list > li.icon-selected .selectcontainer {
+	background: url(../images/workFlow/selected_bottom.png) no-repeat center bottom
+}
+ul.ico-list > li a {
+	text-align: left; outline-style: none; outline-color: invert; outline-width: medium; width: 60px; text-overflow: ellipsis; display: inline-block; word-wrap: break-word; white-space: nowrap; height: 16px; color: #888; vertical-align: middle; overflow: hidden; word-break: break-all; text-decoration: none
+}
+.list ul.ico-list .ico {z-index: 500; margin: 1px 3px; width: 20px; display: inline-block; height: 20px; vertical-align: middle;}
+.ico-blank {background: url(../images/workFlow/01.png) no-repeat 0px 0px;}
+.ico-sysentity {background: url(../images/workFlow/icons_48.png) no-repeat 0px 0px; }
+.ico-cstentity {background: url(../images/workFlow/icons_48.png) no-repeat 0px -96px;}
+.ico-view {background: url(../images/workFlow/icons_48.png) no-repeat 0px -144px;}
+.icon48 UL.ico-list .ico-item{background: url("../images/workFlow/icons-item.png") no-repeat;}

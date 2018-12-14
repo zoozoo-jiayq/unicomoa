@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/mui.min.css" />
+    <link rel="stylesheet" href="../../css/work.css"/>
+    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+
+</head>
+<body>
+<header class="mui-bar mui-bar-nav qy-head">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" ></a>
+	<h1 class="mui-title">我审批的</h1>
+</header>
+<div class="mui-content" style="background-color: white;">
+
+
+		<div id="slider" class="mui-slider mui-fullscreen">
+			<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<a class="mui-control-item mui-active" href="#item1mobile" id="item1A">
+					待审批
+				</a>
+				<a class="mui-control-item " href="#item2mobile" id="item2A">
+					已审批
+				</a>
+			</div>
+			<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+			<div class="mui-slider-group">
+				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" approve="approving">
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="item2mobile" class="mui-slider-item mui-control-content ">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" approve="approved">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<script src="../../js/mui.min.js"></script>
+<script type="text/javascript">
+	mui.init({
+		gestureConfig:{
+			tap:true,
+			hold:true,
+			release:true
+		},
+		beforeback:function(){
+			pageClose();
+			return true;
+		}
+	});
+</script>
+<script src="../../js/mui.pullToRefresh.js"></script>
+<script src="../../js/mui.pullToRefresh.material.js"></script>
+<script type="text/javascript" charset="utf-8">
+	(function($) {
+		$('.mui-scroll-wrapper').scroll({
+			indicators: true //是否显示滚动条
+		});
+	})(mui);
+</script>
+<script type="text/javascript" src="../../js/qytxplugin.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/letterCode.js"></script>
+<script type="text/javascript" src="../../js/logined/fixedflow/myApproveList.js"></script>
+</body>
+</html>

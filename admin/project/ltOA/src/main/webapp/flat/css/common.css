@@ -1,0 +1,57 @@
+
+.search-bar{ position:relative; z-index:999;padding:0 0 0 142px;height:40px; background:url(img/search-bar2.gif?v=2) no-repeat;}
+.search-box{ padding:6px 20px 0 50px; height:34px; background:url(img/search-bar2.gif?v=2) no-repeat right -50px; }
+.search-bar-input { width:270px; padding:5px 10px; border: 1px solid #d2611b; font:bold 13px arial; background:url(img/search-bar2.gif?v=2) no-repeat 0 -100px; }
+.search-btn-cOsS {float:left;margin-top:1px; width:72px;  height:27px; cursor:pointer; border:none; background:url(img/search-bar2.gif?v=2) left -150px; }
+.search-bar .hint{color:#999999;}
+.shopping-cart{float:left;display:inline;margin-left:9px; margin-top:1px;width:132px; height:26px; overflow:hidden;text-indent:-9999px;cursor:pointer; border:none; background:url(img/search-bar2.gif?v=2) left -250px;}
+
+/*  - categories  Download:http://www.jb51.net
+--------------------------------------*/
+/* categories handle */
+#categories-title a{ width:165px; color:#ffffff; position:absolute; left:15px; top:14px; height:25px; font:bold 13px arial; cursor:default; }
+#categories-title a:hover{ text-decoration:none; }
+
+#categories{position:relative; float:center;width:143px;background:#fff; margin:0; padding:0; list-style:none; position:relative; z-index:970;}
+#categories li{ margin-top:-1px; }
+#categories li {border-right: 1px solid #83ABC6;}
+#categories li a { color:#3d3d3d; font:bold 12px arial; text-decoration:none; display:block; padding:4px 10px; border-top: 1px solid #83ABC6; zoom:1;}
+#categories li a {cursor:default;} /* only sub links */
+#categories.after-load-subs li a{background:url(img/arrow-1.gif) no-repeat 96% 50%;}
+#categories.after-load-subs li.node a,#categories.after-load-subs li.node a:hover{background-image:none;border-left-color:#FFF;cursor:pointer;}
+#categories.after-show-sub li { /*background-image: none;*/ border-right: 1px solid #83ABC6; }
+#categories .active-border-color{ border-color:#999999; }
+#categories li a:hover{text-decoration:none; color:#3D3D3D; }
+#categories li a:hover{/* border-left: 1px solid #999999; padding-left:9px; */}
+#categories .top-corner { position:absolute; display:none; width:5px; height:5px; top:0; left:0; background:url(img/categories-bg.gif) no-repeat 0 0; border:none !important;}
+#categories .box-bottom { position:relative; font-size:0px; display:block; height:4px; line-height:0; margin-left:-5px; overflow:hidden; background:#146fb6 url(img/categories-bg.gif) no-repeat 0 -50px; border:none !important;}
+#categories .view-more-box{ list-style:none; margin:0; padding:0; height:0px; overflow:hidden; }
+#categories li a.view-more, #categories li a.view-less { color:#D05319; display:block; background-image:url(img/arrow-a.gif); background-repeat:no-repeat; background-color:#FDEDD2; }
+#categories li a.view-more { background-position:173px -42px;}
+#categories li a.view-less { background-position:170px 10px;}
+#categories.after-show-sub li.current { border-right:none; }
+#categories li.current a { padding-left:9px; border-top:1px solid #999999; border-right:1px solid #999999; color:#3D3D3D; background:#ffffff /* url(img/search-bar2.gif) no-repeat 0 100% */;}
+#categories .view-more-list li {border-right:none; }
+#categories-subs { position:absolute; top:-15000px; left:-15000px; z-index:1001; }
+
+#categories-subs div.sec-categories{ margin:0; padding:0; width:230px;height:400px; background:url(img/sub.gif) 0 0;list-style:none;  overflow:hidden; }
+#categories-subs dl{float:left;	width:230px;background:url(img/arrow-1.gif) no-repeat 5% 50%;}
+#categories-subs dt{float:left;padding:6px 20px; width:120px;font-weight:normal;line-height:16px; color:#3d3d3d; text-align:left;}
+#categories-subs dd{float:left;padding:6px 10px;width:370px; line-height:16px; text-align:left;border-top:1px solid #ffd9a8;}
+#categories-subs dd a, #categories-subs dt a{color:#004B91;white-space:nowrap; text-decoration:none; font-family:Tahoma;font-size:13px;}
+#categories-subs dd a:hover{color:#f60;}
+#categories-subs dt a:hover{color:#f60;text-decoration:underline;}
+#categories .shadow-line { background-color:#ffffff; height:2px; width:1px; overflow:hidden; position:absolute; z-index:9999; }
+/* when page is categories collapse */
+#page.categories-collapse #categories{ position:absolute; visibility:hidden; z-index:970; top:40px; }
+#page.categories-collapse{ position:relative; }
+#page.categories-collapse #categories-title a{ background:url(img/search-bar2.gif?v=2) no-repeat right -200px; cursor:pointer;width:125px; }
+#page.categories-collapse #categories-title a.expanded{ background-position:right -252px; }
+#page.categories-collapse .search-bar{ position:relative; z-index:999; background:url(img/search-bar2.gif?v=2) no-repeat 0 -191px; padding-left:142px;}
+#page.categories-collapse .search-bar.handle-expanded{background-position:0 0;}
+/*--------------------------------------
+  end categories */
+/*  - page
+--------------------------------------*/
+#page {width:150px;}
+#page-inner{}

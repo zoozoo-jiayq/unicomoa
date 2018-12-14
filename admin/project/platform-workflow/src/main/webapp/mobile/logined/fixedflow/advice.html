@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/work.css" />
+    <script src="../../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">审批意见</h1>
+	</header>
+	<div class="mui-content">
+		<div class="mui-input-row advice" style="display: none;">
+			<textarea rows="5" placeholder="请输入您的审批意见" id="option"></textarea>
+		</div>
+		<ul class="mui-table-view">
+		</ul>
+		<div class="nodata" style="display: none">
+			暂无数据
+		</div>
+	</div>
+	<nav class="mui-bar mui-bar-tab fixed-btn" style="display: none;">
+		<button class="mui-btn mui-btn-blue mui-btn-block" id="submitBtn">完成</button>
+	</nav>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script src="../../js/logined/fixedflow/advice.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/mui.min.css" />
+    <link rel="stylesheet" href="../../css/work.css"/>
+    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title" id="title"></h1>
+	</header>
+	<input type="hidden" value="" id="nextAction" />
+	<input type="hidden" value="" id="nextUsers" />
+	<div class="mui-content" id="approveDiv">
+		<div class="mui-row">
+			<div class="sp_view" id="state" ></div>
+			<div class="pf_content">
+				<label id="operTitle">批复内容</label>
+				<textarea rows="5" placeholder="请输入(非必填)..." id="advice" style="width: 100%;padding: 0px;"></textarea>
+			</div>
+			
+		<div class="block-item bt10" id="selectDiv" style="display:none">
+			审批人
+			<span class="gray correct">(长按头像可删除，点击头像可替换)</span>
+			<div class="swiper-container-header">
+				<div class="head headImg" id="addHead">
+					<a href="javascript:void(0);" name='userSelect' id="userSelect">
+						<div class="round"><img src="../../images/round_plus.png"/></div>
+						<p class="center">请选择</p>
+					</a>
+				</div>
+			</div>
+		</div>
+			<div class="buttonArea mui-qy-btn">
+				<button class="mui-btn mui-btn-blue" id="submitBtn" disabled="disabled" style="display: none;">提交</button>
+			</div>
+
+		</div>
+	</div>
+	<div class="mui-popover mui-top-zero" id="userList">
+		<header class="mui-bar mui-bar-nav qy-head">
+			<a class= "mui-icon mui-icon-left-nav mui-pull-left qy-back" id="iconClose" ></a>
+			<h1 class="mui-title">选择审批人员</h1>
+		</header>
+		<div class="mui-scroll-wrapper" >
+			<div class="mui-scroll">
+				<ul class="mui-table-view mui-user">
+				</ul>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab fixed-btn sel-user" id="oper" style="display: none;">
+			<button class="mui-btn" onclick="cancle('userList');">取消</button>
+			<button class="mui-btn mui-btn-blue" onclick="sure();">确定</button>
+		</nav>
+	</div>
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+      	mui.init({
+			gestureConfig:{
+				tap:true,
+				longtap:true,
+				hold:true,
+				release:true
+			},
+			swipeBack: false //启用右滑关闭功能
+		});
+      	mui('.mui-scroll-wrapper').scroll();
+    </script>
+    <script type="text/javascript" src="../../js/qytxplugin.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/letterCode.js"></script>
+    <script type="text/javascript" src="../../js/logined/fixedflow/formEvent.js"></script>
+    <script type="text/javascript" src="../../js/logined/fixedflow/operate.js"></script>
+</body>
+</html>

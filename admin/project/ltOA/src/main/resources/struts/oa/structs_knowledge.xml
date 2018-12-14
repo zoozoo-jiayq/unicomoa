@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+    
+<struts>
+    <package name="knowledge" namespace="/knowledge" extends="struts-default">
+		<!--获取知识库类型列表-->
+		<action name="knowledgeType_*" class="cn.com.qytx.oa.knowledge.action.KnowledgeActionType" method="{1}">
+		 <result name="success">
+		    /logined/knowledge/updateKnowledgeType.jsp
+		 </result>	
+		</action>
+		<!-- 初始化索引 -->
+		<action name="initIndex" class="cn.com.qytx.oa.knowledge.action.KnowledgeAction" method="initIndex"></action>	
+		<!-- 删除        索引 -->
+		<action name="delIndex" class="cn.com.qytx.oa.knowledge.action.KnowledgeAction" method="delIndex"></action>	
+	
+		<!--跳转到查看，编辑页面 -->
+		<action name="knowledge_*" class="cn.com.qytx.oa.knowledge.action.KnowledgeAction" method="{1}">
+		  <result name="toAdd">/logined/knowledge/viewKnowledge.jsp</result>
+		  <result name="toUpdate">/logined/knowledge/addKnowledge.jsp</result>
+		  <result name="toUpdateBefore">/logined/knowledge/addKnowledgeBefore.jsp</result>
+		  <result name="toShenhe">/logined/knowledge/shenheKnowledge.jsp</result>
+		 </action>
+		
+			<!-- 根据文件路径初始化知识库-->
+		<action name="initIndexByDirect" class="cn.com.qytx.oa.knowledge.action.ScanUploadKnowledge" method="initIndex"></action>	
+		
+		<!-- 收藏知识库的列表 -->
+		<action name="collect_*" class="cn.com.qytx.oa.knowledge.action.KnowledgeCollectAction" method="{1}">
+		</action>
+		
+		<!-- 上传知识库 -->
+		<action name="uploadKnowledge_*" class="cn.com.qytx.oa.knowledge.action.UploadKnowledge" method="{1}">
+		</action>
+		<action name="getList" class="cn.com.qytx.oa.knowledge.action.FileListAction" method="getList"></action>
+		<action name="loadDetail" class="cn.com.qytx.oa.knowledge.action.FileListAction" method="loadDetail"></action>
+	</package>
+</struts>

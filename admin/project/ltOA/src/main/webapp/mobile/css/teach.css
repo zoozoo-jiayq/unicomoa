@@ -1,0 +1,261 @@
+@charset "utf-8";
+/* CSS Document 
+body{ padding-top:0px;}*/
+/*nav*/
+body > header{ width:100%;height:48px; background:#009142;line-height:50px; text-align:center; color:#fff; font-size:18px; position:fixed;top:0px; left:0px; z-index:999; display:none;}
+body > header .return{ position:absolute; background:url(../images/return.png) no-repeat 5px center; width:48px; height:48px;line-height:48px;top:0px; left:0px;cursor:pointer; background-size:30px; display:inline-block;}
+body > header .add{ position:absolute; background:url(../images/add_btn1.png) no-repeat center center;width:48px;  height:48px;line-height:48px;top:0px; right:0px; cursor:pointer; background-size:30px;display:inline-block;}
+body > header .txt{ position:absolute;top:0; right:0px; cursor:pointer; background-size:100%;display:inline-block; padding:0px 10px;height:48px; line-height:48px; color:#fff; font-size:16px}
+body > .header_v{ background:none; text-align:left; text-indent:35px; position:absolute;}
+body > .header_v a:hover{ background-color:inherit}
+body > header a:active,body > header a.active{ background-color:#3eb8b8;}
+/*列表*/
+.que_list{ width:100%; }
+.que_list li{  border-bottom:1px solid #d9d9d9; position:relative}
+.que_list li a{display:block;padding:7px 10px;}
+.que_list li a:active,.que_list li a.active{ background-color:#d9d9d9;}
+.que_list li img{width:80px;height:60px;float:left;margin-right:10px;}
+.que_list li a h2{ line-height:22px; font-size:16px; height:22px;  overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap;word-break: keep-all; color:#353535}
+.que_list li a h2 em{position:absolute; left:10px; top:16px; background:#ff3e3e; border-radius:50%; width:9px; height:9px; display:none;}
+.que_list li a h2 em.current{ display:block;}
+.que_list li a h2 a{color:#353535; font-size:16px;}
+.que_list li a p{font-size:12px;color:#aaa; line-height:20px;height:20px;position:relative; padding-right:60px;overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap;word-break: keep-all;}
+.que_list li a p.name{ font-size:14px;}
+.que_list li a p.exam{ height:16px; margin-top:3px;}
+.que_list li a p .btn1{float:left; width:24px; height:13px; line-height:14px; text-align:center; border-radius:3px; font-size:10px; color:#fff;  background:#55cd55; margin-right:7px;}
+.que_list li a p .btn2{float:left; width:24px; height:13px;line-height:14px; text-align:center;  border-radius:3px; font-size:10px; color:#fff; background:#ff6d6d;margin-right:7px;}
+.que_list li a p .noBtn{ border:1px solid #bbbbbb; color:#bbbbbb;}
+.que_list li a p .state{color:#ff5454; position:absolute; height:20px; line-height:20px; right:10px;}
+.que_list li a p .num{color:#009142;position:absolute; height:20px; line-height:20px; right:10px;}
+.que_list li a p .join{color:#45c01a; position:absolute; height:20px; line-height:20px; right:10px;}
+
+.que_list li a p .video_icon{ float:left; background:url(../images/video.png) no-repeat; height:15px; width:15px; background-size:15px}
+.que_list li a p .sound_icon{ float:left; background:url(../images/sound.png) no-repeat center; height:15px; width:15px; background-size:15px}
+.que_list li a p .img_icon{ float:left; background:url(../images/img.png) no-repeat center; height:15px; width:15px; background-size:15px}
+.que_list li a p .wd_icon{ float:left; background:url(../images/wd.png) no-repeat center; height:15px; width:15px; background-size:15px}
+/*nodata*/
+.nodata{ padding-top:110px; line-height:30px; font-size:16px; color:#aaa; text-align:center;}
+
+/*视频*/
+.videoBox{ width:100%;height:180px;background:#000; position:fixed; top:0; left:0; z-index:999;padding: 5px 0px}
+/*音频*/
+.soundBox{width:100%;height:180px;background:url(../images/audio.png) no-repeat center #838383; position:fixed; top:0; left:0; z-index:999; background-size:100%;padding: 5px 0px}
+/*选项卡*/
+.tab{overflow:hidden;width:100%; background:#fff;}
+.tab li{height: 38px; width:25%; float:left; font-size:16px;}
+.tab li a{ display:block; height: 37px;line-height: 37px;text-align: center;color: #999999;cursor: pointer;outline: none;border-bottom:1px solid #d9d9d9;font-size:16px;}
+.tab li.current a{ color:#009142;height:36px; border-bottom:2px solid #009142; }
+.tab li.current a:visited{color:#009142}
+/*.tabContent{background:#fff;display:none;bottom:0px;left: 0;overflow-x: hidden;overflow-y: auto;position: absolute;right: 0;top: 222px;}*/
+.tabContent{display:none; overflow:hidden}
+.tab5 li{ width:20%;}
+.tab4 li{ width:25%;}
+.tab3 li{ width:33.3%;}
+.tab2 li{ width:50%;}
+.tabContent2{ position:relative;}
+
+
+/*选节*/
+.election-x{ width:100%; overflow:hidden;}
+.election-x h2{ font-size:16px; padding:0 8px; background:#ebebeb; height:30px; line-height:30px; color:#888888;}
+.election-x h2 .btnList{float:right; background:url(../images/icon1.png) no-repeat; width:16px; height:16px; background-size:16px; margin-top:6px;}
+.election-x h2 .btnLump{ background-position:0 -16px;}
+.election-x table{table-layout: fixed; width:100%; margin-top:10px;}
+.election-x table a{ width:100%; height:38px; background:#ebebeb; border-radius:3px; text-align:center; line-height:38px; font-size:16px; color:#353535; display:block}
+.election-x table a:active,.election-x table a.active{ background-color:#cccccc;}
+.election-x table a.on{background:#009142;color:#fff;}
+.election-x li{height:42px; border-bottom:1px solid #d9d9d9; color:#353535; line-height:42px; font-size:16px;}
+.election-x li a{display:block;padding:0 50px 0 10px; color:#353535;    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;}
+.election-x li.on a{ color:#009142;}
+.election-x li a:active,.election-x li a.active{ background-color:#d9d9d9;}
+.election-x li .time{ position:absolute; right:10px; line-height:42px; color:#bbbbbb; font-size:12px;}
+
+/*简介*/
+.summary-x{padding:0 10px;overflow:hidden;color:#353535;}
+.summary-x dt{font-size:17px; line-height:22px; padding:10px 0 6px }
+.summary-x dd{ font-size:15px; line-height:23px; color:#353535;}
+.summary-x dd.txt{text-indent:2em}
+.summary-x dd.gray{ color:#aaaaaa;}
+
+/*评论*/
+.discuss-x{}
+.discuss-x > h2{font-size:14px; padding:0 8px; background:#ebebeb; height:30px; line-height:30px; color:#888888;}
+.discuss-x > h2 a{ float:right; color:#888; padding-left:20px; background:url(../images/new_icon.png) no-repeat left 8px; background-size:16px auto; height:30px; line-height:25px;}
+.discuss-x ul{ width:100%;}
+.discuss-x li{border-bottom:1px solid #d9d9d9; position:relative;}
+.discuss-x li a{padding:6px 10px; display:block;}
+.discuss-x li h2{font-size:14px;color:#aaa; line-height:18px; margin-bottom:3px}
+.discuss-x li h2 label{ float:left; padding-right:10px; color:#aaa;}
+.discuss-x li p{font-size:14px;color:#353535;line-height:22px;}
+.discuss-x li.more{height:33px; line-height:33px; text-align:center;color:#888; font-size:14px;}
+.discuss-x .more:active{ background:#e0e0e0}
+.formBox{ position:fixed;width:100%; height:50px; background:#ebebeb; border-top:1px solid #c0c0c0; bottom:0; left:0;}
+.formBox p{margin:10px 69px 10px 10px}
+.formBox .ipt{ width:100%; height:30px; border:none; background:#fff; font-size:15px; color:#aaaaaa; text-indent:7px; border-radius:3px;padding-left:6px}
+.formBox .btn{ position:absolute; width:50px; height:30px; top:10px; right:10px; background:#009142; color:#fff; line-height:30px; text-align:center; font-size:15px; border-radius:3px;}
+
+/*试题*/
+.questions > h2{font-size:16px; padding:0 8px; height:35px; line-height:35px; color:#888888;}
+.questions > h2 .num{ float:right; color:#888888; font-size:12px;}
+.questions > h2 .num i{ font-size:16px; color:#009142;}
+.questions .buttonArea{ width:100%; padding:5px 0 5px 0; position:fixed; left:0px; bottom:0; background:#fff;z-index:999 ; margin:0;}
+.questions dt{padding:9px 10px 0 10px; font-size:16px; color:#353535; line-height:23px; }
+.questions dt span{ color:rgb(95,194,231); padding-left:10px;}
+.questions dd{font-size:14px;line-height:20px;  position:relative; margin-top:3px;}
+.questions dd a{ display:block;padding:10px 35px 10px 60px;color:#353535;}
+.questions dd a:active,.questions dd a.active{ background-color:#f4ffef;}
+.questions dd em{display:inline-block; width:25px; line-height:22px; padding-left:35px; position:absolute; top:10px; left:0px;}
+.questions dd .chk{ position:absolute; background:url(../images/chk.png) no-repeat; right:10px; top:10px; background-size:20px; width:20px; height:20px;}
+.questions dd.on{ background:#e5f4ec;}
+.questions dd.on .chk{ background-position:0 -20px;}
+.questions dd.proper a{ color:#009142}
+.questions dd.proper em{background:url(../images/right.png) no-repeat 32px center; background-size:16px; height:20px;}
+.questions dd.wrong a{ color:#ff3e3e}
+.questions dd.wrong em{background:url(../images/wrong.png) no-repeat 32px center; background-size:16px; height:20px;}
+.questions dd.miss a{ color:#535353}
+.questions dd.miss em{background:url(../images/right.png) no-repeat 32px center; background-size:16px; height:20px;}
+.questions dd.wd{margin:9px 10px 0;}
+.questions dd .Textarea{border: 1px solid #e4e4e4;height:100px;line-height:25px;min-height:60px;padding:5px 8px;vertical-align: middle; width:95%;}
+
+.questions dd .exp{width:100%;background:rgb(223,242,250); font-size:14px; color:#425ea5;padding:17px 12px;box-sizing:border-box}
+
+.questions-l{ position:relative;}
+
+
+
+
+/*试卷时间*/
+.que_time{ position:absolute; font-size:12px; text-align:center; color:#fff; left:50%; margin-left:-25px; text-indent:15px; background:url(../images/time.png) no-repeat left center; background-size:auto 13px; bottom:0;}
+
+
+/*按钮*/
+.buttonArea ,.buttonArea2{text-align:center; padding:0 10px 20px 10px;}
+.buttonArea table ,.buttonArea2 table{ table-layout:fixed; width:100%}
+.buttonArea  table td ,.buttonArea2 table td{ width:50%; padding:0 10px;}
+.buttonArea  table td:last-child ,.buttonArea2 table td:last-child{ padding-left:5px;}
+.buttonArea  table td:first-child ,.buttonArea2 table td:first-child{ padding-right:5px;}
+.formButton{display:block; text-align:center; height:44px;line-height:44px;color:#fff !important;font-size:16px;background:#5FC2E7;border-radius:3px;}
+.formButton:hover{background-color: rgb(67,168,207)}
+/*.formButton:active ,.formButton.active{ background:#007535;}*/
+.formButtonNo, .formButtonNo:active ,.formButtonNo.active{color:#8DD1EC !important;background:#5FC2E7;}
+.buttonArea .shortButton{width:142px;}
+/*.buttonArea .green{ background:#66cdcc;border:1px solid #66cdcc; color:#FFF;}
+.buttonArea .green:active ,.buttonArea .green.active{background:#bdd3d1;border:1px solid #bdd3d1;}
+.buttonArea .green2{ background:#dff1ef;border:1px solid #dff1ef; color:#444}
+.buttonArea .green2:active ,.buttonArea .green2.active{background:#bdd3d1;border:1px solid #bdd3d1;color:#444}
+.buttonArea .yellow{ background:#fdfacf;border:1px solid #fdfacf; color:#444}
+.buttonArea .yellow:active ,.buttonArea .yellow.active{background:#f2efc3;border:1px solid #f2efc3; color:#444}
+.buttonArea .blue{background:#009142; color:#fff; border:none}
+.buttonArea .blue:active ,.buttonArea .blue.active{ background:#3eb8b8; color:#fff;}*/
+.buttonArea .ck{ background:#7cc9e5;border:1px solid #7cc9e5; color:#fff}/*查看答卷*/
+.buttonArea .ck:active ,.buttonArea .ck.active{background:#34a2ca;border:1px solid #34a2ca;}/*查看答卷*/
+.buttonArea .ph{ background:#cdc76c;border:1px solid #cdc76c; color:#fff}/*排行*/
+.buttonArea .ph:active ,.buttonArea .ph.active{background:#b1aa39;border:1px solid #b1aa39;}/*排行*/
+.buttonArea .cx{ background:#009142 ;border:1px solid #5fb888; color:#fff}/*重新考试*/
+.buttonArea .cx:active ,.buttonArea .cx.active{background:#007535;border:1px solid #2fa063;}/*重新考试*/
+.buttonArea .ksjg{ background:#86c06a;border:1px solid #86c06a; color:#fff}/*考试结果*/
+.buttonArea .ksjg:active ,.buttonArea .ksjg.active{background:#69a64b;border:1px solid #69a64b;}/*考试结果*/
+
+.tjBtn{ display:block; width:145px; height:44px;line-height:44px;font-size:16px; text-align:center;border-radius:3px; color:#fff !important; background:#66cdcc; position:absolute; left:50%; margin-left:-72px;}
+
+/*开始考试*/
+.starExa{ width:100%; overflow:hidden;}
+.starExa dl{ padding-bottom:45px;}
+.starExa .speed{ position:relative; height:28px; margin:0 15px;}
+.starExa .speed .bar{ position:absolute; height:4px; background:#d9d9d9; border-radius:5px; width:100%; overflow:hidden;}
+.starExa .speed .bar i{ position:absolute; height:4px; background:#009142; border-radius:5px; width:50%; left:0; top:0}
+.starExa .speed .num{ position:absolute; font-size:14px; text-align:center; color:#009142; bottom:0; width:100%; text-align:center}
+.starExa .btn{ height:42px; margin:0 15px; line-height:42px;}
+.starExa .btn a{ display:block; width:100%; height:100%; border-radius:3px; background:#009142; color:#fff; text-align:center; font-size:16px;}
+.starExa .btn a:active ,.starExa .btn a.active{ background:#3eb8b8;}
+
+/*考试结果*/
+.examResult{ position:relative;}
+.examResult > h1{font-size:16px; text-align:center; color:#353535; padding:16px 0 13px 0;  }
+.examResult .scale{padding:0 10px; position:relative; height:167px;}
+.scale .circle1{position:absolute; width:160px; height:160px; left:50%; margin-left:-80px; z-index:1}
+.scale .circle3{ position:absolute; width:122px; height:122px; background:#FFF; border-radius:50%; z-index:3; left:50%; margin-left:-61px; top:20px;}
+.circle3 .ci3-1{ font-size:14px; position:absolute; width:100%; text-align:center; color:#aaaaaa; top:14px;}
+.circle3 .ci3-1 font{ font-size:18px; color:rgb(0,191,243);}
+.circle3 .ci3-2{font-size:42px; color:#ff3e3e; position:absolute; width:100%; top:5px; text-align:center;top:30px;}
+.circle3 .ci3-3{font-size:24px; color:#aaaaaa; position:absolute; width:100%; top:5px; text-align:center;top:75px;}
+.scale .num{ position:absolute; right:10px; bottom:0; height:35px;}
+.scale .num li{height:12px; color:rgb(37,182,237); padding-bottom:5px; font-size:12px}
+.scale .num li em{display:inline-block; width:12px; height:12px; background:rgb(37,182,237); float:left; margin-top:2px;}
+.scale .num li label{padding-left:6px;}
+.scale .num li.error{ color:rgb(52,149,186)}
+.scale .num li.error em{ background:rgb(52,149,186)}
+.examResult .listBox{ margin:5px 10px 0 10px; padding:10px; border-bottom:1px solid #d9d9d9; border-top:1px solid #d9d9d9; overflow:hidden; position:relative;}
+.listBox .peoList{width:100%; overflow:hidden;}
+.peoList li{position:relative;}
+.peoList li a{height:48px; display:block;}
+.peoList li .imgBox{width:48px;height:48px;float:left;margin-right:8px;}
+.peoList li img{ max-width:48px; max-height:48px;}
+.peoList li h2{font-size:16px;color:#353535; padding-top:6px; line-height:18px;}
+.peoList li p{font-size:14px;color:#aaaaaa;line-height:22px;}
+/*.listBox .txtList{width:100%; overflow:hidden; padding-top:5px}*/
+.listBox .txtList{width:100%; overflow:hidden; padding-top:10px ; border:none}
+.txtList td{font-size:14px; color:#aaaaaa; line-height:20px;}
+.txtList li{font-size:14px; color:#aaaaaa; line-height:20px;}
+.listBox .medal{ position:absolute; right:20px; top:0; width:39px; height:64px;}
+
+/*查看答卷*/
+.lookAnswer{ position:relative;}
+.lookAnswer dl{ padding-top:15px;}
+.lookAnswer dl dt{ font-size:16px; color:#353535; line-height:22px; text-align:center;  }
+.lookAnswer dl dd{color:#888888; font-size:12px; text-align:center; line-height:20px;}
+.lookAnswer table{table-layout: fixed; width:100%; margin-top:10px;}
+.lookAnswer table a{ width:100%; height:52px; background:#88cb5a; border-radius:3px; text-align:center; line-height:52px; font-size:16px; color:#fff; display:block}
+.lookAnswer table a:active ,.lookAnswer table a.active{background:#298409;}
+.lookAnswer table a.error{ background:#ff5454;}
+.lookAnswer table a.error:active , .lookAnswer table a.error.active{ background:#d24242;}
+
+/*排行榜*/
+.ranking{ position:relative}
+.ranking .title{ height:30px; line-height:30px; color:#353535; font-size:14px; padding:0 10px; background:#ebebeb;}
+.ranking table{table-layout: fixed; width:100%;}
+.ranking table td{padding:7px 0; border-bottom:1px solid #d9d9d9; font-size:14px; text-align:center}
+.ranking dl{padding:0 10px;}
+.ranking dl dt{float:left; width:48px; height:48px; margin-right:10px; position:relative;}
+.ranking dl dt img{ width:48px;}
+.ranking dl dt .medal{ position:absolute; width:10px; left:2px; top:2px;}
+.ranking dl dd{overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap; word-break: keep-all;}
+.ranking dl dd.name{color: #353535;font-size: 16px;line-height: 18px;margin-bottom: 6px; padding-top: 3px;}
+.ranking dl dd.job{color: #aaaaaa;font-size: 14px;line-height: 22px;}
+.ranking .gray{ color:#aaaaaa;}
+.ranking i{ font-size:18px;}
+.ranking table tr.on td{ background:#f4ffef;}
+.ranking table tr.on td i{ color:#ff5454;}
+.ranking table tr.on .num{ color:#009142;}
+
+/*完成*/
+.finish{width:250px; height:180px; margin:40px auto 0; position:relative; background:url(../images/success1.png) no-repeat center top; background-size:78px auto;}
+.finish p{font-size:16px; text-align:center; color:#aaaaaa; padding-top:90px;}
+.finish .btn{-webkit-box-sizing:border-box; width:100%;height: 44px;line-height: 44px; border:1px solid #bbbbbb; border-radius:3px; text-align:center; font-size:16px; color:#353535; position:absolute; bottom:0;}
+.finish .btn:active ,.finish .btn.active{border:1px solid #d9d9d9; background:#d9d9d9; color:#353535;}
+
+/*选择章节*/
+.section{ width:100%}
+.section li{height:42px; font-size:16px; overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap; word-break: keep-all; position:relative; line-height:42px; border-bottom:1px solid #d9d9d9;}
+.section li a{color:#353535; display:block; padding:0 80px 0 10px; overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap; word-break: keep-all; }
+.section li a:active ,.section li a.active{background:#d9d9d9;}
+.section li .num{ position:absolute; right:10px; font-size:12px; color:#bbbbbb; height:100%; line-height:42px;}
+
+/*附件*/
+.atta{ width:100%;}
+.atta .title{font-size:18px;color:#353535;line-height:22px; padding-top:15px;}
+.atta img{width:100%; padding-bottom:10px;}
+.atta p{color:#888888; line-height:22px; font-size:16px;}
+
+/*积分查询*/
+.query{ width:100%;}
+.query table{border:none; width:100%;}
+.query table thead{background:#ebebeb;}
+.query table thead tr th{line-height:26px; height:26px; color:#888888; font-size:14px; border-right:1px solid #d9d9d9}
+.query table td{ height:38px; line-height:38px; text-align:center; border-right:1px solid #d9d9d9; border-bottom:1px solid #d9d9d9; color:#888888;font-size:14px;}
+.query table td.data_l{ text-align:left; text-indent:10px;}
+

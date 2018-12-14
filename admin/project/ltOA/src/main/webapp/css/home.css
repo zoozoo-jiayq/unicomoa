@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+.home{ background:url(../images/home/homebg.jpg) #d3effe repeat-x;_height:350px;_overflow:hidden;}
+.formButton{width:78px;height:27px!important;line-height:27px; pading-bottom:3px;text-align:center;outline:0;cursor:pointer;color:#000;font-size:12px;outline:0;border:0;background:url(../images/base_button.png) 0 0 no-repeat; font-weight:normal}
+.formButton:hover{color:#000; background:url(../images/base_button.png) -90px 0 no-repeat}
+.formButton:active{width:78px;height:27px!important; }
+a.formButton{display:inline-block;display:-moz-inline-stack;*display:inline;zoom:1}
+a.formButton:hover{color:#000;background:url(../images/base_button.png) -90px 0 no-repeat}
+.formButtonlong,.mainButton .formButtonlong{width:108px;height:27px!important;line-height:27px;text-align:center;outline:0;cursor:pointer;color:#000;font-size:12px;outline:0;border:0;background:url(../images/base_button.png) 0px -117px no-repeat; font-weight:normal}
+.formButtonlong:hover,.mainButton .formButtonlong:Hover{color:#000; background:url(../images/base_button.png) -111px -117px no-repeat}
+
+
+/*pop*/
+.workPop{ width:100%; margin:0 auto; }
+.workPop h2{ height:30px; line-height:30px; padding:0 10px 0 5px; background:#fff; border-bottom:1px solid #eaeaea;}
+.workPop h2 i{ margin-left:10px; color:#666}
+.workPop h2 i font{ margin:0 3px; color:#F00; font-size:12px}
+.workPop h2 strong{ font-size:16px; margin-left:8px; color:#000;}
+.workPop h2 span a{ color:#03F; text-decoration:underline}
+.workPop .close{ display:block; width:15px; height:15px; background:url(../images/home/icon_close.png) no-repeat center center; position:absolute; top:6px; right:6px; z-index:89; cursor:pointer}
+.workPop .popCont{ height:290px; overflow:auto; overflow-x:hidden;}
+.workPop .popCont h3{ height:28px; line-height:28px; background:#edf4fa; color:#000; padding-right:20px; padding-left:5px; font-weight:bold;}
+.workPop .popCont ul.w_list li{ border-top:1px solid #ffffff;border-bottom:1px solid #dbdbdb; background:url(../images/home/lidot.png) no-repeat 10px 25px;  padding:10px;padding-left:30px; cursor:pointer}
+.workPop .popCont ul.w_list li h4{ font-weight:bold; line-height:22px; color:#666}
+.workPop .popCont ul.w_list li h4 span{ float:right; margin-right:5px; color:#ff7403;}
+.workPop .popCont ul.w_list li p{ line-height:22px;}
+.icon_b_ckh{ display:inline-block; width:16px; height:16px; background:url(../images/home/blue_chk.png) no-repeat; vertical-align:middle; cursor:pointer}
+.icon_w{ display:inline-block; height:30px; background:url(../images/home/icon_work.png) no-repeat left center; vertical-align:middle; padding-left:15px;}
+.iconText em{display: inline-block; height: 20px;width: 22px; margin-right: 3px;background: url(../images/1.gif) no-repeat;}
+.iconText em.icon_notice{background-position: 0 -2px}/*公告通知*/
+.iconText em.icon_checkIn{background-position: 0 -32px}/*考勤*/
+.iconText em.icon_im_notice{background-position: 0 -62px}/*重要通知*/
+.iconText em.icon_common{background-position: 0 -92px}/*通用图标*/
+.iconText em.icon_fileCabinet{background-position: 0 -122px}/*文件柜*/
+.iconText em.icon_mailBox{background-position: 0 -152px}/*邮件*/
+.iconText em.icon_logBook{background-position: 0 -182px}/*工作日志*/
+.iconText em.icon_schedule{background-position: 0 -212px}/*日程安排*/
+.iconText em.icon_workflow{background-position: 0 -242px}/*工作流*/
+.iconText em.icon_officialDoc{background-position: 0 -272px}/*公文管理*/
+.iconText em.importent{width: 15px; height: 15px;background: url(../images/importenticon.png) no-repeat center center;}
+/*smsbox*/
+#smsbox_panel{Z-INDEX:1100;POSITION:absolute;WIDTH:445px;DISPLAY:none;RIGHT:30px; bottom:23px;}
+#smsbox_panel .head-center{WIDTH:430px}
+#smsbox_panel .head-title{PADDING-LEFT:20px;BACKGROUND:url(../images/home/smsbox_toolbar_icons.png) no-repeat left -78px;MARGIN-LEFT:10px}
+#smsbox_panel .s_center{POSITION:relative;HEIGHT:423px;OVERFLOW:hidden;PADDING-TOP:5px}
+#smsbox_panel .center-left{POSITION:relative;WIDTH:164px;FLOAT:left;HEIGHT:415px}
+#smsbox_panel .center-group{TEXT-ALIGN:left;LINE-HEIGHT:22px;MARGIN-BOTTOM:5px;HEIGHT:22px}
+#smsbox_panel .center-group #group_by_name{LINE-HEIGHT:22px;WIDTH:98px;DISPLAY:block;FLOAT:left;HEIGHT:22px;COLOR:#317ddb;TEXT-DECORATION:none}
+#smsbox_panel .center-group .active#group_by_name{BACKGROUND:url(../images/home/smsbox_group_bg.png) no-repeat left -22px;COLOR:#fff}
+#smsbox_panel .center-group #group_by_type{LINE-HEIGHT:22px;WIDTH:98px;DISPLAY:block;FLOAT:right;HEIGHT:22px;COLOR:#317ddb;TEXT-DECORATION:none}
+#smsbox_panel .center-group .active#group_by_type{BACKGROUND:url(../images/home/smsbox_group_bg.png) no-repeat right -22px;COLOR:#fff}
+#smsbox_panel #smsbox_scroll_up{DISPLAY:none;BACKGROUND:url(../images/home/scroll_arrow.png) no-repeat center 0;HEIGHT:10px;FONT-SIZE:1px;OVERFLOW:hidden;CURSOR:pointer}
+#smsbox_panel .active#smsbox_scroll_up{BACKGROUND-POSITION:center -20px}
+#smsbox_panel #smsbox_list{HEIGHT:343px}
+#smsbox_panel #smsbox_list .list-container{Z-INDEX:1;POSITION:relative;WIDTH:165px;HEIGHT:343px;OVERFLOW:hidden}
+#smsbox_panel #smsbox_list .list-container .list-block{-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomleft:5px;-webkit-border-top-left-radius:5px;-moz-border-radius-topleft:5px;BORDER-BOTTOM:#e6f3fb 1px solid;BORDER-LEFT:#e6f3fb 1px solid;PADDING-BOTTOM:5px;PADDING-LEFT:0;PADDING-RIGHT:0;BORDER-TOP:#e6f3fb 1px solid;CURSOR:pointer;BORDER-RIGHT:#bbd1de 0px solid;PADDING-TOP:5px;border-radius-topleft:5px;border-radius-bottomleft:5px}
+#smsbox_panel #smsbox_list .list-container .list-block-hover{BORDER-BOTTOM:#bbd1de 1px solid;BORDER-LEFT:#bbd1de 1px solid;BACKGROUND:#f4f9ff;BORDER-TOP:#bbd1de 1px solid;BORDER-RIGHT:#bbd1de 1px solid}
+#smsbox_panel #smsbox_list .list-container .list-block-active{BORDER-BOTTOM:#bbd1de 1px solid;BORDER-LEFT:#bbd1de 1px solid;BACKGROUND:#fff;BORDER-TOP:#bbd1de 1px solid;BORDER-RIGHT:#fff 1px solid}
+#smsbox_panel #smsbox_list .list-container .list-block TABLE{BORDER-BOTTOM:0;BORDER-LEFT:0;TABLE-LAYOUT:fixed;MARGIN-LEFT:5px;CLEAR:both;FONT-SIZE:12px;BORDER-TOP:0;BORDER-RIGHT:0}
+#smsbox_panel #smsbox_list .list-container .list-block TABLE.unread{FONT-WEIGHT:bold}
+#smsbox_panel #smsbox_list .list-container .list-block TABLE.unread TD.count{BACKGROUND:url(../images/home/smsbox_unread.png) no-repeat right center; }
+#smsbox_panel #smsbox_list .list-container .list-block TABLE TD{TEXT-OVERFLOW:ellipsis;WHITE-SPACE:nowrap;OVERFLOW:hidden}
+#smsbox_panel #smsbox_list .list-container .list-block TABLE TD.count{COLOR:#307dd7}
+#smsbox_panel #smsbox_list .list-container .list-block TABLE TD.avatar{WIDTH:43px}
+#smsbox_panel #smsbox_list .list-container .list-block TABLE TD.avatar IMG{BORDER-BOTTOM:#999 1px solid;BORDER-LEFT:#999 1px solid;PADDING-BOTTOM:1px;PADDING-LEFT:1px;PADDING-RIGHT:1px;BORDER-TOP:#999 1px solid;BORDER-RIGHT:#999 1px solid;PADDING-TOP:1px}
+#smsbox_panel #smsbox_list .list-container .list-block TABLE TD.time{TEXT-ALIGN:left}
+#smsbox_panel #smsbox_scroll_down{DISPLAY:none;BACKGROUND:url(../images/home/scroll_arrow.png) no-repeat center -10px;HEIGHT:10px;FONT-SIZE:1px;OVERFLOW:hidden;CURSOR:pointer}
+#smsbox_panel .active#smsbox_scroll_down{BACKGROUND-POSITION:center -30px}
+#smsbox_panel #smsbox_op_all{BORDER:#bbd1de 1px solid; border-right:0; TEXT-ALIGN:left;LINE-HEIGHT:27px;BACKGROUND:url(../images/home/smsbox_toolbar_bg.png) repeat-x left top;HEIGHT:27px; padding-left:10px;}
+#smsbox_panel #smsbox_op_all A{LINE-HEIGHT:26px;WIDTH:85px;DISPLAY:block;HEIGHT:26px}
+#smsbox_panel #smsbox_read_all{LINE-HEIGHT:22px;WIDTH:60px;DISPLAY:inline-block;BACKGROUND:url(../images/home/smsbox_toolbar_icons.png) no-repeat left top;HEIGHT:22px;COLOR:#317ddb;TEXT-DECORATION:none; padding-left:20px}
+#smsbox_panel .center-right{BORDER:#bbd1de 1px solid;WIDTH:260px;BACKGROUND:#fff;FLOAT:left;HEIGHT:418px}
+#smsbox_panel .center-toolbar{BORDER-BOTTOM:#bbd1de 1px solid;BORDER-LEFT:0;BACKGROUND:url(../images/home/smsbox_toolbar_bg.png) repeat-x left top;HEIGHT:27px}
+#smsbox_panel .center-toolbar A{LINE-HEIGHT:26px;PADDING-LEFT:20px;DISPLAY:block;BACKGROUND:url(../images/home/smsbox_toolbar_icons.png) no-repeat left top;FLOAT:left;HEIGHT:26px;COLOR:#327ed4;MARGIN-LEFT:10px;TEXT-DECORATION:none}
+#smsbox_panel .center-toolbar #smsbox_toolbar_read{background-position:0 0}
+#smsbox_panel .center-toolbar #smsbox_toolbar_detail{BACKGROUND-POSITION:0 -26px}
+#smsbox_panel .center-toolbar #smsbox_toolbar_delete{BACKGROUND-POSITION:0 -52px}
+#smsbox_panel .center-chat{PADDING:5px 5px 0px 5px;OVERFLOW-X:hidden;OVERFLOW-Y:auto;HEIGHT:278px;}
+#smsbox_panel .center-chat .msg-block{-webkit-border-radius:5px;-moz-border-radius:5px;MARGIN-BOTTOM:3px}
+#smsbox_panel .center-chat .from{PADDING-BOTTOM:5px;PADDING-LEFT:5px;PADDING-RIGHT:5px;PADDING-TOP:5px}
+#smsbox_panel .center-chat .msg-hover{BACKGROUND:#e6f3fb}
+#smsbox_panel .center-chat .msg-active{BACKGROUND:#e6f3fb}
+#smsbox_panel .center-chat .from .head{LINE-HEIGHT:20px;HEIGHT:20px}
+#smsbox_panel .center-chat .from .head .name{FLOAT:left;COLOR:#327dd8}
+#smsbox_panel .center-chat .from .head .operation{TEXT-ALIGN:right;FLOAT:right}
+#smsbox_panel .center-chat .from .head .operation A{COLOR:#317ed8;TEXT-DECORATION:none}
+#smsbox_panel .center-chat .to{PADDING-BOTTOM:5px;PADDING-LEFT:5px;PADDING-RIGHT:5px;PADDING-TOP:5px}
+#smsbox_panel .center-chat .to .head{LINE-HEIGHT:20px;HEIGHT:20px}
+#smsbox_panel .center-chat .to .head .name{FLOAT:left;COLOR:#42b475}
+#smsbox_panel .center-chat .to .head .operation{FLOAT:right}
+#smsbox_panel .center-reply{TEXT-ALIGN:center;PADDING-BOTTOM:5px;MARGIN:5px 0;PADDING-LEFT:5px;PADDING-RIGHT:5px;BACKGROUND:url(../images/home/smsbox_textarea_bg.png) no-repeat center top;HEIGHT:80px;PADDING-TOP:5px}
+#smsbox_panel .center-reply-focus{BACKGROUND-POSITION:center -90px}
+#smsbox_panel .center-reply TEXTAREA{BORDER-BOTTOM:0;BORDER-LEFT:0;LINE-HEIGHT:17px;WIDTH:238px;BACKGROUND:none transparent scroll repeat 0 0;HEIGHT:70px;OVERFLOW:auto;BORDER-TOP:0;BORDER-RIGHT:0}
+#smsbox_panel .center-reply #smsbox_send_msg{POSITION:absolute;TEXT-ALIGN:left;PADDING-LEFT:6px;WIDTH:53px;BOTTOM:7px;DISPLAY:block;BACKGROUND:url(../images/home/smsbox_send_bg.png) no-repeat left top;HEIGHT:22px;COLOR:#307dd5;RIGHT:20px;TEXT-DECORATION:none;PADDING-TOP:4px}
+#smsbox_panel .rapid-reply{MARGIN-LEFT:5px}
+#smsbox_panel .center-tips{Z-INDEX:10;POSITION:absolute;TEXT-ALIGN:center;WIDTH:430px;BACKGROUND:#e6f3fb;HEIGHT:100%;FONT-SIZE:16px;TOP:0;LEFT:7px}
+#smsbox_panel .center-tips .error{TEXT-ALIGN:center;MARGIN-TOP:80px;FONT-SIZE:16px}
+#smsbox_panel #no_msg{DISPLAY:none}
+#smsbox_panel .no-msg{MARGIN-TOP:60px;BACKGROUND:url(../images/home/no_sms.jpg) no-repeat center top;PADDING-TOP:120px}
+#smsbox_panel .no-msg .close-tips{MARGIN-BOTTOM:20px;FONT-SIZE:14px}
+#smsbox_panel #no_sms_priv{TEXT-ALIGN:center;MARGIN-TOP:160px;FONT-SIZE:24px}
+#smsbox_panel #smsbox_close_countdown{COLOR:#f00}
+#smsbox_panel .foot-center{WIDTH:430px}
+.center-tips{paddding-top:50px; text-align:center; line-height:30px;}
+.center-tips span{ margin:0 3px;}
+.loading{ text-align:center;}
+.close-tips{  text-align:center;}
+.no-msg{ text-align:center;}
+.dialog .head{HEIGHT:30px}
+.dialog .head-left{WIDTH:5px;BACKGROUND:url(../images/home/smsbox_bg.png) no-repeat left top;FLOAT:left;HEIGHT:30px}
+.dialog .head-center{BACKGROUND:url(../images/home/smsbox_bg.png) repeat-x left -30px;FLOAT:left;HEIGHT:30px}
+.dialog .head-title{LINE-HEIGHT:30px;FLOAT:left;HEIGHT:30px;COLOR:#fff;FONT-SIZE:14px;FONT-WEIGHT:bold}
+.dialog .head-close a{MARGIN-TOP:4px;WIDTH:21px;BACKGROUND:url(../images/home/smsbox_close_bg.png) no-repeat 0 top;FLOAT:right;HEIGHT:21px;CURSOR:pointer; display:block;}
+.dialog .head-close a:hover{BACKGROUND-POSITION:-21px top}
+.dialog .head-right{WIDTH:10px;BACKGROUND:url(../images/home/smsbox_bg.png) no-repeat left -60px;FLOAT:left;HEIGHT:30px}
+.dialog .s_center{PADDING-LEFT:7px;PADDING-RIGHT:12px;BACKGROUND:url(../images/home/smsbox_center_bg.png) repeat-y right top}
+.dialog .foot{HEIGHT:12px;FONT-SIZE:1px;OVERFLOW:hidden}
+.dialog .foot-left{WIDTH:5px;BACKGROUND:url(../images/home/smsbox_bg.png) no-repeat left -90px;FLOAT:left;HEIGHT:12px;CLEAR:both}
+.dialog .foot-center{BACKGROUND:url(../images/home/smsbox_bg.png) repeat-x left -102px;FLOAT:left;HEIGHT:12px}
+.dialog .foot-right{WIDTH:10px;BACKGROUND:url(../images/home/smsbox_bg.png) no-repeat left -114px;FLOAT:left;HEIGHT:12px}
+.dialog .corner{Z-INDEX:2;POSITION:absolute;WIDTH:24px;BOTTOM:0;BACKGROUND:url(../images/home/smsbox_corner_bg.png) no-repeat left top;HEIGHT:7px;FONT-SIZE:1px;OVERFLOW:hidden;RIGHT:15px; }
+#org_pannel{display:none; width:245px; height:460px; border:1px solid #4684b9;background:#f0fafc; position:absolute;Z-INDEX:1100; right:10px; bottom:31px;border-radius:5px 5px 5px 5px;}
+#org_pannel .pannelDot{ width:15px; height:15px; position:absolute; bottom:-10px; right:10px; z-index:99; background:url(../images/home/org_panel_dot.png) no-repeat bottom;}
+#org_pannel .pannelTab{ height:32px; background:url(../images/home/org_panel_bg.jpg) repeat-x; line-height:32px;}
+#org_pannel .pannelTab span{ display:inline-block; height:32px; line-height:32px; color:#fff; font-size:14px; font-weight:bold; width:122px; text-align:center; cursor:pointer;}
+#org_pannel .pannelTab span.current{ background:url(../images/home/org_panel_bg_current.jpg) repeat-x; color:#000;width:123px;border-radius:5px 5px 0px 0px;}
+#org_pannel .orgListbox{ margin:10px; border:1px solid #88acc2; background:#fff; padding:5px; height:360px; overflow:hidden;}
+#org_pannel .orgListbox ul.ztree{background:#fff; }
+#org_pannel .btnArea{ text-align:right; margin:0 10px;}

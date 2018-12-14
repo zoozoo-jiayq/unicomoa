@@ -1,0 +1,14 @@
+@charset "utf-8";
+.home{ background:url("../images/home/homebg.png") no-repeat scroll center bottom #fff !important;}
+.formPage{ width:100% !important; padding:0 !important;}
+body{ background:#fff !important;}
+.operate .tab .current{ background:#fff !important; border-bottom:1px solid #fff !important;}
+.dailyPage{ width:98% !important;}
+.dailyPage .formbg{ margin-top:0 !important;}
+
+.detailsPage{ width:100% !important; margin-top:0 !important;}
+.detailsPage .buttonArea ,.buttonArea{ padding:20px !important; margin:0 !important;}
+.item_list{ width:auto !important; padding:0 10px !important}
+.item_list .item{width:380px !important;}
+
+

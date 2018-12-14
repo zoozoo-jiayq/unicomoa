@@ -1,0 +1,149 @@
+@charset "utf-8";
+.brand_skin .blue{ color:#00a3a3 ;}
+/*header*/
+.brand_skin .headbg{background:#58c3c3 url(images/headbg.jpg) no-repeat right top ;}
+.brand_skin .index_nav .index_menu{ color:#35a5a5 ;}
+.brand_skin #div_tab li{ background:#58b7b7;border:none ;}
+/*.brand_skin .menu_right em{ background:url(images/icon_head.png) no-repeat;}*/
+.brand_skin .head_nav li p.user font{color:#FFF ;}
+.brand_skin .index_nav .index_menu em{ background:url(images/home.png) no-repeat;}
+
+.brand_skin .menu_right span.on{background:#51c1c1; border:1px solid #4ab6b6;}
+
+/*foot*/
+.brand_skin .bottom{color:#66c4cc;}
+.brand_skin .exBot em.icon_work{ background:url(images/swtx.png) no-repeat;}
+.brand_skin .exBot em.messageBox{background:url(images/jsxx.png) no-repeat;}
+.brand_skin .exBot em.icon_group{background:url(images/zzjg.png) no-repeat;}
+.brand_skin .exBot em.icon_work_on{ background:url(images/swtx.gif) no-repeat;}
+.brand_skin .exBot em.messageBox_on{ background:url(images/jsxx.gif) no-repeat;}
+
+/*menu*/
+.brand_skin .m_left{ border-right:none ;}
+.brand_skin .m_right{ border-left:none ; width:201px ;}
+.brand_skin .popTop{ background:url(images/top_bg.png) no-repeat ;}
+.brand_skin .organi_box .tab{ background:url(images/orangz_topbg.png) ;}
+.brand_skin .organi_box .tab li.one { color:#00a3a3;}
+.brand_skin .organi_box .tab_cur li.one { color:#fff;}
+.brand_skin .organi_box .tab li.two{color:#fff;}
+.brand_skin .organi_box .tab_cur li.two{color:#00a3a3;}
+.brand_skin .organi_box .tab_cur{ background:url(images/orangz_topbg_2.png) no-repeat ;}
+.brand_skin .organi_box .organi_middle{ background:url(images/orangz_middlebg.png) repeat-y;}
+.brand_skin .organi_box .organi_footer{background:url(images/orangz_footbg.png)}
+.brand_skin .m_left li em{ background:url(images/menu.png) no-repeat;}
+.brand_skin .m_left li.current{ background:url(images/menu_bj.jpg) no-repeat ;}
+.brand_skin .m_left li.current em{background:url(images/menu_on.png) no-repeat ;}
+.brand_skin .m_right li em{ background:url(images/two_menu.png) no-repeat;}
+.brand_skin .m_right li dl dd a{ background:url(images/graydot.png) no-repeat scroll left center ;}
+.brand_skin .m_right li dl dd a:hover, .brand_skin .m_right li dl dd a.on{ color:#00a3a3 ; background:url(images/bluedot.png) no-repeat scroll left center ;}
+
+/*左侧menu*/
+.brand_skin .menu_l .s_menu ul.l_f_menu em{background:url(images/menu.png) no-repeat;}
+.brand_skin .menu_l .s_menu h3.on , .brand_skin .menu_l .s_menu h3.off{ background-color:#35a6e3}
+.brand_skin .menu_l .s_menu dt{background:url(images/graydot.png) no-repeat scroll left center ;}
+.brand_skin .menu_l .s_menu dt.on{color:#00a3a3 ; background:url(images/bluedot.png) no-repeat scroll left center ;}
+
+
+/*桌面*/
+.brand_skin .popMidRight ul li h3 , .brand_skin .popMidRight ul li h3 a ,.brand_skin .popMiddle a.readed, .brand_skin .popMiddle a.deleted{color:#00a3a3 ;}
+.brand_skin .popMidLeft ul li.current{ background:url(images/menu_bj.jpg) no-repeat right 0 ;}
+.brand_skin .submitArea p .formButton_green{ background:#00a3a3 }
+.brand_skin .popMiddle a.readed{ background:url(images/readed.png) no-repeat scroll left center ;}
+.brand_skin .popMiddle a.deleted{ background:url(images/delete.png) no-repeat scroll left center ;}
+.brand_skin .popMidLeft .up .next{ background:url(images/up.png) no-repeat scroll center center / 19px auto ;}
+.brand_skin .popMidLeft .down .prev{ background:url(images/down.png) no-repeat scroll center center / 19px auto ;}
+
+.brand_skin #app_cate_list ul li em{background:url(images/menu.png) no-repeat ;}
+.brand_skin #app_cate_list ul li.current{ background:url(images/menu_bj.jpg) no-repeat right top ;}
+.brand_skin #app_cate_list ul li.current em{background:url(images/menu_on.png) no-repeat ;}
+
+.brand_skin #portalSetting #bar span{color:#00a3a3;}
+.brand_skin #portalSetting #bar .on{ color:#00a3a3;}
+.brand_skin #portalSetting #bar #btnAppSet{ background:url(images/iysz_icon.png) no-repeat scroll left center ;}
+.brand_skin #portalSetting #bar #btnScreenSet{ background:url(images/fpsz_icon.png) no-repeat scroll left center;}
+
+.brand_skin #control a.active{ background:url(images/btn_active.png) no-repeat scroll center top;}
+.brand_skin #control a.cfg:hover{background: url(images/btn_cfg_hover.png) no-repeat center top;}
+
+.brand_skin #app_cate_list .scroll-up{ background:url(images/up_small.png) no-repeat scroll center center;}
+.brand_skin #app_cate_list .scroll-down{ background:url(images/down_small.png) no-repeat scroll center center;}
+
+
+/*新建收文/发文*/
+.brand_skin .header_hd{ background:url(images/headerbj_hd.png) repeat-x scroll left bottom ;}
+.brand_skin .operate .tab ul{ border-left:1px solid #00a3a3 ;}
+.brand_skin .operate .tab li{border:1px solid #00a3a3 ; border-left:none ;}
+.brand_skin .operate .tab .current a{ color:#00a3a3 }
+.brand_skin .operate .btn .formButton{ background:#66cccc ; }
+.brand_skin .operate .btn .formButton:hover{background:#33b2b2;}
+
+.brand_skin .mainpage .openMenu h2{ background:url(images/open_hd.png) no-repeat scroll 11px center ;border-bottom:2px solid #00a3a3 ; color:#00a3a3 ;}
+.brand_skin .mainpage .openMenu h3{color:#00a3a3 ;}
+
+/*日志*/
+.brand_skin .blockTitle{border-bottom:2px solid #00a3a3 ; color:#00a3a3 }
+.brand_skin .txtlist li a:hover{color:#00a3a3 ;}
+.brand_skin .dailyPage .small_title a{color:#00a3a3 ;}
+.brand_skin .dailyPage .small_title a.shareShow{ background:url(images/arrow_down.png) no-repeat scroll right center ;}
+.brand_skin .dailyPage .buttonArea .formButton_green{background:#66cccc ;}
+.brand_skin .dailyPage .buttonArea .formButton_green:hover{ background:#33b2b2 ;}
+
+/*内部邮件*/
+.brand_skin .meilTitle{ background:#d9effb; border-bottom:2px solid #3aaff0}
+.brand_skin .meil_wrap li.current, .brand_skin .meil_wrap li:hover{background:#dbeef9}
+.brand_skin .meil_wrap h2{ background:url(images/down_mail.png) no-repeat 16px center ;}
+.brand_skin .meil_wrap h2.on{background:url(images/left_mail.png) no-repeat 16px center ;}
+
+/*日程管理*/
+.brand_skin .day .date_top{ color:#00a3a3;}
+.brand_skin .day .red{ color:#d13939;}
+.brand_skin .day .gray{color:#c5c5c5}
+.brand_skin  .schedule table.pretty tbody td.on_day{ background:#dbeef9;}
+
+
+/*Accormenus*/
+.brand_skin .service-menu h1{border-bottom:2px solid #00a3a3 ;color:#00a3a3 ;}
+.brand_skin .search input{ background:url(images/icon_search.png) no-repeat scroll 95% center #fff ;}
+.brand_skin .service-menu .menu-p:hover , .brand_skin .service-menu .menu-p.on{background:#e5f7ff ; }
+
+
+/*datatable*/
+.brand_skin .greenBtn , .brand_skin .blueBtn{background:#66cccc ;}
+.brand_skin .greenBtn:hover , .brand_skin .blueBtn:hover{background:#33b2b2 ;}
+
+/*form*/
+.brand_skin .big_title{border-bottom:1px solid #00a3a3 ; color:#00a3a3 ;}
+.brand_skin .small_title{color:#00a3a3 ;}
+.brand_skin .blueBtn:hover{background:#33b2b2 ;}
+.brand_skin .buttonArea .formButton_green{background:#66cccc ;}
+.brand_skin .buttonArea .formButton_green:hover{ background:#33b2b2 ;}
+.brand_skin .buttonArea .formButton_grey{background:#deebeb ;}
+.brand_skin .buttonArea .formButton_grey:hover{background:#c1d9d9 ;}
+
+/*infoDetail*/
+.brand_skin .detailsPage .buttonArea .formButton_grey{background:#e3f1f7 ;}
+.brand_skin .detailsPage .buttonArea .formButton_grey:hover{background:#cae4ef ;}
+
+/*peopleTree*/
+.brand_skin .ztree li span.button{background:url(images/zTreeStandard.gif) ;}
+.brand_skin .ztree li a.curSelectedNode{ color:#00a3a3;}
+
+/*selectMember*/
+.brand_skin .member .tab .current a{ color:#00a3a3 ;}
+
+/*smallTab*/
+.brand_skin .smallTab .tab .current a{color:#00a3a3 ;}
+
+.brand_skin .item .title{color:#00a3a3;}
+.brand_skin .item .title em{ background:url(images/menu_kp.png) no-repeat;}
+
+.brand_skin .ui-widget-content{color:#00a3a3 ;}
+
+/*中间固定宽度*/
+.brand_skin .head_door{ background:url(images/headerBJ_door.png);}
+.brand_skin .head_door .index_menu{background:url(images/menuBtn_bj.png) no-repeat 7px center; color:#2aa9b4;}
+.brand_skin .head_door .index_menu:hover{background:url(images/menuBtn_bj.png) no-repeat 7px center #ddeded;}
+.brand_skin .indexTop .operate{ border:1px solid #58b0b8;}
+.brand_skin .operate span.on{ background:#8ad0d6;}
+
+

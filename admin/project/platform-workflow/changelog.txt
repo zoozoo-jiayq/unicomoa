@@ -1,0 +1,24 @@
+﻿日期：××××年××月××日		作者：王永刚
+新增功能：【××××】	对应需求：【××××】
+
+日期：××××年××月××日		作者：李华伟
+修正缺陷：
+【编号】	【标题】
+【编号】	【标题】
+【编号】	【标题】
+【编号】	【标题】
+------------------------------------------
+日期：2015.6.10 作者：贾永强
+修正缺陷：
+创建固定流程信息表：
+drop table tb_cbb_baseworkflow;
+create table tb_cbb_baseworkflow(
+	id int IDENTITY not null,
+	form_data varchar(1000) null,
+	userIds varchar(5000) not null,
+	code varchar(50) not null,
+	instanceId varchar(100) not null,
+	company_id int null
+)
+
+ALTER TABLE tb_cbb_my_processed ADD approveResult VARCHAR(10);

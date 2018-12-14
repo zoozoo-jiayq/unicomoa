@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+<!-- 事务提醒 -->
+	<package name="affairs" namespace="/affairs" extends="struts-default">
+		<action name="setup_*" class="cn.com.qytx.cbb.affairs.action.AffairsAction" method="{1}">	</action>
+		<action name="getShortcutMenu" class="cn.com.qytx.cbb.affairs.action.AffairsAction" method="getShortcutMenu">
+		    <result name="success">/logined/affairs/affairs_window.jsp</result>
+		</action>
+
+        <!-- action for wap -->
+        <action name="getAffairsListForWap" class="cn.com.qytx.cbb.affairs.action.AffairsForWapAction" method="list"/>
+        <action name="showAffairsForWap" class="cn.com.qytx.cbb.affairs.action.AffairsForWapAction" method="show">
+            <result name="success">/wap/logined/affairs/show.jsp</result>
+        </action>
+    </package>
+</struts>

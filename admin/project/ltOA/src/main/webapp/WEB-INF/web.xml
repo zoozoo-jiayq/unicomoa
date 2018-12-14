@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:applicationContext*.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+    
+	 <listener>
+		  <listener-class>
+		   org.springframework.web.context.request.RequestContextListener
+		  </listener-class>
+	 </listener>
+	 
+	 <listener>
+	 	<listener-class>
+	 		cn.com.qytx.platform.utils.OnlineUserListener
+	 	</listener-class>
+	 </listener>
+	 
+	<!-- UTF-8编码过滤 --> 
+	<filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+		<filter-name>oauthfilter</filter-name>
+		<filter-class>cn.com.qytx.cbb.oauth.OAuthDecodeFilter</filter-class>
+		<init-param>
+  		<param-name>redisHost</param-name>
+  		<param-value>123.57.213.133</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>redisPort</param-name>
+  		<param-value>55555</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>env</param-name>
+  		<param-value>product</param-value>
+  	</init-param>
+	<init-param>
+  		<param-name>enableCache</param-name>
+  		<param-value>no</param-value>
+  	</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>oauthfilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    
+    <!-- Druid安全拦截器，只有使用指定用户名密码登陆才能访问druid/index.html -->
+    <filter>
+    	<filter-name>druidSecurity</filter-name>
+    	<filter-class>cn.com.qytx.platform.base.filter.DruidFilter</filter-class>
+    	<init-param>
+    		<param-name>username</param-name>
+    		<param-value>administrator</param-value>
+    	</init-param>
+    	<init-param>
+    		<param-name>password</param-name>
+    		<param-value>administrator123</param-value>
+    	</init-param>
+    </filter>
+    <filter-mapping>
+    	<filter-name>druidSecurity</filter-name>
+    	<url-pattern>/druid/index.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+    	<filter-name>druidSecurity</filter-name>
+    	<url-pattern>/druid/login</url-pattern>
+    </filter-mapping>
+    <!-- druid监控配置 -->
+    <filter>
+        <filter-name>DruidWebStatFilter</filter-name>
+        <filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
+        <init-param>
+            <param-name>exclusions</param-name>
+            <param-value>*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>sessionStatEnable</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>profileEnable</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>principalSessionName</param-name>
+            <param-value>userInfo</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>DruidWebStatFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+      <servlet>
+    <servlet-name>druidStatView</servlet-name>
+    <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+    <init-param>
+      <param-name>resetEnable</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>druidStatView</servlet-name>
+    <url-pattern>/druid/*</url-pattern>
+  </servlet-mapping>
+    
+     <!--  登录验证码拦截器 -->
+	  <filter>
+	    <filter-name>checkCodeFilter</filter-name>
+	    <filter-class>cn.com.qytx.platform.security.CheckCodeFilter</filter-class>
+	  </filter>
+	  <filter-mapping>
+	    <filter-name>checkCodeFilter</filter-name>
+	    <url-pattern>/j_spring_security_check</url-pattern>
+	  </filter-mapping>
+    
+    <!-- SSO客户端配置 -->
+    <!-- SSO拦截器--> 
+    <filter>
+    	<filter-name>sso-client</filter-name>
+    	<filter-class>cn.com.qytx.oa.sso.client.SSOClientFilter</filter-class>
+    	<init-param>
+    		<param-name>host</param-name>
+    		<param-value>127.0.0.1</param-value>
+    	</init-param>
+    	<init-param>
+    		<param-name>port</param-name>
+    		<param-value>60000</param-value>
+    	</init-param>
+    </filter>
+    <filter-mapping>
+    	<filter-name>sso-client</filter-name>
+    	<url-pattern>/j_spring_security_check</url-pattern>
+    </filter-mapping>
+    <!-- SSO心跳服务 --> 
+    <listener>
+    	<listener-class>cn.com.qytx.oa.sso.client.HeartBeatListener</listener-class>
+    </listener>
+    
+     <!--    SSO服务端配置 -->
+  <servlet>
+  	<servlet-name>SSO-SERVER</servlet-name>
+  	<servlet-class>cn.com.qytx.cbb.sso.server.SSOAuthority</servlet-class>
+  	<init-param>
+  		<param-name>port</param-name>
+  		<param-value>60000</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet> -->
+  <!-- SSO登录地址  -->
+  <servlet-mapping>
+  	<servlet-name>SSO-SERVER</servlet-name>
+  	<url-pattern>/sso/login</url-pattern>
+  </servlet-mapping>
+
+ <!--   SSO服务端配置结束 -->
+	 
+	  <!-- 安全过滤器  begin-->
+     <!-- session过滤器 begin-->
+     <filter>
+	    <filter-name>sessionFilter</filter-name>
+	    <filter-class>cn.com.qytx.platform.security.SessionFilter</filter-class>
+	  	</filter>
+	  	<filter-mapping>
+	    <filter-name>sessionFilter</filter-name>
+	    <url-pattern>*.jsp</url-pattern>
+	  </filter-mapping>
+	  <filter-mapping>
+	    <filter-name>sessionFilter</filter-name>
+	    <url-pattern>*.action</url-pattern>
+	  </filter-mapping>
+	 <!-- session过滤器 end--> 
+	 
+	 <!-- spring安全框架 -->
+	  <filter>
+	    <filter-name>springSecurityFilterChain</filter-name>
+	    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	  </filter>
+	  <filter-mapping>
+	    <filter-name>springSecurityFilterChain</filter-name>
+	    <url-pattern>/*</url-pattern>
+	  </filter-mapping>
+<!-- 安全过滤器  end-->
+ 
+    <!-- open db session for controller begin -->
+    <filter>
+        <filter-name>Spring OpenEntityManagerInViewFilter</filter-name>
+        <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Spring OpenEntityManagerInViewFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- open db session for controller end -->
+    
+	<!-- 将当前登录用户放在线程变量中 -->
+ 	<filter>
+	    <filter-name>transportUser</filter-name>
+	    <filter-class>cn.com.qytx.platform.base.application.TransportUserFilter</filter-class>
+   </filter>
+ 	<filter-mapping>
+	    <filter-name>transportUser</filter-name>
+	    <url-pattern>/*</url-pattern>
+	  </filter-mapping>
+	
+	<!-- struts2拦截器 -->
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>
+            cn.com.qytx.platform.base.filter.StrutsFilter
+        </filter-class>
+        <init-param>
+            <param-name>patternPathConfig</param-name>
+            <param-value>struts/*/</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+	
+	   <servlet>
+    <description>用于NTKO文件上传，与普通上传冲突</description>
+    <display-name>NTKO上传管理类</display-name>
+    <servlet-name>NtkoManagerServlet</servlet-name>
+    <servlet-class>cn.com.qytx.cbb.publicDom.action.NtkoManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NtkoManagerServlet</servlet-name>
+    <url-pattern>/servlet/ntkoManagerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>用于NTKO文件上传，与普通上传冲突</description>
+    <display-name>NTKO模版管理类</display-name>
+    <servlet-name>NtkoTemplateManagerServlet</servlet-name>
+    <servlet-class>cn.com.qytx.cbb.publicDom.action.NtkoTemplateManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NtkoTemplateManagerServlet</servlet-name>
+    <url-pattern>/servlet/ntkoTemplateManagerServlet</url-pattern>
+  </servlet-mapping>
+	
+	<servlet>
+	    <description>系统启动的时候自动发布公文流程，如果还没有发布过</description>
+	    <servlet-name>deploy</servlet-name>
+	    <servlet-class>cn.com.qytx.cbb.publicDom.action.PublicDomDeployServlet</servlet-class>
+	    <load-on-startup>1</load-on-startup>
+  	</servlet>
+  
+	 
+  	<welcome-file-list>
+ 		<welcome-file>/login.jsp</welcome-file> 		
+  	</welcome-file-list>
+
+
+	<servlet>
+		<servlet-name>initLogoServlet</servlet-name>
+		<servlet-class>cn.com.qytx.cbb.login.action.LogoInitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>cn.com.qytx.platform.springmvc.CutomerDispatchServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>*.c</url-pattern>
+	</servlet-mapping>
+	
+	 <!-- 监控客户端配置
+	<servlet>
+		<servlet-name>monitorServlet</servlet-name>
+		<servlet-class>cn.com.qytx.monitor.client.MonitorAlarmInitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+		<init-param>
+			<param-name>appName</param-name>
+			<param-value>oa测试</param-value>
+		</init-param>
+		<init-param>
+			<param-name>alarmURL</param-name>
+			<param-value>http://10.100.6.135:8999/monitorservice/httpPost/sendAlarm.action</param-value>
+		</init-param>
+		<init-param>
+			<param-name>heartTimerInterval</param-name>
+			<param-value>1</param-value>
+		</init-param>
+	</servlet>
+ -->
+	<listener>
+	 	<listener-class>cn.com.qytx.cbb.util.OnlineUserListener</listener-class>
+	 </listener>
+</web-app>

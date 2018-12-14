@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 考勤 -->
+     <package name="attWap" namespace="/attWap" extends="struts-default">
+        <!-- 打卡 -->
+       <action name="addSign" class="cn.com.qytx.cbb.attendance.action.AttendanceMobileAction"
+    	  method="addSign"></action>
+        <!-- 获取当天的签到签退剩余的打卡次数及打卡信息 -->
+       <action name="getSignCountAndInfo" class="cn.com.qytx.cbb.attendance.action.AttendanceMobileAction"
+    	   method="getSignCountAndInfo"></action>
+        <!-- 查看打卡详情 -->
+        <action name="getSignDetail" class="cn.com.qytx.cbb.attendance.action.AttendanceMobileAction"
+    	                  method="getSignDetail"></action>
+    	<!-- 打卡信息设置 -->
+    	<action name="attendanceSet" class="cn.com.qytx.cbb.attendance.action.AttendanceSettingAction" method="attendanceSet"></action>
+    	<!-- 获取打卡设置信息 -->
+    	<action name="getAttendanceSet" class="cn.com.qytx.cbb.attendance.action.AttendanceSettingAction" method="getAttendanceSet"></action>
+    
+    
+    	<!-- 获取考勤组设置 -->
+    	<action name="init" class="cn.com.qytx.cbb.attendance.action.NewAttendanceWapAction" method="init"></action>
+    	<!-- 打卡 -->
+    	<action name="saveRecord" class="cn.com.qytx.cbb.attendance.action.NewAttendanceWapAction" method="saveRecord"></action>
+    	<!-- 查看打卡记录 -->
+    	<action name="recordReport" class="cn.com.qytx.cbb.attendance.action.NewAttendanceWapAction" method="recordReport"></action>
+        <!-- 查询考勤人数 -->
+    	<action name="findAttendanceNum" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction" method="findAttendanceNum"></action>
+        <!-- 打卡列表 或未打卡列表 -->
+         <action name="findPunchTheClockByType" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction" method="findPunchTheClockByType"></action>
+        <!-- 个人考勤详情 -->
+         <action name="findUserDetail" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction" method="findUserDetail"></action>
+         
+          <!-- 个人月考勤详情 -->
+         <action name="findAttendanceByUserId" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction" method="findAttendanceByUserId"></action>
+    
+          <!-- 所有人月考勤详情 -->
+         <action name="findALLMonthAttendance" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction" method="findALLMonthAttendance"></action>
+    
+           <!-- 所有人月考勤详情 -->
+         <action name="attendanceWap_*" class="cn.com.qytx.cbb.attendance.action.AttendanceWapAction" method="{1}"></action>
+    </package>
+    
+</struts>

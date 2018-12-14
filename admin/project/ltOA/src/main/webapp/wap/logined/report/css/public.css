@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+.singleList li{line-height:25px;  background:url(../images/arrow_right.png) #fff no-repeat center right;border-top:1px solid #fff; border-bottom:1px solid #dedede;}
+.singleList li a{ padding:10px 30px 10px 10px;  display:block; color:#000; font-size:16px;}
+.singleList li a:hover{background:url(../images/arrow_right.png) #f5f8ff no-repeat center right; }
+.singleList li p{line-height:25px; word-break:keep-all;/* 不换行 */white-space:nowrap;/* 不换行 */overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。IE, Safari (WebKit)*/ -o-text-overflow:ellipsis; /* 兼容Opera */font-size:16px;}
+.bookList .buttonArea{ position:fixed; bottom:0px; left:0px; background:#ececec; width:100%; padding:0px; margin:0px}
+.bookList .buttonArea input{ margin:0px;}
+.btnShenpi{ width:55px; height:30px; font-size:14px; color:#4e5a83; text-indent:10px; line-height:30px; display:inline-block; background:url(../images/btnShenpi.png) no-repeat center center; background-size:100%; vertical-align:middle}
+.frmLi{ background:#fff}
+.frmLi li{ border-bottom:1px solid #ccc; padding:10px; line-height:20px; font-size:14px;}
+.shenpiList li{ padding:10px; border-bottom:1px dashed #d2d2d2}
+.shenpiList li h2{ height:30px; line-height:30px; color:#0066cc; font-size:14px; padding:0 10px}
+.shenpiList li h2 time{ font-size:12px; margin-left:10px; color:#999}
+.shenpiList li .roundBox{ padding:10px; line-height:26px; font-size:14px;}
+.remPsd{ line-height:20px; margin:0 15px; text-align:right;}
+.remPsd input{ margin-right:5px}
+.article table{ table-layout:fixed; width:auto; background:#aaa; margin-top:10px;}
+.article table th{ background:#EFEFEF; min-width:80px;}
+.article table td{ background:#fff;min-width:80px;}
+.mainIfrme{width:100%;height:auto;}

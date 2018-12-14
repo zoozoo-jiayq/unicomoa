@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 系统登录 -->
+    <package name="login" namespace="/login" extends="struts-default">
+        <action name="loginForward" class="cn.com.qytx.cbb.login.action.LoginAction" method="loginForward">
+            <!-- <result name="success" type="redirect">/logined/index.jsp</result> -->
+           <result name="success" type="redirect">/logined/indexFix.jsp</result>
+         <!--   <result name="success" type="redirect">/logined/indexMain.jsp</result> -->
+        </action>
+        <!--登陆成功后跳转的页面-->
+        <action name="unitLogin" class="cn.com.qytx.cbb.login.action.LoginAction" method="unitLogin">
+           <result name="toOA" type="redirect">/logined/indexFix.jsp</result>
+           <result name="toHR" type="redirect">/logined/indexHrLeft.jsp</result>
+        </action>
+        <!--  修改换肤标志      -->
+		<action name="updateUserSkinLogo" class="cn.com.qytx.cbb.login.action.LoginAction" method="updateUserSkinLogo">
+        </action>
+        <!-- 初始化所有用户邮箱 -->
+		<action name="defaultEmail" class="cn.com.qytx.cbb.login.action.DefaultEmailAction" method="defaultEmail">
+        </action>
+        
+		<action name="toLogin" class="cn.com.qytx.cbb.login.action.LoginAction" method="toLogin">
+        </action>
+        
+		<action name="quitLogin" class="cn.com.qytx.cbb.login.action.LoginAction" method="quitLogin">
+        </action>
+        
+		<action name="checkIsLogin" class="cn.com.qytx.cbb.login.action.LoginAction" method="checkIsLogin">
+        </action>
+        
+        <action name="redirect" class="cn.com.qytx.cbb.login.action.LoginAction" method="redirect">
+    		<result name="success" type="redirect">/logined/indexFix.jsp</result>
+    		<result name="error" type="redirect">/login.jsp</result>
+    	</action>
+        
+    </package>
+    
+</struts>

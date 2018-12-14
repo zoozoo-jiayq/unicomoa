@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*获奖名单滚动*/
+.luckDraw{border:1px solid #ececec;overflow:hidden;padding:10px 15px;color:#666;line-height:30px;position:relative;margin-top:20px;}
+.luckDraw h2{font-size:16px;font-weight:bold;}
+.luckDraw h2 span{margin-left:25px;}
+.luckDraw .bd dl{padding:5px 0;overflow:hidden;}
+.luckDraw .bd dl dd{width:460px;float:left;padding-left:15px;line-height:25px;height:25px; overflow:hidden;}
+.luckDraw .hd{ height:20px;}
+.luckDraw .hd .prev,.luckDraw .hd .next{display:block;width:145px; height:20px;overflow:hidden;}
+.luckDraw .up .next{background:url(../images/menu_up.png) no-repeat center;position:absolute;top:9px;left:455px;}
+.luckDraw .down .prev{position:absolute;bottom:8px;left:455px;background:url(../images/menu_down.png) no-repeat center;}
+.luckDraw .up .nextStop{background:url(../images/menu_up.png) no-repeat center;}
+.luckDraw .down .prevStop{background:url(../images/menu_down.png) no-repeat center;}
+.luckDraw .bd{height:400px;overflow:hidden;margin-bottom:10px;}
+/*抽奖中*/
+.luckDrawTitle{font-size:36px;color:#666;text-align:center;margin-top:35px;}
+.luckDrawNum{text-align:center;margin-top:20px;}
+.luckDrawNum span{background:#ff6600;font-size:60px;color:#fff;padding:3px 18px;}
+.formPage .luckDrawCon .buttonArea{text-align:center;}
+.formPage .luckDrawCon .buttonArea .formButton_green{min-width:80px;}
+.formPage .luckDrawCon .buttonArea .formButton_grey{min-width:80px;margin-right:0;}
+.luckDrawList{border:1px solid #ececec;}
+.luckDrawList h5{height:30px;line-height:30px;background:#fafafa;padding-left:10px;color:#017a8f;font-size:16px;border-bottom:1px solid #ececec;}
+.luckDrawTable{width:100%;}
+.luckDrawTable td{line-height:25px;padding:5px 45px;color:#333;}
+.luckDrawTable tr.odd{background:#fff;}
+.luckDrawTable tr.even{background:#fbfbfb;}
+/*抽奖结果*/
+.luckDrawPage{padding:30px;}
+.lDbigTitle{line-height:26px;text-align: left; color: #333333;font-size: 24px;padding-bottom:10px; font-family:"微软雅黑"}
+.lDsmallTitle{text-align: left; color: #adadad;font-family:"微软雅黑"}
+.lDsmallTitle span{margin-right:10px;}

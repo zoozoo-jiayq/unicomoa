@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 文件管理管理所有action -->
+    <package name="file" namespace="/file" extends="struts-default">
+     <!--查找文件类别-->
+         <action  name="addFileSort" class="cn.com.qytx.oa.file.action.FileSortAction" method="addFileSort">
+         </action>
+        <!--查找文件类别-->
+         <action  name="fileSort" class="cn.com.qytx.oa.file.action.FileSortAction" method="findFileSortList">
+         </action>
+          <!--得到文件类别-->
+         <action  name="getFSortById" class="cn.com.qytx.oa.file.action.FileSortAction" method="getFSortById">
+         </action>
+          <!--查找文件-->
+         <action  name="fileContent" class="cn.com.qytx.oa.file.action.FileSortAction" method="findFileContentList">
+          <!--查找文件-->
+          </action>
+         <action  name="getFilenNoCheckConentListAll" class="cn.com.qytx.oa.file.action.FileContentAction" method="getFilenNoCheckConentListAll">
+		</action>
+		 <!--查找文件类别-->
+         <action  name="findFileSort" class="cn.com.qytx.oa.file.action.FileSortAction" method="findAllFileSorts">
+         
+		</action>
+		 <!--查找文件类别-->
+         <action  name="deleteFileSort" class="cn.com.qytx.oa.file.action.FileSortAction" method="deleteFileSort">
+		</action>
+		<!--修改文件类别-->
+         <action  name="updateFileSort" class="cn.com.qytx.oa.file.action.FileSortAction" method="editFileSort">
+		</action>
+		<!--得到文件列表-->
+         <action  name="findAllFileContents" class="cn.com.qytx.oa.file.action.FileContentAction" method="findAllFileContents">
+         </action>
+         <!--得到添加到附近的文件-->
+         <action  name="getAttachmentFile" class="cn.com.qytx.oa.file.action.FileContentAction" method="getAttachmentFile">
+		</action>
+		<!--添加文件-->
+         <action  name="addFile" class="cn.com.qytx.oa.file.action.FileContentAction" method="addFile">
+		</action>
+		<!--修改文件-->
+         <action  name="updateFile" class="cn.com.qytx.oa.file.action.FileContentAction" method="updateFile">
+         
+		</action>
+		<!--删除文件-->
+         <action  name="delFile" class="cn.com.qytx.oa.file.action.FileContentAction" method="delFile">
+         
+		</action>
+		<!--编辑文件-->
+         <action  name="updateFileContent" class="cn.com.qytx.oa.file.action.FileContentAction" method="updateFileContent">
+         <result name="success" >/logined/file/updateFileContent.jsp</result>
+		</action>
+		<!--添加子文件夹  -->
+         <action  name="addChildFileSort" class="cn.com.qytx.oa.file.action.FileSortAction" method="addChildFileSort">
+         
+		</action>
+		<!--验证文件夹  -->
+         <action  name="checkChildFileSort" class="cn.com.qytx.oa.file.action.FileSortAction" method="checkChildFileSort">
+         
+		</action>
+		 <!--上传附件 -->
+        <action name="uploadfile" class="cn.com.qytx.oa.file.action.UploadAction"  method="uploadFile">
+        </action>
+        <!-- 批量上传附件 -->
+        <action name="uploadAttacheFile" class="cn.com.qytx.cbb.news.action.manage.UploadFileAction"  method="uploadAttacheFile">
+        </action>
+		  <!--批量保存-->
+        <action name="att" class="cn.com.qytx.oa.file.action.UploadAction"  method="addAttachFileContent">
+        
+        </action>
+		  <!--分享文件-->
+        <action name="shareFile" class="cn.com.qytx.oa.file.action.UploadAction"  method="shareFile">
+        
+        </action>
+          <!--批量保存-->
+        <action name="getViewFileCheckList" class="cn.com.qytx.oa.file.action.FileContentAction"  method="getViewFileCheckList">
+        </action>
+         <!--下载附件
+          -->
+        <action name="downFile" class="cn.com.qytx.cbb.file.action.UploadAction"  method="downFile">
+        </action>
+        <!--显示文件内容-->
+         <action  name="getContentById" class="cn.com.qytx.oa.file.action.FileContentAction" method="getContentById">
+         
+		</action>
+  </package>
+  
+  <package name="mobileFile" namespace="/mobileFile" extends="struts-default">
+    <action name="list" class="cn.com.qytx.oa.file.action.mobile.MobileFileListAction" method="listFile"></action>
+    <action name="getList" class="cn.com.qytx.oa.file.action.FileListAction" method="getList"></action>
+  </package>
+</struts>

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html>
+	<head>
+		<title>Text Area Properties</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta content="noindex, nofollow" name="robots">
+		<script src="../../dialog/common/fck_dialog_common.js" type="text/javascript"></script>
+		<script src="/inc/js/utility.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/cn_spell.js" type="text/javascript"></script>
+		<script type="text/javascript">
+var dialog	= window.parent ;
+var oEditor = dialog.InnerDialogLoaded() ;
+
+// Gets the document DOM
+var oDOM = oEditor.FCK.EditorDocument ;
+
+var oActiveEl = dialog.Selection.GetSelectedElement() ;
+
+var item_id = "";
+
+window.onload = function()
+{
+	// First of all, translate the dialog box texts
+	oEditor.FCKLanguageManager.TranslatePage(document) ;
+
+	if ( oActiveEl && oActiveEl.getAttribute('tagName') == 'TEXTAREA' )
+	{
+		GetE('txtName').value		= oActiveEl.getAttribute('title') ;
+		GetE('txtValue').value	= oActiveEl.getAttribute('innerHTML') ;
+		item_id = oActiveEl.getAttribute('name').substr(5);
+		
+    if(oActiveEl.getAttribute('RICH')=='1')
+       GetE('rich').checked	= true;
+       
+		var txtFontSizeFull = oActiveEl.getAttribute('style').fontSize;
+		GetE('txtFontSize').value = txtFontSizeFull.substr(0, txtFontSizeFull.length - 2);//这里的substr是为了去掉末尾的'px' by dq 090522
+
+		var txtWidthFull = oActiveEl.getAttribute('style').width;
+		GetE('txtWidth').value = txtWidthFull.substr(0, txtWidthFull.length - 2);//这里的substr是为了去掉末尾的'px' by dq 090522
+
+		var txtHeightFull = oActiveEl.getAttribute('style').height;
+		GetE('txtHeight').value = txtHeightFull.substr(0, txtHeightFull.length - 2);//这里的substr是为了去掉末尾的'px' by dq 090522
+	}
+	else
+		oActiveEl = null ;
+
+	dialog.SetOkButton( true ) ;
+	dialog.SetAutoSize( true ) ;
+	SelectField( 'txtName' ) ;
+}
+
+function Ok()
+{
+  //验证名称中不能包含空格
+    if(txtName.value.indexOf(" ") >=0){
+    	alert("控件名称中不能包含空格，请去掉空格！");
+    	return false;
+    }
+  if(txtName.value=="")
+  {
+     alert("控件名称不能为空");
+     return;
+  }
+
+	oEditor.FCKUndo.SaveUndoStep() ;
+	
+	if(oActiveEl == null)
+	{
+	  //_get("/general/system/workflow/flow_form/cool_form/get_item.php","FORM_ID="+ oEditor.parent.form_id,function(req){item_id = req.responseText;},false);
+	}
+	item_id=txtName.value;
+	var sbHTML = [];
+	sbHTML.push(item_id+":");
+	/**
+	var oNode=oEditor.FCK.EditorDocument.createTextNode(sbHTML);    					
+	oEditor.FCK.InsertElement( oNode );
+	*/
+	/**为后台保存创建命名规范*/
+	item_id="_"+shareConvert(item_id)+"_";
+	oActiveEl = CreateNamedElement( oEditor, oActiveEl, 'TEXTAREA', {name:item_id, title: GetE('txtName').value} ) ;
+	if(oActiveEl==undefined){
+    	return false;
+    }
+	oActiveEl.setAttribute('value', GetE('txtValue').value);
+	
+	if(GetE('rich').checked)
+	   SetAttribute( oActiveEl, 'RICH', '1' ) ;
+	else
+		 SetAttribute( oActiveEl, 'RICH', '0' ) ;
+
+  if (GetE('txtWidth').value) {
+  	oActiveEl.style.width = GetE('txtWidth').value + 'px';
+  }
+  if (GetE('txtHeight').value) {
+  	oActiveEl.style.height = GetE('txtHeight').value + 'px';
+  }
+  if (GetE('txtFontSize').value) {
+  	oActiveEl.style.fontSize = GetE('txtFontSize').value + 'px';
+  }
+  SetAttribute(oActiveEl,'cnName',"%"+GetE('txtName').value+"%") ;
+	return true ;
+}
+
+		</script>
+	</head>
+	<body style="overflow: hidden">
+		<table height="100%" width="100%">
+			<tr>
+				<td align="center">
+					<table border="0" cellpadding="0" cellspacing="0" width="80%">
+						<tr>
+							<td>
+								控件名称<br>
+								<input type="text" id="txtName" size="10" maxlength="15"/>
+							</td>
+							<td width="25%">&nbsp;</td>
+							<td>
+								字体大小<br>
+								<input id="txtFontSize" type="text" size="10" maxlength="5" onkeyup="testNum(this);return false;">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								控件宽度<br>
+								<input id="txtWidth" type="text" size="10" maxlength="5" onkeyup="testNum(this);return false;"/>
+						  </td>
+							<td width="20%">&nbsp;</td>
+						  <td>
+								控件高度<br>
+								<input id="txtHeight" type="text" size="10" maxlength="5" onkeyup="testNum(this);return false;"/>
+							</td>
+						</tr>
+						<tr>
+							<td  colspan="3">
+								默认值<br>
+								<textarea id="txtValue" style="WIDTH: 100%" rows=4></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td  colspan="3" style="display:none">
+								富文本形式
+								<input id="rich" type="checkbox">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

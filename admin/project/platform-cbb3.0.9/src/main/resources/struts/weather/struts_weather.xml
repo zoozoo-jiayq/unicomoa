@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 获取天气预报 -->
+    <package name="weather" namespace="/weather" extends="struts-default">
+        <!--获取天气预报-->
+        <action name="getWeather" class="cn.com.qytx.cbb.weather.action.WeatherAction" method="getWeather">
+
+        </action>
+
+    </package>
+
+
+</struts>

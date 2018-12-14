@@ -1,0 +1,75 @@
+    @charset "utf-8";
+/* CSS Document */
+a{ text-decoration:none !important}
+a:focus{ outline:none; outline-offset:inherit}
+.container-fluid {margin: 0;padding: 0;}
+
+
+.showBox{height:115px;background:#4ec5f2; position:relative; padding-left:100px;}
+.showBox .faceBox{ position:absolute; width:100px; height:100%; background:#30b6e9; left:0; top:0;}
+.showBox .faceBox img{ width:45px; height:45px; border-radius:50%; position:absolute; left:50%; margin-left:-26px; top:20px;}
+.showBox .faceBox .name{ width:100%; text-align:center; color:#fff; font-size:18px; position:absolute; bottom:20px; left:0; margin:0; height:20px; overflow:hidden}
+.showBox dl{padding:0 15px 0 20px; margin-bottom:0}
+.showBox dl dt{font-size:22px; color:#fff; font-weight:normal; height:42px;} 
+.showBox dl dt i{ font-size:32px; color:#ffd861; font-weight:bold; font-style:normal}
+.showBox dl dd.time{ color:#fff; font-size:16px; padding-bottom:5px;}
+.showBox dl dd.explain{font-size:14px; line-height:18px; color:#fff; height:38px; overflow:hidden;}
+
+/*.showList{ margin:13px 9px; position:relative;}
+.showList .media{color:#353535; margin-top:0; margin-bottom:30px; position:relative; z-index:3}
+.showList .media time{ float:right; margin-right:10px;font-size:12px; color:#bbb}
+.showList .media .media-object{ width:41px; height:41px;border-radius:50%}
+.showList .media .media-objectEnd{ border-radius:0;}
+.showList .media .media-heading{ color:#353535; font-size:14px; padding-top:3px;}
+.showList .media .media-headingEnd{}
+.showList .media p{ margin-bottom:0;font-size: 12px;}
+.showList .media p.via{color:#55cd55;}
+.showList .media p.noGo{color:#d24242;}
+.showList .line{position:absolute; width:1px; background:#cccccc; height:100%; left:20px; top:0}*/
+
+/*首页*/
+.homePage{ background:#fff;overflow:hidden;}
+.homePage .banner{width:100%; height:140px; background:url(../images/banner_bj.jpg) no-repeat; background-size:100% 100%; position:relative;}
+.homePage .banner .applyBtn{ position:absolute; width:70px; height:90px; left:55px ; top:50%; margin-top:-45px; text-align:center;}
+.homePage .banner .approvalBtn{ position:absolute; width:70px; height:90px; right:55px; top:50%; margin-top:-45px; text-align:center;}
+.homePage .banner h2{ font-size:16px; color:#fff; text-align:center; margin:0; margin-top:10px;}
+.homePage .banner img{ width:60px;}
+.homePage .banner a{ text-decoration:none}
+.homePage .title{ height:30px; line-height:30px; margin:0; text-indent:10px; color:#888; font-size:14px; background:#ebebeb; padding:0}
+.homePage td{height:110px; position:relative; padding:0 !important}
+.homePage td a{ display:block; width:100%; height:100%}
+.homePage td a:active ,.homePage td a.active{ background:#f5f5f5;}
+.homePage .flowBox{ position:absolute; width:90px; height:80px; left:50%; margin-left:-45px; top:50%; margin-top:-40px;}
+.homePage .flowBox .iconImg{ position:absolute; background:url(../images/free_icon.png) no-repeat; background-size:55px; width:55px; height:55px; left:50%; margin-left:-27px; top:0; color:#fff; text-align:center; line-height:55px; font-size:18px ; font-weight:bold}
+.homePage .flowBox .ico-1{ background-position:0 -55px;}
+.homePage .flowBox .ico-2{ background-position:0 -110px;}
+.homePage .flowBox .ico-3{ background-position:0 -165px;}
+.homePage .flowBox .ico-4{ background-position:0 -220px;}
+.homePage .flowBox .ico-5{ background-position:0 -275px;}
+.homePage .flowBox .ico-6{ background-position:0 -330px;}
+.homePage .flowBox .ico-7{ background-position:0 -385px;}
+.homePage .flowBox .ico-8{ background-position:0 -440px;}
+.homePage .flowBox .ico-9{ background-position:0 -495px;}
+.homePage .flowBox h2{font-size:14px; position:absolute; left:7px; bottom:0; width:100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;word-break: keep-all; height:25px; line-height:33px; color:#353535; margin:0; text-align:center}
+.homePage .flowBox h2 .tag{ position:relative; background:url(../images/tag.png) no-repeat; width:14px; height:9px; background-size:100% 100%; display:inline-block; left:3px; top:-4px;}
+
+/*选项卡*/
+.tab-ques{ border-bottom:none;}
+.tab-ques li{height:46px; width:50%;font-size:16px;}
+.tab-ques li a{border:none;border-bottom:1px solid #d9d9d9; padding:0; text-align:center;color: #999999;font-size:16px;height:40px;line-height:35px; margin:0}
+.tab-ques > li > a:focus, .tab-ques > li > a:hover{ background:none}
+.tab-ques > li.active > a, .tab-ques > li.active > a:focus, .tab-ques > li.active > a:hover{ border:none;color:#25b6ed; border-bottom:2px solid #25b6ed;}
+.tabContent{ display:none;}
+
+/*我的审批*/
+.peoList{ margin-top:0; border-bottom:1px solid #e0e0e0; position:relative}
+.peoList a{ display:block;padding:7px 10px; padding-left:65px; text-decoration:none; position:relative}
+.peoList a.active ,.peoList a:active{ background:#f5f5f5}
+.peoList .face{position:absolute; width:48px; height:48px; border-radius:50%;left:10px; top:8px; }
+.peoList .media-heading{color: #353535;font-size:16px;height: 26px;line-height: 28px; overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap;word-break: keep-all;}
+.peoList p{margin-bottom:0;color: #aaaaaa;font-size:14px;}
+.peoList p .time{ float:right; font-size:12px;}
+.peoList .media-body, .peoList .media-left, .peoList .media-right{display:inline}
+
+/*更多选项*/
+

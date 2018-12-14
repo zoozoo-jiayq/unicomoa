@@ -1,0 +1,22 @@
+@charset "utf-8";
+/*Accormenus*/
+.service-menu h1{border-bottom:2px solid #f60; color:#f60}
+
+/*form*/
+.big_title{ border-bottom:1px solid #f60; color:#f60;}
+.small_title , .small_title a{ color:#f60;}
+
+
+/*datatable*/
+table.pretty{ border:1px solid #f60;}
+table.pretty thead{ background:#f60;}
+table.pretty thead tr th{ border-bottom:1px solid #f60; border-right:1px solid #fff}
+table.pretty tbody td{border-right:1px solid #f60;}
+table.pretty tbody tr.odd td{background:#F90}
+table.pretty tbody tr.even td{background:#F63}
+
+/*selectMember*/
+
+/*smallTab*/
+
+

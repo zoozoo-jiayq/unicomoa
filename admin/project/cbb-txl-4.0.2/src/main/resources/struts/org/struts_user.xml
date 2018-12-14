@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 用户管理所有action -->
+    <package name="user" namespace="/user" extends="struts-default">
+        <!--根据部门id获取人员列表-->
+        <action name="getUserListByGroupId" class="cn.com.qytx.cbb.org.action.UserListAction"
+                method="getUserListByGroupId">
+
+        </action>
+        <!--添加人员信息-->
+        <action name="addUser" class="cn.com.qytx.cbb.org.action.UserAddAction" method="addUser">
+
+        </action>
+        <!--删除人员信息-->
+        <action name="deleteUser" class="cn.com.qytx.cbb.org.action.UserDeleteAction" method="deleteUser"></action>
+
+        <!--删除用户登录信息-->
+        <action name="deleteLoginUser" class="cn.com.qytx.cbb.org.action.UserDeleteAction" method="deleteLoginUser"></action>   
+        
+        <!--更新人员信息-->
+        <action name="updateUser" class="cn.com.qytx.cbb.org.action.UserUpdateAction" method="updateUser">
+
+        </action>
+        <!--更新虚拟人员信息-->
+        <action name="updateUserForVirtual" class="cn.com.qytx.cbb.org.action.UserUpdateAction" method="updateUserForVirtual">
+
+        </action>
+        <!--查看人员信息-->
+        <action name="getUserById" class="cn.com.qytx.cbb.org.action.UserViewAction" method="getUserById">
+            <result name="success">/logined/user/userUpdate.jsp</result>
+            <result name="view">/logined/user/userView.jsp</result>
+            <result name="virtual">/logined/user/userUpdateVirtual.jsp</result>
+        </action>
+        <action name="ajaxUserById" class="cn.com.qytx.cbb.org.action.UserViewAction" method="ajaxUserById">
+        </action>
+        
+        
+        <!--选择人员人员信息-->
+        <action name="selectUser" class="cn.com.qytx.cbb.org.action.UserSelectAction" method="selectUserByType">
+        </action>
+        <!--选择部门信息-->
+        <action name="selectGroup" class="cn.com.qytx.cbb.org.action.GroupSelectAction" method="selectGroup">
+        </action>
+        
+        <action name="getUserInfo" class="cn.com.qytx.cbb.org.action.UserSelectAction" method="getUserInfo">
+        
+        </action>
+        <!--聊天人员的选择-->
+        <action name="selectOnUser" class="cn.com.qytx.cbb.org.action.OnUserSelectAction" method="selectUserByType">
+        </action>
+        <!--个人通讯录-->
+       <!--  <action name="findAllByUser" class="cn.com.qytx.cbb.org.action.AddresselectAction" method="selectUserByType">
+
+        </action> -->
+        <!--选择人员人员信息-->
+        <action name="selectTreeUser" class="cn.com.qytx.cbb.org.action.TreeUserAction" method="selectUserByType">
+
+        </action>
+         <!--选择人员加权限-->
+        <action name="selectUserPriv" class="cn.com.qytx.cbb.org.action.TreeUserAction" method="selectUserPriv">
+        </action>
+        
+        <!--人员导出-->
+        <action name="exportUserInfo" class="cn.com.qytx.cbb.org.action.UserListAction" method="exportUserInfo">
+        </action>
+        
+        <!--初始密码-->
+        <action name="updateUserPassword" class="cn.com.qytx.cbb.org.action.UserSetAction" method="updateUserPassword">
+
+        </action>
+        <!--更改登录-->
+        <action name="updateUserState" class="cn.com.qytx.cbb.org.action.UserSetAction" method="updateUserState">
+
+        </action>
+
+                
+        <!--配置用户登录信息-->
+        <action name="updateLoginUser" class="cn.com.qytx.cbb.org.action.UserUpdateAction" method="updateLoginUser">
+        </action>   
+        
+        <!--获取用户配置登录信息-->
+        <action name="detailLoginUser" class="cn.com.qytx.cbb.org.action.UserUpdateAction" method="detailLoginUser">
+            <result name="update">/logined/user/loginUserAddOrUpdate.jsp</result>
+            <result name="detail">/logined/user/loginUserDetail.jsp</result>
+        </action>   
+        
+        <action name="all" class="cn.com.qytx.cbb.org.action.UserSelectAction" method="all"></action>
+	
+		<!-- 获得初始节点的信息 -->
+		<action name="defaultSelect" class="cn.com.qytx.cbb.org.action.OrgSelectAction" method="defaultSelect"></action>
+		<!-- 异步获得点击节点下面的信息 -->
+		<action name="getTreeByNode" class="cn.com.qytx.cbb.org.action.OrgSelectAction" method="getTreeByNode"></action>
+		<!-- 获得从属部门信息 -->
+		<action name="loadOtherGroups" class="cn.com.qytx.cbb.org.action.OtherGroupAction" method="loadOtherGroups"></action>
+    </package>
+
+
+</struts>

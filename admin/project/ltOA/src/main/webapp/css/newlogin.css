@@ -1,0 +1,111 @@
+body,h1,h2,h3,h4,h5,ul,li,div,p,dl,dd,dt,input{
+	margin: 0;
+	padding: 0;
+	font-family:"寰蒋闆呴粦";
+	box-sizing:border-box;
+}
+ul,ol{
+	list-style-type: none;
+}
+body{
+	font-size: 14px;
+}
+img{width: 100%;}
+a:hover,a{
+	text-decoration: none;
+	outline: none;
+}
+.left{
+	float:left;
+}
+.right{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+.pr{position: relative;}
+/* 鐧诲綍椤�*/
+.login_bg{
+	width: 100%;height: 100%;background:#e7f2fc;
+}
+.login_box{
+	width: 550px;height: 450px;border-radius: 25px;
+	background: url(../images/newlogin/login_box_bg.png) no-repeat center;overflow: hidden;
+	position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: auto;
+}
+.login_title{
+	text-align: center;padding: 20px 20px 17px;font-size: 30px;color: #ffffff;font-weight: bold;
+	background: url(../images/newlogin/bottom_bar.png) no-repeat bottom center;
+}
+.login_content{
+	width: 338px;margin: 20px auto 0px;
+}
+.input_block{
+	border-radius:4px;background: #fff;border: 1px solid #60c2ff;height: 45px;line-height: 45px;
+	background-color: transparent;color:#fff;
+}
+.input_block::-webkit-input-placeholder {
+  color: #87c7fc;
+}
+.input_block:-moz-placeholder {
+  color: #87c7fc;
+}
+.input_block:-ms-input-placeholder {
+  color: #87c7fc;
+}
+.user{
+	border-radius:4px;position: relative;
+}
+.user_ico{
+	display: block;width: 12px;height: 14px;background: url(../images/newlogin/user.png) no-repeat center;
+	position: absolute;top: 15px;left: 12px;
+}
+.user>input{width: 100%;padding-left: 38px;}
+.mt15{margin-top: 15px;}
+.psw{
+	background: url(../images/newlogin/psw.png) no-repeat 12px center;padding-left: 38px;width: 100%;
+}
+.input_yzma{
+	width:198px;float: left;background: url(../images/newlogin/yanzhengma.png) no-repeat 12px center;padding-left: 38px;
+}
+.yzma{
+	width: 81px;height: 45px;overflow: hidden; float: left;margin-left: 8px;border-radius: 4px;
+}
+.yzma>img{width: 100%;height: 100%;}
+.change{color: #fffafa;font-size: 14px;float: right;margin-top: 26px;}
+.change:hover{text-decoration:underline;}
+.rember_info{
+	display: inline-block;margin-top: 12px;color: #fff;font-size: 12px;padding-left: 22px;cursor: pointer;
+}
+.rember_info>b{
+	display: inline-block;width: 11px;height: 11px;background-color: transparent;border-radius: 2px;
+	position: absolute;top: 2px;left: 0;border:1px solid #00b7ee;box-sizing:border-box;
+}
+.rember_checked{
+	background: url(../images/newlogin/checked.png) no-repeat center;
+}
+.login_btn{
+	display: block;width: 100%;height:50px;background-color: #00b7ee;color: #fff;font-size: 18px;
+	line-height: 50px;text-align: center;border-radius: 4px;margin-top: 12px;
+}
+.login_btn:hover{background-color:#00a2d4;cursor: pointer; }
+.error {
+    padding: 0;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #ff0000;
+    margin-top: 10px;
+}
+.error em {
+    float: left;
+    width: 16px;
+    height: 25px;
+    background: url(../flat/images/loginForward/error_bg.png) no-repeat left center;
+    margin: 0 5px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px rgb(56,155,232) inset !important;
+}

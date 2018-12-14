@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+	
+	<package name="ydzjMobile" namespace="/ydzjMobile" extends="struts-default">
+		<!--上传头像 -->
+		<action name="headPictureUpload" class="cn.com.qytx.ydzj.action.UserPhotoUploadAction" method="headPictureUpload"></action>
+		<!--头像预览 -->
+		<action name="headPictureView" class="cn.com.qytx.ydzj.action.UserPhotoUploadAction" method="headPictureView"></action>
+		<!-- 获得电话本 -->
+		<action name="getPublicPhoneBook" class="cn.com.qytx.ydzj.action.PublicPhoneBookAction" method="getPublicPhoneBook"></action>
+		<!-- 获得电话本类别 -->
+		<action name="getPublicPhoneBookCategory" class="cn.com.qytx.ydzj.action.PublicPhoneBookAction" method="getPublicPhoneBookCategory"></action>
+		<!--更新密码 -->
+		<action name="updatePass" class="cn.com.qytx.ydzj.action.UpdatePassAction" method="updatePass"></action>
+		<!--更新签名 -->
+		<action name="updateSign" class="cn.com.qytx.ydzj.action.UserSignAction" method="updateSign"></action>
+		<!--更新用户性别 -->
+		<action name="updateUserSex" class="cn.com.qytx.ydzj.action.UserSexAction" method="updateUserSex"></action>
+	</package>
+</struts>

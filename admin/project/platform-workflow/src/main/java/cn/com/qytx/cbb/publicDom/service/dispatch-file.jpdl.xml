@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="dispatch" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="49,162,48,48" name="start1">
+      <transition g="-40,-21" name="转发文拟稿" to="发文拟稿"/>
+   </start>
+   <task assignee="#{assigner}" g="458,154,92,52" name="发文核稿">
+      <transition g="-35,-26" name="转盖章" to="套红盖章"/>
+      <transition g="498,430:-54,-18" name="转核稿" to="继续核稿"/>
+      <transition g="742,322:-47,-9" name="转发文分发" to="发文分发"/>
+      <transition g="737,361:-18,-5" name="转分发" to="归档"/>
+   </task>
+   <task assignee="#{assigner}" g="662,149,92,52" name="套红盖章">
+      <transition g="-31,-14" name="转发文分发" to="发文分发"/>
+      <transition g="740,282:-37,-32" name="转核稿" to="发文核稿"/>
+      <transition g="1114,286:-16,-3" name="转分发" to="归档"/>
+   </task>
+   <task assignee="#{creater}" g="212,155,92,52" name="发文拟稿">
+      <transition g="387,180:-41,-9" name="转核稿" to="发文核稿"/>
+      <transition g="693,118:-28,-1" name="转盖章" to="套红盖章"/>
+      <transition g="689,72:-41,-23" name="转发文分发" to="发文分发"/>
+      <transition g="676,25:-31,-16" name="转分发" to="归档"/>
+   </task>
+   <task assignee="#{assigner}" g="921,156,92,52" name="发文分发">
+      <transition g="-28,-5" name="转分发" to="归档"/>
+   </task>
+
+   <end g="1326,161,48,48" name="end1"/>
+   <script expr="loop" g="209,403,92,52" name="继续核稿">
+      <transition g="-38,-22" name="转核稿" to="发文核稿"/>
+   </script>
+   <task assignee="ziper" g="1142,154,92,52" name="归档">
+        <on event="timeout">
+      <timer duedate="1 seconds"/>
+      <event-listener class="cn.com.qytx.cbb.publicDom.service.ZipBehaviorListener" />
+    </on>
+      <transition g="-20,-21" name="归档" to="end1"/>
+   </task>
+</process>

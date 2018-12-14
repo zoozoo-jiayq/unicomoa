@@ -1,0 +1,32 @@
+body,html{height:100%;}
+#div_tab{PADDING-BOTTOM:0;PADDING-LEFT:0px;PADDING-RIGHT:0px;BACKGROUND:url(images/t_tab_bg.gif) #fff repeat-x 0 bottom;HEIGHT:33px;}
+#div_tab LI{POSITION:relative;TEXT-ALIGN:center;LIST-STYLE-TYPE:none;FLOAT:left;LIST-STYLE-IMAGE:none;MARGIN-left:1px; margin-right:1px; margin-top:1px;}
+#div_tab LI{max-width:140px\0; LINE-HEIGHT:33px;BACKGROUND:url(images/t_tab_uselectbg.png);_BACKGROUND:url(images/t_tab_uselectbg_ie6.png);HEIGHT:33px;overflow:hidden;DISPLAY:inline;}
+#div_tab LI SPAN{max-width:110px\0;LINE-HEIGHT:32px;BACKGROUND:url(images/t_tab_uselectbg.png) right;HEIGHT:32px; color:#fff;}
+#div_tab LI.crent{MARGIN-TOP:1px;BACKGROUND:url(images/t_tab_selectbg.png);HEIGHT:32px;}
+#div_tab LI.crent SPAN{max-width:110px\0; LINE-HEIGHT:32px;BACKGROUND:url(images/t_tab_selectbg.png) right;HEIGHT:32px;DISPLAY:inline-block;BACKGROUND-REPEAT:no-repeat;BACKGROUND-POSITION:right bottom;padding:0 15px 0 15px; overflow:hidden;}
+#div_tab LI{BACKGROUND-REPEAT:no-repeat;background-position:0 0;COLOR:#fff;white-space:nowrap;}
+#div_tab LI.crent{BACKGROUND-REPEAT:no-repeat;background-position:0 0;COLOR:#fff;DISPLAY:inline;}
+#div_tab LI SPAN{padding:0 8px; text-align:center; DISPLAY:inline-block;BACKGROUND-REPEAT:no-repeat;BACKGROUND-POSITION:right bottom;word-break:keep-all;white-space:nowrap;}
+#div_tab LI .menua{max-width:100px; POSITION:relative;COLOR:#fff;FONT-SIZE:16px; TEXT-DECORATION:none;DISPLAY:inline-block; word-break:keep-all; margin-right:10px; margin-left:10px;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden; /*内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。IE, Safari (WebKit)*/
+   -o-text-overflow:ellipsis; /* 兼容Opera */}
+#div_tab LI.crent .menua{/*FONT-WEIGHT:bold;*/COLOR:#000; font-size:16px;margin:0 0px; padding-left:7px;padding-right:11px}
+/*#div_tab LI .menua:hover{FONT-WEIGHT:bold}*/
+#div_tab LI .win_close{WIDTH:10px;DISPLAY:inline-block;BACKGROUND:url(images/t_delete_ico.gif) no-repeat;HEIGHT:14px;OVERFLOW:hidden;CURSOR:pointer; vertical-align:middle; margin-left:5px;}
+#div_tab LI.crent .win_close{POSITION:absolute; top:13px;right:5px; WIDTH:10px;DISPLAY:inline-block;BACKGROUND:url(images/t_delete_ico.gif) no-repeat;HEIGHT:14px;OVERFLOW:hidden;CURSOR:pointer; vertical-align:middle}
+#div_tab LI .win_close{BACKGROUND-POSITION:0 -14px;display:none;}
+#div_tab LI .win_close:hover{background-position:0 0}
+.tabbox{WIDTH:100%;BACKGROUND:url(images/t_tab_bg.gif) repeat-x;HEIGHT:35px}
+#div_tab{Z-INDEX:99;WHITE-SPACE:nowrap;background:none;word-break:keep-all;}
+#div_tab LI{DISPLAY:inline-block;WHITE-SPACE:nowrap;word-break:keep-all;FLOAT:inherit}
+.tabList{POSITION:relative;HEIGHT:35px;width:100%;}
+
+.clearfix:after {content:"."; display:block;height:0;clear:both; visibility:hidden;}
+*html .clearfix{height:1%;}
+*+html .clearfix{height:1%;}
+.clearfix{display:inline-block;}
+/* Hide from IE Mac */
+.clearfix {display:block;}

@@ -1,0 +1,249 @@
+@charset"utf-8";
+/*左侧菜单*/
+
+.leftMenu {
+    background: #f4f9fa;
+}
+.meilTitle {
+    border-bottom: 2px solid #5bbbc9;
+    background: #cee7eb;
+    height: 38px;
+    overflow: hidden;
+    border-right: 1px solid #e6eaeb;
+}
+.meilTitle ul {
+    padding: 5px 0;
+    background: url(../images/meil_fg.png) no-repeat center center;
+    overflow: hidden;
+}
+.meilTitle ul li {
+    float: left;
+    width: 50%;
+    line-height: 25px;
+    height: 25px;
+    text-align: center;
+    overflow: hidden;
+}
+.meilTitle ul li img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.meilTitle ul li a {
+    color: #333;
+    font-size: 16px;
+}
+.meil_wrap {
+    background: #f4f9fa;
+    border-right: 1px solid #e6eaeb;
+    overflow: auto;
+}
+.meil_wrap a {
+    color: #555555;
+}
+.meil_wrap h2 {
+    background: url(../images/icon/down_mail.png) no-repeat 16px center;
+    padding-left: 30px;
+    height: 35px;
+    line-height: 35px;
+}
+.meil_wrap h2.on{ background:url(../images/icon/left_mail.png) no-repeat 16px center;}
+.meil_wrap li {
+    height: 35px;
+    line-height: 35px;
+}
+.meil_wrap li.current, .meil_wrap li:hover {
+    background: #e2f0f2;
+}
+.meil_wrap li a {
+    padding-left: 30px;
+}
+.meil_wrap .wj_ul li {
+    padding-left: 15px;
+}
+.meil_wrap h3 {
+    height: 35px;
+    line-height: 35px;
+    padding-left: 30px;
+}
+/*右侧内容*/
+/*操作*/
+
+.meil_search_area {
+    height: 36px;
+    padding: 8px 0px 0 0px;
+    /* background: #e8f0f3;
+    border-top: 1px solid #D4D4D4; */
+    overflow: visible;
+}
+.meil_area_down {
+    border-bottom: 1px solid #D4D4D4;
+    border-top: none;
+}
+.meil_btn {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.meil_btn input:hover{
+	background-color: #e8eaeb;
+}
+.meil_btn input {
+    /* height: 24px;
+    line-height: 2px;
+    background-color: rgb(243, 243, 243);
+    padding: 0 12px;
+    border: 1px solid #888; */
+    height: 28px;
+    line-height: 28px;
+    color: #555;
+    border: 0;
+    min-width: 80px;
+	padding:0 8px;
+    cursor: pointer;
+    background-color: rgb(225, 228, 230);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d7d7d7', GradientType=0)
+}
+.meil_btn input.no {
+	color: #ccc;
+    /* background: #eee;
+    border: 1px solid #aaa;
+    color: #888; */
+}
+.morebtn {
+    height: 28px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin-top: 2px;
+}
+.morebtn .meil_btn_0 {
+    /* background-color: rgb(225, 228, 230); */
+    color: #555;
+    width: 102px;
+    height: 28px;
+   background: url(../images/lv_btn_01.png) no-repeat;
+    border: none;
+    text-align: left;
+    padding-left: 7px;
+    *margin-top: -16px !important;
+    _margin-top: 0px;
+}
+.morebtn .m_btnlist {
+    width: 100px;
+    position: absolute;
+    border: 1px solid #c5c8c5;
+    z-index: 50;
+    top: 27px;
+    left: 0px;
+    display: none;
+    background: #fff;
+}
+.morebtn .m_btnlist p {
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+    padding: 0 5px;
+}
+.morebtn .m_btnlist p a {
+    display: block;
+    height: 24px;
+    color: #000;
+    padding: 0 5px;
+    margin: 0px;
+}
+.morebtn .m_btnlist p a:hover {
+    text-decoration: underline
+}
+.morebtnHover .m_btnlist {
+    display: block;
+}
+.meil_search {
+    float: right;
+}
+/*详情*/
+
+.meil_details .top_title {
+    background: #f4f8fb;
+    border-bottom: 1px solid #cccccc;
+    overflow: hidden;
+    font-size: 12px;
+}
+.top_title ul {
+    padding: 5px;
+}
+.top_title li {
+    line-height: 25px;
+    overflow: hidden;
+}
+.top_title li label {
+    color: #7a8599;
+}
+.top_title li a {
+    color: #1d5494;
+    padding: 0 5px;
+}
+.top_title li font {
+    color: #5ea308;
+    font-weight: bold;
+}
+.meil_details .meil_cont {
+    padding: 10px;
+    min-height: 80px;
+    line-height: 25px;
+    color: #000;
+}
+.meil_details .meil_cont p {
+    line-height: 25px;
+}
+.meil_details .meil_annex {
+    padding: 10px;
+    overflow: hidden;
+}
+.meil_annex h3 {
+    font-size: 16px;
+    color: #017a8f;
+}
+/**/
+
+.meil_cz {
+    height: 30px;
+    line-height: 30px;
+}
+.meil_cz li {
+    float: left;
+    padding: 0 5px;
+    line-height: 30px;
+    position: relative;
+}
+.meil_cz li .cz_list {
+    position: absolute;
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #c5c8c5;
+    display: none;
+    left: 10px;
+    top: 27px;
+    width: 100px;
+    z-index: 50;
+}
+.cz_list p {
+    padding: 0 5px;
+}
+.cz_list p a {
+    color: #555;
+}
+/*邮件图标*/
+
+table.pretty tbody td a.personMeil_noread {
+    background: url(../images/icon/meil_noread.png) no-repeat scroll left center;
+   /* display: inline-block;*/
+    padding-left: 25px;
+}
+table.pretty tbody td a.personMeil_readed {
+    background: url(../images/icon/meil_readed.png) no-repeat scroll left center;
+   /* display: inline-block;*/
+    padding-left: 25px;
+}

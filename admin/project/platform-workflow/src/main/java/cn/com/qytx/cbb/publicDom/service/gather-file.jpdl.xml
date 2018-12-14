@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="gather" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="41,31,48,48" name="start1">
+      <transition g="-69,-20" name="转收文登记" to="收文登记"/>
+   </start>
+   <task assignee="#{creater}" g="257,28,92,52" name="收文登记">
+      <transition g="-69,-20" name="转领导批阅" to="领导批阅"/>
+      <transition g="-43,-21" name="转收文分发" to="收文分发"/>
+      <transition g="-30,-21" name="转阅读" to="收文阅读"/>
+   </task>
+   <task assignee="#{assigner}" g="258,189,92,52" name="领导批阅">
+      <transition g="-69,-20" name="转领导批阅" to="转领导批阅"/>
+      <transition g="-37,-22" name="转收文分发" to="收文分发"/>
+      <transition g="-42,10" name="转阅读" to="收文阅读"/>
+   </task>
+   <script expr="loop" g="35,183,92,52" name="转领导批阅">
+      <transition g="199,317:-46,-15" name="转领导批阅" to="领导批阅"/>
+   </script>
+   <task assignee="#{assigner}" g="453,186,92,52" name="收文分发">
+      <transition g="-36,-21" name="转阅读" to="收文阅读"/>
+   </task>
+   <task g="446,35,92,52" name="收文阅读">
+   <assignment-handler class="cn.com.qytx.cbb.publicDom.service.impl.MultiAssignTask"> 
+        </assignment-handler>
+      <transition g="-21,-20" name="已阅" to="归档"/>
+   </task>
+   <task assignee="ziper" g="678,40,80,40" name="归档">
+    <on event="timeout">
+      <timer duedate="1 seconds"/>
+      <event-listener class="cn.com.qytx.cbb.publicDom.service.ZipBehaviorListener" />
+    </on>
+   		<transition g="-25,-15" name="归档" to="end1"/>
+   </task>
+   <end g="817,34,48,48" name="end1"/>   
+</process>

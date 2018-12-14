@@ -1,0 +1,168 @@
+@charset"utf-8";
+/* CSS Document */
+/*考勤记录*/
+
+.recordBox {
+    margin: 10px auto;
+    width: 80%;
+    background: #fff;
+    padding: 0 15px;
+}
+.recordBox h3 {
+    line-height: 26px;
+    text-align: center;
+    color: #1b8fd8;
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #49a3df;
+}
+.record   {
+    margin: 0 20px;
+    padding: 20px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+.record h4 {
+    color: #017a8f;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.record .recordTable td {
+    line-height: 25px;
+    vertical-align: top;
+    font-size: 14px;
+}
+.recordMore {
+    padding: 10px 20px;
+}
+.recordMore a {
+    font-size: 14px;
+    color: #06c;
+}
+/*考勤记录*/
+
+.registBox {
+    margin: 10px auto;
+    width: 80%;
+    background: #fff;
+    padding: 0 15px 20px 15px;
+}
+.punchClock {
+    padding: 45px 45px 20px 45px;
+    height: 300px;
+    background: url(../images/res_bg1.png) no-repeat;
+	position:relative;
+}
+.clockBox {
+    width: 370px;
+    height: 185px;
+    background: #fbfcfe;
+    border: 1px solid #c5e2f4;
+}
+.clockBox h3 {
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #fff;
+    margin: -1px 10px 0 10px;
+    background: #98c4f1;
+    height: 42px;
+    width: 200px;
+    margin: 0 auto;
+}
+.clockBox h3 span{ font-size: 14px; font-weight: bold;}
+.clockBox p {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+.clockBox p.clockCurrent {
+    font-size: 54px;
+    color: #98c4f1;
+    line-height: 65px;
+    font-weight: bold;
+}
+.clolcFont{
+	width: 100px;height: 100px;padding: 18px;
+}
+.line{
+	border-right: 1px solid #c5e2f4;
+	float: left;
+	height: 97px;
+	margin-top: 25px;
+}
+.clockBtn {
+    position: absolute;
+    top: 272px;
+    right: 45px;
+}
+.clockDiv h4 {
+    color: #465c6a;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    padding: 28px;
+}
+.clockDiv h4 span {
+    font-size: 20px;
+}
+.clockBtn .btn_blue {
+    font-family: "微软雅黑";
+    width: 372px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff; 
+    border: none;
+    background-color: #52bef0;
+}
+.clockBtn .btn_grey {
+    font-family: "微软雅黑";
+    width: 372px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc; 
+    border: none;
+    background-color:#ececec;
+}
+/*IP地址输入*/
+
+.inputIP {
+    width: 180px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #e4e4e4;
+    display: inline-block;
+    vertical-align: middle;
+}
+.inputIP input {
+    border: none;
+    width: 42px;
+    text-align: center;
+}
+.clockBtn h3 {
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    margin: -1px 10px 0 10px;
+    background: #98c4f1;
+}
+.clockBtn p {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+.clockBtn p.clockCurrent {
+    font-size: 54px;
+    color: #333;
+    line-height: 65px;
+}
+

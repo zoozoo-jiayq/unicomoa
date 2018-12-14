@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+/*pop panel*/
+.pop-panel-wrapper{border-radius:5px;z-index:21;position:absolute; padding:30px 0px;width:100%;display:none;height:auto;overflow:hidden;top:0;left:0;}
+.pop-panel-title{border-bottom:#e1e1e1 1px solid;line-height:2;padding:0px 15px;background:#fafafa;color:#696969;}
+.pop-panel{border-radius:4px;-webkit-box-shadow:2px 0 6px #eaeaea,-2px 0 6px #eaeaea,0px 1px 5px #eaeaea;-moz-box-shadow:2px 0 6px #eaeaea,-2px 0 6px #eaeaea,0px 1px 5px #eaeaea;box-shadow:2px 0 6px #eaeaea,-2px 0 6px #eaeaea,0px 1px 5px #eaeaea;opacity:1;border:#d5d5d5 1px solid;position:relative;margin:0 auto;width:800px;bottom:0;visibility:visible;left:0;-o-box-shadow:2px 0 6px #eaeaea,-2px 0 6px #eaeaea,0px 1px 5px #eaeaea;-ms-box-shadow:2px 0 6px #eaeaea,-2px 0 6px #eaeaea,0px 1px 5px #eaeaea}
+.pop-panel-inner{border-radius:5px;position:relative;text-align:left;background:#fff;overflow:hidden}
+.pop-panel-close{z-index:29;position:absolute;outline-style:none;outline-color:invert;outline-width:medium;width:30px;display:block;background:url(images/close.png) no-repeat;height:30px;overflow:hidden;cursor:pointer;right:-15px;top:-15px}
+.pop-panel-close:hover{background-position:0 -30px}
+.pop-panel-msg-box{border-radius:0 0 4px 4px;position:absolute;text-align:center;padding-bottom:0;line-height:2;padding-left:3px;width:200px;padding-right:3px;background:#9ed1e6;color:#fff;margin-left:-100px;padding-top:0;top:0;left:50%}
+.pop-panel-overlay{opacity:.65;z-index:20;position:absolute;filter:alpha(opacity=65);width:100%;display:none;background:#d6d6d6;height:100%;top:0;left:0;-moz-opacity:.65;-khtml-opacity:.65}
+.pop-panel-sider{border-radius:4px 0 0 4px;position:absolute;filter:none;overflow-x:hidden;width:145px;background:#f7f7f7;height:100%;overflow:auto;border-right:#e8e8e8 1px solid;top:0;left:0}
+.pop-panel-tips{position:absolute;text-align:left;padding-bottom:10px;line-height:20px;padding-left:10px;width:500px;bottom:0;padding-right:10px;color:#91271e;margin-left:10px;padding-top:10px}
+.pop-panel-sider .group-header{padding-bottom:0;line-height:2em;padding-left:15px;padding-right:0;color:#444;font-size:15px;padding-top:0}
+.pop-panel-sider .group-header-link{padding-bottom:0;line-height:2em;padding-left:15px;padding-right:0;color:#444;font-size:15px;padding-top:0}
+.pop-panel-sider .group-header-link{cursor:pointer}
+.pop-panel-sider .group-header-link:hover{background:#88beea;color:#fff}
+.pop-panel-sider .group{margin:0 0 15px}
+.pop-panel-sider .group .item{padding-bottom:0;line-height:2em;margin:3px 1px 1px;padding-left:30px;padding-right:0;color:#666;font-size:13px;cursor:pointer;padding-top:0}
+.pop-panel-sider .group .item:hover{background:#88beea;color:#fff}
+.pop-panel-sider .group .active.item{background:#88beea;color:#fff}
+.pop-panel-sider hr{border-bottom:0;border-left:0;margin:0;background:#dfdfdf;height:1px;border-top:0;border-right:0}
+.pop-panel-container{min-height:150px;background:#fff;height:auto}
+.pop-panel-container-with-sider{min-height:150px;background:#fff;height:auto}
+.pop-panel-container-with-sider{margin-left:145px}
+.pop-panel .pop-panel-container .content{margin:10px}
+.pop-panel .pop-panel-sider .content{margin:10px}
+.pop-panel .content-with-controll{margin:20px 20px 120px;overflow:auto}
+.pop-panel .controll-bar{position:absolute;padding-bottom:10px;padding-left:10px;bottom:0;padding-right:10px;right:0;padding-top:10px}

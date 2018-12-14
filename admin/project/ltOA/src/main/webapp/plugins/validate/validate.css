@@ -1,0 +1,38 @@
+dl {
+font:normal 12px/15px Arial;
+  position: relative;
+    width: 350px;
+}
+dt {
+    clear: both;
+    float:left;
+    width: 80px;
+    padding: 4px 0 2px 0;
+    text-align: left;
+}
+dd {
+    float: left;
+    width: 200px;
+    margin: 0 0 8px 0;
+    padding-left: 6px;
+}
+
+.hint {
+display: none;
+    position: absolute;
+    right: -160px;
+    width: 200px;
+    margin-top: -4px;
+    border: 1px solid #c93;
+    padding: 10px 12px;
+    background: #ffc url(/jscss/demoimg/200911/pointer.gif) no-repeat -10px 5px;
+}
+
+.hint .hint-pointer {
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 10px;
+    height: 19px;
+    background: url(/jscss/demoimg/200911/pointer.gif) left top no-repeat;
+}

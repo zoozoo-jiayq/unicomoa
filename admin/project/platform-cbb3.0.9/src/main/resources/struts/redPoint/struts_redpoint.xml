@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 红点推送 -->
+    <package name="wapRedPoint" namespace="/wapRedPoint" extends="struts-default">
+		<action name="getRedPointCount" class="cn.com.qytx.cbb.redpoint.action.RedPointAction" method="getRedPointCount"></action>   		
+    </package>
+</struts>

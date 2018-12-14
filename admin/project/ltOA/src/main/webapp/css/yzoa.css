@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*   邮政OA 投票调查模块样式     */
+.yz_qn{ width:1000px; margin:0 auto; overflow:hidden;}
+.yz_qn .menu_left{float:left; width:130px; border:1px solid #e3e3e3; padding:6px; overflow:hidden; border-radius:5px; background:#f5f5f5;}
+.yz_qn .menu_left h2{ font-size:20px; text-align:center;}
+.yz_qn .menu_left ul li{ width:128px; height:35px; background:#FFF; border:1px solid #e3e3e3; overflow:hidden; line-height:35px; margin-top:10px; cursor:pointer;}
+.yz_qn .menu_left ul li img{float: left; display:inline; margin:10px 8px 0 8px;}
+
+.yz_qn .cont_right{float:right; width:100%;overflow:auto; background:#FFF; height:500px;}
+.yz_qn .cont_right h2{ text-align:center;color:#000;font-size:20px; padding:10px 0;}
+.yz_qn .cont_right .subject{overflow:hidden; color:#666; line-height:25px; text-indent:2em;}
+.yz_qn .cont_right .buttonArea{ padding:15px 0; text-align:center; background:#f6f6f6; border-top:1px solid #dcdcdc;}
+.yz_qn .cont_right .buttonArea em{ float:right; padding-right:15px;}
+.yz_qn .cont_right .buttonArea em a{width:58px; height:22px; background:#edf5ec; border:1px solid #d4d4d4; display:inline-block; line-height:22px; margin:8px 0px 0 10px;}
+.yz_qn .sj_836{ width:836px;}
+
+
+/*单选题 多选题 填空题*/
+.choice .title_c{color: #598900;font-size: 16px;font-weight: bold; padding-top: 15px;}
+.choice dl{overflow:hidden; margin-top:10px; border-top:1px solid #c1c1c1}
+.choice dl dt{font-size: 16px; line-height: 25px; padding: 12px 15px;  word-wrap: break-word; color:#000;}
+.choice dl dd{overflow:hidden;font-size:16px; color:#000; text-indent:40px; line-height:35px; cursor:pointer;}
+.choice dl dd .radio input{ margin-right:5px;}
+
+.choice dl dd.wd{padding:15px; background:none !important;text-indent:0; padding-bottom:0;}
+.choice dl dd.wd .formTextarea{ width:97%;}
+
+.choice dl dd.operate{ height:25px; line-height:25px;text-indent:0; background:none !important; padding-top:8px;}
+.choice dl dd.operate em{ float:left; color:#2674d0; padding-left:106px; cursor:pointer;}
+.choice dl dd.operate span{ float:right; padding-right:13px; display:none; }
+.choice dl dd.operate span a{ float:left; width:55px; height:22px;color:#666;line-height:22px; margin-right:2px;background:#cef5ff; font-size:14px;}
+.choice dl dd.operate span a img{float: left;margin-left: 5px; margin-right: 3px;  margin-top: 3px; display:inline;}
+
+.choice dl dd .left_545{ float:left; width:545px; overflow:hidden;}
+.choice dl dd .right_455{ float:left; width:455px; overflow:hidden; font-size: 16px;line-height: 35px;}
+.choice dl dd .right_455 em{ padding:0 10px;color:#000}
+
+.choice dl.add_xz{ background:#fcfcfc}
+.choice dl.add_xz .formText{ width:80%; border:none; border-bottom:1px solid #e1e1e1; background:none}
+.choice dl.add_xz .formTextarea{ float:left; width:79%}
+.choice dl.add_xz dd{ background:none !important; text-indent:50px; }
+
+.choice dl.add_xz .operate{ padding-bottom:8px;text-indent:0px;}
+.choice dl.add_xz .operate span{ display:block;}
+.sj_836 dl:hover .operate span{ display:block;}
+.choice dl font{ color:#2674d0; padding-left:5px;}
+
+
+/*设计调查问卷*/
+.plan_ques{padding:8px; overflow:hidden;line-height:25px;  color:#333333; text-indent:10px;}
+
+
+/*   邮政OA 投票调查模块样式            end */
+
+/*   邮政OA 投票聊天室模块样式        */
+.self_date{padding:3px 10px;}
+.self_date li{cursor:pointer;background:url(../images/group.jpg) no-repeat left center; padding-left:20px; color:#333333; margin-top:3px; text-align:left; font-size:14px;}
+.self_date li img{width:14px; height:14px;display:none;margin-left:5px;margin-top:-3px;}
+.self_date li.sz{background:none;padding-left:0}
+.self_date li.sz a{ color:#205484;}
+
+/*群组设置*/
+.qz_sz{width:430px; margin:20px auto 0;}
+.qz_sz .buttonArea{padding:10px 0;}
+/*   邮政OA 投票聊天室模块样式        end*/
+
+/*邮政OA抽奖模块样式*/
+.cjDiv{width: 1002px; height: 634px; text-align: center; overflow: hidden; background: url(../images/cj_bg.jpg) no-repeat;margin:0 auto;}
+.cjDiv h1{width: 580px; height: 45px;margin: 0 auto; margin-top: 90px; font-family:"微软雅黑"; font-size:33px; color:#000;}
+.cjDiv .caozuo{top:116px;display: inline-block; height: 80px; position: absolute; right: 0px; width: 140px;}
+.cjDiv .caozuo a{ float:left; width:140px; height:35px; line-height:35px; color:#cfcfce; font-weight:bold; text-align:center;}
+.cjDiv .cjText_p {text-align: center; margin-top: 149px;}
+.cjDiv .cjText{width: 543px; height: 78px; font-family:"微软雅黑"; border:none; font-size: 36px; font-weight: bold; color: #fff; letter-spacing: 29px;line-height: 78px; padding: 0 0 0 15px; background: url(../images/cj_textbg.png) repeat-x;}
+.cjDiv .cj_btn_p{text-align: center; margin-top: 89px;}
+
+.cj_btn_p .cj_btn{width: 121px; height: 39px; border: none; color: #000; font-size: 14px; font-weight: bold; vertical-align: middle; background: url(../images/cj_btn.png) no-repeat; text-align: center; cursor: pointer;}
+.cj_re_btn{display: inline-block;width: 77px; height: 77px; position: absolute;bottom: 30px; right: 20px;}
+
+div.cj_result{width: 1002px; height: 634px; text-align: center; overflow: hidden;}
+div.cj_result h1{ margin-top:80px;}
+div.cj_result .cjText_p{ margin-top:38px;}
+div.cj_result .cj_btn_p{ margin-top:35px;}
+div.cj_result .cjjg{ background:url(../images/cj_jg.png) no-repeat; width:694px; height:272px; margin:10px auto 0;}
+.cjjg ul{ padding-top:88px; padding-left:40px; float:left;}
+.cjjg ul li{ float:left; width:270px; height:35px; line-height:25px; color:#000; font-family:"微软雅黑"; font-size:20px; padding-right:40px; font-weight:bold;}
+.cjjg p{ text-align:center; width:100%; float:left;   padding-top:8px;}
+.cjjg p a{font-family:"微软雅黑"; font-size:20px;font-weight:bold; padding-right:10px; padding-left:10px;color:#000;}
+h1.cj_result{width: 240px; height: 60px; background: url(../images/cjh11.png) no-repeat; margin: 0 auto; margin-top: 55px;}
+
+.cj_table{width: 450px; border: none; background: none;margin: 0 auto; margin-top: 30px;}
+.cj_table td{height: 48px; line-height: 48px; text-align: center; font-family:"微软雅黑"; font-size: 24px; font-weight: bold; color: #000; background: none;}
+.cj_table td a{ font-size: 24px; font-weight: bold; color: #000; text-decoration: none; margin-right: 40px;}
+.cj_table td a:hover{text-decoration: underline;}
+.cj_table tfoot td{height: 40px; line-height: 40px;text-align: right;}
+
+/*新增奖项*/
+.add_prize{ width:550px; margin:10px auto 0;}
+/*邮政OA抽奖模块样式 end*/
+
+/*附件列表*/
+.annex_list{ overflow:hidden;}
+.annex_list ul li{border:1px solid #e9eff1;background:#f4f8f9;width:30%; float:left;height:45px;overflow:Hidden; margin:5px;position:relative;}
+.annex_list ul li .icon{ width:40px; height:40px; position:absolute; top:1px; left:5px;}
+.annex_list ul li div.txt{ margin-left:40px;padding-top:2px;}
+.annex_list ul li p{line-height:20px; word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; -o-text-overflow:ellipsis;padding-left:10px;}
+.annex_list ul li p a{ margin-right:15px;/*margin-left:0px;*/}
+
+/*统计分析*/
+.census_t .cont_right{float:right; width:100%;overflow:hidden; background:#FFF;}
+.census_t .cont_right h2{ text-align:center;color:#000;font-size:20px; padding:10px 0;}
+.census_t .cont_right .subject{overflow:hidden;  line-height:25px; text-align:left; padding:0 20px;}
+.census_t .cont_right .subject a{ float:right; color:#0066cc;}
+
+/*调查问卷*/
+.dcwj_t .cont_right{float:right; width:100%;overflow:hidden; background:#FFF; height:auto;}
+/*progress bar*/
+.progressbar{ display:inline-block; width:266px; height:20px; border:1px solid #f1f1f1;background:#fff; vertical-align:middle; text-align:left; position:relative; margin-right:5px;}
+.progressbar i{display:block; width:100%; height:20px; background:#50ac26; font-size:14px; text-align:right; line-height:20px; color:#fff;}
+
+/*新品汇详情*/
+.reviewBox{padding-top:20px;margin-top:20px;overflow:hidden;border-top:1px solid #cccccc;}
+.reviewCon{background:#fafafa;border:1px solid #d6d6d6;padding:5px 20px 5px 90px;overflow:hidden;position:relative;}
+.reviewCon dt{width:70px;height:100%;float:left;position:absolute;left:20px;}
+.reviewCon dt em{float:left;width:60px;height:60px;background:url(../images/people.png) no-repeat;margin-top:34px;}
+.reviewCon dt p{color:#333;font-size:14px;padding-top:2px;}
+.reviewCon dd{width:100%;float:left;}
+.reviewCon dd h4{font-weight:bold;font-size:16px;color:#333;padding:5px 0;}
+.reviewCon dd h4 a{color:#0066cc;font-size:14px;font-weight:normal;}
+.reviewCon dd p{padding-right:20px;}
+.reviewCon dd .formTextarea{width:100%;min-height:80px;}
+.reviewCon .reviewButtonArea{padding:10px 0;overflow:hidden;}
+.reviewCon dd .reviewButton{width:68px;height:28px;border:none;background:url(../images/review_btn.png) no-repeat;cursor:pointer;color:#fff;font-size:14px;}
+.reviewCon dd .reviewButton:hover{background:url(../images/review_btn_hover.png) no-repeat;}
+.reviewList{border:1px solid #ccc;border-top:none;overflow:hidden;}
+.reviewList h4{background:#f3f3f3;height:45px;line-height:45px;font-weight:bold;font-size:16px;color:#333;padding-left:20px;}
+.reviewList ul{padding:10px 0;}
+.reviewList ul li{overflow:hidden;border-bottom:1px dotted #cbcbcb;padding:20px 30px 10px 90px;position:relative;}
+.reviewList ul li.reciew_bg{background:#fbfaf8;}
+.reviewList ul li.last_review{border-bottom:1px solid #ccc;}
+.reviewList ul li .reviewLeft{float:left;margin-right:10px;position:absolute;left:30px;}
+.reviewList ul li h5{font-size:14px;}
+.reviewList ul li h5 .gray_9{margin-left:20px;}
+.reviewList ul li h5 a{color:#0066cc;font-size:14px;}
+.reviewList ul li p{color:#000;padding-top:5px;line-height:24px;}
+.reviewRight{/*float:left;*/}
+.reviewList ul li p.time{color:#999;padding-top:20px;}

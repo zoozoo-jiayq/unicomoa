@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+
+
+	<package name="productionSchedule" namespace="/productionSchedule" extends="struts-default">
+        <!-- 保存生产进度 -->
+		<action name="productionScheduleSave" class="cn.com.qytx.oa.productionSchedule.action.ProductionScheduleAction" method="productionScheduleSave">
+		</action>
+		<!-- 获取生产进度详情 -->
+		<action name="getProductionSchedule" class="cn.com.qytx.oa.productionSchedule.action.ProductionScheduleAction" method="getProductionScheduleAll">
+		</action>
+		<!-- 获取生产进度详情mui -->
+			<action name="getProductionScheduleMui" class="cn.com.qytx.oa.productionSchedule.action.ProductionScheduleAction" method="getProductionScheduleMui">
+		</action>
+		<!-- 删除生产进度 -->
+			<action name="deleteproductionSchedule" class="cn.com.qytx.oa.productionSchedule.action.ProductionScheduleAction" method="deleteproductionSchedule">
+		</action>
+		<!-- 生产进度统计 -->
+			<action name="getTotelProduction" class="cn.com.qytx.oa.productionSchedule.action.ProductionScheduleAction" method="getTotelProduction">
+		</action>
+		<!-- 判断时间是否已经存在 -->
+			<action name="isRtime" class="cn.com.qytx.oa.productionSchedule.action.ProductionScheduleAction" method="isRtime">
+		</action>
+		<!-- 更新生产进度 -->
+			<action name="updateProductionSchedule" class="cn.com.qytx.oa.productionSchedule.action.ProductionScheduleAction" method="updateProductionSchedule">
+		  	 <result name="success">
+		   /logined/productionSchedule/productionScheduleUpdate.jsp
+		 </result>
+		</action>
+		<!-- 上报错误 -->
+		<action name="uploadError" class="cn.com.qytx.oa.productionSchedule.action.UploadErrorAction" method="uploadError"></action>
+		<!-- 获取安全天数 -->
+		<action name="getSafeDays" class="cn.com.qytx.oa.productionSchedule.action.UploadErrorAction" method="getSafeDays"></action>
+	</package>
+</struts>

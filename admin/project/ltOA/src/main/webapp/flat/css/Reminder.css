@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+.iconText em {background:url(../images/icon/icon_list.png) no-repeat;width: 16px;height: 16px;margin-right: 3px;display: inline-block;margin-top:5px;float:left;}
+.iconText em.icon_logBook {background-position: 0px 0;}/*工作日志*/
+.iconText em.icon_mailBox {background-position: 0px -38px;}/*电子邮件*/
+.iconText em.icon_officialDoc{background-position: 0px -77px;}/*公文管理*/
+.iconText em.icon_workflow{background-position: 0px -120px;}/*工作流*/
+.iconText em.icon_notice{background-position: 0px -160px;}/*公告通知*/
+.iconText em.icon_fileCabinet{background-position: 0px -208px;}/*文件柜*/
+.iconText em.icon_addrBook{background-position: 0px -256px;}/*通讯簿*/

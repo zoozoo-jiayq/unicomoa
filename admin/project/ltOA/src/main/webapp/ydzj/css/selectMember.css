@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+/*select Member*/
+body{ background:#f0f9fc;}
+.selectMember{ padding:10px; background:#f0f9fc; margin:0px auto; width:360px;}
+.selectMember .mem_listbox{ width:350px;}
+.selectMember .mem_listbox .seleTable{border:1px solid #ccc; height:340px; background:#fff; overflow:auto}
+.selectMember .mem_listbox table td{ background:#fff; text-align:left; line-height:24px; padding:0 3px}
+.selectMember .mem_listbox table td input{ margin-right:3px;}
+.selectMember .btn_box{ width:90px; text-align:center;}
+.selectMember .btn_box span{ margin-top:80px;}
+.selectMember p{ line-height:20px; color:#000;height:20px}
+.selectMember .ipt{ width:95%; float:left;border-top:1px solid #86acc3; border-bottom:1px solid #bbd1df;border-left:1px solid #a4c1d1;border-right:1px solid #aec8d7; padding:0 8px; line-height:20px; height:20px; }
+.selectMember .ztree{ height:320px; overflow:auto; margin:0px; border:0; background:#fff;}
+.selectMember .selelist{width:190px; padding:5px; height:340px;border: 1px solid #ccc;background-color: #fff;font-size:12px; line-height:22px; color:#000}
+.selectMember .selelist option{ line-height:22px;}
+.selectMember .selectTab {height: 23px;padding-left: 10px;margin: 10px 0px 0px 0px;background: url(../images/selectMember/admin_x_bg.gif) 0px -127px repeat-x;}
+.selectMember .selectTab li {float: left;margin-right: 0px;height: 23px; /*background: url(../images/admin_button.gif) 0px -92px;*/ }
+.selectMember .selectTab li a{ display:block; height: 23px;line-height: 23px;text-align: center;color: #000;cursor: pointer;outline: none;border: none;/*background: url(../images/admin_button.gif) right -122px no-repeat;*/ padding-right:10px;padding-left:10px;}
+.selectMember .selectTab li a:hover {color: #ff9b1f; text-decoration:none}
+.selectMember .selectTab li.current{background: url(../images/selectMember/admin_button.gif) 0px -30px ;}
+.selectMember .selectTab li.current a {color: #000000;font-weight: bold;background: url(../images/selectMember/admin_button.gif) right -61px no-repeat;}

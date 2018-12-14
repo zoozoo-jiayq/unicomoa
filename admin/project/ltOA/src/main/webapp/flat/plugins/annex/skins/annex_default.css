@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+.annex{ width:100%;float:left; padding-top:5px;}
+.annex ul li{height:25px;overflow:Hidden;position:relative; padding-bottom:10px;float: left;}
+.annex ul li .icon{ width:18px; height:18px; position:absolute; top:3px; left:0;}
+.annex ul li .icon em{display: block; width: 18px; height: 18px; background: url(default/icon_fileClass.png) no-repeat scroll 0 0; float:left}
+.annex ul li .icon em.img{background-position: 0 2px;}
+.annex ul li .icon em.doc{background-position: 0 -30px;}
+.annex ul li .icon em.rar{background-position: 0 -62px;}
+.annex ul li .icon em.excel{background-position: 0 -102px;}
+.annex ul li .icon em.wb , .annex ul li .icon em.txt{background-position: 0 -142px;}
+.annex ul li .icon em.ppt{background-position: 0 -182px;}
+.annex ul li .icon em.unknown{background-position: 0 -213px;}
+.annex ul li div.txt{margin-left:20px; height:25px; color:#555; line-height:25px;}
+.annex ul li p{ float:left; padding-right:10px; cursor:pointer}
+.annex ul li p a{ margin-right:10px;margin-left:0px;color:#06c;}

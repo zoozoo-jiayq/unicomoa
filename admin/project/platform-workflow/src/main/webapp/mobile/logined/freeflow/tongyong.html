@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>填写表单</title>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link href="../../css/work.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">通用申请</h1>
+	</header>
+	<div class="mui-content">
+		<form class="mui-input-group forms expenseForm">
+			<div class="mui-input-row">
+				<label>申请内容</label>
+				<input type="text" class="pr" placeholder="适用于所有申请" id="applyContent">
+			</div>
+		</form>
+		<div class="mui-input-row advice" style="margin-top: 10px;">
+			<textarea id="reason" rows="5" placeholder="请输入申请原因" style="margin-bottom: 8px;font-size: 16px;"></textarea>
+		</div>
+		<div class="block-item">
+			<span class="gray correct">审批人<span>(长按头像可删除)</span></span>
+			<div class="swiper-container-header">
+				
+				<div class="head" id="addUser">
+					<div class="round"><img src="../../images/round_plus.png" /></div>
+					<p class="center">请选择</p>
+				</div>
+			</div>
+		</div>
+		<div class="buttonArea">
+		  	<button class="mui-btn mui-btn-blue mui-btn-block" id="sbn">提交</button>
+		</div>
+	</div>
+	</div>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+	    mui.init({
+			gestureConfig:{
+				tap:true
+			},
+			swipeBack: false //启用右滑关闭功能
+		});
+		mui('.mui-scroll-wrapper').scroll();
+    </script>
+    <script type="text/javascript" src="../../js/qytxplugin.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/fixed.js"></script>
+	<script type="text/javascript" src="../../js/letterCode.js"></script>
+	<script type="text/javascript" src="../../js/logined/freeflow/hammer.js"></script>
+	<script type="text/javascript" src="../../js/logined/freeflow/selectUser.js"></script>
+    <script type="text/javascript" src="../../js/logined/freeflow/tongyong.js"></script>
+</body>
+</html>

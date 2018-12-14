@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+    
+<struts>
+	<package name="module" namespace="/module" extends="struts-default">
+	    <action name="list" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="list">
+	    </action>
+		<action name="updateStatue" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="updateStatue">
+		</action>
+		<action name="filePath" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="filePath"></action>
+		<action name="valiCode" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="valiCode"></action>
+		<action name="valiName" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="valiName">
+		</action>
+		<action name="valiOrder" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="valiOrder"></action>
+		 <action name="save" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="save">
+	    </action>
+	    <action name="viewUpdate" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="viewUpdate">
+	    	<result name="viewUpdate">/logined/module/viewUpdate.jsp</result>
+	    </action>
+	    <action name="del" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="del"></action>
+	    <action name="mobileList" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="mobileList">
+	    	<result name="mobileList">/logined/authority/mobileList.jsp</result>
+	    </action>
+	    <action name="getModuleList" class="cn.com.qytx.cbb.module.action.RoleModuleMobileAction" method="getModuleList">
+	    </action>
+	    <action name="update" class="cn.com.qytx.cbb.module.action.RoleModuleMobileAction" method="update">
+	    </action>
+	    
+	    <action name="download" class="cn.com.qytx.cbb.module.action.DownLoadAction">
+	    	<result name="success" type="stream">
+	    		<param name="contentType">application/vnd.ms-excel</param>
+	    		<param name="contentDisposition">attachment;fileName="${fileName}"</param>  
+                <param name="inputName">inputStream</param>  
+                <param name="bufferSize">4096</param>  
+	    	</result>
+	    </action>
+	    
+	     <action name="upload" class="cn.com.qytx.cbb.module.action.UploadAction" method="importModule">
+	     </action>
+	    
+	    <action name="mobileIndex" class="cn.com.qytx.cbb.module.action.ModuleInfoMobileAction" method="mobileIndex">
+	    	
+	    </action>
+    </package>
+</struts>

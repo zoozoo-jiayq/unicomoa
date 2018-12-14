@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/mui.min.css" />
+    <link rel="stylesheet" href="../../css/work.css"/>
+    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav qy-head">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">我发起的</h1>
+	</header>
+</body>
+</html>
+<script type="text/javascript"  src="../../js/mui.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" charset="utf-8">
+      	//启用双击监听
+		mui.init({
+			gestureConfig:{
+				doubletap:true
+			},
+			subpages:[{
+				url:'myStart_pullrefresh_sub.html',
+				id:'myStart_pullrefresh_sub',
+				styles:{
+					top: '45px',
+					bottom: '0px',
+				}
+			}],
+			beforeback: function(){
+				plus.webview.close(plus.webview.getWebviewById("qingjia"));
+				plus.webview.close(plus.webview.getWebviewById("baoxiao"));
+				plus.webview.close(plus.webview.getWebviewById("chuchai"));
+				plus.webview.close(plus.webview.getWebviewById("waichu"));
+				plus.webview.close(plus.webview.getWebviewById("lingyong"));
+				plus.webview.close(plus.webview.getWebviewById("tongyong"));
+				plus.webview.close(plus.webview.getWebviewById("qingjia_detail"));
+				plus.webview.close(plus.webview.getWebviewById("baoxiao_detail"));
+				plus.webview.close(plus.webview.getWebviewById("chuchai_detail"));
+				plus.webview.close(plus.webview.getWebviewById("waichu_detail"));
+				plus.webview.close(plus.webview.getWebviewById("lingyong_detail"));
+				plus.webview.close(plus.webview.getWebviewById("tongyong_detail"));
+				plus.webview.close(plus.webview.getWebviewById("free_operate"));
+				plus.webview.close(plus.webview.getWebviewById("detail"));
+				plus.webview.close(plus.webview.getWebviewById("operate"));
+				plus.webview.close(plus.webview.getWebviewById("apply"));
+				plus.webview.close( "myStart_pullrefresh_sub", "auto", 100);
+			}    
+		});
+		function plusReady(){
+			// 隐藏滚动条
+			//plus.webview.currentWebview().setStyle({scrollIndicator:'none'});
+			var contentWebview = null;
+			document.querySelector('header').addEventListener('doubletap',function () {
+				if(contentWebview==null){
+					contentWebview = plus.webview.currentWebview().children()[0];
+				}
+				if(mui.os.ios){
+					contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+				}else{
+					contentWebview.evalJS('mui.scrollTo(0, 100)');
+				}
+			});
+		}
+		if(window.plus){
+			plusReady();
+		}else{
+			document.addEventListener('plusready',plusReady,false);
+		}
+
+    </script>

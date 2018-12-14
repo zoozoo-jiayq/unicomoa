@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 自定义表单 -->
+    <package name="docTemplate" namespace="/workflowForm" extends="struts-default">
+        
+         
+         <!-- 添加公文模板文件 -->
+        <action name="saveDocTemplate" class="cn.com.qytx.cbb.publicDom.action.DocTemplateAction" method="saveDocTemplate">
+            <result type="redirect" name="success">/logined/docTemplate/docTemplateList.jsp</result>
+        </action>
+        <action name="docTemplate_*" class="cn.com.qytx.cbb.publicDom.action.DocTemplateListAction" method="{1}">
+        </action>
+        <action name="docTemplateAjax_*" class="cn.com.qytx.cbb.publicDom.action.DocTemplateAction" method="{1}">
+        </action>
+        
+        <action name="view" class="cn.com.qytx.cbb.publicDom.action.DocTemplateAction" method="prepView"></action>
+
+    </package>
+
+
+</struts>

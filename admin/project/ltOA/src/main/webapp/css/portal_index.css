@@ -1,0 +1,653 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: transparent;
+    cursor: default;
+    font-size: 12px;
+}
+
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    /*background:#5b98cf url('images/portal_bg.jpg') bottom right no-repeat;*/
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .background {
+        width: 0;
+    }
+}
+
+.screen ul {
+    padding: 60px 0 0 22px;
+    height: 100%;
+}
+
+#container {
+    height: 100%;
+}
+
+.screen ul li {
+    width: 125px;
+    padding-bottom:25px;
+}
+
+.block {
+    float: left;
+    display: block;
+    height: 122px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.block .count {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+    width: 35px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-image: url('../images/home/count_bg.png');
+    behavior: url("../iepngfix.htc");
+    
+}
+
+.icon-text {
+    cursor: pointer;
+    margin-top: 3px;
+    padding-left: 10px;
+    height: 20px;
+    font-size:15px;
+    display: inline-block;
+    background: url('../images/home/icon_text_l.png') 0px 0px no-repeat;
+    behavior: url("../iepngfix.htc");
+}
+A.icon-text:Hover{text-decoration:none}
+.icon-text span {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    background: url('../images/home/icon_text_r.png') right center no-repeat;
+    behavior: url("../iepngfix.htc");
+    color: #fff;
+    padding: 0 10px 0 0px;
+    
+}
+
+li.block .img {
+    height: 86px;
+    width: 86px;
+    line-height: 86px;
+    cursor: pointer;
+    position: relative;
+    margin: 0px auto;
+    text-align: center;
+}
+
+li.block .img p {
+    position: static;
++ position : absolute;
+    top: 50%
+}
+
+li.block .img p img {
+    max-height: 86px;
+    max-width: 86px;
+    position: static;
++ position : relative;
+    top: -50%;
+    left: -50%;
+    vertical-align: middle
+}
+
+li.block .img p:after {
+    content: ".";
+    font-size: 1px;
+    visibility: hidden
+}
+
+.block .count1 {
+    background-position: -12px -32px;
+}
+
+.block .count2 {
+    background-position: -12px -66px;
+}
+
+.block .count3 {
+    background-position: -12px -99px;
+}
+
+.block .count4 {
+    background-position: -12px -134px;
+}
+
+.block .count5 {
+    background-position: -12px -167px;
+}
+
+.block .count6 {
+    background-position: -12px -201px;
+}
+
+.block .count7 {
+    background-position: -12px -235px;
+}
+
+.block .count8 {
+    background-position: -12px -268px;
+}
+
+.block .count9 {
+    background-position: -12px -302px;
+}
+
+.block .count10 {
+    background-position: -12px -336px;
+}
+
+#trash {
+    position: absolute;
+    left: 50%;
+    width: 128px;
+    height: 128px;
+    bottom: 10px;
+    display: none;
+    background: url(../images/home/trash.png) no-repeat center top transparent;
+}
+
+#trash.hover {
+    background: url(../images/home/trash_hover.png) no-repeat center top transparent;
+}
+
+#pageUp {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 10px;
+    width: 61px;
+    height: 99px;
+    margin-top: -50px;
+    background: url(../images/home/page_up.png) no-repeat left top transparent;
+}
+
+#pageDown {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 10px;
+    width: 61px;
+    height: 99px;
+    margin-top: -50px;
+    background: url(../images/home/page_down.png) no-repeat left top transparent;
+}
+
+#control {
+    height: 26px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+}
+
+#control table {
+    margin: 0 auto;
+}
+
+.control-r {
+    padding-right: 15px;
+    height: 26px;
+    width: 26px;
+    background: url(../images/home/slide_bar_r.png) no-repeat right top transparent;
+}
+
+.control-l {
+    width: 15px;
+    height: 26px;
+    background: url(../images/home/slide_bar_l.png) no-repeat left top transparent;
+}
+
+#control a {
+    top: 0px;
+    float: left;
+    width: 26px;
+    height: 26px;
+    background: url(../images/home/btn.png) no-repeat center top transparent;
+    display: block;
+}
+
+#control a.active {
+    background: url(../images/home/btn_active.png) no-repeat center top transparent;
+}
+
+#control a.cfg {
+    height: 26px;
+    float: right;
+    background: url(../images/home/btn_cfg.png) no-repeat center top transparent;
+}
+
+#control a.cfg:hover {
+    background: url(../images/home/btn_cfg_hover.png) no-repeat center top transparent;
+}
+
+.slidebox {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+}
+
+.add {
+    background: url(../images/home/add.png) no-repeat center top transparent;
+}
+
+.add:hover {
+    background: url(../images/home/add_hover.png) no-repeat center top transparent;
+}
+
+/**** end ****/
+#overlay {
+    background: #000;
+    filter: alpha(opacity = 60);
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+}
+
+.table-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.dialog .head {
+    cursor: move;
+}
+
+.dialog .msg-content {
+    overflow-y: auto;
+}
+
+.TableTop {
+    border: 0px;
+    font-size: 12px;
+}
+
+.TableTop td {
+    height: 32px;
+    font-weight: bold;
+    color: #383838;
+    /*  background:url('../images/home/table_top_bg.png') 0px -32px no-repeat;*/
+}
+
+.TableTop td.head-left {
+    width: 5px !important;
+    background-position: left 0px;
+}
+
+.TableTop td.head-center {
+    background-position: 0px -32px;
+    background-repeat: repeat-x;
+}
+
+.TableTop td.head-right {
+    width: 5px !important;
+    background-position: right -64px;
+}
+
+.dialog .head .left, .dialog .top .left, .dialog .body .left, .dialog .foot .left {
+    width: 10px;
+}
+
+.dialog .body .center .msg-content {
+    margin: 5px 0px 0px 3px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.extDialog .dialog .head {
+    cursor: default;
+}
+
+/* lp Ӧ�ú�����ʽ */
+.clearfix {
+    border-top: 1px solid transparent !important;
+    margin-top: -1px !important;
+    border-top: 0;
+    margin-top: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#portalSetting {
+    width: 100%;
+    height: 100%;
+}
+
+#portalSetting #appPageDom {
+    display: block;
+    height: 100%;
+}
+
+#portalSetting #screenPageDom {
+    display: none;
+    height: 100%;
+}
+
+#portalSetting #bar {
+    line-height: 24px;
+    text-align: left;
+    padding-left: 10px;
+    background: transparent url("../images/home/bar_bg.jpg") repeat-x 0 bottom;
+}
+
+#portalSetting #appPageDom #app_cate_list {
+    width: 120px;
+    height: 100%;
+    background-color: #F3F3F3;
+    text-align: left;
+    padding: 3px;
+    float: left;
+    overflow: hidden;
+    border-right: 1px solid #D0D0D0;
+}
+
+#portalSetting #appPageDom #app_list_box {
+
+}
+
+#portalSetting #bar #btnAppSet {
+    width: 102px;
+    height: 22px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    cursor: pointer;
+    background: url("../images/home/bar_btn_appset.png") center center;
+}
+
+#portalSetting #bar #btnScreenSet {
+    width: 102px;
+    height: 22px;
+    display: block;
+    float: left;
+    margin-top: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    background: transparent url("../images/home/bar_btn_screenset.png") center center;
+}
+
+#portalSetting #bar #portalSettingMsg {
+    width: auto;
+    margin-left: 100px;
+    height: 38px;
+    line-height: 38px;
+    color: Green;
+}
+
+#portalSetting #appPageDom #app_cate_list ul {
+    list-style-type: none;
+    width: 100%;
+    overflow: hidden;
+    height: 305px;
+}
+
+#portalSetting #appPageDom #app_cate_list .scroll-up,
+#portalSetting #appPageDom #app_cate_list .scroll-down {
+    height: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background: url('../images/home/scroll_arrow.png') center 0px no-repeat;
+}
+
+#portalSetting #appPageDom #app_cate_list .scroll-up {
+    background-position: center 0px;
+}
+
+#portalSetting #appPageDom #app_cate_list .scroll-down {
+    background-position: center -10px;
+}
+
+#portalSetting #appPageDom #app_cate_list .scroll-up-hover {
+    background-position: center -20px;
+}
+
+#portalSetting #appPageDom #app_cate_list .scroll-down-hover {
+    background-position: center -30px;
+}
+
+#portalSetting #app_cate_list ul li {
+    width: 100%;
+    border-bottom: 1px solid #D8D8D8;
+    float: left;
+    height: 27px;
+    text-indent: 10px;
+    line-height: 27px;
+}
+
+#portalSetting #app_cate_list ul li a {
+    display: block;
+    height: 27px;
+    width: 100%;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#portalSetting #app_cate_list ul li a:hover {
+    background: transparent url("../images/home/app_cate_list_bg.gif") 0 -27px;
+    text-decoration: none
+}
+
+#portalSetting #app_cate_list ul li a.current {
+    color: #FFF;
+    background: transparent url("../images/home/app_cate_list_bg.gif") 0 0px;
+}
+
+#portalSetting #app_list_box {
+    overflow: auto !important;
+}
+
+#portalSetting #app_list_box ul {
+    padding: 10px;
+    list-style-type: none;
+}
+
+#portalSetting #app_list_box ul li {
+    float: left;
+    width: 85px;
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#portalSetting #app_list_box ul li a img {
+    display: block;
+    margin: 0 auto;
+}
+
+#portalSetting #app_list_box ul li a {
+    color: #000;
+}
+
+#portalSetting #app_list_box ul li a span.lleft {
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    margin-top: 3px;
+}
+
+#portalSetting #app_list_box ul li a span.lright {
+    display: inline-block;
+    height: 18px;
+    max-width: 80px;
+    line-height: 18px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#portalSetting #app_list_box ul li:hover span.lleft {
+    display: inline-block;
+    height: 18px;
+    background: transparent url('../images/home/app_title_bg.png') no-repeat left 0;
+    padding-left: 2px;
+}
+
+#portalSetting #app_list_box ul li:hover span.lright {
+    display: inline-block;
+    padding-right: 2px;
+    max-width: 80px;
+    overflow: hidden;
+    color: #FFF;
+    background: transparent url('../images/home/app_title_bg.png') no-repeat right -18px;
+}
+
+#portalSetting #screenPageDom {
+    height: 100%;
+    background-color: #F3F3F3;
+}
+
+#portalSetting #screenPageDom #screen_list {
+    overflow: auto !important;
+    height: 100%;
+}
+
+#portalSetting #screenPageDom ul {
+    padding: 10px 5px;
+    height: auto;
+    list-style-type: none;
+}
+
+#portalSetting #screenPageDom ul li {
+    display: block;
+    height: 120px;
+    width: 240px;
+    line-height: 120px;
+    cursor: move;
+    text-align: center;
+    font-family: "Microsoft YaHei", "Arial", "宋体";
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #FFF;
+    background: transparent url('../images/home/min_screen_bg.png') no-repeat;
+}
+
+#portalSetting #screenPageDom ul #btnAddScreen {
+    cursor: pointer;
+    background: transparent url('../images/home/min_screen_bg_add.png') no-repeat;
+}
+
+#portalSetting #screenPageDom ul li {
+    position: relative;
+}
+
+#portalSetting #screenPageDom ul li.current {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#portalSetting #screenPageDom ul li .closebtn {
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    background: transparent url('../images/home/close.png') no-repeat center center;
+    cursor: pointer;
+    top: -6px;
+    right: -6px;
+}
+
+/* author:tbt */
+.slidebox #container {
+    position: relative;
+    width: 1440px;
+    height: 452px;
+    left: 0px;
+    margin-left: 0px;
+    display: none;
+}
+
+.slidebox #container .screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.slidebox #container .screen .ui-sortable li {
+    margin:0 8px;
+}
+
+
+/* app box css---tbt*/
+#dialog_content_appbox {
+    height: 372px;
+}
+
+#portalSetting {
+    overflow: hidden;
+}
+
+#portalSetting #bar {
+    z-index: 2;
+    position: absolute;
+    margin:0 2px;
+    height: 38px;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    left: 0;
+}
+
+#portalSetting #appPageAll {
+    left: 0;
+    top: 38px;
+    width: 767px;
+    height: 334px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+}
+
+#portalSetting #appPageDom {
+    overflow: hidden;
+}
+
+#portalSetting #app_cate_list {
+    left: 0;
+    top: 0;
+    width: 120px;
+    height: 334px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+}
+
+#portalSetting #app_list_box {
+    left: 120px;
+    top: 0;
+    width: 647px;
+    height: 334px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+}

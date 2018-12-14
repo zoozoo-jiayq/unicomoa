@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * Text field dialog window.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=uft-8" />
+	<meta content="noindex, nofollow" name="robots" />
+	<script src="../../dialog/common/fck_dialog_common.js" type="text/javascript"></script>
+  <script src="/inc/js/utility.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/cn_spell.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+var dialog	= window.parent ;//应该是对话框外壳所对应的窗口 by dq 090520
+var oEditor = dialog.InnerDialogLoaded() ;//获得最外层界面所对应的window，该函数在对话框外壳程序中(fckdialog.html)定义 by dq 090520
+
+// Gets the document DOM
+var oDOM = oEditor.FCK.EditorDocument ;//获得编辑区域的iframe对应的窗口的document（定义及赋值：fck.js第942行-->114行-->fc,editingarea.js第28行-->220行），它是直接可编辑的 by dq 090520
+//Selection是什么？(在fckselection.js第24行定义)，GetSelectedElement函数在哪定义？(在fckselection_ie.js第48行定义) by dq 090520
+var oActiveEl = dialog.Selection.GetSelectedElement() ;//获得编辑区域里被选中的控件对象 by dq 090520
+var item_id = "";
+window.onload = function()//对话框弹出时，最内层的对话框显示完成后，执行这个onload函数 by dq 090520
+{
+	if ( oActiveEl && oActiveEl.getAttribute('tagName') == 'INPUT')//编辑一个编辑区域内的控件时，走这个分支 by dq 090520
+	{
+		GetE('ITEM_NAME').value	= oActiveEl.getAttribute('title') ;
+		// if(oActiveEl.getAttribute('onFocus')=="selectPerson(this)"){
+		// 	GetE('SELECT_TYPE').value	= "0";
+		// }else{
+		// 	GetE('SELECT_TYPE').value	= "1";
+		// }
+		//GetE('SELECT_TYPE').value	= oActiveEl.getAttribute('type') ;
+    // var val = oActiveEl.getAttribute('initGroup');
+    // var os = document.getElementsByName("isDefault");
+    // for(var i=0; i<os.length; i++){
+    //   if(os[i].value == val){
+    //     os[i].checked = "checked";
+    //   }
+    // }
+	}
+	else//在编辑区域内新建一个控件时，走这个分支 by dq 090520
+		oActiveEl = null ;
+
+	dialog.SetOkButton( true ) ;//该函数在fckdialog.html 683行定义 by dq 090520
+	dialog.SetAutoSize( true ) ;//该函数在fckdialog.html 213行定义 by dq 090520
+	SelectField( 'ITEM_NAME' ) ;//在编辑区域设置刚创建的控件为选中状态，该函数在fck_dialog_common.js 第100行定义 by dq 090520
+}
+
+function Ok()
+{
+  //验证名称中不能包含空格
+   if(ITEM_NAME.value.indexOf(" ") >=0){
+   	alert("控件名称中不能包含空格，请去掉空格！");
+   	return false;
+   }
+  //为“撤销”操作做准备，记录当前编辑区域的状态（猜的） by dq 090520
+	oEditor.FCKUndo.SaveUndoStep() ;
+
+  if(ITEM_NAME.value=="")
+  {
+     alert("控件名称不能为空");
+     return;
+  }
+	/**为后台保存创建命名规范*/
+	item_id="_"+shareConvert(GetE('ITEM_NAME').value)+"_";
+  oActiveEl = CreateNamedElement( oEditor, oActiveEl, 'DIV', {name:item_id} ) ;
+	/**控件创建不成功*/
+	if(oActiveEl==undefined){
+    	return false;
+    }
+  SetAttribute(oActiveEl,'cnName',"%"+GetE('ITEM_NAME').value+"%") ;
+  return true;
+}
+
+</script>
+</head>
+<body style="overflow: hidden">
+
+<table width="100%" style="height: 100%">
+		<tr>
+			<td align="center">
+				<table cellspacing="3" cellpadding="0" border="0">
+          <tr>
+              <td nowrap><b>对应的控件名称</b>：
+              </td>
+              <td nowrap>
+               <Input id="ITEM_NAME" type="text" size="20" maxlength="15">
+              </td>
+          </tr>
+         <!--  <tr>
+              <td nowrap><b>是否显示默认值</b>：
+              </td>
+              <td nowrap>
+              	
+               <select id="SELECT_TYPE">
+               	  <option value="0" selected>选择人员</option>
+               	  <option value="1">选择部门</option>
+               </select>
+           
+               <label><input type="radio" name="isDefault"  value="1" checked />是</label>
+               <label><input type="radio" name="isDefault" value="0" />否</label>
+              </td>
+          </tr> -->
+          <tr >
+              <td colspan="2">
+              	<div style="font-size: 10pt;font-family:宋体;color:blue;word-wrap:break-word;width:280px;">
+                  <b>说明：</b>该控件将创建一个无边框的DIV容器，允许用户将创建的控件放进容器中(在源码模式下通过拷贝的方式)，通过控制容器来达到控制容器中的控件是否显示的目的。
+                </div>
+              </td>
+          </tr>
+				</table>
+			</td>
+		</tr>
+</table>
+</body>
+</html>
+
+

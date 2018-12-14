@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.manageList{position:relative;padding:14px;}
+.manageList table{table-layout:fixed}
+.manageList .manageBox{ border:1px solid #e3b2c7; overflow:hidden;height:300px;}
+.manageList .col_1{border:1px solid #e3b2c7;}
+.manageList .col_1 .title{ background:#e3b2c7; color:#9d4869; padding:0 8px;}
+.manageList .col_2{border:1px solid #f7b88d;}
+.manageList .col_2 .title{ background:#f8b78d; color:#ac602e; padding:0 8px;}
+.manageList .col_3{border:1px solid #b5d991;}
+.manageList .col_3 .title{ background:#b5d993; color:#4c7725; padding:0 8px;}
+.manageList .col_4{border:1px solid #97d3d3;}
+.manageList .col_4 .title{ background:#97d3d3; color:#1e7272; padding:0 8px;}
+.manageList .col_5{border:1px solid #94c1fa;}
+.manageList .col_5 .title{ background:#94c1fa; color:#26538a; padding:0 8px;}
+.manageList .col_6{border:1px solid #fda3a3;}
+.manageList .col_6 .title{ background:#fda3a3; color:#8e2c2d; padding:0 8px;}
+.manageBox .title{height:30px; line-height:30px; font-size:16px;}
+.manageBox .cont{ height:270px; width:100%; overflow:auto;}

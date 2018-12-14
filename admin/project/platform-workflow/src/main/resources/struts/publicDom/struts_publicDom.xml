@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<!-- 表单权限控制 -->
+	<package name="baseSet" namespace="/baseSet" extends = "struts-default">
+		<action name="formAuthority" class="cn.com.qytx.cbb.publicDom.action.FormAuthorityAction">
+			<result name="toSet">/logined/publicDom/formSet/formList.jsp</result>
+			<result name="toPropertyList">/logined/formAuthority/propertyList.jsp</result>
+			<result name="toSetUsers">/logined/formAuthority/setUsers.jsp</result>
+		</action>
+		 <action name="ajax_*" class="cn.com.qytx.cbb.publicDom.action.FormAuthorityAction" method="{1}" ></action>
+	</package>
+	
+	<!-- 重构后  -->
+	<package name="dom" namespace="/dom" extends="struts-default">
+		
+		<action name="gather" class="cn.com.qytx.cbb.publicDom.action.NewGatherDomAction">
+		     <result name="add">/logined/publicDom/newDom/gather_add.jsp</result>
+			 <result name="register">/logined/publicDom/newDom/gather_register.jsp</result>
+		     <result name="approve">/logined/publicDom/newDom/gather_approve.jsp</result>
+		     <result name="dispatcher">/logined/publicDom/newDom/gather_dispatcher.jsp</result>
+		     <result name="read">/logined/publicDom/newDom/gather_read.jsp</result>
+		     <result name="read_state">/logined/publicDom/newDom/gather_read_state.jsp</result>
+		     <result name="gather_zip">/logined/publicDom/newDom/gather_zip.jsp</result>
+		     <result name="register_complete">/logined/publicDom/newDom/gather_register_complete.jsp</result>
+		     <result name="approve_complete">/logined/publicDom/newDom/gather_approve_complete.jsp</result>
+		     <result name="dispatcher_complete">/logined/publicDom/newDom/gather_dispatcher_complete.jsp</result>
+		     <result name="read_complete">/logined/publicDom/newDom/gather_read_complete.jsp</result>
+		    
+		    <!-- add by 贾永强 -->
+		    <result name="innerSystemUpate">/logined/publicDom/newDom/gather_innerSystem_update.jsp</result>
+		    <result name="history_form">/logined/publicDom/newDom/jsp_historyForm.jsp</result>
+		</action>
+		
+		<action name="dispatch" class="cn.com.qytx.cbb.publicDom.action.NewDispatchDomAction">
+		      <result name="add">/logined/publicDom/newDom/dispatch_add.jsp</result>
+		      <result name="writeDoc">/logined/publicDom/newDom/dispatch_writeDoc.jsp</result>
+		      <result name="approve">/logined/publicDom/newDom/dispatch_approve.jsp</result>
+		      <result name="red">/logined/publicDom/newDom/dispatch_red.jsp</result>
+		      <result name="send">/logined/publicDom/newDom/dispatch_send.jsp</result>
+		      <result name="dispatch_zip">/logined/publicDom/newDom/dispatch_zip.jsp</result>
+		      <result name="writeDoc_complete">/logined/publicDom/newDom/dispatch_writeDoc_complete.jsp</result>
+		      <result name="approve_complete">/logined/publicDom/newDom/dispatch_approve_complete.jsp</result>
+		      <result name="red_complete">/logined/publicDom/newDom/dispatch_red_complete.jsp</result>
+		      <result name="send_complete">/logined/publicDom/newDom/dispatch_send_complete.jsp</result>
+		</action>
+		
+		<action name="public" class="cn.com.qytx.cbb.publicDom.action.NewPublicDomAction">
+			  <result name="main" >/logined/publicDom/newDom/public_main.jsp</result>
+		      <result name="selectuser">/logined/publicDom/newDom/public_selectuser.jsp</result>
+		      <result name="zip_search">/logined/publicDom/newDom/public_zip_search.jsp</result>
+		      <result name="hasDeleted">/logined/publicDom/newDom/hasDeleted.jsp</result>
+		      <result name="zipReport">/logined/publicDom/newDom/zipReport.jsp</result>
+		      <result name="printView">/logined/publicDom/newDom/printView.jsp</result>
+		      
+		</action>
+		
+	</package>
+</struts>

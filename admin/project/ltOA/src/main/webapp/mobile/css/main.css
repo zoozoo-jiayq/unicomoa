@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin: 0px;padding: 0px;font-style: normal;}
+a{color: rgb(96, 127, 166);text-decoration: none;}
+body{line-height: inherit;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;background: #fff;}
+.pt10{ padding-top:10px;}
+.pt15{ padding-top:15px;}
+.articleDetail{padding: 10px 15px 15px;}
+.articleDetail h1 {padding-bottom: 10px;font-size: 24px; line-height:36px;font-weight: normal;word-break:keep-all;word-wrap:break-word;}
+.articleDetail h2 {padding-bottom: 10px;line-height: 15px;font-size: 15px;overflow: hidden;color: #5b7ea4; font-weight:normal}
+.articleDetail h2 label{ color:#898989}
+.articleDetail h3{ padding-top:15px; padding-bottom:10px;}
+.articleDetail p {font-size: 18px; line-height:28px;clear: both;display: block;color:#454545; padding:5px 0; text-indent:2em; overflow:hidden}
+.articleDetail img{max-width: 100%; float:left;}
+
+.listBox{ border:1px solid #c0c0c0; background:#fff; border-radius:3px; overflow:hidden; margin:12px;}
+.listBox a{ display:block;padding:12px;}
+.listBox h2{ font-size:16px; font-weight:100; color:#353535}
+.listBox img{ width:100%; margin-top:15px;}
+.listBox .txt{font-size:14px; line-height:22px; color:#999; margin-top:8px;}
+.listBox .more{ font-size:14px; color:#000; margin-top:10px; font-weight:100}
+.listBox .more a{ color:#000;}
+.listBox a:active , .listBox a.active{ background:#e6e6e6;}
+
+
+
+
+

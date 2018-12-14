@@ -1,0 +1,11 @@
+<wire-bindings>
+
+  <!-- ########################### -->
+  <!-- ### Descriptor bindings ### -->
+  <!-- ########################### -->
+  <!-- hibernate bindings -->
+  <binding class="org.jbpm.pvm.internal.wire.binding.JpaEntityManagerBinding" />
+  <!-- sessions -->
+  <binding class="org.jbpm.pvm.internal.wire.binding.JpaDbSessionBinding" />
+  
+</wire-bindings>

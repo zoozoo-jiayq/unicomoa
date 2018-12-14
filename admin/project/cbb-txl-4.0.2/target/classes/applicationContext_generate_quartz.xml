@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序 -->
+	<bean id="startQuertzForGenerate" lazy-init="false" autowire="no"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<property name="triggers">
+			<list>
+				<ref bean="generateCompanyBaseInfoCron" />
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- 定时生成各个单位的基本数据文件 -->
+	<bean id="generateCompanyBaseInfo"
+		class="cn.com.qytx.cbb.org.job.GenerateCompanyBaseInfo"></bean>
+	<bean id="generateCompanyBaseInfoTask"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="generateCompanyBaseInfo" />
+		<property name="targetMethod" value="execute" />
+	</bean>
+	<bean id="generateCompanyBaseInfoCron" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="generateCompanyBaseInfoTask" />
+		<!-- <property name="cronExpression" value="0 0/3 * * * ?" /> -->
+		<property name="cronExpression" value="0 23 16 * * ?" />
+	</bean>
+</beans>

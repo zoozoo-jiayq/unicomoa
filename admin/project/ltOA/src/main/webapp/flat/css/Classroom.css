@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* CSS Document */
+/*在线课堂 2015-03-17 王光星*/
+.gray_8 {color: #888 !important}
+a{ text-decoration:none !important}
+
+/*页面步骤*/
+.flow-steps {overflow: hidden;}
+.flow-steps li {background:url(../images/flow_steps_bg.png) no-repeat 100% 0px #e4e4e4; padding: 0px 24px 0px 0px; height: 40px; text-align: center; color: #888; line-height: 40px; overflow: hidden; font-size: 18px; float: left; width:174px;}
+.flow-steps li span {display: block;}
+.flow-steps li strong {display: block;}
+.flow-steps li .first {background: url("../images/icon/flow_steps_bg.png") no-repeat -12px -69px rgb(228, 228, 228);}
+.flow-steps li.last {background-position: 100% -240px;}
+.flow-steps li.current {color:#FFF; background-color: rgb(255, 102, 0); }
+.flow-steps li.current .first {background-position: -22px -160px; background-color: rgb(255, 102, 0);}
+.flow-steps li.current-prev {background-position: 100% -40px !important;}
+.flow-steps li.done {background-position: 100% -80px; color: rgb(255, 102, 0); background-color: rgb(255, 230, 186);}
+.flow-steps li.done .first {background-position: -22px -200px; background-color: rgb(255, 230, 186);}
+.flow-steps li.last-current {background-position: 100% -280px; color: rgb(255, 255, 255); background-color: rgb(255, 102, 0);}
+
+/*提示消息*/
+.ts_message{border:1px solid #e1e1e1; overflow:hidden; margin-top:15px;}
+.ts_message .mag{ background:#fafafa; padding:95px 0 105px 305px;}
+.ts_message .mag em{ background:url(../images/success.png) no-repeat; height:90px; line-height:65px; display:inline-block; padding-left:130px;color:#008800;font-size:36px;}
+.ts_message .mag p{color: #333;font-size: 16px;margin-top: -18px; padding-left: 128px; text-align: left;}
+.ts_message .mag p a{ color:#0066cc; text-decoration:underline;}
+.ts_message .btn{ height:42px; padding:22px 0 22px 0; background:#eaf0f4;}
+.ts_message .buttonArea{border-top:1px solid #e1e1e1;padding:20px 0;background:#eaf0f4;}
+
+/*buttonArea*/
+.formPage .bigArea{clear: both;margin-top: 20px;padding-bottom: 20px;text-align:center}
+.bigArea .bigButton_green{min-width:160px; _width:160px;height:40px;line-height:35px; text-align:center;outline:0;cursor:pointer;color:#fff;font-size:18px;border:0; background:#61b6c5; border-radius:3px;margin:0 15px;padding:0 10px;}
+.bigArea .bigButton_green:hover{ background:#49a4b4;}
+.bigArea .bigButton_grey{min-width:160px; _width:160px;height:40px;line-height:35px; text-align:center;outline:0;cursor:pointer;color:#353535;font-size:18px;border:0; background:#dce7e9; border-radius:3px;margin:0 15px;padding:0 10px;}
+.bigArea .bigButton_grey:hover{background:#c0dadf;}
+
+/*录入习题*/
+.enter{overflow:hidden; padding:0 10px;}
+.enter dt{font-size:14px; line-height: 25px; padding: 12px 15px;  word-wrap: break-word; color:#353535;}
+.enter dd{overflow:hidden;font-size:14px; color:#353535; text-indent:40px; line-height:40px; cursor:pointer; position:relative;}
+.enter .formText{ width:78%; border:none !important; border-bottom:1px solid #ebebeb !important; background:none}
+.enter .formTextarea{ float:left; width:79%}
+.enter dd .close{ position:absolute; background:url(../images/online/close.png) no-repeat; width:18px; height:18px; right:106px; top:5px;}
+.enter dd .oper{ position:absolute; right:0; top:0px; font-size:14px; color:#0066cc; width:95px; text-indent:0; height:25px; line-height:25px;}
+.enter dd .oper.on{ color:#48990c;}
+.enter dd.operate em {color: #2674d0;cursor:pointer;float:left;padding-left:50px;}
+
+/*习题列表*/
+.choice{height:590px; overflow:auto;}
+.choice .odd{ background:#fcfcfc;}
+.choice dl{overflow:hidden;border-top:1px solid #eee;padding:20px;}
+.choice dl dt{color:#888888;padding:5px 140px 5px 10px; overflow:hidden; height:18px; line-height:18px; position:relative}
+.choice dl dt span{ float:left; padding:0 15px; border-right:1px solid #d4d4d4;}
+.choice dl dt label.radio{ color:#888888;}
+.choice dl dd.title{ line-height: 25px; padding:5px 10px;  word-wrap: break-word; color:#353535; position:relative; margin-top:0}
+.choice dl dd font{color:#48990c;}
+.choice dl dd{overflow:hidden;color:#353535; line-height:22px; margin-top:10px; padding:0 30px; cursor:pointer;}
+.choice dl dd .radio input{margin-right:10px;}
+.choice .operate{ position:absolute; right:13px; top:7px; border-right:none; padding:0}
+.choice .operate a{ float:left; width:55px; height:22px;color:#666;line-height:20px; margin-right:2px;background:#e1e4e6; font-size:14px;}
+.choice .operate a i{ width:20px; height:22px; float:left;}
+.choice .operate a i.batch_revise{background:url(../images/icon/xg_icon.png) center center no-repeat;}/*修改*/
+.choice .operate a i.delete{background:url(../images/icon/sc_icon.png) center center no-repeat;}/*删除*/
+
+/*课程表*/
+.syllabus{width:100%;background:#fff;}
+.syllabus .even{ background:#fafafa;}
+.syllabus .syllBox{padding:30px;overflow:hidden; position:relative; border-bottom:1px solid #ebebeb;}
+.syllabus .noDate{ padding:30px 0; text-align:center; font-size:18px; color:#999;}
+.syllBox .imgBox{ float:left;width:200px; height:161px; position:relative; padding-right:10px;}
+.syllBox .imgBox .share{position:absolute; background:url(../images/online/gb.png) no-repeat; width:100%; height:100%; left:0; top:0; display:none;}
+.syllBox .close .share{ display:block;}
+.syllBox .txtBox{ float:left; width:610px; height:160px; overflow:hidden;}
+.txtBox dt{color:#017a8f; font-size:16px; height:25px; overflow:hidden; line-height:25px; float:left; width:100%;}
+.txtBox dt a{color:#017a8f;}
+.txtBox dd{ font-size:14px; float:left; width:100%; line-height:22px; color: #888}
+.txtBox dd.txt{overflow:hidden;color:#353535;}
+.txtBox dd.pl{ background:url(../images/online/pl_icon.png) no-repeat 0 center; padding-left:25px; margin-top:5px;}
+.syllBox .operateBox{ float:right; width:120px; overflow:hidden;}
+.operateBox .cjdBtn{float:left; height:35px; font-size:16px; color:#fff; background:#5db254 url(../images/online/cjd_icon.png) no-repeat 26px center; text-indent:46px; line-height:35px; width:100%; border-radius:3px; cursor:pointer;} 
+.operateBox .cjdBtn:hover{ background-color:#47943f;}
+.operateBox .czBtn{float:left; margin-top:6px; width:118px; border:1px solid #dbdbdb; border-radius:3px; background:#ebebeb;}
+.operateBox .czBtn a{float:left; width:100%; height:38px; border-bottom:1px solid #cfcfcf; border-top:1px solid #fff; position:relative; line-height:38px; text-indent:57px; color:#353535;}
+.operateBox .czBtn a:hover{ background:#dadada}
+.operateBox .czBtn em{ position:absolute; background:url(../images/online/cz_icon.png) no-repeat; width:16px; height:16px; left:29px; top:12px;}
+.operateBox .czBtn em.em1{ background-position:0 0;}
+.operateBox .czBtn em.em2{ background-position:1px -39px;}
+.operateBox .czBtn em.em3{ background-position:-1px -80px;}
+.operateBox .czBtn em.em4{ background-position:2px -133px;}
+
+.addbtn{float:right; width:120px; height:35px; border-radius:3px; background:url(../images/online/add_icon.png) no-repeat 32px center #39a6b9; text-indent:54px; margin-top:10px; font-size:16px; color:#fff; line-height:35px; margin-right:20px;}
+
+/*上传视频*/
+.upload_vis{ width:100%;background:#fff;}
+.upload_vis .uploadBox{ float:left;width:236px;height:270px; border:1px solid #e9e9e9; overflow:hidden; margin-right:12px; margin-top:20px; position:relative;}
+.uploadBox .del{position:absolute; width:35px; height:20px; top:0; right:0; background:#252524; text-align:center; line-height:20px; color:#fff; font-size:12px; cursor:pointer;
+filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8;opacity: 0.8; z-index:5}
+.uploadBox .del:hover{filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity: 1;opacity: 1;}
+.uploadBox dt{ width:100%; height:156px; background:#f5f5f5; position:relative;}
+.uploadBox dt.video{background:url(../images/online/vido_mr.png) no-repeat;}/*视频*/
+.uploadBox dt.img{background:url(../images/online/img_mr.png) no-repeat;}/*图片*/
+.uploadBox dt.sound{background:url(../images/online/audio_mr.png) no-repeat;}/*音频*/
+.uploadBox dt img{ width:100%; height:100%;}
+.uploadBox dt .shade{position:absolute;background:#000000;filter:alpha(opacity=30);-moz-opacity:0.3;-khtml-opacity:0.3;opacity:0.3; left:0; top:0; width:100%; height:100%; z-index:3; display:none;}
+.uploadBox dt .v_icon{ position:absolute; background:url(../images/online/video_icon.png) no-repeat; width:69px; height:69px; left:50%; margin-left:-34px; top:50%; margin-top:-34px; z-index:5}
+.uploadBox dt .img_icon{ position:absolute; background:url(../images/online/img_icon.png) no-repeat; width:38px; height:38px; right:5px; bottom:5px;  z-index:5;}
+.uploadBox dd.name{color:#555555; line-height:24px; padding:12px 9px 8px 9px; height:50px; overflow:hidden; border-bottom:1px solid #e9e9e9}
+.uploadBox dd.name label{color:#017a8f;font-size:18px; padding-right:4px;}
+.uploadBox dd.info{ height:43px; line-height:42px; padding:0 8px; color:#aaaaaa;}
+.uploadBox:hover .shade{ display:block;}
+.upload_vis .addBox{border:1px dashed #cecece; cursor:pointer;}
+.addBox dt{background:#f5f5f5; font-size:30px; text-align:center; line-height:150px; color:#353535}
+.addBox dd.add{width:100%; height:50px; line-height:50px; text-indent:60px; font-size:18px; color:#fff; background:url(../images/online/add.png) no-repeat 30px center #61b6c5; padding:0; cursor:pointer;}
+.addBox dd.add:hover{ background-color:#429bab;}
+.addBox dd.tip{ height:40px; line-height:20px; overflow:hidden; padding-top:10px; padding-left:8px;}
+
+
+
+/*查看考题*/
+.lookQue{ margin:0 auto; width:1000px; background:#fff; padding:50px 0; color:#353535;}
+.lookQue .bigTitle{ font-size:24px;  text-align:center; padding:5px 30px;}
+.lookQue .bigTitle .num{ float:right; font-size:14px; }
+.lookQue .bigTitle .num label{ color:#ff5454; font-size:24px;}
+.lookQue .nameTitle{ font-size:16px; text-align:center; padding:5px 105px 5px 30px;}
+.lookQue .smalTitle{ padding:5px 30px 30px 30px;}
+.lookQue .smalTitle p{ text-indent:2em;}
+.lookQue dl{overflow:hidden;border-top:1px solid #eee;padding:20px;}
+.lookQue dl dt{ line-height: 25px; padding:5px 10px;  word-wrap: break-word; color:#353535; position:relative;}
+.lookQue dl dt font{color:#48990c;}
+.lookQue dl dd{overflow:hidden;color:#353535; padding:0 60px; line-height:22px; margin-top:10px}
+.lookQue dl dd.reply{ background:url(../images/online/right_btn.png) no-repeat 38px 5px ; color:#48990c;}
+.lookQue dl dd.error{ background:url(../images/online/error_btn.png) no-repeat 38px 5px ; color:3ff5454;}
+.lookQue .even{ background:#fcfcfc;}
+.lookQue .wrong{ background:#fff8f8;}
+
+/*封面*/
+.page{ width:200px; height:160px;}
+.page img{ width:200px; height:160px;}
+
+
+/*排序*/
+.sortBtn{ float:right; background:url(../images/online/sort_icon.png) no-repeat; width:9px; height:15px; margin-top:4px; position:relative;}
+.sortBtn .upBtn{ position:absolute; width:9px; height:7px; left:0; top:0}
+.sortBtn .downBtn{ position:absolute; width:9px; height:7px; left:0; bottom:0}
+
+/*成绩单数*/
+.markNum{ float:right;  font-size:16px;}
+.markNum label{color:#888888; margin-right:20px;}
+.markNum label.num{display: inline-block; width: 122px; height: 29px;text-align: center; margin-right:0; cursor:pointer;}
+.markNum label.num:hover{ width: 120px; height: 27px; border: 1px solid #d9d9d9; line-height: 27px; background:#fafafa;}
+.markNum label.num.on{width: 120px; height: 27px; border: 1px solid #d9d9d9; line-height: 27px; background:#fff6ec;}
+.markNum em{color:#ff6600;}
+
+/*评论*/
+.discuss{background:#fff; padding:0 30px 20px 30px;}
+.discuss dl{ padding:15px 6px; overflow:hidden; border-bottom:1px solid #ebebeb;}
+.discuss dl dt{float:left; width:75px; height:75px; margin-right:10px;}
+.discuss dl dd{ padding-left:85px;}
+.discuss dl dd.name{ font-size:14px; color:#aaaaaa;}
+.discuss dl dd.name label{ color:#017a8f; font-size:16px;}
+.discuss dl dd.name a.del{ float:right; color:#0066cc;}
+.discuss dl dd.txt{ color:#353535; line-height:22px; margin-top:5px;}
+.discuss .even{ background:#fafafa}
+
+/*视频播放*/
+.bf_box{width:986px; height:666px; background:#6a6a6a; position:absolute; left:50%; margin-left:-493px; top:50%; margin-top:-333px; z-index:99;}
+.bf_box h2{ position:relative; height:45px; line-height:45px; padding:0 80px 0 6px; font-size:16px; color:#fff; overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap;word-break: keep-all;}
+.bf_box h2 .close{ position:absolute; background:url(../images/online/tc_close.png) no-repeat; width:51px; height:17px; right:18px; top:14px;}
+.bf_box h2 .close:hover{ background-position:0 -17px;}
+.bf_box .bfq{ width:974px; height:614px; padding-left:5px; overflow:hidden;}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jbpm-configuration>
+
+  <process-engine-context>
+
+    <command-service name="txRequiredCommandService">
+      <skip-interceptor />
+      <retry-interceptor />
+      <environment-interceptor />
+      <standard-transaction-interceptor />
+    </command-service>
+
+    <command-service name="newTxRequiredCommandService">
+      <retry-interceptor />
+      <environment-interceptor policy="requiresNew" />
+      <standard-transaction-interceptor />
+    </command-service>
+
+    <hibernate-configuration>
+      <cfg resource="jbpm.hibernate.cfg.xml" />     
+    </hibernate-configuration>
+
+  </process-engine-context>
+
+  <transaction-context>
+    <transaction type="spring" />
+    <entity-manager accessor-class="org.jbpm.pvm.internal.jpa.SpringEntityManagerAccessor"/>
+    <hibernate-session jpa="true"/>
+  </transaction-context>
+
+</jbpm-configuration>

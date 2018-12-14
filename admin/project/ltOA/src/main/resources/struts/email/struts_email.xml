@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="email" extends="struts-default" namespace="/logined/email">
+
+        <default-action-ref name="emailMainPage"/>
+		
+		<!-- 初始化所有用户邮箱 -->
+		<action name="defaultEmail" class="cn.com.qytx.oa.email.action.DefaultEmailAction" method="defaultEmail">
+        </action>
+	
+        <!-- 获取邮件箱列表 -->
+        <action name="emailBoxList" class="cn.com.qytx.oa.email.action.EmailBoxAction" method="list"/>
+
+        <!-- 修改指定邮件箱的每页显示数量 ajax-->
+        <action name="emailBoxChangePageMax" class="cn.com.qytx.oa.email.action.EmailBoxAction" method="changPageMax"/>
+
+        <!-- 删除邮件箱ajax -->
+        <action name="emailBoxDelete" class="cn.com.qytx.oa.email.action.EmailBoxAction" method="delete"/>
+
+        <!-- 打开邮件箱修改页面 -->
+        <action name="emailBoxEdit" class="cn.com.qytx.oa.email.action.EmailBoxAction" method="edit">
+            <result name="success">/logined/email/emailBoxEdit.jsp</result>
+            <result name="error">/logined/email/emailBoxList.jsp</result>
+        </action>
+
+        <!-- 邮件箱更新ajax -->
+        <action name="emailBoxUpdate" class="cn.com.qytx.oa.email.action.EmailBoxAction" method="update">
+        </action>
+
+        <!-- 新增邮件箱ajax -->
+        <action name="emailBoxSave" class="cn.com.qytx.oa.email.action.EmailBoxAction" method="save"/>
+
+        <!-- 新建一封邮件 -->
+        <action name="emailBodyCreate" class="cn.com.qytx.oa.email.action.EmailAction" method="emailBodyCreate">
+            <result name="success">/logined/email/emailCreate.jsp</result>
+        </action>
+
+        <!-- 邮件的操作 -->
+        <action name="emailBodySave" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="save"/>
+        <!-- 邮件的操作 -->
+        <action name="emailBodyUpdate" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="update"/>
+
+        <!-- 邮件主窗口打开action，需要加载用户自定义的邮件箱 -->
+        <action name="emailMainPage" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailMainPage">
+            <result name="success">/logined/email/emailMain.jsp</result>
+        </action>
+
+        <!-- 个人桌面任务中的未读邮件弹窗 -->
+        <action name="emailNotReadForDesktopTask" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailNotReadForDesktopTask">
+            <result name="success">/logined/email/emailNotReadForDesktopTask.jsp</result>
+        </action>
+
+        <!-- 打开收件箱列表页面 -->
+        <action name="emailToListPage" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailToListPage">
+            <result name="success">/logined/email/emailToList-list.jsp</result>
+        </action>
+        <!-- 收件箱列表ajax -->
+        <action name="emailToList" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailToList"/>
+
+        <!-- 修改收件箱邮件星级ajax -->
+        <action name="emailToChangeMarkLevel" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToChangeMarkLevel"/>
+
+        <!-- 打开已发送 列表页面 -->
+        <action name="emailSendedListPage" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailSendedListPage">
+            <result name="success">/logined/email/emailSendedList-list.jsp</result>
+        </action>
+
+        <!-- 已发送 列表ajax -->
+        <action name="emailSendedList" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailSendedList"/>
+
+        <!-- 打开草稿箱 列表页面 -->
+        <action name="emailDraftListPage" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailDraftListPage">
+            <result name="success">/logined/email/emailDraftList.jsp</result>
+        </action>
+        <!-- 草稿箱 列表 ajax-->
+        <action name="emailDraftList" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailDraftList"/>
+
+        <!-- 打开废纸篓 列表页面 -->
+        <action name="emailWastebasketListPage" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailWastebasketListPage">
+            <result name="success">/logined/email/emailWastebasketList-list.jsp</result>
+        </action>
+
+        <!-- 废纸篓 列表 ajax-->
+        <action name="emailWastebasketList" class="cn.com.qytx.oa.email.action.EmailListAction"
+                method="emailWastebasketList"/>
+
+        <!-- 单封邮件详情 -->
+        <action name="emailDetail" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailDetail">
+            <result name="success">/logined/email/emailDetail.jsp</result>
+            <result name="notExist">/logined/email/emailAlertError.jsp</result>
+        </action>
+        
+        <!-- 单封邮件事务详情 -->
+        <action name="emailAffairsDetail" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailDetail">
+            <result name="success">/logined/email/emailDetail.jsp?type=affairs</result>
+            <result name="notExist">/logined/email/emailAlertError.jsp</result>
+        </action>
+
+        <!-- 删除邮件  ajax-->
+        <action name="emailToDelete" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToDelete"/>
+
+        <!-- 删除邮件  ajax-->
+        <action name="emailToReadedDelete" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToReadedDelete"/>
+
+        <!-- 销毁邮件  ajax-->
+        <action name="emailToDestroy" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToDestroy"/>
+        <!-- 恢复删除邮件  ajax-->
+        <action name="emailToRecovery" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToRecovery"/>
+        <!-- 移动邮件  ajax-->
+        <action name="emailToMove" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToMove"/>
+        <!-- 标记为已读  ajax-->
+        <action name="emailToReaded" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToReaded"/>
+        <!-- 所有标记为已读  ajax-->
+        <action name="emailToReadedAll" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToReadedAll"/>
+
+        <!-- 删除已发送、草稿箱邮件  ajax-->
+        <action name="emailBodyDelete" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyDelete"/>
+
+        <!-- 发送草稿箱中的邮件-批量  ajax-->
+        <action name="emailBodyDraftSend" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyDraftSend"/>
+
+        <!-- 转发邮件 收件箱 -->
+        <action name="emailToForward" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToForward">
+            <result name="success">/logined/email/emailCreate.jsp</result>
+        </action>
+        <!-- 转发邮件 发件箱 -->
+        <action name="emailBodyForward" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyForward">
+            <result name="success">/logined/email/emailCreate.jsp</result>
+        </action>
+        <!-- 再次发送 发件箱 -->
+        <action name="emailBodyAgainSend" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyAgainSend">
+            <result name="success">/logined/email/emailCreate.jsp</result>
+        </action>
+
+        <!-- 给指定人发送邮件 -->
+        <action name="sendEmailByUserId" class="cn.com.qytx.oa.email.action.EmailAction" method="sendEmailByUserId">
+            <result name="success">/logined/email/emailCreate.jsp</result>
+        </action>
+
+        <!-- 给指定群组发送邮件 -->
+        <action name="sendEmailByGroupId" class="cn.com.qytx.oa.email.action.EmailAction" method="sendEmailByGroupId">
+            <result name="success">/logined/email/emailCreate.jsp</result>
+        </action>
+        
+        <!-- 聊天室根据群组或者个人发送邮件 -->
+        <action name="chatSendEmailByIdStr" class="cn.com.qytx.oa.email.action.EmailAction" method="chatSendEmailByIdStr">
+        </action>
+        
+        <!-- 回复、回复全部邮件 -->
+        <action name="emailToReply" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToReply">
+            <result name="success">/logined/email/emailCreate.jsp</result>
+        </action>
+        <!-- 修改邮件体，草稿箱 -->
+        <action name="emailBodyEdit" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyEditDraft">
+            <result name="success">/logined/email/emailCreate.jsp</result>
+        </action>
+        <!-- 修改邮件体，未读取 -->
+        <action name="emailBodyEditNotRead" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyEditNotRead">
+            <result name="success">/logined/email/emailCreate.jsp</result>
+        </action>
+
+        <!-- 收件箱、废纸篓导出Excel -->
+        <action name="emailToExport" class="cn.com.qytx.oa.email.action.EmailExportAction"
+                method="emailToExport"/>
+        <!-- 发件箱、草稿箱导出Excel -->
+        <action name="emailBodyExport" class="cn.com.qytx.oa.email.action.EmailExportAction"
+                method="emailBodyExport"/>
+
+        <!-- 删除所有收件人已经删除的邮件 -->
+        <action name="emailBodyDeleteIfToUserDeleted" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyDeleteIfToUserDeleted"/>
+
+        <!-- 删除所有收件人已经读取的邮件 -->
+        <action name="emailBodyDeleteIfToUserReaded" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyDeleteIfToUserReaded"/>
+
+        <!-- 删除所有收件人未读取的邮件 -->
+        <action name="emailBodyDeleteIfToUserNotRead" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyDeleteIfToUserNotRead"/>
+
+        <!-- 清空废纸篓 -->
+        <action name="emailToWastebasketClean" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToWastebasketClean"/>
+
+        <!-- 打开搜索页面，赋给某些初始值 -->
+        <action name="searchPage" class="cn.com.qytx.oa.email.action.EmailListAction" method="searchPage">
+            <result name="success">/logined/email/emailSearch.jsp</result>
+        </action>
+        <!-- 搜索并加载搜索结果 -->
+        <action name="searchList" class="cn.com.qytx.oa.email.action.EmailListAction" method="searchList">
+            <result name="inbox" type="chain">emailToListPage</result>
+            <result name="outbox" type="chain">emailSendedListPage</result>
+            <result name="draft" type="chain">emailDraftListPage</result>
+            <result name="wastebasket" type="chain">emailWastebasketListPage</result>
+        </action>
+
+        <!-- 邮件阅读状态查看，ajax -->
+        <action name="readStatus" class="cn.com.qytx.oa.email.action.EmailAction" method="readStatus"/>
+
+        <!-- 邮件收回，ajax -->
+        <action name="emailToTakeBack" class="cn.com.qytx.oa.email.action.EmailAction" method="emailToTakeBack"/>
+
+        <!-- 获取选择邮箱的邮件数量，ajax -->
+        <action name="getBoxEmailCount" class="cn.com.qytx.oa.email.action.EmailAction" method="getBoxEmailCount"/>
+        <!-- 获取选择邮箱的邮件数量，ajax -->
+        <action name="loadDiyEmailBoxList" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="loadDiyEmailBoxList"/>
+
+        <!-- 以下为：移动端Web专用Action -->
+        <!-- 获取收件箱列表ajax -->
+        <action name="getInBoxListForWap" class="cn.com.qytx.oa.email.action.EmailWapAction" method="getInBoxList"/>
+        <!-- 获取发件箱列表ajax -->
+        <action name="getOutBoxListForWap" class="cn.com.qytx.oa.email.action.EmailWapAction" method="getOutBoxList"/>
+        <!-- 打开邮件箱详情 -->
+        <action name="emailDetailForWap" class="cn.com.qytx.oa.email.action.EmailAction" method="emailDetail">
+            <result name="success">/wap/logined/email/show.jsp</result>
+            <result name="notExist">/logined/email/emailAlertError.jsp</result>
+        </action>
+        <!-- 转发邮件 -->
+        <action name="emailForwardForWap" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailBodyForward">
+            <result name="success">/wap/logined/email/create.jsp</result>
+        </action>
+        <!-- 回复邮件 -->
+        <action name="emailReplyForWap" class="cn.com.qytx.oa.email.action.EmailAction"
+                method="emailToReply">
+            <result name="success">/wap/logined/email/create.jsp</result>
+        </action>
+        <!-- 以上为：移动端Web专用Action -->
+        <!-- 获得收件箱未读数量 -->
+        <action name="getNotReadCount" class="cn.com.qytx.oa.email.action.EmailAction" method="getNotReadCount"></action>
+    </package>
+    
+    
+    <!-- 移动手机端控制器 -->
+    <package name="wapEmail" namespace="/wap/email" extends="struts-default">
+		<action name="email_*" 
+    	    class="cn.com.qytx.oa.email.action.EmailNewWapAction"  method="{1}">
+		</action>
+	</package>
+</struts>

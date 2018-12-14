@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.devMode" value="false" />
+        <!-- 上传文件大小限制20M 单位是字节 -->
+    <constant name="struts.multipart.maxSize" value="204857600"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <package name="default" extends="struts-default">
+    	
+    </package>
+     
+    <!-- OA -->
+    <include file="struts/address/struts_addresss.xml"></include>
+    <include file="struts/attendance/struts_attendance.xml"></include>
+    <include file="struts/attendance/struts_attendance_wap.xml"></include>
+    <include file="struts/daily/struts_daily.xml"></include>
+    <include file="struts/email/struts_email.xml"></include>
+    <include file="struts/deskTop/struts_desktop.xml"></include>
+    <include file="struts/notify/struts_notify.xml"></include>
+    <include file="struts/notify/struts_wapNotify.xml"></include>
+    <include file="struts/oa/struts_calendar.xml"></include>
+    <include file="struts/oa/struts_file.xml"></include>
+    <include file="struts/oa/struts_message.xml"></include>
+    <include file="struts/taskManager/struts_task_wap.xml"></include>
+    <include file="struts/taskManager/struts_task.xml"></include>
+    <include file="struts/onlineExam/struts_onlineExam.xml"></include>
+    <include file="struts/onlineExam/struts_wapOnlineExam.xml"></include>
+    <include file="struts/record/struts_record.xml"></include>
+    <include file="struts/record/struts_record_other.xml"></include>
+    
+    <include file="struts/date/struts_date.xml"></include>
+    <!-- CBB -->
+     <!-- 会议签到-->
+    <include file="struts/sign/struts_sign.xml"></include>
+    <include file="struts/affaires/struts_affairs.xml"></include>
+    <include file="struts/affaires/struts_affairSetting.xml"></include>
+    <include file="struts/affaires/struts_affairs_remind.xml"></include>
+    <include file="dict/struts_dict.xml"></include>
+    <include file="struts/filemanager/struts_file.xml"></include>
+    <include file="struts/jpush/struts_jpush.xml"></include>
+    <include file="struts/log/struts_log.xml"></include>
+    <include file="struts/login/struts_login_wap.xml"></include>
+    <include file="struts/login/struts_login.xml"></include>
+    <include file="struts/org/struts_authority.xml"></include>
+    <include file="struts/org/struts_company.xml"></include>
+    <include file="struts/org/struts_group.xml"></include>
+    <include file="struts/org/struts_menu.xml"></include>
+    <include file="struts/org/struts_user.xml"></include>
+    <include file="struts/org/struts_userUpload.xml"></include>
+    <include file="struts/org/struts-mobile.xml"></include>
+	<include file="struts/systemset/struts_systemset.xml"></include>
+	    
+	<include file="struts/weather/struts_weather.xml"></include>    
+	 <include file="struts/comment/struts_comment.xml"></include> 
+    <include file="struts/myapply/struts_myapply.xml"></include>
+    <include file="struts/module/struts_module.xml"></include>
+    <include file="struts/speak/struts_speak.xml"></include>
+    <include file="struts/secret/struts_secret.xml"></include>
+    <include file="struts/question/struts_question.xml"></include>
+    <include file="struts/question/struts_questionMobile.xml"></include>
+    <include file="struts/question/struts_wapQuestion.xml"></include>
+    <include file="struts/news/news_mobile.xml"></include>
+    <include file="struts/news/news.xml"></include>
+    
+    
+     <!-- 工作流 -->
+    <include file="struts/customForm/struts_customForm.xml"></include>
+    <include file="struts/customJpdl/struts_customJpdl.xml"></include>
+    <include file="struts/jbpmApp/struts_jbpmApp.xml"></include>
+    <include file="struts/jbpmApp/struts_jbpmAppMobile.xml"></include>
+    <include file="struts/publicDom/struts_docTemplate.xml"></include>
+    <include file="struts/publicDom/struts_documentType.xml"></include>
+    <include file="struts/publicDom/struts_ntko.xml"></include>
+    <include file="struts/publicDom/struts_publicDom.xml"></include>
+    <include file="struts/publicDom/struts_publicDomMobile.xml"></include>
+    <include file="struts/customWidget/struts_customWidget.xml"></include>
+    
+    <include file="struts/ydzjmobile/struts_ydzjmobile.xml"></include>
+    
+    <!-- 首页统计报表 -->
+    <include file="struts/oa/struts_count.xml"></include>
+    
+    <include file="struts/headimage/struts_headImage.xml"></include>
+
+    <include file="struts/redPoint/struts_redpoint.xml"></include>
+    
+    <include file="struts/oa/structs_knowledge.xml"></include>
+    
+    <include file="struts/productionSchedule/struts_productionSchedule.xml"></include>
+    
+    <!-- 工作日志 -->
+    <include file="struts/worklog/struts_worklog.xml"></include>
+     <!-- 资产管理 -->
+    <include file="struts/capital/struts_capital.xml"></include>
+    <!-- 会议室管理 -->
+    <include file="struts/meeting/struts_meeting.xml"></include>
+    
+    
+    <include file="struts/performance/struts_performance.xml"></include>
+    <!-- 工作流配置 -->
+    <include file="struts/workflowModule/struts_workflowModule.xml"></include>
+    
+    <!-- 资产 -->
+    <include file="struts/capital/struts_capital.xml"></include>
+    
+    <!-- 绩效考核 -->
+    <include file="struts/performance/struts_performance.xml"></include>
+    <!-- 工作流配置 -->
+    <include file="struts/workflowModule/struts_workflowModule.xml"></include>
+    <!-- 车辆管理 -->
+    <include file="struts/car/struts_car.xml"></include>
+    <!-- 车辆对接 -->
+    <include file="struts/carManage/struts_car_manage.xml"></include>
+    <!-- 渠道管理 -->
+    <include file="struts/channel/struts_channel.xml"></include>
+    
+    <!-- 事务提醒   -->
+     <include file="struts/affaires/struts_affairs.xml"></include>
+    <include file="struts/affaires/struts_affairSetting.xml"></include>
+    <include file="struts/affaires/struts_affairs_remind.xml"></include>
+    
+     <package name="skinAndMenu" namespace="/skinAndMenu" extends="struts-default">
+     <!--换肤 和 菜单 样式 -->
+         <action  name="skinAndMenu" class="cn.com.qytx.oa.skinAndMenu.SkinAndMenuAction">
+         </action>
+         
+     <!-- redpoint -->
+      </package>
+</struts>

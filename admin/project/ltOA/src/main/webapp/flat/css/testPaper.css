@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*   邮政OA 投票调查模块样式     */
+.yz_qn{ overflow:hidden;}
+.yz_qn .menu_left{float:left; width:130px; border:1px solid #e3e3e3; padding:6px; overflow:hidden; border-radius:5px; background:#f5f5f5;}
+.yz_qn .menu_left h2{ font-size:20px; text-align:center;}
+.yz_qn .menu_left ul li{ width:128px; height:35px; background:#FFF; border:1px solid #e3e3e3; overflow:hidden; line-height:35px; margin-top:10px; cursor:pointer;}
+.yz_qn .menu_left ul li img{float: left; display:inline; margin:10px 10px 0 10px;}
+
+.yz_qn .cont_right{float:right; width:100%;overflow:auto; background:#FFF; height:500px;}
+.yz_qn .cont_right h2{ text-align:center;color:#000;font-size:20px; padding:10px 0;}
+.yz_qn .cont_right .subject{overflow:hidden; color:#666; line-height:25px; text-indent:2em;}
+.yz_qn .cont_right .buttonArea{ padding:15px 0; text-align:center; background:#f6f6f6; border-top:1px solid #dcdcdc;}
+.yz_qn .cont_right .buttonArea em{ float:right; padding-right:15px;}
+.yz_qn .cont_right .buttonArea em a{width:58px; height:22px; background:#edf5ec; border:1px solid #d4d4d4; display:inline-block; line-height:22px; margin:8px 0px 0 10px;}
+.yz_qn .sj_836{ width:836px;}
+
+
+/*单选题 多选题 填空题*/
+.choice .title_c{color: #598900;font-size: 16px;font-weight: bold; padding-top: 15px;}
+.choice dl{overflow:hidden; margin-top:10px; border-top:1px solid #eee}
+.choice dl dt{font-size: 16px; line-height: 25px; padding: 12px 15px;  word-wrap: break-word; color:#000;}
+.choice dl dd{overflow:hidden;font-size:16px; color:#000; text-indent:40px; line-height:35px; cursor:pointer;}
+.choice dl dd .radio input{ margin-right:5px;}
+
+.choice dl dd.wd{padding:15px 0 0 37px; background:none !important;text-indent:0; padding-bottom:0;}
+.choice dl dd.wd .formTextarea{ width:97%;}
+
+.choice dl dd.operate{ height:25px; line-height:25px;text-indent:0; background:none !important; padding-top:8px;}
+.choice dl dd.operate em{ float:left; color:#2674d0; padding-left:106px; cursor:pointer;}
+.choice dl dd.operate span{ float:right; padding-right:13px; display:none; }
+.choice dl dd.operate span a{ float:left; width:55px; height:22px;color:#666;line-height:20px; margin-right:2px;background:#e1e4e6; font-size:14px;}
+.choice dl dd.operate span a i{ width:20px; height:22px; float:left;}
+.choice dl dd.operate span a i.setTop{  background:url(../images/icon/sy_icon.png) no-repeat center center;}/*上移*/
+.choice dl dd.operate span a i.cancelTop{background:url(../images/icon/xy_icon.png) center center no-repeat;}/*下移*/
+.choice dl dd.operate span a i.batch_revise{background:url(../images/icon/xg_icon.png) center center no-repeat;}/*修改*/
+.choice dl dd.operate span a i.delete{background:url(../images/icon/sc_icon.png) center center no-repeat;}/*删除*/
+.choice dl dd.operate span a.no_cz{ color:#aaa;}
+.choice dl dd.operate span a.no_cz i.batch_revise{background:url(../images/icon/xgno_icon.png) center center no-repeat;}/*不可操作*/
+
+.choice dl dd .left_545{float:left; width:50%; overflow:hidden;}
+.choice dl dd .right_455{ float:left; width:50%; overflow:hidden; font-size: 16px;line-height: 35px;}
+.choice dl dd .right_455 em{ padding:0 10px;color:#000}
+.choice dl dd .right_455 .percent{ display:inline-block; text-indent:0; width:45px;}
+
+.choice dl.add_xz{ background:#fcfcfc}
+.choice dl.add_xz .formText{ width:80%; border:none; border-bottom:1px solid #e1e1e1; background:none}
+.choice dl.add_xz .formTextarea{ float:left; width:79%}
+.choice dl.add_xz dd{ background:none !important; text-indent:50px; }
+.choice dl.add_xz dd label{text-indent:0px;}
+.choice dl.add_xz .operate{ padding-bottom:8px;text-indent:0px;}
+.choice dl.add_xz .operate span{ display:block;}
+.sj_836 dl:hover .operate span{ display:block;}
+.choice dl font{ color:#2674d0; padding-left:5px;}
+
+.choice dl dd.on{ background:#f9f9f9;}
+
+
+/*设计调查问卷*/
+.plan_ques{padding:8px; overflow:hidden;line-height:25px;  color:#333333;}
+
+
+/*   邮政OA 投票聊天室模块样式        */
+.self_date{padding:3px 10px;}
+.self_date li{cursor:pointer;background:url(../images/group.jpg) no-repeat left center; padding-left:20px; color:#333333; margin-top:3px; text-align:left; font-size:14px;}
+.self_date li img{width:14px; height:14px;display:none;margin-left:5px;margin-top:-3px;}
+.self_date li.sz{background:none;padding-left:0}
+.self_date li.sz a{ color:#205484;}
+
+/*群组设置*/
+.qz_sz{width:430px; margin:20px auto 0;}
+.qz_sz .buttonArea{padding:10px 0;}
+/*   邮政OA 投票聊天室模块样式        end*/
+
+/*邮政OA抽奖模块样式
+.cjDiv{width: 1002px; height: 634px; text-align: center; overflow: hidden; background: url(../images/cj_bg.jpg) no-repeat;margin:0 auto;}
+.cjDiv h1{width: 580px; height: 45px;margin: 0 auto; margin-top: 90px; font-family:"微软雅黑"; font-size:33px; color:#000;}
+.cjDiv .caozuo{top:116px;display: inline-block; height: 80px; position: absolute; right: 0px; width: 140px;}
+.cjDiv .caozuo a{ float:left; width:140px; height:35px; line-height:35px; color:#cfcfce; font-weight:bold; text-align:center;}
+.cjDiv .cjText_p {text-align: center; margin-top: 149px;}
+.cjDiv .cjText{width: 543px; height: 78px; font-family:"微软雅黑"; border:none; font-size: 36px; font-weight: bold; color: #fff; letter-spacing: 29px;line-height: 78px; padding: 0 0 0 15px; background: url(../images/cj_textbg.png) repeat-x;}
+.cjDiv .cj_btn_p{text-align: center; margin-top: 89px;}
+
+.cj_btn_p .cj_btn{width: 121px; height: 39px; border: none; color: #000; font-size: 14px; font-weight: bold; vertical-align: middle; background: url(../images/cj_btn.png) no-repeat; text-align: center; cursor: pointer;}
+.cj_re_btn{display: inline-block;width: 77px; height: 77px; position: absolute;bottom: 30px; right: 20px;}
+
+div.cj_result{width: 1002px; height: 634px; text-align: center; overflow: hidden;}
+div.cj_result h1{ margin-top:80px;}
+div.cj_result .cjText_p{ margin-top:38px;}
+div.cj_result .cj_btn_p{ margin-top:35px;}
+div.cj_result .cjjg{ background:url(../images/cj_jg.png) no-repeat; width:694px; height:272px; margin:10px auto 0;}
+.cjjg ul{ padding-top:88px; padding-left:40px; float:left;}
+.cjjg ul li{ float:left; width:270px; height:35px; line-height:25px; color:#000; font-family:"微软雅黑"; font-size:20px; padding-right:40px; font-weight:bold;}
+.cjjg p{ text-align:center; width:100%; float:left;   padding-top:8px;}
+.cjjg p a{font-family:"微软雅黑"; font-size:20px;font-weight:bold; padding-right:10px; padding-left:10px;color:#000;}
+h1.cj_result{width: 240px; height: 60px; background: url(../images/cjh11.png) no-repeat; margin: 0 auto; margin-top: 55px;}
+
+.cj_table{width: 450px; border: none; background: none;margin: 0 auto; margin-top: 30px;}
+.cj_table td{height: 48px; line-height: 48px; text-align: center; font-family:"微软雅黑"; font-size: 24px; font-weight: bold; color: #000; background: none;}
+.cj_table td a{ font-size: 24px; font-weight: bold; color: #000; text-decoration: none; margin-right: 40px;}
+.cj_table td a:hover{text-decoration: underline;}
+.cj_table tfoot td{height: 40px; line-height: 40px;text-align: right;}*/
+
+/*新增奖项*/
+.add_prize{ width:550px; margin:10px auto 0;}
+
+/*统计分析*/
+.census_t .cont_right{float:right; width:100%;overflow:hidden; background:#FFF;}
+.census_t .cont_right h2{ text-align:center;color:#000;font-size:20px; padding:10px 0;}
+.census_t .cont_right .subject{overflow:hidden;  line-height:25px; text-align:left; padding:0 15px;}
+.census_t .cont_right .subject a{ float:right; color:#0066cc;}
+
+/*调查问卷*/
+.dcwj_t .cont_right{float:right; width:100%;overflow:hidden; background:#FFF; height:auto;}
+/*progress bar*/
+.progressbar{ display:inline-block; width:266px; height:20px; border:1px solid #f1f1f1;background:#fff; vertical-align:middle; text-align:left; position:relative; margin-right:5px;}
+.progressbar i{display:block; width:100%; height:20px; background:#50ac26; font-size:14px; text-align:right; line-height:20px; color:#fff;}
+
+
+/*页面步骤*/
+.flow-steps {overflow: hidden;}
+.flow-steps li {background:url(../images/icon/flow_steps_bg.png) no-repeat 100% 0px #e4e4e4; padding: 0px 24px 0px 0px; height: 40px; text-align: center; color: #888; line-height: 40px; overflow: hidden; font-size: 18px; float: left; width:136px;}
+.flow-steps li span {display: block;}
+.flow-steps li strong {display: block;}
+.flow-steps li .first {background: url("../images/icon/flow_steps_bg.png") no-repeat -12px -69px rgb(228, 228, 228);}
+.flow-steps li.last {background-position: 100% -240px;}
+.flow-steps li.current {color:#FFF; background-color: rgb(255, 102, 0); font-weight:bold;}
+.flow-steps li.current .first {background-position: -22px -160px; background-color: rgb(255, 102, 0);}
+.flow-steps li.current-prev {background-position: 100% -40px !important;}
+.flow-steps li.done {background-position: 100% -80px; color: rgb(255, 102, 0); background-color: rgb(255, 230, 186);}
+.flow-steps li.done .first {background-position: -22px -200px; background-color: rgb(255, 230, 186);}
+.flow-steps li.last-current {background-position: 100% -280px; color: rgb(255, 255, 255); background-color: rgb(255, 102, 0);}
+
+.long-steps li{ width:242px;}
+.long-steps4 li{width:223.5px;}
+
+/*提示消息*/
+.ts_message{border:1px solid #e1e1e1; overflow:hidden; margin-top:15px;}
+.ts_message .mag{ background:#fafafa; padding:95px 0 105px 240px;}
+.ts_message .mag em{ background:url(../images/icon/success.png) no-repeat; height:90px; line-height:65px; display:inline-block; padding-left:130px;color:#008800;font-size:36px;}
+.ts_message .mag p{color: #333;font-size: 16px;margin-top: -18px; padding-left: 128px; text-align: left;}
+.ts_message .mag p a{ color:#0066cc; text-decoration:underline;}
+.ts_message .btn{ height:42px; padding:22px 0 22px 0; background:#eaf0f4;}
+.ts_message .buttonArea{border-top:1px solid #e1e1e1;padding:20px 0;background:#eaf0f4;}
+

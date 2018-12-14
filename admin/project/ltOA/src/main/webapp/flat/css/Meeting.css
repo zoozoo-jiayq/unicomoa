@@ -1,0 +1,5 @@
+@charset "utf-8";
+/* CSS Document */
+.titbox .formText{border:1px solid #e4e4e4;line-height:26px;color:#555555;height:26px; text-indent:10px;background:#fff;vertical-align:middle;}
+.titbox .Wdate{width:150px;text-indent:5px; background:url(../plugins/form/skins/default/wdat.png) no-repeat #fff right center !important;}
+.titbox .formButton_grey{min-width:100px; _width:100px; padding:0 10px;height:30px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#555;font-size:16px;border:0; background:#ececec; border-radius:3px;margin-right:20px;}

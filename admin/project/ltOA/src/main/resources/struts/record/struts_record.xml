@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="record" extends="struts-default" namespace="/logined/record">
+        <default-action-ref name="main"/>
+        <!-- 打开人事档案主页面 -->
+        <action name="main" class="cn.com.qytx.oa.record.action.UserRecordAction" method="mainPage">
+            <result name="success">/logined/record/main.jsp</result>
+            <result name="error">/common/500.jsp</result>
+        </action>
+        <action name="searchPage" class="cn.com.qytx.oa.record.action.UserRecordAction" method="searchPage">
+            <result name="success">/logined/record/search.jsp</result>
+        </action>
+        <!-- 打开list列表页面,以及搜索功能 -->
+        <action name="list" class="cn.com.qytx.oa.record.action.UserRecordAction" method="list">
+            <result name="success">/logined/record/list.jsp</result>
+            <result name="error">/common/500.jsp</result>
+        </action>
+        <!-- 人事档案列表信息查询，ajax -->
+        <action name="listAjax" class="cn.com.qytx.oa.record.action.UserRecordAction" method="listAjax"/>
+
+        <!-- 人事档案列表信息查询，ajax -->
+        <action name="checkLoginName" class="cn.com.qytx.oa.record.action.UserRecordAction" method="checkLoginName"/>
+
+        <!-- 保存一份新的人事档案 -->
+        <action name="save" class="cn.com.qytx.oa.record.action.UserRecordAction" method="save">
+            <result name="success" type="redirect">/logined/record/list_manager.jsp</result>
+            <result name="input">/logined/record/createEdit.jsp</result>
+            <result name="error">/common/500.jsp</result>
+        </action>
+        <!-- 创建人事档案，打开创建页面 -->
+        <action name="create" class="cn.com.qytx.oa.record.action.UserRecordAction" method="create">
+            <result name="success">/logined/record/createEdit.jsp</result>
+            <result name="error">/common/500.jsp</result>
+        </action>
+
+        <!-- 创建人事档案，打开创建页面 -->
+        <action name="createOrEditByUserId" class="cn.com.qytx.oa.record.action.UserRecordAction" method="createOrEditByUserId">
+            <result name="success">/logined/record/createEdit.jsp</result>
+            <result name="detail">/logined/record/detail.jsp?form=show</result>
+            <result name="error">/common/500.jsp</result>
+            <result name="wapSuccess">/wap/logined/addressbook/detail_company.jsp</result>
+            <result name="onLine">/logined/user/userDetail.jsp</result>      
+            <result name="noExist">/logined/record/no_record.jsp</result>          
+        </action>
+
+        <!-- 查看一份人事档案，打开查看页面 -->
+        <action name="show" class="cn.com.qytx.oa.record.action.UserRecordAction" method="show">
+            <result name="detail">/logined/record/detail.jsp</result>
+            <result name="error">/common/500.jsp</result>
+        </action>
+        <!-- 修改一份人事档案，打开修改页面 -->
+        <action name="edit" class="cn.com.qytx.oa.record.action.UserRecordAction" method="edit">
+            <result name="success">/logined/record/createEdit.jsp</result>
+            <result name="error">/common/500.jsp</result>
+        </action>
+        <!-- 更新保存一份修改过的人事档案 -->
+        <action name="update" class="cn.com.qytx.oa.record.action.UserRecordAction" method="update">
+            <result name="success">/logined/record/list_manager.jsp</result>
+            <result name="input">/logined/record/createEdit.jsp</result>
+            <result name="error">/common/500.jsp</result>
+        </action>
+        <!-- 删除人事档案，可批量，ajax -->
+        <action name="delete" class="cn.com.qytx.oa.record.action.UserRecordAction" method="delete"/>
+        
+        <!-- 查看手机端用户档案详情， -->
+        <action name="findUserRecordView" class="cn.com.qytx.oa.record.action.UserRecordAction" method="findUserRecordView">
+        	<result name="retailRecord">/logined/wapRecord/detailRecord.jsp</result>
+        	<result name="fujian">/logined/wapRecord/accessoryList.jsp</result>
+        </action>
+        
+        <!-- 人事档案，tree -->
+        <action name="userRecordTree" class="cn.com.qytx.oa.record.action.UserRecordTreeAction" method="userRecordTree"/>
+        
+        <!-- 人事档案导入 -->
+        <action name="import" class="cn.com.qytx.oa.record.action.UserRecordImportAction" method="importList"/>
+        
+    </package>
+</struts>

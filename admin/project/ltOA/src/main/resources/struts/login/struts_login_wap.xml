@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 系统登录 -->
+    <package name="loginwap" namespace="/wap" extends="struts-default">
+        <!--登陆成功后跳转的页面-->
+        <action name="loginAjax" class="cn.com.qytx.cbb.login.action.mobile.LoginWapAction" method="loginAjax">
+        </action>
+        <!--修改密码-->
+        <action name="updatePwd" class="cn.com.qytx.cbb.login.action.mobile.UpdatePwd" method="updatePwd">
+        </action>
+        <!--修改个性签名 移动通讯助理 -->
+        <action name="updateSignName" class="cn.com.qytx.cbb.login.action.mobile.UpdateUserForWap" method="updateSignName">
+        </action>
+        <!-- 上传并修改头像 -->
+        <action name="uploadUserPhoto" class="cn.com.qytx.cbb.login.action.mobile.UpdateUserForWap" method="uploadUserPhoto">
+        <param name="savePath">/images</param>
+        </action>
+    </package>
+</struts>

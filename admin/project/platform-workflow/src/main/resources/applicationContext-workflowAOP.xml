@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+	
+	<!-- 工作流新增待办切面 -->
+	<bean id="workflowAddAspect" class="cn.com.qytx.cbb.jbpmApp.aspect.WorkflowAddAspect" />
+	<!-- 工作流批量新增待办切面 -->
+	<bean id="workflowAddListAspect" class="cn.com.qytx.cbb.jbpmApp.aspect.WorkflowAddListAspect"></bean>
+	<!-- 工作流删除切面 -->
+	<bean id="workflowDelteAspect" class="cn.com.qytx.cbb.jbpmApp.aspect.WorkflowDeleteAspect" />
+	<!-- 工作流审批切面 -->
+	<bean id="workflowApproveAspect" class="cn.com.qytx.cbb.jbpmApp.aspect.WorkflowApproveAspect" />
+	<!-- 工作流拒绝切面 -->
+	<bean id="workflowRollBackAspect" class="cn.com.qytx.cbb.jbpmApp.aspect.WorkflowRollBackAspect" />
+	
+	<aop:config>
+		<!-- 工作流待审批新增切面 -->
+		<aop:aspect ref="workflowAddAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.myapply.service.impl.MyWaitProcessImpl.saveOrUpdate(..))"
+				id="workflowAddCut" />
+			<aop:around pointcut-ref="workflowAddCut" method="doAround"/>
+		</aop:aspect>
+		<!-- 工作流待审批新增切面  end -->
+		
+		<!-- 工作流待审批批量新增切面 -->
+		<aop:aspect ref="workflowAddListAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.myapply.service.impl.MyWaitProcessImpl.saveList(..))"
+				id="workflowAddListCut" />
+			<aop:around pointcut-ref="workflowAddListCut" method="doAround"/>
+		</aop:aspect>
+		<!-- 工作流待审批批量新增切面  end -->
+		
+		<!-- 工作流待审批删除切面 -->
+		<aop:aspect ref="workflowDelteAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.myapply.service.impl.MyWaitProcessImpl.del(..))"
+				id="workflowDeleteCut" />
+			<aop:around pointcut-ref="workflowDeleteCut" method="doAround"/>
+		</aop:aspect>
+		<!-- 工作流待审批删除切面  end -->
+		
+		<!-- 工作流审批切面 -->
+		<aop:aspect ref="workflowApproveAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.myapply.service.impl.MyApplyServiceImpl.approve(..))"
+				id="workflowApproveCut" />
+			<aop:around pointcut-ref="workflowApproveCut" method="doAround"/>
+		</aop:aspect>
+		<!-- 工作流审批切面  end -->
+		
+		<!-- 工作流拒绝切面 -->
+		<aop:aspect ref="workflowRollBackAspect">
+			<aop:pointcut
+				expression="execution(* cn.com.qytx.cbb.myapply.service.impl.MyApplyServiceImpl.rollback(..))"
+				id="workflowRollBackCut" />
+			<aop:around pointcut-ref="workflowRollBackCut" method="doAround"/>
+		</aop:aspect>
+		<!-- 工作流拒绝切面  end -->
+		
+	</aop:config>
+</beans>

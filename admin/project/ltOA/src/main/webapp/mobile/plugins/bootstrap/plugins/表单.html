@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>表单</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="container">
+        <h2>基本表单</h2>
+        <form>
+          <div class="form-group has-success ">
+            <label for="exampleInputEmail1">正确样式</label>
+            <input type="email" class="form-control"  placeholder="Enter email">
+          </div>
+          <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputSuccess2">正确样式 带图标</label>
+              <input type="text" class="form-control" aria-describedby="inputSuccess2Status">
+              <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+              <span  class="sr-only">(success)</span>
+          </div>
+          <div class="form-group has-warning">
+            <label for="exampleInputEmail1">警告样式</label>
+            <input type="email" class="form-control" placeholder="Enter email">
+          </div>
+          <div class="form-group has-warning has-feedback">
+              <label class="control-label" for="inputWarning2">警告样式 带图标</label>
+              <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+              <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+              <span id="inputWarning2Status" class="sr-only">(warning)</span>
+          </div>
+          <div class="form-group has-error">
+            <label for="exampleInputEmail1">错误样式</label>
+            <input type="email" class="form-control" placeholder="Enter email">
+          </div>
+          <div class="form-group has-error has-feedback">
+              <label class="control-label" for="inputError2">错误样式 带图标</label>
+              <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+              <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+              <span id="inputError2Status" class="sr-only">(error)</span>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">普通输入</label>
+            <input type="email" class="form-control" placeholder="Enter email">
+          </div>
+           <div class="form-group">
+            <label for="exampleInputEmail1">不可输入</label>
+            <input type="email" class="form-control"  placeholder="Enter email" disabled>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">文件上传</label>
+            <input type="file">
+            <p class="help-block">Example block-level help text here.</p>
+          </div>
+          <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Check me out
+                </label>
+              </div>
+          </div>    
+          <div class="form-group">
+              <div class="checkbox">  
+                <label class="checkbox-inline">
+                      <input type="checkbox"  value="option1"> 1
+                </label>
+                <label class="checkbox-inline">
+                      <input type="checkbox" value="option2"> 2
+                </label>
+                <label class="checkbox-inline">
+                      <input type="checkbox"  value="option1"> 3
+                </label>
+                <label class="checkbox-inline">
+                      <input type="checkbox"  value="option2"> 4
+                </label>
+              </div>
+          </div>    
+          <div class="form-group">
+              <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" value="option1">
+                    Option two can be something else and selecting it will deselect option one
+                  </label>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="radio">
+                    <label class="radio-inline">
+                      <input type="radio" name="inlineRadioOptions"  value="option1"> 1
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="inlineRadioOptions"  value="option2"> 2
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="inlineRadioOptions"  value="option3"> 3
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="inlineRadioOptions"  value="option4"> 4
+                    </label>
+              </div>
+          </div>   
+          <div class="form-group">
+              <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+          </div> 
+          <div class="form-group">
+               <select multiple class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+          </div> 
+          <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Sign in</button>
+                   <button type="submit" class="btn btn-default">return</button>
+          </div>
+        </form>
+        <h2>内联表单</h2>
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="exampleInputName2">Name</label>
+            <input type="text" class="form-control"  placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail2">Email</label>
+            <input type="email" class="form-control"  placeholder="jane.doe@example.com">
+          </div>
+          <button type="submit" class="btn btn-default">Send invitation</button>
+        </form>
+        <h4  style=" color:#CCC">label不能删除 只能隐藏  用sr-only</h4>
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="exampleInputName2" class="sr-only">Name</label>
+            <input type="text" class="form-control"  placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail2 sr-only" class="sr-only">Email</label>
+            <input type="email" class="form-control"  placeholder="jane.doe@example.com">
+          </div>
+          <button type="submit" class="btn btn-default">Send invitation</button>
+        </form>
+     </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

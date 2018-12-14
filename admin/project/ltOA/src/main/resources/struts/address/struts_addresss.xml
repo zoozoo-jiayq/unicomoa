@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">    
+<struts>
+   <!-- 通讯簿联系人组 -->
+	<package name="addressGroup" namespace="/addressGroup" extends="struts-default">
+		<action name="setup_*" class="cn.com.qytx.oa.publicaddress.action.AddressGroupAction" method="{1}">	</action>
+		<action name="getDetailAddressGroup" class="cn.com.qytx.oa.publicaddress.action.AddressGroupAction" method="getDetailAddressGroup">	
+            <result name="update">/logined/address/update_group.jsp</result>
+            <result name="update_public">/logined/publicaddress/add_group.jsp</result>
+            <result name="maintain">/logined/publicaddress/maintain_group.jsp</result>
+		</action>
+	</package>
+    <!-- 通讯簿联系人 -->
+	<package name="address" namespace="/address" extends="struts-default">
+		<action name="setup_*" class="cn.com.qytx.oa.publicaddress.action.AddressAction" method="{1}"></action>
+		<action name="getDetailInfo" class="cn.com.qytx.oa.publicaddress.action.AddressAction" method="getDetailInfo">
+		    <result name="update">/logined/address/update_address.jsp</result>
+		    <result name="detail">/logined/address/detail_address.jsp</result>
+		    <result name="share">/logined/address/share_address.jsp</result>
+		    <result name="wapDetail">/wap/logined/addressbook/detail_own.jsp</result>
+		</action>
+		<action name="getAllDetailInfo" class="cn.com.qytx.oa.publicaddress.action.AddressAction" method="getDetailInfo">
+		    <result name="update">/logined/address/all_update_address.jsp</result>
+		    <result name="detail">/logined/address/all_detail_address.jsp</result>
+		</action>
+		
+		<action name="importCheckAddress" class="cn.com.qytx.oa.publicaddress.action.AddressImportAction" method="importCheckAddress"></action>
+		<action name="importAddress" class="cn.com.qytx.oa.publicaddress.action.AddressImportAction" method="importAddress"></action>
+	</package>
+</struts>

@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+.dictionary{padding:5px 10px;}
+.dictionary h1{background:url(../images/icon/authority_icon.png) no-repeat left center; color:#333; padding-left:28px; font-weight:bold;  height:30px; line-height:29px;}
+.dictionary .dataArea{ position:relative; padding-right:210px;}
+.dataArea .data_r{position:absolute;width:180px; padding:10px; border:1px solid #e6eaeb; background:#fff; right:0; top:0;}
+.data_r .workes{ height:30px; border-bottom:2px solid #5bbbc9; line-height:25px;}
+.workes ul{ float:left; padding-left:8px;}
+.workes ul li{float: left;line-height: 20px; width: 56px;}
+.workes ul li a{ color:#555555;}
+.workes em { width:15px; height:25px;margin-right:3px; float:left;background:url(../images/icon/dataArea_icon.png) no-repeat;}
+.workes em.em1 {background-position:0px -64px;}
+.workes em.em2 {background-position:0px -33px;}
+.workes em.em3 {background-position:0px -6px;}
+.data_r .d_list li{height:49px; border-bottom:1px solid #f2f2f2; line-height:49px; color:#555555; background:url(../images/icon/dataArea_icon.png) no-repeat 160px -83px; cursor:pointer; padding-left:12px;}
+.d_list li:hover , .d_list li.on{ background:#e5f1f4 url(../images/icon/dataArea_icon.png) no-repeat 160px -83px;}
+
+.dataArea .data_l{ border:1px solid #ececec; background:#ffffff;}
+.data_l h2{height:35px; line-height:35px; background:#fafafa; border-bottom:1px solid #ececec; padding-left:11px;}
+.data_l .radio input {margin-right: 8px; margin-top: -3px; vertical-align: middle;}
+.data_l ul{ padding: 5px 10px;}
+.data_l li{line-height:30px; height:30px;}
+
+

@@ -1,0 +1,190 @@
+@charset "utf-8";
+/* CSS Document */
+/*在线课堂 2015-03-17 王光星*/
+.gray_8 {color: #888 !important}
+a{ text-decoration:none !important}
+
+
+/*提示消息*/
+.ts_message{border:1px solid #e1e1e1; overflow:hidden; margin-top:15px;}
+.ts_message .mag{ background:#fafafa; padding:95px 0 105px 305px;}
+.ts_message .mag em{ background:url(../images/success.png) no-repeat; height:90px; line-height:65px; display:inline-block; padding-left:130px;color:#008800;font-size:36px;}
+.ts_message .mag p{color: #333;font-size: 16px;margin-top: -18px; padding-left: 128px; text-align: left;}
+.ts_message .mag p a{ color:#0066cc; text-decoration:underline;}
+.ts_message .btn{ height:42px; padding:22px 0 22px 0; background:#eaf0f4;}
+.ts_message .buttonArea{border-top:1px solid #e1e1e1;padding:20px 0;background:#eaf0f4;}
+
+/*buttonArea*/
+.formPage .bigArea{clear: both;margin-top: 20px;padding-bottom: 20px;text-align:center}
+.bigArea .bigButton_green{min-width:160px; _width:160px;height:40px;line-height:35px; text-align:center;outline:0;cursor:pointer;color:#fff;font-size:18px;border:0; background:#61b6c5; border-radius:3px;margin:0 15px;padding:0 10px;}
+.bigArea .bigButton_green:hover{ background:#49a4b4;}
+.bigArea .bigButton_grey{min-width:160px; _width:160px;height:40px;line-height:35px; text-align:center;outline:0;cursor:pointer;color:#353535;font-size:18px;border:0; background:#dce7e9; border-radius:3px;margin:0 15px;padding:0 10px;}
+.bigArea .bigButton_grey:hover{background:#c0dadf;}
+
+
+/*课程表*/
+.syllabus{width:100%;background:#fff;}
+.syllabus .even{ background:#fafafa;}
+.syllabus .syllBox{padding:30px;overflow:hidden; position:relative; border-bottom:1px solid #ebebeb;}
+.syllabus .noDate{ padding:30px 0; text-align:center; font-size:18px; color:#999;}
+.syllBox .imgBox{ float:left;width:200px; height:161px; position:relative; padding-right:10px;}
+.syllBox .txtBox{ float:left; width:760px; height:160px; overflow:hidden;}
+.txtBox dt{color:#017a8f; font-size:16px; height:25px; overflow:hidden; line-height:25px; float:left; width:100%;}
+.txtBox dt a{color:#017a8f;}
+.txtBox dd{ font-size:14px; float:left; width:100%; line-height:22px; color: #888}
+.txtBox dd.txt{overflow:hidden;color:#353535;}
+.txtBox dd .pl{ background:url(../images/online/pl_icon.png) no-repeat 0 center; padding-left:25px;  float:left; margin-right:10px;margin-top:5px;} 
+.txtBox dd .btn1{ background: #55cd55;border-radius: 3px;color: #fff;float: left;font-size: 12px;height: 18px;line-height: 18px;margin-right: 10px;margin-top: 7px;text-align: center;width: 40px;}
+.txtBox dd .btn2{ background: #ff6d6d;border-radius: 3px;color: #fff;float: left;font-size: 12px;height: 18px;line-height: 18px;margin-right: 10px;margin-top: 7px;text-align: center; width: 40px;}
+.txtBox dd .video_icon{float:left; background:url(../images/online2/video.png) no-repeat;height:20px; width:20px; background-size:20px; margin-top:6px;}
+.txtBox dd .sound_icon{float:left; background:url(../images/online2/sound.png) no-repeat left center; height:20px; width:20px; background-size:20px; margin-top:6px;}
+.txtBox dd .img_icon{ float:left; background:url(../images/online2/img.png) no-repeat left center; height:22px; width:32px;margin-top:6px;background-size:22px;}
+.txtBox dd .wd_icon{ float:left; background:url(../images/online2/wd.png) no-repeat left center; height:20px; width:20px; background-size:20px; margin-top:6px;}
+
+.addbtn{float:right; width:120px; height:35px; border-radius:3px; background:url(../images/online/add_icon.png) no-repeat 32px center #39a6b9; text-indent:54px; margin-top:10px; font-size:16px; color:#fff; line-height:35px; margin-right:20px;}
+
+/*视频*/
+.videoBox{ width:100%; height:520px; overflow:hidden; background:#000;}
+
+/*课程详情*/
+.contBox_ck{ margin-top:18px; overflow:hidden; padding-bottom:30px;}
+.contBox_ck .course-left{float: left;width:680px;background: #fff;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border:1px solid #eee; overflow:hidden; padding:15px 20px; min-height:266px;}
+.contBox_ck .course-right{float: right;width:295px; background: #fff none repeat scroll 0 0;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);border:1px solid #eee;overflow:hidden; padding:20px 0}
+.course-right h2{font-size:16px; padding:0 20px; line-height:25px; color:#000}
+.course-right dl{padding:15px 20px; overflow:hidden;}
+.course-right dl dt{float: left;width: 80px; height:64px;}
+.course-right dl dt img{ width:100%; height:100%;}
+.course-right dl dd{float:right; width:160px;font-size: 14px;line-height: 22px;color: #555;}
+.course-right .sug{padding:0 20px; line-height:22px; color:#555;}
+
+/*课程详情 选节*/
+.election-x li{height:42px; border-bottom:1px solid #d9d9d9; color:#353535; line-height:42px; font-size:14px;}
+.election-x li a{display:block;padding:0 50px 0 12px; color:#353535;    overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap;word-break: keep-all;}
+.election-x li.on a{ color:#017a8f;}
+.election-x li a:active,.election-x li a.active{ background-color:#d9d9d9;}
+.election-x li .time{ position:absolute; right:10px; line-height:42px; color:#bbbbbb; font-size:12px;}
+
+/*课程详情 评论*/
+.discussBox{margin-top:10px;}
+.discussBox .formTextarea{ width:97%;}
+.discussBox .oper{ height:30px; margin-top:8px; text-align:left; color:#adadad; line-height:30px;}
+.discussBox .oper .formButton_green{ float:right; margin-right:0}
+.discussList{overflow:hidden; margin-top:10px;}
+.discussList ul li{  border-bottom:1px solid #e0e0e0; position:relative;}
+.discussList ul li time{ position:absolute; top:10px; right:10px; font-size:12px; color:#bbb}
+.discussList ul li a{padding:8px 10px;/*height:48px;*/ display:block;}
+.discussList ul li .imgBox{ float:left; width:48px; height:48px; overflow:hidden; margin-right:10px;}
+.discussList ul li img{ max-height:48px; max-width:48px;}
+.discussList ul li h2{font-size:16px;color:#353535; line-height:18px;}
+.discussList ul li p{font-size:14px;color:#aaaaaa;line-height:22px;}
+.discussList ul li .txt{color:#353535; padding-left:58px;}
+
+/*课程详情 练习*/
+.choice{ padding-bottom:10px;}
+.choice .plan_ques { color: #adadad;height: 22px;line-height: 33px;padding: 0 8px;}
+.choice dl{overflow:hidden; border-bottom:1px solid #eee; padding-bottom:10px;}
+.choice dl dt{ line-height: 25px; padding:8px;  word-wrap: break-word; color:#000;}
+.choice dl dt font{ color:#017a8f}
+.choice dl dd{overflow:hidden; color:#000; text-indent:30px; line-height:35px; cursor:pointer;}
+.choice dl dd .radio input{ margin-right:5px;}
+.choice dl dd.wd{padding:15px 0 5px 37px; background:none !important;text-indent:0; }
+.choice dl dd.wd .formTextarea{ width:95%;}
+.choice dl dd.txt{color:#adadad; line-height:22px; padding-left:30px; text-indent:0; display:none}
+.choice dl dd.operate{ height:25px; line-height:25px;text-indent:0; background:none !important;}
+.choice dl dd.operate span{ float:right;  }
+.choice dl dd.operate span a{ float:left; width:78px; height:22px;color:#666;line-height:20px; margin-right:8px;background:#e1e4e6; font-size:14px; text-align:center; border-radius:3px;}
+.choice .buttonArea{ text-align:center !important; padding-bottom:0 !important}
+
+/*课程详情 查看练习*/
+.choiceQue{ padding-bottom:10px;}
+.choiceQue dl{overflow:hidden; border-bottom:1px solid #eee; padding:10px;}
+.choiceQue dl dt{ line-height: 25px; padding:5px 10px;  word-wrap: break-word; color:#353535; position:relative;}
+.choiceQue dl dt font{color:#48990c;}
+.choiceQue dl dd{overflow:hidden;color:#353535; padding:0 60px; line-height:22px; margin-top:10px}
+.choiceQue dl dd.reply{ background:url(../images/online2/right_btn.png) no-repeat 38px 5px ; color:#48990c;}
+.choiceQue dl dd.error{ background:url(../images/online2/error_btn.png) no-repeat 38px 5px ; color:3ff5454;}
+.choiceQue .even{ background:#fcfcfc;}
+.choiceQue .wrong{ background:#fff8f8;}
+
+/*简介*/
+.suggest{padding:0 10px;overflow:hidden;color:#353535;}
+.suggest dt{font-size:16px; line-height:22px; padding:10px 0 6px }
+.suggest dd{ font-size:14px; line-height:25px; color:#353535;}
+.suggest dd.txt{text-indent:2em; margin-top:5px;}
+.suggest dd.gray{ color:#aaaaaa;}
+
+/*附件*/
+.accessory{ width:100%; min-height:600px; overflow:hidden;border:none; background:none;}
+
+/*图片详情*/
+.picBox{ padding-top:15px;}
+.picBox h2{line-height:26px;text-align: left; color: #333333;font-size: 22px;padding-bottom:10px;}
+.picBox img{border: none; display: block; margin: 5px auto; max-width:100%;}
+.picBox p{color: #333;line-height: 30px; text-indent: 2em;}
+.picBox h3{text-align: left; color: #adadad;padding-bottom:10px;}
+.picBox h3 span{margin-right:20px;}
+
+/*排行榜*/
+.ranking{ position:relative}
+.ranking .title{ height:35px; line-height:35px; color:#353535; font-size:16px; padding:0 10px; background:#ebebeb;}
+.ranking table{table-layout: fixed; width:100%;}
+.ranking table td{padding:7px 0; border-bottom:1px solid #d9d9d9; font-size:14px; text-align:center}
+.ranking dl{padding:0 10px;}
+.ranking dl dt{float:left; width:60px; height:60px; margin-right:10px; position:relative;}
+.ranking dl dt img{ width:60px;}
+.ranking dl dt .medal{ position:absolute; width:14px; left:2px; top:2px;}
+.ranking dl dd{overflow: hidden;text-align: left;text-overflow: ellipsis;white-space: nowrap; word-break: keep-all;}
+.ranking dl dd.name{color: #353535;font-size: 16px;line-height: 18px;margin-bottom: 6px; padding-top: 7px;}
+.ranking dl dd.job{color: #aaaaaa;font-size: 14px;line-height: 22px;}
+.ranking .gray{ color:#aaaaaa;}
+.ranking i{ font-size:18px;}
+.ranking table tr.on td{ background:#f4ffef;}
+.ranking table tr.on td i{ color:#ff5454;}
+.ranking table tr.on .num{ color:#009142;}
+
+
+
+/*选项卡*/
+.tab{width:100%; background:#fff;border-bottom:1px solid #d9d9d9; height:37px;}
+.tab li{height: 38px; width:120px; float:left; font-size:16px;}
+.tab li a{ display:block; height: 37px;line-height: 37px;text-align: center;color: #999999;cursor: pointer;outline: none;}
+.tab li.current a{ color:#017a8f;height:36px; border-bottom:2px solid #017a8f; }
+.tabContent{display:none; position:relative}
+
+/*查看考题*/
+.lookQue{ margin:0 auto; width:1000px; background:#fff; padding:10px 0; color:#353535;}
+.lookQue .bigTitle{ font-size:24px;  text-align:center; padding:5px 30px;}
+.lookQue .bigTitle .num{ float:right; font-size:14px; }
+.lookQue .bigTitle .num label{ color:#ff5454; font-size:24px;}
+.lookQue .smalTitle{ padding:5px 30px 30px 30px; text-align:left;}
+.lookQue .smalTitle label{ padding-right:20px;}
+.lookQue dl{overflow:hidden;border-top:1px solid #eee;padding:20px;}
+.lookQue dl dt{ line-height: 25px; padding:5px 10px;  word-wrap: break-word; color:#353535; position:relative; font-size:16px;}
+.lookQue dl dt font{color:#48990c;}
+.lookQue dl dd{overflow:hidden;color:#353535; padding:0 60px; line-height:22px; margin-top:10px}
+.lookQue dl dd.reply{ background:url(../images/online/right_btn.png) no-repeat 38px 5px ; color:#48990c;}
+.lookQue dl dd.error{ background:url(../images/online/error_btn.png) no-repeat 38px 5px ; color:3ff5454;}
+.lookQue .even{ background:#fcfcfc;}
+.lookQue .wrong{ background:#fff8f8;}
+
+/*试卷*/
+.carries{ margin:0 auto; width:1000px; background:#fff; padding:50px 0 0 0; color:#353535;}
+.carries .bigTitle{ font-size:24px;  text-align:center; padding:5px 30px; position:fixed; top:0; width:940px; background:#fff;}
+.carries .bigTitle .num{ float:right; font-size:14px; }
+.carries .bigTitle .num label{ color:#ff5454; font-size:24px;}
+.carries .smalTitle{ padding:5px 30px 30px 30px; text-align:left;}
+.carries .smalTitle label{ padding-right:20px;}
+.carries dl{overflow:hidden;border-top:1px solid #eee;padding:15px 20px;}
+.carries dl dt{ line-height: 25px; padding:5px 10px;  word-wrap: break-word; color:#353535;  font-size:16px;}
+.carries dl dt font{ color:#017a8f}
+.carries dl dd{overflow:hidden; color:#353535; text-indent:30px; line-height:35px; cursor:pointer;}
+.carries dl dd .radio input{ margin-right:5px;}
+.carries dl dd.wd{padding:15px 0 5px 37px; background:none !important;text-indent:0; }
+.carries dl dd.wd .formTextarea{ width:95%;}
+.carries .buttonArea {text-align:center; clear:both; margin-top:20px; padding-bottom:20px;}
+.carries .formButton_green{min-width:100px; _width:100px;height:30px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#fff;font-size:16px;border:0; background:#61b6c5; border-radius:3px; margin-right:20px;padding:0 10px;}
+.carries .formButton_green:hover{ background:#49a4b4;}
+
+
+
+

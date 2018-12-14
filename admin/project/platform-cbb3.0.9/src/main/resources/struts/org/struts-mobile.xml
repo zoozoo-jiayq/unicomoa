@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+   <!--cbb 通讯录手机端接口-->
+    <package name="org" namespace="/org/mobile" extends="struts-default">
+        <action name="service" class="cn.com.qytx.cbb.org.action.mobile.MobileAction" method="execute">
+       </action>
+       
+       <!-- 获得通讯录隐藏列表 -->
+       <action name="getMobileViewByGroupId" class="cn.com.qytx.cbb.groupExt.action.SecretListAction" method="getMobileViewByGroupId">
+       </action>
+       <!-- 隐藏用户 -->
+       <action name="mobileHide" class="cn.com.qytx.cbb.groupExt.action.SecretListAction" method="mobileHide">
+       </action>
+       <!-- 显示用户 -->
+       <action name="mobileShow" class="cn.com.qytx.cbb.groupExt.action.SecretListAction" method="mobileShow">
+       </action>
+    </package>
+    
+    
+    
+    
+   <!--cbb 群组 -->
+    <package name="groupExt" namespace="/groupExt" extends="struts-default">
+       <!-- 获得群组列表 -->
+       <action name="getUserByGroupExtId" class="cn.com.qytx.cbb.groupExt.action.GroupExtAction" method="getUserByGroupExtId">
+       </action>
+       <!-- 将人员移动到群组 -->
+       <action name="moveUserToGroup" class="cn.com.qytx.cbb.groupExt.action.GroupExtAction" method="moveUserToGroup">
+       </action>
+       <!-- 将人员从群组中删除 -->
+       <action name="moveOutUserFromGroup" class="cn.com.qytx.cbb.groupExt.action.GroupExtAction" method="moveOutUserFromGroup">
+       </action>
+       <!--得到部门详情-->
+       <action name="loadGroupInfo" class="cn.com.qytx.cbb.groupExt.action.GroupExtAction" method="loadGroupInfo">
+            <result name="success">/logined/group_ext/groupUpdate.jsp</result>
+       </action>
+       <!--得到部门详情-->
+       <action name="toAddGoupUser" class="cn.com.qytx.cbb.groupExt.action.GroupExtAction" method="toAddGoupUser">
+            <result name="success">/logined/group_ext/selectGroupUser.jsp</result>
+       </action>
+	   <action name="selectGroup" class="cn.com.qytx.cbb.groupExt.action.selectGroupExtAction" method="selectGroup"></action>
+    </package>
+    
+    <!-- 手机端加载选择人员部门的控件 -->
+    <package name="mobileGroup" namespace="/mobileUser" extends="struts-default">
+    <action name="select" class="cn.com.qytx.cbb.org.action.mobile.MobileUserAction" >
+       </action>
+    </package>
+    
+    <!-- 手机端修改人员信息 -->
+    <package name="updateUser" namespace="/mobile/update" extends="struts-default">
+    	<action name="user" class="cn.com.qytx.cbb.org.action.mobile.MobileUserAction" method="updateUser"></action>
+    </package>
+</struts>

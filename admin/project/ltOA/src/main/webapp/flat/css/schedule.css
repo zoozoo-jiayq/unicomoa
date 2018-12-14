@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.schedule{ padding:5px 10px;}
+.schedule .title_sc{ height:39px; background:#f5f6f5; border:1px solid #ececec; border-bottom:none; overflow:hidden;}
+.schedule .title_sc .time{ width:200px; margin:0 auto; height:39px;}
+.schedule .title_sc .time span{ width:9px; height:39px; cursor:pointer;}
+.schedule .title_sc .time .previous{ float:left; background:url(../images/icon/left_rc.png) no-repeat left center;}
+.schedule .title_sc .time .next{ float:left; background:url(../images/icon/right_rc.png) no-repeat left center;}
+.schedule .title_sc .time strong{ float:left; line-height:39px; font-size:16px; color:#333333; padding:0 15px;}
+.schedule .title_sc .time .today{ float:left; line-height:39px; color:#0066cc; text-decoration:underline; margin-right:30px;}
+.schedule table.pretty tbody td{ background:#ffffff; border-bottom:1px solid #ececec; border-right:1px solid #ececec; padding:0; line-height:none; vertical-align:top;}
+.schedule table.pretty tbody td.on_day{ background:#f1fbfd;}
+.schedule .day{padding:0 8px; min-height:100px;}
+.day .date_top{height:30px; line-height:30px; color:#0591aa; font-size:18px; text-align:right;}
+.day .cont_cent{padding:5px 0; font-size:12px; color:#666;}
+.day .cont_cent li{line-height:24px; overflow: hidden; text-align: left;  text-overflow: ellipsis;  white-space: nowrap;  word-break: keep-all; cursor:pointer;}
+.day .cont_cent li:hover{ color:#ff6600}
+.day .gray{ color:#c5c5c5;}
+.day .red{ color:#d13939;}

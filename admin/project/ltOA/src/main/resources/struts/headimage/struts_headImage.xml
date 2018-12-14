@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="chatGroup" namespace="/chatGroupHeadImage" extends="struts-default" >
+     	<action name="compound" class="cn.com.qytx.cbb.compoundImage.action.CompoundHeadImageAction" method="compoundHeadImage"></action>
+    </package>
+</struts>

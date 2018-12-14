@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 自定义流程 -->
+    <package name="customerJpdl" namespace="/workflow" extends="struts-default">
+      	
+      	<!-- 流程管理 -->
+      	<action name="manager" class="cn.com.qytx.cbb.customJpdl.action.JbpmManagerAction" >
+      		<result name="new_define">/logined/customJPDL/newDefine.jsp</result>
+      		<result name="update">/logined/customJPDL/updateDefine.jsp</result>
+          <result name="success">/logined/customJPDL/index.jsp</result>
+          <result name="prep_create">/logined/customJPDL/prepCreate.jsp</result>
+          <result name="option_success">/logined/customJPDL/success.jsp</result>
+          <result name="edit_process">/logined/customJPDL/editProcess.jsp</result>
+          <result name="wizard">/logined/customJPDL/wizard.jsp</result>
+          <result name="copy">/logined/customJPDL/copyProcess.jsp</result>
+          <result name="checkResult">/logined/customJPDL/checkResult.jsp</result>
+      	</action>
+      	
+      	<!-- 流程定义 -->
+      	<action name="jpdl" class="cn.com.qytx.cbb.customJpdl.action.JpdlDefineAction">
+      		<result name="myflow">/logined/customJPDL/workflow.jsp</result>
+      		<result name="exprEditor">/logined/customJPDL/exprEditor.jsp</result>
+      		<result name="nodelist">/logined/customJPDL/nodelist.jsp</result>
+      		<result name="view">/logined/customJPDL/view.jsp</result>
+           <result name="node_edit">/logined/customJPDL/nodeEdit.jsp</result>
+      	</action>
+      	
+      	<!-- 节点属性管理 -->
+      	<action name="nodeManager" class="cn.com.qytx.cbb.customJpdl.action.NodeAttributeManagerAction">
+      		<!-- <result name="candidate">/logined/customJPDL/candidate.jsp</result> -->
+      		<result name="candidate">/logined/customJPDL/toNodeEdit.jsp</result>
+      		<result name="writeable">/logined/customJPDL/writeable.jsp</result>
+      		<result name="secretable">/logined/customJPDL/secretable.jsp</result>
+	        <result type="chain" name="node_edit">
+              <param name="actionName">jpdl</param>
+	            <param name="method">nodeEdit</param> 
+	        </result>
+          <result type="chain" name="node_edit">
+              <param name="actionName">jpdl</param>
+              <param name="method">nodeEdit</param> 
+          </result>
+          <result name="nodeSetup">/logined/customJPDL/nodeSetup.jsp</result>
+
+      	</action>
+    </package>
+
+</struts>

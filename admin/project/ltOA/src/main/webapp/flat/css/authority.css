@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.anthority{padding:5px 10px;}
+.anthority .title_an{height:30px;line-height:29px;}
+.anthority .title_an .name{ background:url(../images/icon/authority_icon.png) no-repeat left center; color:#333; padding-left:28px; font-weight:bold; float:left; height:30px; margin-right:20px;}
+.anthority .title_an .formButton_green{width:79px; height:27px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#fff;font-size:14px;border:0; background:#61b6c5;margin-right:5px;}
+.anthority .title_an .formButton_green:hover{ background:#49a4b4;}
+.anthority .title_an .formButton_grey{width:79px; height:27px;line-height:25px; text-align:center;outline:0;cursor:pointer;color:#333333;font-size:14px;border:0;background:#dce7e9;}
+.anthority .title_an .formButton_grey:hover{background:#c0dadf;}
+
+.anthority .access{ width:100%;}
+.access td{ width:auto; white-space: nowrap; border:1px solid #ececec; background:#fff;}
+.access td .radio {margin-right: 10px;}
+.access td .radio input {margin-right:8px;margin-top: -3px; vertical-align: middle;}
+.access td h2{background:#fafafa; border-bottom:1px solid #ececec; height:35px; color:#4d4d4d; padding:0 10px; line-height:35px;}
+.access td .subset{ padding:5px 20px;}
+.access td ul{ padding-left:20px;}
+.access td ul li{ line-height:30px; white-space: nowrap;}
+

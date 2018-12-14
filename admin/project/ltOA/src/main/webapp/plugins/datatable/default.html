@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表</title>
+<link href="skins/datatable_page.css" rel="stylesheet" type="text/css" />
+<link href="skins/datatable_default.css" rel="stylesheet" type="text/css"/>
+<link href="skins/reset.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="list">
+  <div class="searchArea">
+    <table cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td style="width:600px;">
+            <div class="fButton greenBtn">
+              <span class="add" onclick="addNotify();">新增</span>
+            </div>
+            <div class="fButton orangeBtn">
+              <span onclick="deleteAll();" class="delete">删除</span>
+            </div>
+            <div class="fButton greenBtn">
+              <span class="import">导入</span>
+            </div>
+            <div class="fButton blueBtn">
+              <span class="export">导出</span>
+            </div>
+            <div class="fButton greenBtn">
+              <span onclick="setTop();" class="setTop">置顶</span>
+            </div>
+            <div class="fButton blueBtn">
+              <span onclick="cancelTop();" class="cancelTop">取消置顶</span>
+            </div></td>
+          <td class="right"><label>类型：</label>
+            <select>
+              <option>法律行政法规</option>
+            </select>
+            <label>关键字：</label>
+            <span class="position:relative;">
+            <input type="text" style="width:200px" class="formText" placeholder="输入标题关键字" id="title" name="">
+            </span> 
+            <label>创建时间：</label>
+            <input type="text" class="formText Wdate"/>
+            -
+            <input type="text" class="formText Wdate"/>
+            <input type="button" class="searchButton" value="查询"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <table cellpadding="0" cellspacing="0"  class="pretty dataTable">
+    <thead>
+      <tr>
+        <th class="chk"><input type="checkbox"/></th>
+        <th style="width:100px">交易号</th>
+        <th style="width:40%;">品名</th>
+        <th style="width:60%;">内容</th>
+        <th style="width:140px;">发布时间</th>
+        <th style="width:60px;">状态</th>
+        <th style="width:120px;" class="right_bdr0">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td><input type="checkbox"/></td>
+        <td><a href="">123456</a></td>
+        <td class="data_l">复合肥</td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td>已发布</td>
+        <td class="right_bdr0 data_l"><a href="#">修改</a><a href="#">删除</a></td>
+      </tr>
+      <tr class="even">
+        <td><input type="checkbox"/></td>
+        <td><a href="">123456</a></td>
+        <td class="data_l">复合肥</td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td>已发布</td>
+        <td class="right_bdr0 data_l"><a href="#">修改</a><a href="#">删除</a></td>
+      </tr>
+      <tr class="odd">
+        <td><input type="checkbox"/></td>
+        <td><a href="">123456</a></td>
+        <td class="data_l">复合肥</td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td>已发布</td>
+        <td class="right_bdr0 data_l"><a href="#">修改</a><a href="#">删除</a></td>
+      </tr>
+      <tr class="even">
+        <td><input type="checkbox"/></td>
+        <td><a href="">123456</a></td>
+        <td class="data_l">复合肥</td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td>已发布</td>
+        <td class="right_bdr0 data_l"><a href="#">修改</a><a href="#">删除</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="dataTables_info" id="Table_info">共 197 条数据 </div>
+  <div class="dataTables_paginate paging_full_numbers" id="Table_paginate"><a class="first paginate_button paginate_button_disabled" tabindex="0" id="Table_first">首页</a><a class="previous paginate_button paginate_button_disabled" tabindex="0" id="Table_previous">上一页</a><span><a class="paginate_active" tabindex="0">1</a><a class="paginate_button" tabindex="0">2</a><a class="paginate_button" tabindex="0">3</a><a class="paginate_button" tabindex="0">4</a><a class="paginate_button" tabindex="0">5</a></span><a class="next paginate_button" tabindex="0" id="Table_next">下一页</a><a class="last paginate_button" tabindex="0" id="Table_last">尾页</a></div>
+</div>
+<div class="clear"></div>
+<div class="list">
+  <div class="searchArea">
+    <table cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td style="width:600px;">
+            <div class="fButton greenBtn">
+              <span class="add" onclick="addNotify();">新增</span>
+            </div>
+            <div class="fButton orangeBtn">
+              <span onclick="deleteAll();" class="delete">删除</span>
+            </div>
+            <div class="fButton greenBtn">
+              <span class="import">导入</span>
+            </div>
+            <div class="fButton blueBtn">
+              <span class="export">导出</span>
+            </div>
+            <div class="fButton greenBtn">
+              <span onclick="setTop();" class="setTop">置顶</span>
+            </div>
+            <div class="fButton blueBtn">
+              <span onclick="cancelTop();" class="cancelTop">取消置顶</span>
+            </div></td>
+          <td class="right"><label>类型：</label>
+            <select>
+              <option>法律行政法规</option>
+            </select>
+            <label>关键字：</label>
+            <span class="position:relative;">
+            <input type="text" style="width:200px" class="formText" placeholder="输入标题关键字" id="title" name="">
+            </span>
+            <label>创建时间：</label>
+            <input type="text" class="formText Wdate"/>
+            -
+            <input type="text" class="formText Wdate"/>
+            <input type="button" class="searchButton" value="查询"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <table cellpadding="0" cellspacing="0"  class="pretty dataTable">
+    <thead>
+      <tr>
+        <th class="chk"><input type="checkbox"/></th>
+        <th style="width:100px">交易号</th>
+        <th>品名</th>
+        <th>内容</th>
+        <th style="width:140px;">发布时间</th>
+        <th style="width:120px;"><select><option>全部状态</option><option>等待甲方确认合同</option><option>交易完成</option></select></th>
+        <th style="width:120px;" class="right_bdr0">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td><input type="checkbox"/></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="orange">待确认合同</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0 data_l"><a href="#">修改</a><a href="#">删除</a></td>
+      </tr>
+      <tr class="even">
+        <td><input type="checkbox"/></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="green">交易完成</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0 data_l"><a href="#">修改</a><a href="#">删除</a></td>
+      </tr>
+      <tr class="odd">
+        <td><input type="checkbox"/></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="green">交易完成</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0 data_l"><a href="#">修改</a><a href="#">删除</a></td>
+      </tr>
+      <tr class="even">
+        <td><input type="checkbox"/></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="green">交易完成</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0 data_l"><a href="#">修改</a><a href="#">删除</a></td>
+      </tr>
+      <tr class="odd">
+        <td><input type="checkbox"/></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="green">交易完成</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0 data_l"><a href="#">修改</a><a href="#">删除</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="dataTables_info" id="Table_info">共 197 条数据 </div>
+  <div class="dataTables_paginate paging_full_numbers" id="Table_paginate"><a class="first paginate_button paginate_button_disabled" tabindex="0" id="Table_first">首页</a><a class="previous paginate_button paginate_button_disabled" tabindex="0" id="Table_previous">上一页</a><span><a class="paginate_active" tabindex="0">1</a><a class="paginate_button" tabindex="0">2</a><a class="paginate_button" tabindex="0">3</a><a class="paginate_button" tabindex="0">4</a><a class="paginate_button" tabindex="0">5</a></span><a class="next paginate_button" tabindex="0" id="Table_next">下一页</a><a class="last paginate_button" tabindex="0" id="Table_last">尾页</a></div>
+</div>
+<div class="clear"></div>
+<div class="list">
+  <div class="searchArea">
+    <table cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td style="width:600px;">
+            <div class="fButton greenBtn">
+              <span class="add" onclick="addNotify();">新增</span>
+            </div>
+            <div class="fButton orangeBtn">
+              <span onclick="deleteAll();" class="delete">删除</span>
+            </div>
+            <div class="fButton greenBtn">
+              <span class="import">导入</span>
+            </div>
+            <div class="fButton blueBtn">
+              <span class="export">导出</span>
+            </div>
+            <div class="fButton greenBtn">
+              <span onclick="setTop();" class="setTop">置顶</span>
+            </div>
+            <div class="fButton blueBtn">
+              <span onclick="cancelTop();" class="cancelTop">取消置顶</span>
+            </div></td>
+          <td class="right"><label>类型：</label>
+            <select>
+              <option>法律行政法规</option>
+            </select>
+            <label>关键字：</label>
+            <span class="position:relative;">
+            <input type="text" style="width:200px" class="formText" placeholder="输入标题关键字" id="title" name="">
+            </span> 
+            <label>创建时间：</label>
+            <input type="text" class="formText Wdate"/>
+            -
+            <input type="text" class="formText Wdate"/>
+            <input type="button" class="searchButton" value="查询"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <table cellpadding="0" cellspacing="0"  class="pretty dataTable">
+    <thead>
+      <tr>
+        <th class="Img">缩略图</th>
+        <th style="width:100px">交易号</th>
+        <th>品名</th>
+        <th>内容</th>
+        <th style="width:140px;">发布时间</th>
+        <th style="width:120px;">状态</th>
+        <th style="width:120px;" class="right_bdr0">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td><img class="tableImg" src="skins/default/img1.png" /></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="orange">待确认合同</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0"><a href="#" class="oper_btn">确认合同</a><br /><a href="">查看详情</a></td>
+      </tr>
+      <tr class="even">
+        <td><img class="tableImg" src="skins/default/img2.png" /></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="green">交易完成</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0"><a href="#" class="oper_btn">确认合同</a><br /><a href="">查看详情</a></td>
+      </tr>
+      <tr class="odd">
+        <td><img class="tableImg" src="skins/default/img3.png" /></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="green">交易完成</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0"><a href="#" class="oper_btn">确认合同</a><br /><a href="">查看详情</a></td>
+      </tr>
+      <tr class="even">
+        <td><img class="tableImg" src="skins/default/img1.png" /></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="green">交易完成</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0"><a href="#" class="oper_btn">确认合同</a><br /><a href="">查看详情</a></td>
+      </tr>
+      <tr class="odd">
+        <td><img class="tableImg" src="skins/default/img3.png" /></td>
+        <td><input name="" class="formText" type="text" /></td>
+        <td>复合肥<p class="f12 grey_9">含量10%，一级</p></td>
+        <td class="longTxt">北京全亚通信技术有限公司河南分公司pc端扁平化设计标准化规范设计</td>
+        <td>2013-01-18 11:40</td>
+        <td><span class="green">交易完成</span><p class="f12 grey_9">剩余期限：3个工作日</p></td>
+        <td class="right_bdr0"><a href="#" class="oper_btn">确认合同</a><br /><a href="">查看详情</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="dataTables_info" id="Table_info">共 197 条数据 </div>
+  <div class="dataTables_paginate paging_full_numbers" id="Table_paginate"><a class="first paginate_button paginate_button_disabled" tabindex="0" id="Table_first">首页</a><a class="previous paginate_button paginate_button_disabled" tabindex="0" id="Table_previous">上一页</a><span><a class="paginate_active" tabindex="0">1</a><a class="paginate_button" tabindex="0">2</a><a class="paginate_button" tabindex="0">3</a><a class="paginate_button" tabindex="0">4</a><a class="paginate_button" tabindex="0">5</a></span><a class="next paginate_button" tabindex="0" id="Table_next">下一页</a><a class="last paginate_button" tabindex="0" id="Table_last">尾页</a></div>
+</div>
+</body>
+</html>

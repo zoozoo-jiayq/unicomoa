@@ -1,0 +1,67 @@
+@charset "utf-8";
+.dailyPage{width:1030px;margin:0 auto;overflow:hidden;}
+.dailyPage .formbg{margin-top:10px;border:1px solid #e6eaeb;overflow:hidden;}
+/*buttonArea*/
+.dailyPage .buttonArea {text-align:left; clear:both; margin-top:20px; padding-bottom:20px;}
+.dailyPage .buttonArea .formButton_green{width:100px;height:30px;line-height:30px; text-align:center;outline:0;cursor:pointer;color:#fff;font-size:16px;border:0; background:#61b6c5; border-radius:3px; margin-right:20px;}
+.dailyPage .buttonArea .formButton_green:hover{ background:#49a4b4;}
+.dailyPage .buttonArea .formButton_grey{width:100px;height:30px;line-height:30px; text-align:center;outline:0;cursor:pointer;color:#555;font-size:16px;border:0; background:#dce7e9; border-radius:3px;margin-right:20px;}
+.dailyPage .buttonArea .formButton_grey:hover{background:#c0dadf;}
+
+.dailyPage select{border:1px solid #e4e4e4;color:#555555;height:29px; background:#fff; padding:1px;vertical-align:middle;}
+.dailyPage .formText{border:1px solid #e4e4e4;line-height:26px;color:#555555;height:26px; text-indent:10px;background:#fff;vertical-align:middle;}
+.dailyPage .formTextarea{min-height:100px;padding:10px 0;border:1px solid #e4e4e4;color:#555555;text-indent:10px;background:#fff;text-indent:10px;vertical-align:middle;}
+.dailyPage .formText:hover , .dailyPage .formTextarea:hover{border:1px solid #cecece;}
+.dailyPage .formText:focus , .dailyPage .formTextarea:focus{border:1px solid #459fd2;}
+.dailyPage .readOnlyText{border:1px solid #e4e4e4;line-height:26px;color:#c2c2c2;height:26px; text-indent:10px;background:#fafafa;vertical-align:middle;}
+.dailyPage .readOnlyTextarea{min-height:40px;padding:10px 0;border:1px solid #e4e4e4;line-height:26px;color:#c2c2c2;height:26px; text-indent:10px;background:#fafafa;vertical-align:middle; width:90%;}
+
+.blockBox{border:1px solid #e6eaeb;width:240px;background:#fff;}
+.blockTitle{height:35px;line-height:35px;padding-left:10px;font-size:16px;color:#017a8f;border-bottom:2px solid #5bbbc9;}
+.txtlist{padding:5px 0 5px 10px; overflow:auto;}
+.txtlist li{font-size:14px;color:#555;line-height:25px;}
+.txtlist li a{color:#555;}
+.txtlist li a:hover{color:#017a8f;}
+.dailyPage .small_title a{color:#017a8f;display:inline-block;padding-right:20px;}
+.dailyPage .small_title a.shareShow{background:url(../images/arrow_down.png) no-repeat right center;}
+.dailyPage .small_title a.shareCls{background:url(../images/arrow_up.png) no-repeat right center;}
+/*日志回复*/
+.dailyTopButton{margin-top:10px;}
+.dailyTopButton a{padding:0 20px;margin-right:5px;display:inline-block;color:#333;height:28px;line-height:27px;}
+.dailyTopButton a.no_oper{background:#e6e6e6;color:#adadad;}
+.dailyTopButton a:hover{text-decoration:none;}
+.dailyTopButton a.gray_bg{background:#dce7e9;}
+.dailyTopButton a.gray_bg:hover{background:#c0dadf;}
+.dailyDetail{padding:10px 30px 0 30px;line-height:25px;color:#555;}
+.dailyDetail .dailyTime{color:#adadad;padding-top:10px;}
+.dailyDetail em{font-style:italic; padding-right:3px; font-weight:inherit; padding:0 1px;}
+
+.reviewBox{background:#f4f9fa;border-top:1px solid #d7e3e6;padding:10px 20px;overflow:hidden;}
+.reviewBox dl{position:relative;}
+.reviewBox dl dt{font-size:14px; line-height:25px;}
+.reviewBox dl dt label{color:#017a8f;}
+.reviewBox dl dd{color:#555;line-height:25px;} 
+.reviewBox dl dd.hf_t{ padding-left:40px; padding-top:5px;}
+
+.reviewTime{color:#adadad;}
+.reviewTime em{cursor:pointer;margin-left:5px;font-style: normal;font-weight: normal;}
+.reviewTime em a{color:#555;}
+.reviewTime em img{margin-right:5px;}
+.reviewButton{width:80px;height:30px;line-height:30px; text-align:center;outline:0;cursor:pointer;color:#fff;font-size:16px;border:0; background:#61b6c5; border-radius:3px;}
+.reviewButton:hover{ background:#49a4b4;}
+.reviewTable{width:100%;table-layout:fixed}
+.reviewTable td{padding-bottom:5px;}
+.reviewTable td .reviewTime{padding:0;}
+.reviewTable td label{color:#017a8f;}
+
+.reviewTxt{display:none;padding-bottom:15px;}
+/*日志管理*/
+.dailyManage .big_title{border-bottom:none;font-size:16px;padding-right:20px;}
+.dailyManage .big_title .fr{font-size:14px;color:#adadad;}
+.dailyManage .dailyDetail{padding-top:0;padding-bottom:15px;}
+.dailybg{background:#f9fafa;}
+.dailyDetailBox a{color:#017a8f;}
+
+/*附件*/
+.daily_annex{ padding-top:5px; overflow:hidden;}
+.daily_annex h3{ font-size:16px;}

@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+/*select*/
+DIV.selectbox-wrapper {
+	BORDER-RIGHT: #b7d1eb 1px solid; BORDER-TOP: #b7d1eb 0px solid; MARGIN-TOP: 0px; BORDER-LEFT: #b7d1eb 1px solid;BORDER-BOTTOM: #b7d1eb 1px solid; POSITION: absolute; BACKGROUND-COLOR: #fff; TEXT-ALIGN: left;
+}
+DIV.selectbox-wrapper dl dd.selected {BACKGROUND-COLOR: #e0ecf7;}
+DIV.selectbox-wrapper dl dd.current {
+	COLOR: #fff; BACKGROUND-COLOR: #36c
+}
+DIV.selectbox-wrapper dl{ margin:0px; padding:0px;}
+DIV.selectbox-wrapper dl dd {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; CURSOR: pointer; LINE-HEIGHT: 20px; PADDING-TOP: 3px; margin:0px;
+}
+.selectbox { border:none;  DISPLAY:block; padding-left:4px; CURSOR: pointer; padding-top:2px; padding-bottom:2px; HEIGHT: 19px; line-height:19px; background:url(images/bg01.gif) #fff no-repeat right; border:1px solid #b7d1eb;}
+.btn{ float:left; display:inline; margin-left:8px; margin-top:2px;}
+/*select end*/

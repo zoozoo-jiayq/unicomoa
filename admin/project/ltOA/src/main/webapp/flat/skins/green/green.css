@@ -1,0 +1,152 @@
+@charset "utf-8";
+.green_skin .blue{ color:#4db344 ;}
+/*header*/
+.green_skin .headbg{background:#118f2c url(images/headbg.png) no-repeat right top ;}
+.green_skin .index_nav .index_menu{ color:#118f2c ;}
+.green_skin #div_tab li{ background:#59ba55;border:none ;}
+/*.green_skin .menu_right em{ background:url(images/icon_head.png) no-repeat;}*/
+.green_skin .head_nav li p.user font{ color:#FFF ;}
+
+.green_skin .menu_right span.on{background:#319c2e; border:1px solid #31992e;}
+
+/*foot*/
+.green_skin .bottom{color:#34a342;}
+.green_skin .exBot em.icon_work{ background:url(images/swtx.png) no-repeat;}
+.green_skin .exBot em.messageBox{background:url(images/jsxx.png) no-repeat;}
+.green_skin .exBot em.icon_group{background:url(images/zzjg.png) no-repeat;}
+.green_skin .exBot em.icon_work_on{ background:url(images/swtx.gif) no-repeat;}
+.green_skin .exBot em.messageBox_on{ background:url(images/jsxx.gif) no-repeat;}
+
+/*menu*/
+.green_skin .m_left{ border-right:none ;}
+.green_skin .m_right{ border-left:none ; width:201px ;}
+.green_skin .popTop{ background:url(images/top_bg.png) no-repeat ;}
+.green_skin .organi_box .tab{ background:url(images/orangz_topbg.png) ;}
+.green_skin .organi_box .tab li.one { color:#4db344;}
+.green_skin .organi_box .tab_cur li.one { color:#fff;}
+.green_skin .organi_box .tab li.two{color:#fff;}
+ .green_skin .organi_box .tab_cur li.two{color:#4db344;}
+.green_skin .organi_box .tab_cur{ background:url(images/orangz_topbg_2.png) no-repeat ;}
+.green_skin .organi_box .organi_middle{ background:url(images/orangz_middlebg.png) repeat-y;}
+.green_skin .organi_box .organi_footer{background:url(images/orangz_footbg.png)}
+
+.green_skin .m_left li em{ background:url(images/menu.png) no-repeat;}
+.green_skin .m_left li.current{ background:url(images/menu_bj.jpg) no-repeat ;}
+.green_skin .m_left li.current em{background:url(images/menu_on.png) no-repeat ;}
+.green_skin .m_right li em{ background:url(images/two_menu.png) no-repeat;}
+.green_skin .m_right li dl dd a{ background:url(images/graydot.png) no-repeat scroll left center ;}
+.green_skin .m_right li dl dd a:hover, .green_skin .m_right li dl dd a.on{ color:#118f2c ; background:url(images/bluedot.png) no-repeat scroll left center ;}
+
+/*左侧menu*/
+.green_skin .menu_l .s_menu ul.l_f_menu em{background:url(images/menu.png) no-repeat;}
+.green_skin .menu_l .s_menu h3.on , .green_skin .menu_l .s_menu h3.off{ background-color:#4fb545}
+.green_skin .menu_l .s_menu dt{background:url(images/graydot.png) no-repeat scroll left center;}
+.green_skin .menu_l .s_menu dt.on{color:#4cafe3 ; background:url(images/bluedot.png) no-repeat scroll left center ;}
+
+/*桌面*/
+.green_skin .popMidRight ul li h3 , .green_skin .popMidRight ul li h3 a ,.green_skin .popMiddle a.readed, .green_skin .popMiddle a.deleted{color:#4db344 ;}
+.green_skin .popMidLeft ul li.current{ background:url(images/menu_bj.jpg) no-repeat right 0 ;}
+.green_skin .submitArea p .formButton_green{ background:#4db344 }
+.green_skin .popMiddle a.readed{ background:url(images/readed.png) no-repeat scroll left center ;}
+.green_skin .popMiddle a.deleted{ background:url(images/delete.png) no-repeat scroll left center ;}
+.green_skin .popMidLeft .up .next{ background:url(images/up.png) no-repeat scroll center center / 19px auto ;}
+.green_skin .popMidLeft .down .prev{ background:url(images/down.png) no-repeat scroll center center / 19px auto ;}
+.green_skin .popMidLeft .down .prevStop{ background:url(images/down_gray.png) no-repeat scroll center center / 19px auto ;}
+
+.green_skin #app_cate_list ul li em{background:url(images/menu.png) no-repeat ;}
+.green_skin #app_cate_list ul li.current{ background:url(images/menu_bj.jpg) no-repeat right top ;}
+.green_skin #app_cate_list ul li.current em{background:url(images/menu_on.png) no-repeat ;}
+
+.green_skin #portalSetting #bar span{color:#4db344;}
+.green_skin #portalSetting #bar .on{ color:#4db344;}
+.green_skin #portalSetting #bar #btnAppSet{ background:url(images/iysz_icon.png) no-repeat scroll left center ;}
+.green_skin #portalSetting #bar #btnScreenSet{ background:url(images/fpsz_icon.png) no-repeat scroll left center;}
+
+.green_skin #control a.active{ background:url(images/btn_active.png) no-repeat scroll center top;}
+.green_skin #control a.cfg:hover{background: url(images/btn_cfg_hover.png) no-repeat center top;}
+
+.green_skin #app_cate_list .scroll-up{ background:url(images/up_small.png) no-repeat scroll center center;}
+.green_skin #app_cate_list .scroll-down{ background:url(images/down_small.png) no-repeat scroll center center;}
+
+
+/*新建收文/发文*/
+.green_skin .header_hd{ background:url(images/headerbj_hd.png) repeat-x scroll left bottom ;}
+.green_skin .operate .tab ul{ border-left:1px solid #4db344 ;}
+.green_skin .operate .tab li{border:1px solid #4db344 ; border-left:none ;}
+.green_skin .operate .tab .current a{ color:#4db344 }
+.green_skin .operate .btn .formButton{ background:#4db344 ; }
+.green_skin .mainpage .openMenu h2{ background:url(images/open_hd.png) no-repeat scroll 11px center ;border-bottom:2px solid #4db344 ; color:#4db344 ;}
+.green_skin .mainpage .openMenu h3{color:#4db344 ;}
+
+/*日志*/
+.green_skin .blockTitle{border-bottom:2px solid #4db344 ; color:#4db344 }
+.green_skin .txtlist li a:hover{color:#4db344 ;}
+.green_skin .dailyPage .small_title a{color:#4db344 ;}
+.green_skin .dailyPage .small_title a.shareShow{ background:url(images/arrow_down.png) no-repeat scroll right center ;}
+.green_skin .dailyPage .buttonArea .formButton_green{background:#4db344 ;}
+.green_skin .dailyPage .buttonArea .formButton_green:hover{ background:#268d22 ;}
+
+/*内部邮件*/
+.green_skin .meilTitle{ background:#e5efe4; border-bottom:2px solid #34a43a}
+.green_skin .meil_wrap li.current, .green_skin .meil_wrap li:hover{background:#ebf5ea}
+.green_skin .meil_wrap h2{ background:url(images/down_mail.png) no-repeat 16px center ;}
+.green_skin .meil_wrap h2.on{background:url(images/left_mail.png) no-repeat 16px center ;}
+
+/*日程管理*/
+.green_skin .day .date_top{ color:#4db344;}
+.green_skin .day .red{ color:#d13939;}
+.green_skin .day .gray{color:#c5c5c5}
+.green_skin  .schedule table.pretty tbody td.on_day{ background:#ebf5ea;}
+
+/*Accormenus*/
+.green_skin .service-menu h1{border-bottom:2px solid #4db344 ;color:#4db344 ;}
+.green_skin .search input{ background:url(images/icon_search.png) no-repeat scroll 95% center #fff ;}
+.green_skin .service-menu .menu-p:hover , .green_skin .service-menu .menu-p.on{background:#f0f7ef ; }
+
+/*annex*/
+.green_skin .annex ul li p a{ color:#4db344 ;}
+
+/*datatable*/
+.green_skin .greenBtn , .green_skin .blueBtn{background:#4db344;}
+.green_skin .greenBtn:hover , .green_skin .blueBtn:hover{background:#268d22;}
+
+/*form*/
+.green_skin .big_title{border-bottom:1px solid #4db344 ; color:#4db344 ;}
+.green_skin .small_title{color:#4db344 ;}
+.green_skin .blueBtn:hover{background:#268d22 ;}
+.green_skin .inputTable td a{color:#4db344 ; }
+.green_skin .buttonArea .formButton_green{background:#4db344 ;}
+.green_skin .buttonArea .formButton_green:hover{ background:#268d22 ;}
+.green_skin .buttonArea .formButton_grey{background:#e3ece3 ;}
+.green_skin .buttonArea .formButton_grey:hover{background:#cadaca ;}
+
+/*infoDetail*/
+.green_skin .detailsPage .buttonArea .formButton_grey{background:#e3ece3 ;}
+.green_skin .detailsPage .buttonArea .formButton_grey:hover{background:#cadaca ;}
+
+/*peopleTree*/
+.green_skin .ztree li span.button{background:url(images/zTreeStandard.png) ;}
+.green_skin .ztree li a.curSelectedNode{ color:#4db344;}
+
+/*selectMember*/
+.green_skin .member .tab .current a{ color:#4db344 ;}
+
+/*smallTab*/
+.green_skin .smallTab .tab .current a{color:#4db344 ;}
+
+.green_skin .item .title{color:#4db344;}
+.green_skin .item .title em{ background:url(images/menu_kp.png) no-repeat;}
+
+/**/
+.green_skin .ui-widget-content{color:#4db344 ;}
+
+/*中间固定宽度*/
+.green_skin .head_door{ background:url(images/headerBJ_door.png);}
+.green_skin .head_door .index_menu{background:url(images/menuBtn_bj.png) no-repeat 7px center; color:#219932;}
+.green_skin .head_door .index_menu:hover{background:url(images/menuBtn_bj.png) no-repeat 7px center #ddeded;}
+.green_skin .indexTop .operate{ border:1px solid #31992e;}
+.green_skin .operate span.on{ background:#319c2e;}
+
+
+
+

@@ -1,0 +1,9 @@
+$.get()
+document.write('<!-- 用来产生编辑状态的ActiveX控件的JS脚本-->   ');
+document.write('<!-- 因为微软的ActiveX新机制，需要一个外部引入的js-->   ');
+document.write('<object id="ntkoocx" classid="clsid:DB5B521C-DA92-48e0-AE32-BDC944858D42"  hidden="true" ');
+document.write('codebase="'+basePath+'js/logined/ntko/ntkoWebSign.cab#version=3,0,5,0" width=0 height=0>   ');
+document.write('<param name="BackColor" value="16777215">   ');
+document.write('<param name="ForeColor" value="16744576">   ');
+document.write('<SPAN STYLE="color:red">不能装载NTKO WebSignHelper 控件。请在检查浏览器的选项中检查浏览器的安全设置。</SPAN>   ');
+document.write('</object>   ');
