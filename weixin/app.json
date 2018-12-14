@@ -26,12 +26,7 @@
         "selectedIconPath": "imgs/workplan.png",
         "text": "计划"
       },
-      {
-        "pagePath": "pages/workplan/index/index",
-        "iconPath": "imgs/message1.png",
-        "selectedIconPath": "imgs/message.png",
-        "text": "消息"
-      },
+    
       {
         "pagePath": "pages/main/index",
         "iconPath": "imgs/work1.png",
