@@ -57,9 +57,8 @@
         </view>
       </wux-card>
     </wux-wing-blank>
-    <view style="text-align:center">
-        <button bindtap='progress' style="width:50%;display:inline;padding:10px 20px;margin:0 5px;" class='btn' hover-class='btn_hover'>执行进度</button>
-        <button style="width:50%;display:inline;padding:10px 20px;margin:0 5px;">更多操作</button>
-    </view>
+    <button bindtap='progress' style="" class='btn' hover-class='btn_hover'>执行进度</button>
+    <button style="margin-top:10px">更多操作</button>
+
   </view>
 </view>
