@@ -9,3 +9,43 @@
 .add:hover{
   cursor: pointer
 }
+.list{
+  padding: 5px 10px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.block{
+  display: inline-block;
+}
+.leftcell{
+  font-size:12px;
+  width:70px;
+  line-height: 20px;
+}
+.rightcell{
+
+}
+.content{
+  font-size:16px;
+  line-height: 28px;
+}
+.canyuren{
+  font-size: 12px;
+  line-height: 20px;
+  color:#aeaeae;
+}
+.arrarow{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right:10px;
+}
+.arrarow image{
+  width:25px;
+  height:30px;
+}
+.mid{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}

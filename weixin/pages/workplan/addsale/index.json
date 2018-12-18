@@ -9,6 +9,7 @@
     "wux-col": "../../../wux/col/index",
     "wux-input": "../../../wux/input/index",
     "wux-select": "../../../wux/select/index",
-    "wux-input-number": "../../../wux/input-number/index"
+    "wux-input-number": "../../../wux/input-number/index",
+    "wux-switch": "../../../wux/switch/index"
   }
 }

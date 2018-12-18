@@ -1,78 +1,86 @@
 <view class="page">
   <wux-cell-group title="请选择计划类型">
     <wux-cell>
-      <radio-group>
+      <radio-group bindchange="selectPlanType">
         <label class="radio">
           <radio value="sale" checked="true" color="#1296db" />营销活动
         </label>
         <label class="radio">
-          <radio value="visit" checked="true" color="#1296db"/>外出拜访
+          <radio value="visit"  color="#1296db" />外出拜访
         </label>
         <label class="radio">
-          <radio value="other" checked="true" color="#1296db"/>其它
+          <radio value="other"  color="#1296db" />其它
         </label>
       </radio-group>
     </wux-cell>
   </wux-cell-group>
   <view class="line"></view>
   <wux-cell-group title="请选择活动时间">
-    <wux-cell hover-class="none">
-      <wux-row>
-        <wux-col span="3">
-          <view class="labeltext timelineheight">开始时间</view>
-        </wux-col>
-        <wux-col span="5">
-          <picker mode="date" value="{{beginDate}}" bindchange="changeBeginDate">
-            <view class="timelineheight">{{beginDate}}</view>
+    <wux-cell hover-class="none" title="全天">
+      <wux-switch name="positive" slot="footer" color="positive" value="{{workplan.oneDay}}" bind:change="selectAllOneDay" />
+    </wux-cell>
+    <wux-cell style="position:relative;" wx:if="{{!workplan.oneDay}}">
+      <view class="cell">
+        <view class="leftcell">
+          开始时间
+        </view>
+        <view class="rightcell">
+          结束时间
+        </view>
+      </view>
+      <view class="cell">
+        <view class="leftcell">
+          <!-- <picker mode="date" value="{{workplan.beginDate}}" bindchange="changeBeginDate"> -->
+            <view style="color:#aeaeae;">{{workplan.beginDate}}</view>
+          <!-- </picker> -->
+        </view>
+        <view class="rightcell">
+          <!-- <picker mode="date" value="{{workplan.endDate}}" bindchange="changeEndDate"> -->
+            <view style="color:#aeaeae">{{workplan.endDate}}</view>
+          <!-- </picker> -->
+        </view>
+      </view>
+      <view class="cell">
+        <view class="leftcell">
+          <picker mode="time" value="{{workplan.beginTime}}" bindchange="changeBeginTime">
+            <view class="">{{workplan.beginTime}}</view>
           </picker>
-        </wux-col>
-        <wux-col span="4">
-          <picker mode="time" value="{{beginTime}}" bindchange="changeBeginTime">
-            <view class="timelineheight">{{beginTime}}</view>
+        </view>
+        <view class="rightcell">
+          <picker mode="time" value="{{workplan.endTime}}" bindchange="changeEndTime">
+            <view class="">{{workplan.endTime}}</view>
           </picker>
-        </wux-col>
-      </wux-row>
-      <wux-row>
-        <wux-col span="3">
-          <view class="labeltext timelineheight">结束时间</view>
-        </wux-col>
-        <wux-col span="5">
-          <picker mode="date" value="{{endDate}}" bindchange="changeEndDate">
-            <view class="timelineheight">{{endDate}}</view>
-          </picker>
-        </wux-col>
-        <wux-col span="4">
-          <picker mode="time" value="{{endTime}}" bindchange="changeEndTime">
-            <view class="timelineheight">{{endTime}}</view>
-          </picker>
-        </wux-col>
-      </wux-row>
+        </view>
+      </view>
+      <image src="../../../imgs/timezone.png" class="middleimage"></image>
     </wux-cell>
   </wux-cell-group>
   <view class="line"></view>
+  <wux-cell-group title="请选择参与人">
+    <wux-cell extra="{{ workplan.canyurennames }}" bind:click="showSelectUser">
+      <image src="../../../imgs/adduser.png" style="width:30px;height:30px"></image>
+    </wux-cell>
+  </wux-cell-group>
 
+  <view class="line"></view>
   <wux-cell-group>
     <wux-cell hover-class="none">
-      <wux-input placeholder="请输入活动地址" />
+      <wux-input placeholder="请输入活动地址" bind:change="inputAddr"  />
     </wux-cell>
   </wux-cell-group>
   <view class="line"></view>
   <wux-cell-group>
-    <wux-cell title="请选择参与人" extra="{{ canyurennames }}" bind:click="showSelectUser"></wux-cell>
-  </wux-cell-group>
-  <view class="line"></view>
-  <wux-cell-group>
     <wux-cell hover-class="none">
-      <wux-textarea hasCount rows="3" cursorSpacing="80" placeholder="请输入工作计划..." />
+      <wux-textarea hasCount rows="3" bind:change="inputContent"   cursorSpacing="80" placeholder="请输入工作计划..." />
     </wux-cell>
   </wux-cell-group>
   <view class="line"></view>
   <wux-cell-group>
     <wux-cell title="营销目标" hover-class="none">
-      <wux-input-number default-value="15" slot="footer" color="positive" />
+      <wux-input-number default-value="{{workplan.target}}" slot="footer" color="positive" bind:change="changeTarget" />
     </wux-cell>
   </wux-cell-group>
   <view class="line"></view>
   <wux-select id="selectUser" />
-  <button class='btn'  hover-class='btn_hover'>提交</button>
+  <button class='btn' hover-class='btn_hover' bindtap='submit'>提交</button>
 </view>

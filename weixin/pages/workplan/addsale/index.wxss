@@ -1,10 +1,4 @@
-.labeltext {
-  font-size: 28rpx;
-  color: #888;
-}
-.timelineheight{
-  line-height: 30px;
-}
+
 .line{
   height: 10px;
   width: 100%;
@@ -18,4 +12,25 @@
 .btn_hover{
   background-color: #1296db;
   color:#fff  
+}
+.cell{
+  font-size: 14px;
+  line-height: 35px;
+}
+.leftcell{
+  display:inline-block;
+  width:30vw;
+}
+.rightcell{
+  display: inline-block;
+  width: 30vw;
+  float:right;
+}
+.middleimage{
+  position:absolute;
+  top:50%;
+  left:45vw;
+  width:20vw;
+  height:60px;
+  transform: translate(-50%,-50%)
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds"
+	debug="false">
+
+	<contextName>MsgA</contextName>
+	<property name="logback.logdir" value="." />
+	<property name="logback.appname" value="unicomoa" />
+
+	<!-- ConsoleAppender 控制台输出日志 -->
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 对日志进行格式化 -->
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger -%msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="fileInfoLog"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则 如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天 
+			的日志改名为今天的日期。即，<File> 的日志都是当天的。 -->
+		<File>${logback.logdir}/${logback.appname}.info.log</File>
+		<!--滚动策略，按照时间滚动 TimeBasedRollingPolicy -->
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logback.logdir}/${logback.appname}_%d{yyyy-MM-dd}_%i.log
+			</fileNamePattern>
+			<maxHistory>100</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>50MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!--指定最基础的日志输出级别 -->
+	<root level="INFO">
+		<!-- 控制台输出 -->
+		<appender-ref ref="STDOUT" />
+		<!--appender将会添加到这个loger -->
+		<appender-ref ref="fileInfoLog" />
+	</root>
+
+</configuration>
