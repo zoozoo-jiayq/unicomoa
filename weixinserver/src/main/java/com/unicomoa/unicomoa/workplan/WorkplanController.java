@@ -37,6 +37,12 @@ public class WorkplanController extends BaseController {
 		return SUCCESS(plans);
 	}
 	
+	@RequestMapping("/detail")
+	public Object detail(int id) {
+		WorkPlan plan = workPlanService.findById(id).get();
+		return SUCCESS(plan);
+	}
+	
 	@RequestMapping("/add")
 	public Object add(@RequestBody Map<String,Object> request) throws ParseException {
 		WorkPlan wp = new WorkPlan();

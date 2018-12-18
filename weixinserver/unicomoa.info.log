@@ -136,3 +136,40 @@
 2018-12-18 16:17:01,310 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 546 - Completed initialization in 9 ms
 2018-12-18 16:17:01,428 [http-nio-8080-exec-1] INFO  o.h.h.i.QueryTranslatorFactoryInitiator 47 - HHH000397: Using ASTQueryTranslatorFactory
 2018-12-18 16:19:54,739 [http-nio-8080-exec-5] INFO  c.u.unicomoa.base.BaseController 33 - -------------------------------/workplan/list
+2018-12-18 18:10:20,039 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin 164 - Application shutdown requested.
+2018-12-18 18:10:20,042 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor 208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2018-12-18 18:10:20,043 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean 597 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-12-18 18:10:20,045 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource 350 - HikariPool-1 - Shutdown initiated...
+2018-12-18 18:10:20,048 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource 352 - HikariPool-1 - Shutdown completed.
+2018-12-18 18:10:35,756 [main] INFO  c.u.unicomoa.UnicomoaApplication 50 - Starting UnicomoaApplication on I142P6IZ9RBKIC5 with PID 9924 (E:\source\unicomoa\unicomoa\weixinserver\target\classes started by Administrator in E:\source\unicomoa\unicomoa\weixinserver)
+2018-12-18 18:10:35,759 [main] INFO  c.u.unicomoa.UnicomoaApplication 675 - No active profile set, falling back to default profiles: default
+2018-12-18 18:10:36,292 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate 126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-18 18:10:36,356 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate 182 - Finished Spring Data repository scanning in 58ms. Found 1 repository interfaces.
+2018-12-18 18:10:36,639 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$34bf3097] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-18 18:10:36,935 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 90 - Tomcat initialized with port(s): 8080 (http)
+2018-12-18 18:10:36,949 [main] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Initializing ProtocolHandler ["http-nio-8080"]
+2018-12-18 18:10:36,958 [main] INFO  o.a.catalina.core.StandardService 173 - Starting service [Tomcat]
+2018-12-18 18:10:36,958 [main] INFO  o.a.catalina.core.StandardEngine 173 - Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-18 18:10:36,964 [main] INFO  o.a.c.core.AprLifecycleListener 173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Program Files\Java\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Program Files\Java\jdk1.8.0_144\jre\bin;D:/Program Files (x86)/java/bin/server;D:/Program Files (x86)/java/bin;D:/Program Files (x86)/java/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\nodejs\;d:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;C:\Users\Administrator\AppData\Roaming\npm\node_modules\cnpm\node_modules\npminstall\node-gyp-bin;C:\Users\Administrator\AppData\Roaming\npm\node_modules\windows-build-tools\node_modules\.bin;C:\Users\Administrator\AppData\Roaming\npm\node_modules\windows-build-tools\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\nodejs\;d:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH\;D:\Go\bin;C:\Users\Administrator\AppData\Local\Programs\Python\Python36;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Java\jdk1.8.0_144\bin;D:\Program Files (x86)\maven\apache-maven-3.5.2\bin;C:\Users\Administrator\AppData\Roaming\npm;d:\Users\Administrator\AppData\Local\Programs\Fiddler;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;D:\Program Files\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin;D:\ant\apache-ant-1.10.5-bin\apache-ant-1.10.5\bin;C:\Users\Administrator\go\bin;"C:\Users\Administrator\AppData\Local\Android\Sdk\platform-tools;C:\Users\Administrator\AppData\Local\Android\Sdk\tools";C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts;;D:\sts-3.9.1.RELEASE;;.]
+2018-12-18 18:10:37,109 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring embedded WebApplicationContext
+2018-12-18 18:10:37,109 [main] INFO  o.s.web.context.ContextLoader 296 - Root WebApplicationContext: initialization completed in 1316 ms
+2018-12-18 18:10:37,262 [main] INFO  com.zaxxer.hikari.HikariDataSource 110 - HikariPool-1 - Starting...
+2018-12-18 18:10:37,616 [main] INFO  com.zaxxer.hikari.HikariDataSource 123 - HikariPool-1 - Start completed.
+2018-12-18 18:10:37,710 [main] INFO  o.h.jpa.internal.util.LogHelper 31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-12-18 18:10:37,767 [main] INFO  org.hibernate.Version 46 - HHH000412: Hibernate Core {5.3.7.Final}
+2018-12-18 18:10:37,769 [main] INFO  org.hibernate.cfg.Environment 213 - HHH000206: hibernate.properties not found
+2018-12-18 18:10:37,889 [main] INFO  o.h.annotations.common.Version 49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-12-18 18:10:38,012 [main] INFO  org.hibernate.dialect.Dialect 157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-12-18 18:10:40,938 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean 415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-12-18 18:10:41,419 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor 171 - Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-18 18:10:41,456 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration 234 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-12-18 18:10:41,693 [main] INFO  o.a.coyote.http11.Http11NioProtocol 173 - Starting ProtocolHandler ["http-nio-8080"]
+2018-12-18 18:10:41,703 [main] INFO  o.a.tomcat.util.net.NioSelectorPool 173 - Using a shared selector for servlet write/read
+2018-12-18 18:10:41,719 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer 204 - Tomcat started on port(s): 8080 (http) with context path ''
+2018-12-18 18:10:41,721 [main] INFO  c.u.unicomoa.UnicomoaApplication 59 - Started UnicomoaApplication in 6.335 seconds (JVM running for 7.749)
+2018-12-18 18:10:51,761 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] 173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-18 18:10:51,761 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 524 - Initializing Servlet 'dispatcherServlet'
+2018-12-18 18:10:51,772 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet 546 - Completed initialization in 11 ms
+2018-12-18 18:10:51,908 [http-nio-8080-exec-1] INFO  o.h.h.i.QueryTranslatorFactoryInitiator 47 - HHH000397: Using ASTQueryTranslatorFactory
