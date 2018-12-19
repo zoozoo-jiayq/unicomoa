@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/workplan/detail/index",
     "pages/workplan/index/index",
     "pages/workplan/addsale/index",
     "pages/login/index",
@@ -8,8 +9,7 @@
     "pages/daka/index/index",
     "pages/main/index",
     "pages/workplan/search/index",
-    "pages/workplan/progress/index",
-    "pages/workplan/detail/index"
+    "pages/workplan/progress/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

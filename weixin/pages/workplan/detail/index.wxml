@@ -48,14 +48,34 @@
     </wux-wing-blank>
     <view class="line"></view>
     <wux-wing-blank size="default">
-      <wux-card bordered="{{ false }}" title="执行记录" class="rowheight">
-        <view slot="body">
-          <view></view>
+      <wux-card bordered="{{ true }}" title="执行记录" class="rowheight">
+        <view slot="body" >
+          <view class="progress">
+            <view class="step"></view>
+            <view class="operationer block">张三</view>
+            <view class="time block">2018-12-19 12:30</view>
+            <view class="content">活动线程已经打好</view>
+            <view class="img">
+                <image class="block" src="../../../imgs/add.png"></image>
+                <image class="block" src="../../../imgs/adduser.png"></image>
+            </view>
+          </view>
+          <view class="progress">
+          <view class="step"></view>
+            <view class="operationer block">张三</view>
+            <view class="time block">2018-12-19 12:30</view>
+            <view class="content">活动线程已经打好</view>
+            <view class="img">
+                <image class="block" src="../../../imgs/add.png"></image>
+                <image class="block" src="../../../imgs/adduser.png"></image>
+            </view>
+          </view>
         </view>
       </wux-card>
     </wux-wing-blank>
-    <button bindtap='progress' style="" class='btn' hover-class='btn_hover'>执行进度</button>
-    <button style="margin-top:10px">更多操作</button>
-
+    <view class="btngroup">
+      <button bindtap='progress' style="" class='btn' hover-class='btn_hover'>执行进度</button>
+      <button>更多操作</button>
+    </view>
   </view>
 </view>
