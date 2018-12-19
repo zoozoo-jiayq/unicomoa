@@ -7,5 +7,5 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path+"/" ;
     request.setAttribute("ctx", basePath);
-    request.setAttribute("version", "3.1");
+    request.setAttribute("version", "3.2");
 %>

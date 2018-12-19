@@ -257,7 +257,7 @@ public class AttendancePlanDao extends BaseDao<AttendancePlan, Integer> implemen
 			if(userIds.endsWith(",")){
 				userIds=userIds.substring(0,userIds.length()-1);
 			}
-			String sql="select distinct b.user_id,b.user_name from tb_attendance_plan a,tb_user_info b where a.is_delete=0 and a.company_id='"+companyId+"' and b.company_id='"+companyId+"' and a.user_ids like '%,'+cast(b.user_id as varchar(8))+',%' and b.user_id in ("+userIds+")";
+			String sql="select distinct b.user_id,b.user_name from tb_attendance_plan a,tb_user_info b where a.is_delete=0 and a.company_id='"+companyId+"' and b.company_id='"+companyId+"' and a.user_ids like CONCAT('%,',cast(b.user_id as CHAR),',%') and b.user_id in ("+userIds+")";
 			if(planId!=null){
 				sql+=" and a.id<>"+planId+" ";
 			}
@@ -284,7 +284,7 @@ public class AttendancePlanDao extends BaseDao<AttendancePlan, Integer> implemen
 			if(userIds.endsWith(",")){
 				userIds=userIds.substring(0,userIds.length()-1);
 				}
-			String sql="select distinct a.id,a.user_ids from tb_attendance_plan a,tb_user_info b where a.is_delete=0 and a.company_id='"+companyId+"' and b.company_id='"+companyId+"' and a.user_ids like '%,'+cast(b.user_id as varchar(8))+',%' and b.user_id in ("+userIds+") ";
+			String sql="select distinct a.id,a.user_ids from tb_attendance_plan a,tb_user_info b where a.is_delete=0 and a.company_id='"+companyId+"' and b.company_id='"+companyId+"' and a.user_ids like CONCAT('%,',cast(b.user_id as CHAR),',%') and b.user_id in ("+userIds+") ";
 			if(planId!=null){
 				sql+=" and a.id<>"+planId+" ";
 			}

@@ -134,8 +134,8 @@ public class AttendancePlanAction extends BaseActionSupport {
 				plan.setLatitude(vo.getLatitude());
 				plan.setRange(vo.getRange());
 				plan.setCommonOn(new Timestamp(sdf.parse(vo.getCommonOn()).getTime()));
-				plan.setCommonAmOff(new Timestamp(sdf.parse(vo.getCommonAmOff()).getTime()));
-				plan.setCommonPmOn(new Timestamp(sdf.parse(vo.getCommonPmOn()).getTime()));
+				/*plan.setCommonAmOff(new Timestamp(sdf.parse(vo.getCommonAmOff()).getTime()));
+				plan.setCommonPmOn(new Timestamp(sdf.parse(vo.getCommonPmOn()).getTime()));*/
 				plan.setCommonOff(new Timestamp(sdf.parse(vo.getCommonOff()).getTime()));
 				plan.setMonRest(vo.getMonRest());
 				plan.setTuesRest(vo.getTuesRest());
@@ -244,8 +244,8 @@ public class AttendancePlanAction extends BaseActionSupport {
 				vo.setRange(plan.getRange());
 				vo.setCommonOn(sdf.format(plan.getCommonOn().getTime()));
 				vo.setCommonOff(sdf.format(plan.getCommonOff().getTime()));
-				vo.setCommonAmOff(sdf.format(plan.getCommonAmOff().getTime()));
-				vo.setCommonPmOn(sdf.format(plan.getCommonPmOn().getTime()));
+				/*vo.setCommonAmOff(sdf.format(plan.getCommonAmOff().getTime()));
+				vo.setCommonPmOn(sdf.format(plan.getCommonPmOn().getTime()));*/
 				vo.setMonRest(plan.getMonRest()==null?1:plan.getMonRest());//周一
 				vo.setTuesRest(plan.getTuesRest()==null?1:plan.getTuesRest());//周二
 				vo.setWedRest(plan.getWedRest()==null?1:plan.getWedRest());//周三

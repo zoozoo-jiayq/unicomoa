@@ -18,16 +18,24 @@ import cn.com.qytx.cbb.file.config.FilePathConfig;
 import cn.com.qytx.cbb.file.domain.Attachment;
 import cn.com.qytx.cbb.file.service.IAttachment;
 import cn.com.qytx.platform.base.action.BaseActionSupport;
+import cn.com.qytx.platform.org.domain.GroupInfo;
 import cn.com.qytx.platform.org.domain.UserInfo;
+import cn.com.qytx.platform.org.service.IGroup;
 import cn.com.qytx.platform.org.service.IUser;
 
 import com.google.gson.Gson;
 
 public class UpdateUserForWap extends BaseActionSupport{
+	private static final long serialVersionUID = 830800042433855473L;
 	@Autowired
 	IUser userService;
 	@Autowired
     IAttachment attachmentService;
+	  /**
+     * 部门，群组管理接口
+     */
+    @Resource(name = "groupService")
+    IGroup groupService;
     @Resource(name="filePathConfig")
     private FilePathConfig filePathConfig;
 	
@@ -61,11 +69,6 @@ public class UpdateUserForWap extends BaseActionSupport{
 	 */
 	public void uploadUserPhoto(){
 		try{
-			String path = this.getRequest().getContextPath();
-			String basePath = this.getRequest().getScheme() + "://"
-					+ this.getRequest().getServerName() + ":"
-					+ this.getRequest().getServerPort() + path + "/";	
-			
 			UserInfo currUser = userService.findOne(userId);
 			if(currUser != null){
 				// 上传文件
@@ -127,6 +130,67 @@ public class UpdateUserForWap extends BaseActionSupport{
 			ajax("101||服务器异常");
 		}
 	}
+	
+	
+	/**
+     * 获取人员信息
+     *
+     * @return
+     */
+    public void ajaxUserById() {
+    	try{
+    		UserInfo user = userService.findOne(userId);
+            GroupInfo group = groupService.getGroupByUserId(user.getCompanyId(), userId);   //获取部门信息
+            int groupId = 0;
+            if (group != null) {
+                groupId = group.getGroupId();
+            }
+            Map<String, Object> dataMap = new HashMap<String, Object>();
+            // 登录名
+            dataMap.put("loginName", user.getLoginName());
+            // 用户状态
+            dataMap.put("userState", user.getUserState());
+            // 用户ID
+            dataMap.put("id", user.getUserId());
+            // 部门名称
+            if(group!=null){
+            	dataMap.put("groupName", group.getGroupName());
+            }
+            // 部门Id
+            dataMap.put("groupId", groupId);
+            // 工号
+            dataMap.put("workNo", user.getWorkNo());
+            // 姓名
+            dataMap.put("userName", user.getUserName());
+            // 性别
+            dataMap.put("sex", user.getSex());
+            // 生日
+            String birthDay = "";
+            if(user.getBirthDay()!=null){
+            	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            	birthDay = format.format(user.getBirthDay());
+            }
+            dataMap.put("birthDay", birthDay);
+            // 职务
+            dataMap.put("job", user.getJob());
+            // 头像
+            dataMap.put("photo", user.getPhoto());
+            // 联系电话phone2
+            dataMap.put("phone2", user.getPhone2());
+            // 手机号码
+            dataMap.put("phone", user.getPhone());
+            // 电子邮件
+            dataMap.put("email", user.getEmail());
+            // 部门/单位 显示级联信息
+            String groupName = groupService.getGroupNamePathByUserId(user.getCompanyId(), user.getUserId());
+            dataMap.put("groupPath", groupName);
+            Gson gson = new Gson();
+            ajax("100||"+gson.toJson(dataMap));
+    	}catch(Exception e){
+			e.printStackTrace();
+			ajax("101||服务器异常");
+		}
+    }
 	
     /**
      * 得到文件的扩展名,得不到返回空

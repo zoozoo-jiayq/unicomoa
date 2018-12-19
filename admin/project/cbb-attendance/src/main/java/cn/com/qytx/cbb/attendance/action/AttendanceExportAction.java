@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-import org.apache.tools.ant.util.DateUtils;
 
 import cn.com.qytx.cbb.attendance.domain.Attendance;
 import cn.com.qytx.cbb.attendance.service.IAttendance;
@@ -295,7 +294,8 @@ public class AttendanceExportAction extends BaseActionSupport{
         	    	   Timestamp crt = one.getCreateTime();
         	    	   SimpleDateFormat sip = new SimpleDateFormat("yyyy-MM-dd");
         	    	   attDate = sip.format(crt);
-        	    	   week = DateUtils.format(crt, "EEEE");
+        	    	   SimpleDateFormat dateWeek = new SimpleDateFormat("EEEE");
+        	    	   week = dateWeek.format(crt);
         	    	}
         	    	map.put("uname", uname);
         	    	map.put("bm", bm);

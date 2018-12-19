@@ -2,7 +2,6 @@ package cn.com.qytx.cbb.attendance.domain;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +29,6 @@ public class AttendancePlan extends BaseDomain implements Serializable {
 	 * 描述含义
 	 */
 	private static final long serialVersionUID = 1L;
-	private static SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 	
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)

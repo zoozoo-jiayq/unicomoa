@@ -27,9 +27,9 @@
 			          <td class="right">
 			         </td>
 			         <td style="width:92px;">
-			              <!-- <div class="fButton blueBtn">
+			              <div class="fButton blueBtn">
 			              	<span class="add" id="toAdd" >新增</span>
-			              </div> -->
+			              </div> 
 			          </td>
 			        </tr>
 			      </tbody>

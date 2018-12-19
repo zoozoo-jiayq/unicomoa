@@ -2,8 +2,6 @@
  * 登陆js
  */
 $(document).ready(function() {
-		window.location.href = basePath+"wangzhan/html/index.html";
-		
 		$("#j_username").keyup(function(){
 			$("#j_username").val($.trim($("#j_username").val().replace(/[`~!@#$%^&*￥（）【】：；”“‘’？|，。()+<>?:"{},.\/;'[\]]/im,'')));
 		});
