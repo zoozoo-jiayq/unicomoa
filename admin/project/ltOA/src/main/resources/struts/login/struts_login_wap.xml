@@ -7,6 +7,9 @@
         <!--登陆成功后跳转的页面-->
         <action name="loginAjax" class="cn.com.qytx.cbb.login.action.mobile.LoginWapAction" method="loginAjax">
         </action>
+        <!--获取用户信息-->
+        <action name="ajaxUserById" class="cn.com.qytx.cbb.login.action.mobile.UpdateUserForWap" method="ajaxUserById">
+        </action>
         <!--修改密码-->
         <action name="updatePwd" class="cn.com.qytx.cbb.login.action.mobile.UpdatePwd" method="updatePwd">
         </action>

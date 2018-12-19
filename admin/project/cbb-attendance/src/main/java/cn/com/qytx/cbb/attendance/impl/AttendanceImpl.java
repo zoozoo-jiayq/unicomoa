@@ -1,10 +1,6 @@
 package cn.com.qytx.cbb.attendance.impl;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,8 +19,6 @@ import cn.com.qytx.cbb.attendance.domain.AttendanceDays;
 import cn.com.qytx.cbb.attendance.domain.AttendanceIpSet;
 import cn.com.qytx.cbb.attendance.domain.AttendancePlan;
 import cn.com.qytx.cbb.attendance.service.IAttendance;
-import cn.com.qytx.cbb.jbpmApp.dao.WorkflowLeaveDao;
-import cn.com.qytx.cbb.jbpmApp.domain.WorkflowLeave;
 import cn.com.qytx.platform.base.query.Page;
 import cn.com.qytx.platform.base.query.Pageable;
 import cn.com.qytx.platform.base.service.impl.BaseServiceImpl;
@@ -56,8 +50,6 @@ public class AttendanceImpl extends BaseServiceImpl<Attendance> implements IAtte
 	
 	@Resource(name="attendanceCustomPageDao")
 	private AttendanceCustomPageDao attendanceCustomPageDao;
-	@Resource(name="workflowleaveDao")
-	private WorkflowLeaveDao workflowLeaveDao;
   	 /**
 	  *   判断IP是否在正确的范围内：
       *  True: IP地址在设置范围内
@@ -166,7 +158,6 @@ public class AttendanceImpl extends BaseServiceImpl<Attendance> implements IAtte
 	private boolean checkIp(String remoteIp){
 		//先比较前三项 
 		//比较完之后 再把前三项的最后一位比较 大小
-		String ips = remoteIp.substring(remoteIp.lastIndexOf(".")+1);
 			Integer lastIp = Integer.parseInt(remoteIp.substring(remoteIp.lastIndexOf(".")+1));
 			List<AttendanceIpSet> aisList = attendanceIpSetDao.findAttendAnceIpByReomoteIp(remoteIp);
 			if(aisList != null && aisList.size() > 0){
@@ -264,93 +255,6 @@ public class AttendanceImpl extends BaseServiceImpl<Attendance> implements IAtte
 	public Map<Integer, Double> getUserLeaveDays(String startTime,
 			String endTime, Integer companyId,AttendancePlan ap,Integer type) {
 		Map<Integer,Double> map = new HashMap<Integer, Double>();
-		List<WorkflowLeave> wflList = workflowLeaveDao.getWorkflowLeaveList(startTime, endTime, companyId,null,type);
-		Timestamp onTimes = ap.getCommonOn();
-		Timestamp offTimes = ap.getCommonOff();
-		double hourDay = ((double)(offTimes.getTime() - onTimes.getTime()))/(1000*60*60);
-		double dayNum = 0.00;
-		Calendar calendarStart = Calendar.getInstance();
-		Calendar calendarEnd = Calendar.getInstance();
-		SimpleDateFormat sdfYYYYMMDD = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat sdfHHMMSS = new SimpleDateFormat("HH:mm:ss");
-		Timestamp endTimeTs = Timestamp.valueOf(endTime+" 23:59:59.999");
-		if(wflList!=null&&wflList.size()>0){
-			double hour = 0.0;
-			for(WorkflowLeave wfl:wflList){
-				Integer userId = wfl.getUserId();
-				hour = 0.0;
-				Timestamp startLeaveTime = wfl.getStartLeaveTime();
-				Timestamp endLeaveTime = wfl.getEndLeaveTime();
-				if(endTimeTs.getTime()<endLeaveTime.getTime()){
-					endLeaveTime = endTimeTs;
-				}
-				String startLeaveTimestr = sdfYYYYMMDD.format(startLeaveTime);
-				String endLeaveTimestr = sdfYYYYMMDD.format(endLeaveTime);
-				String startLeaveHHMMSS = sdfHHMMSS.format(startLeaveTime);
-				String endLeaveHHMMSS = sdfHHMMSS.format(endLeaveTime);
-				Timestamp newStartLeaveTs = Timestamp.valueOf("1970-01-01 "+startLeaveHHMMSS);
-				Timestamp newEndLeaveTs = Timestamp.valueOf("1970-01-01 "+endLeaveHHMMSS);
-				
-				if(!startLeaveTimestr.equals(endLeaveTimestr)){
-						if(newStartLeaveTs.getTime()<onTimes.getTime()){
-							hour += hourDay;
-						}
-						if(newStartLeaveTs.getTime()>=onTimes.getTime()&&newStartLeaveTs.getTime()<=offTimes.getTime()){
-							hour+=(double)(offTimes.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-						}
-						if(newEndLeaveTs.getTime()>=onTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-							hour+=(double)(newEndLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-						}
-						if(newEndLeaveTs.getTime()>offTimes.getTime()){
-							hour += hourDay;
-						}
-				}else{
-						if(newStartLeaveTs.getTime()<=onTimes.getTime()){
-							if(newEndLeaveTs.getTime()>=onTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-								hour+=(double)(newEndLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-							}
-							if(newEndLeaveTs.getTime()>offTimes.getTime()){
-								hour += hourDay;
-							}
-						}
-						
-						if(newStartLeaveTs.getTime()>onTimes.getTime()&&newStartLeaveTs.getTime()<=offTimes.getTime()){
-							if(newEndLeaveTs.getTime()>onTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-								hour+=(double)(newEndLeaveTs.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-							}
-							
-							if(newEndLeaveTs.getTime()>offTimes.getTime()){
-								hour+=(double)(offTimes.getTime() - onTimes.getTime())/(1000*60*60);
-							}
-							
-						}
-				}
-				calendarStart.setTime(Timestamp.valueOf(startLeaveTimestr+" 00:00:00"));
-				calendarStart.add(Calendar.DAY_OF_YEAR, 1);
-				calendarEnd.setTime(Timestamp.valueOf(endLeaveTimestr+" 00:00:00"));
-				while (calendarStart.before(calendarEnd)) {
-					calendarStart.add(Calendar.DAY_OF_YEAR, 1);
-					int week = calendarStart.get(Calendar.WEEK_OF_YEAR);
-					if(week!=1&&week!=7){
-						hour += hourDay;
-					}
-			    }
-				if(map.containsKey(userId)){
-					Double oldHour = map.get(userId);
-					hour +=oldHour;
-				}
-				dayNum = hour/hourDay;
-				if(hour>hourDay){
-					if(hour%hourDay>(hourDay/2)){
-						dayNum+=1;
-					}else if(hour%hourDay>0){
-						dayNum+=0.5;
-					}
-				}
-				
-				map.put(userId, dayNum);
-			}
-		}
 		return map;
 	}
 
@@ -461,126 +365,6 @@ public class AttendanceImpl extends BaseServiceImpl<Attendance> implements IAtte
 	public Map<String, Double> getDateLeaveNum(String startTime,
 			String endTime, Integer companyId, AttendancePlan ap,Integer type) {
 		Map<String,Double> map = new HashMap<String, Double>();
-		List<WorkflowLeave> wflList = workflowLeaveDao.getWorkflowLeaveList(startTime, endTime, companyId,null,type);
-		Timestamp onTimes = ap.getCommonOn();
-		Timestamp offTimes = ap.getCommonOff();
-		double hourDay = ((double)(offTimes.getTime() - onTimes.getTime()))/(1000*60*60);
-		Calendar calendarStart = Calendar.getInstance();
-		Calendar calendarEnd = Calendar.getInstance();
-		SimpleDateFormat sdfYYYYMMDD = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat sdfHHMMSS = new SimpleDateFormat("HH:mm:ss");
-		Timestamp endTimeTs = Timestamp.valueOf(endTime+" 23:59:59.999");
-		if(wflList!=null&&wflList.size()>0){
-			double oneHour = 0.0;
-			double twoHour = 0.0;
-			String calendarStartYYYYMMDD = "";
-			double dayNum = 0.0;
-			double twoDayNum = 0.0;
-			for(WorkflowLeave wfl:wflList){
-				Integer userId = wfl.getUserId();
-				oneHour = 0.0;
-				twoHour = 0.0;
-				Timestamp startLeaveTime = wfl.getStartLeaveTime();
-				Timestamp endLeaveTime = wfl.getEndLeaveTime();
-				if(endTimeTs.getTime()<endLeaveTime.getTime()){
-					endLeaveTime = endTimeTs;
-				}
-				String startLeaveTimestr = sdfYYYYMMDD.format(startLeaveTime);
-				String endLeaveTimestr = sdfYYYYMMDD.format(endLeaveTime);
-				String startLeaveHHMMSS = sdfHHMMSS.format(startLeaveTime);
-				String endLeaveHHMMSS = sdfHHMMSS.format(endLeaveTime);
-				Timestamp newStartLeaveTs = Timestamp.valueOf("1970-01-01 "+startLeaveHHMMSS);
-				Timestamp newEndLeaveTs = Timestamp.valueOf("1970-01-01 "+endLeaveHHMMSS);
-				if(!startLeaveTimestr.equals(endLeaveTimestr)){
-					
-					if(newStartLeaveTs.getTime()<onTimes.getTime()){
-						oneHour = hourDay;
-					}
-					if(newStartLeaveTs.getTime()>=onTimes.getTime()&&newStartLeaveTs.getTime()<=offTimes.getTime()){
-						oneHour = (double)(offTimes.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-					}
-					if(newEndLeaveTs.getTime()>=onTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-						twoHour = (double)(newEndLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-					}
-					if(newEndLeaveTs.getTime()>offTimes.getTime()){
-						twoHour = hourDay;
-					}
-					
-					dayNum = oneHour/hourDay;
-					if(oneHour>hourDay){
-						if(oneHour%hourDay>(hourDay/2)){
-							dayNum+=1;
-						}else if(oneHour%hourDay>0){
-							dayNum+=0.5;
-						}
-					}
-					twoDayNum = twoHour/hourDay;
-					if(twoHour>hourDay){
-						if(twoHour%hourDay>(hourDay/2)){
-							twoDayNum+=1;
-						}else if(twoHour%hourDay>0){
-							twoDayNum+=0.5;
-						}
-					}
-					if(map.containsKey(startLeaveTimestr+"_"+userId)){
-						dayNum += map.get(startLeaveTimestr+"_"+userId);
-					}
-					map.put(startLeaveTimestr+"_"+userId, dayNum);
-					if(map.containsKey(endLeaveTimestr+"_"+userId)){
-						twoDayNum += map.get(endLeaveTimestr+"_"+userId);
-					}
-					map.put(endLeaveTimestr+"_"+userId, twoDayNum);
-				}else{
-					if(newStartLeaveTs.getTime()<=onTimes.getTime()){
-						if(newEndLeaveTs.getTime()>=onTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-							oneHour =(double)(newEndLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-						}
-						if(newEndLeaveTs.getTime()>offTimes.getTime()){
-							oneHour = hourDay;
-						}
-					}
-					
-					if(newStartLeaveTs.getTime()>onTimes.getTime()&&newStartLeaveTs.getTime()<=offTimes.getTime()){
-						if(newEndLeaveTs.getTime()>onTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-							oneHour = (double)(newEndLeaveTs.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-						}
-						
-						if(newEndLeaveTs.getTime()>offTimes.getTime()){
-							oneHour = (double)(offTimes.getTime() - onTimes.getTime())/(1000*60*60);
-						}
-						
-					}
-					dayNum = oneHour/hourDay;
-					if(oneHour>hourDay){
-						if(oneHour%hourDay>(hourDay/2)){
-							dayNum+=1;
-						}else if(oneHour%hourDay>0){
-							dayNum+=0.5;
-						}
-					}
-					if(map.containsKey(startLeaveTimestr+"_"+userId)){
-						dayNum += map.get(endLeaveTimestr+"_"+userId);
-					}
-					map.put(startLeaveTimestr+"_"+userId, dayNum);
-				}
-				calendarStart.setTime(Timestamp.valueOf(startLeaveTimestr+" 00:00:00"));
-				calendarStart.add(Calendar.DAY_OF_YEAR, 1);
-				calendarEnd.setTime(Timestamp.valueOf(endLeaveTimestr+" 00:00:00"));
-				while (calendarStart.before(calendarEnd)) {
-					calendarStart.add(Calendar.DAY_OF_YEAR, 1);
-					int week = calendarStart.get(Calendar.WEEK_OF_YEAR);
-					if(week!=1&&week!=7){
-						dayNum = 1;
-						oneHour = hourDay;
-					}
-					calendarStartYYYYMMDD =  sdfYYYYMMDD.format(calendarStart.getTime());
-					if(map.containsKey(calendarStartYYYYMMDD+"_"+userId)){
-						dayNum += map.get(calendarStartYYYYMMDD+"_"+userId);
-					}
-					map.put(calendarStartYYYYMMDD+"_"+userId, dayNum);
-			    }
-			}
-		}
 		return map;
 	}
 

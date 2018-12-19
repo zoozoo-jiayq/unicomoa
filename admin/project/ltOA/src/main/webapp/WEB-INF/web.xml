@@ -251,7 +251,7 @@
         <url-pattern>*.action</url-pattern>
     </filter-mapping>
 	
-	   <servlet>
+	  <!--  <servlet>
     <description>用于NTKO文件上传，与普通上传冲突</description>
     <display-name>NTKO上传管理类</display-name>
     <servlet-name>NtkoManagerServlet</servlet-name>
@@ -277,7 +277,7 @@
 	    <servlet-name>deploy</servlet-name>
 	    <servlet-class>cn.com.qytx.cbb.publicDom.action.PublicDomDeployServlet</servlet-class>
 	    <load-on-startup>1</load-on-startup>
-  	</servlet>
+  	</servlet> -->
   
 	 
   	<welcome-file-list>

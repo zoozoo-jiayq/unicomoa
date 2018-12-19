@@ -26,8 +26,6 @@ import cn.com.qytx.cbb.attendance.domain.AttendancePlan;
 import cn.com.qytx.cbb.attendance.domain.OAException;
 import cn.com.qytx.cbb.attendance.service.AttendancePlanService;
 import cn.com.qytx.cbb.attendance.service.IAttendance;
-import cn.com.qytx.cbb.jbpmApp.domain.WorkflowLeave;
-import cn.com.qytx.cbb.jbpmApp.service.IWorkflowLeaveService;
 import cn.com.qytx.platform.utils.DateUtils;
 import cn.com.qytx.platform.base.action.BaseActionSupport;
 import cn.com.qytx.platform.base.application.TransportUser;
@@ -67,9 +65,6 @@ public class AttendanceWapAction extends BaseActionSupport{
 	
 	@Autowired
 	IGroup groupService;
-	
-	@Autowired
-	IWorkflowLeaveService WorkflowLeaveService;
 	
 	
     private Integer userId;
@@ -148,17 +143,14 @@ public class AttendanceWapAction extends BaseActionSupport{
 					 String startTimeYYYYMMDD=month+"-01";
 					  String endTimeYYYYMMDD=endTime.substring(0, endTime.length()-9);
 					//请假
-					List<WorkflowLeave> workflowLeaveList= WorkflowLeaveService.getWorkflowLeaveList(startTimeYYYYMMDD, endTimeYYYYMMDD, user.getCompanyId(), userId,1);
-					List<String> getLeaveTime = leaveTime(workflowLeaveList);
-					
+					List<String> getLeaveTime = new ArrayList<String>();
 					//公休假
-					List<WorkflowLeave> workflowList= WorkflowLeaveService.getWorkflowLeaveList(startTimeYYYYMMDD, endTimeYYYYMMDD, user.getCompanyId(), userId,3);
-					List<String> getRestTime = leaveTime(workflowList);
+					List<String> getRestTime = new ArrayList<String>();
 					//外勤
 					//List<WorkflowLeave> workflowGoOutList= WorkflowLeaveService.getWorkflowLeaveList(startTimeYYYYMMDD, endTimeYYYYMMDD, user.getCompanyId(), userId,2);
 					//List<String> getGoOutTime = leaveTime(workflowGoOutList);
 					
-					List<Map<String,Object>> leaveMapList = findMap(workflowLeaveList,attendancePlan);//请假流程
+					List<Map<String,Object>> leaveMapList = null;//请假流程
 					List<AttendanceDays> restDaysList= attendanceService.getAttendanceWeekDays(startTime,endTime);//周六周日
 				    restNum = restDaysList.size()+getRestTime.size();//休息天数+公休
 					for(AttendanceDays ad:restDaysList){
@@ -535,7 +527,6 @@ public class AttendanceWapAction extends BaseActionSupport{
 	   					startTime=day;
 	   					endTime=day;
 	   				  }
-    				  List<WorkflowLeave> list = WorkflowLeaveService.getWorkflowLeaveList(startTime, endTime,user.getCompanyId() , null,leaveType); 
     			      List<Map<String,Object>> listMap = new ArrayList<Map<String,Object>>();
     			      List<AttendancePlan> attendancePlanlist = attendancePlanService.findAll();
     				  AttendancePlan attendancePlan =attendancePlanlist.get(0); 
@@ -543,18 +534,6 @@ public class AttendanceWapAction extends BaseActionSupport{
     			      Map<Integer,String> userMap = userMap(userIds);
     			      Map<Integer,String> getGroupName = getGroupName(user.getCompanyId(),userIds);
     			      List<Integer> userList= new ArrayList<Integer>();
-    			      if(list!=null && list.size()>0){
-    			    	  for(WorkflowLeave wl:list){
-    			    		  if(!userList.contains(wl.getUserId())){
-    			    			  Map<String,Object> map =new HashMap<String, Object>();
-        			    		  map.put("userName",userMap.get(wl.getUserId()));
-        			    		  map.put("groupName",getGroupName.get(wl.getUserId()) );
-        			    		  map.put("userId",wl.getUserId());
-        			    		  userList.add(wl.getUserId());
-        			    		  listMap.add(map);
-    			    		  }
-    			    	  }
-    			      }
     			      Gson gson = new Gson();
     				  String json = gson.toJson(listMap);
     		          writer.print("100||"+json);
@@ -699,14 +678,6 @@ public class AttendanceWapAction extends BaseActionSupport{
      */
    public List<Integer> findLeaveUserId(String startTime,String endTime,Integer companyId, Integer type){
 	   List<Integer> leaveList= new ArrayList<Integer>();
-	   List<WorkflowLeave> list = WorkflowLeaveService.getWorkflowLeaveList(startTime, endTime,companyId , null,type);
-	   if(list!=null && list.size()>0){
-			for(WorkflowLeave w:list){
-				if(!leaveList.contains(w.getUserId())){
-					leaveList.add(w.getUserId());
-				}
-		    }
-	   }
 	   return leaveList;
    }
    
@@ -1032,8 +1003,6 @@ public class AttendanceWapAction extends BaseActionSupport{
             	map.put("pmOffTime",sdfHHMM.format(a.getCommonOff()));
             	
             	map.put("attendanceTime", sdfHHMM.format(a.getCommonOn())+"-"+sdfHHMM.format(a.getCommonOff()));
-            	List<WorkflowLeave> workflowLeaveList= WorkflowLeaveService.getWorkflowLeaveList(date, date, user.getCompanyId(), userId,1);
-            	List<Map<String,Object>> leaveMapList = findMap(workflowLeaveList,a);//请假流程
             	List<Map<String,Object>> attendanceMapList = new ArrayList<Map<String,Object>>();
             	List<Attendance> attendanceList = attendanceService.todayRecord(userId, date);
             	Integer num=0;//打卡次数
@@ -1049,7 +1018,7 @@ public class AttendanceWapAction extends BaseActionSupport{
             			attendanceMapList.add(attendanceMap);
             		}
             	}
-            	map.put("leaveMapList", leaveMapList);
+            	map.put("leaveMapList", null);
             	map.put("attendanceList", attendanceMapList);
             	map.put("num",num);//打卡次数
             	
@@ -1066,160 +1035,7 @@ public class AttendanceWapAction extends BaseActionSupport{
     }
     
     
-    /**
-     * 查询请假时间及小时
-     * @return
-     */
-    private  List<Map<String,Object>> findMap(List<WorkflowLeave> list,AttendancePlan ap){
-    	List<Map<String,Object>> mapList = null;
-    	mapList = new ArrayList<Map<String,Object>>();
-		if(list!=null && list.size()>0){
-			Timestamp onTimes = ap.getCommonOn();
-			Timestamp amOffTimes = ap.getCommonAmOff();
-			Timestamp pmOnTimes = ap.getCommonPmOn();
-			Timestamp offTimes = ap.getCommonOff();
-			double hourDay = ((amOffTimes.getTime()-onTimes.getTime())+(offTimes.getTime()-pmOnTimes.getTime()))/(1000*60*60);
-			Calendar calendarStart = Calendar.getInstance();
-			Calendar calendarEnd = Calendar.getInstance();
-			double hour = 0.0;
-			DecimalFormat df = new DecimalFormat("#0.00");
-			for(WorkflowLeave wl:list){
-				Map<String,Object> map = new HashMap<String, Object>();
-				hour = 0.0;
-					Timestamp startLeaveTime = wl.getStartLeaveTime();
-					Timestamp endLeaveTime = wl.getEndLeaveTime();
-					map.put("startLeaveTime", sdfYYYYMMDDHHMM.format(startLeaveTime));
-					map.put("endLeaveTime", sdfYYYYMMDDHHMM.format(endLeaveTime));
-					String startLeaveTimestr = sip.format(startLeaveTime);
-					String endLeaveTimestr = sip.format(endLeaveTime);
-					String startLeaveHHMMSS = sdfHHMMSS.format(startLeaveTime);
-					String endLeaveHHMMSS = sdfHHMMSS.format(endLeaveTime);
-					Timestamp newStartLeaveTs = Timestamp.valueOf("1970-01-01 "+startLeaveHHMMSS);
-					Timestamp newEndLeaveTs = Timestamp.valueOf("1970-01-01 "+endLeaveHHMMSS);
-					if(!startLeaveTimestr.equals(endLeaveTimestr)){
-							if(newStartLeaveTs.getTime()<onTimes.getTime()){
-								hour += hourDay;
-							}
-							if(newStartLeaveTs.getTime()>=onTimes.getTime()&&newStartLeaveTs.getTime()<=amOffTimes.getTime()){
-									hour+=(double)(amOffTimes.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-							}
-							if(newStartLeaveTs.getTime()>=amOffTimes.getTime()&&newStartLeaveTs.getTime()<=pmOnTimes.getTime()){
-								hour+=(double)(offTimes.getTime() - pmOnTimes.getTime())/(1000*60*60);
-							}
-							if(newStartLeaveTs.getTime()>=pmOnTimes.getTime()&&newStartLeaveTs.getTime()<=offTimes.getTime()){
-								hour+=(double)(offTimes.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-							}
-							
-							if(newEndLeaveTs.getTime()>=onTimes.getTime()&&newEndLeaveTs.getTime()<=amOffTimes.getTime()){
-								hour+=(double)(newEndLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-							}
-							if(newEndLeaveTs.getTime()>=amOffTimes.getTime()&&newEndLeaveTs.getTime()<=pmOnTimes.getTime()){
-								hour += (double)(amOffTimes.getTime()-onTimes.getTime())/(1000*60*60);
-							}
-							if(newEndLeaveTs.getTime()>=pmOnTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-								hour+=(double)(offTimes.getTime() - newEndLeaveTs.getTime())/(1000*60*60);
-								hour += (double)(amOffTimes.getTime()-onTimes.getTime())/(1000*60*60);
-							}
-							if(newEndLeaveTs.getTime()>offTimes.getTime()){
-								hour += hourDay;
-							}
-						}else{
-							if(newStartLeaveTs.getTime()<=onTimes.getTime()){
-								if(newEndLeaveTs.getTime()>=onTimes.getTime()&&newEndLeaveTs.getTime()<=amOffTimes.getTime()){
-									hour+=(double)(newEndLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-								}
-								if(newEndLeaveTs.getTime()>=amOffTimes.getTime()&&newEndLeaveTs.getTime()<=pmOnTimes.getTime()){
-									hour+=(double)(amOffTimes.getTime() - onTimes.getTime())/(1000*60*60);
-								}
-								if(newEndLeaveTs.getTime()>=pmOnTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-									hour+=(double)(amOffTimes.getTime() - onTimes.getTime())/(1000*60*60);
-									hour+=(double)(newEndLeaveTs.getTime() - pmOnTimes.getTime())/(1000*60*60);
-								}
-								if(newEndLeaveTs.getTime()>offTimes.getTime()){
-									hour+=(double)(amOffTimes.getTime() - onTimes.getTime())/(1000*60*60);
-									hour+=(double)(offTimes.getTime() - pmOnTimes.getTime())/(1000*60*60);
-								}
-							}
-							
-							if(newStartLeaveTs.getTime()>onTimes.getTime()&&newStartLeaveTs.getTime()<=amOffTimes.getTime()){
-								if(newEndLeaveTs.getTime()>=onTimes.getTime()&&newEndLeaveTs.getTime()<=amOffTimes.getTime()){
-									hour+=(double)(newEndLeaveTs.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-								}
-								if(newEndLeaveTs.getTime()>amOffTimes.getTime()&&newEndLeaveTs.getTime()<=pmOnTimes.getTime()){
-									hour+=(double)(newStartLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-								}
-								if(newEndLeaveTs.getTime()>pmOnTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-									hour+=(double)(newStartLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-									hour+=(double)(newEndLeaveTs.getTime() - pmOnTimes.getTime())/(1000*60*60);
-								}
-								if(newEndLeaveTs.getTime()>offTimes.getTime()){
-									hour+=(double)(newStartLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-									hour+=(double)(offTimes.getTime() - pmOnTimes.getTime())/(1000*60*60);
-								}
-							}
-							
-							if(newStartLeaveTs.getTime()>amOffTimes.getTime()&&newStartLeaveTs.getTime()<=pmOnTimes.getTime()){
-								if(newEndLeaveTs.getTime()>=pmOnTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-									hour+=(double)(newEndLeaveTs.getTime() - pmOnTimes.getTime())/(1000*60*60);
-								}
-								if(newEndLeaveTs.getTime()>offTimes.getTime()){
-									hour+=(double)(offTimes.getTime() - pmOnTimes.getTime())/(1000*60*60);
-								}
-							}
-							
-							if(newStartLeaveTs.getTime()>pmOnTimes.getTime()&&newStartLeaveTs.getTime()<=offTimes.getTime()){
-								if(newEndLeaveTs.getTime()>pmOnTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-									hour+=(double)(newEndLeaveTs.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-								}
-								if(newEndLeaveTs.getTime()>offTimes.getTime()){
-									hour+=(double)(offTimes.getTime() - newEndLeaveTs.getTime())/(1000*60*60);
-								}
-							}
-							
-						}
-					calendarStart.setTime(Timestamp.valueOf(startLeaveTimestr+" 00:00:00"));
-					calendarStart.add(Calendar.DAY_OF_YEAR, 1);
-					calendarEnd.setTime(Timestamp.valueOf(endLeaveTimestr+" 00:00:00"));
-					while (calendarStart.before(calendarEnd)) {
-						calendarStart.add(Calendar.DAY_OF_YEAR, 1);
-						int week = calendarStart.get(Calendar.WEEK_OF_YEAR);
-						if(week!=1&&week!=7){
-							hour += hourDay;
-						}
-				    }
-					String hourStr = df.format(hour);
-					if(hourStr.indexOf(".")>0&&"00".equals(hourStr.substring(hourStr.indexOf(".")+1))){
-						hourStr = (new Double(hour)).intValue()+"";
-					}
-					map.put("hour", hourStr);
-					mapList.add(map);
-			}
-		}
-    	
-    	return mapList;
-    	
-    }
     
-    /**
-     * 查询某人月请假日期的集合
-     * @return
-     */
-    private List<String> leaveTime(List<WorkflowLeave> workflowLeaveList){
-    	List<String> leaveTime= new ArrayList<String>();
-    	if(workflowLeaveList!=null && workflowLeaveList.size()>0){
-    		for(WorkflowLeave w:workflowLeaveList){
-    			Integer days=1;
-    			for(int i=0;i<days;i++){
-    				Timestamp time=null;
-    				String times= DateUtils.date2ShortStr(time);
-    				if(!leaveTime.contains(times)){
-    					leaveTime.add(times);
-    				}
-    			}
-    		}
-    	}
-		return leaveTime;
-    }
 	/**
 	 * 功能：获取服务器时间
 	 * @return
@@ -1426,12 +1242,6 @@ public class AttendanceWapAction extends BaseActionSupport{
 			Map<Integer ,String> userMap= findUserMap().get("name");
 			if(userInfo!=null){
 				List<Attendance> list=attendanceService.todayRecord(null, time);
-				List<WorkflowLeave> leaveList = WorkflowLeaveService.findLeaveList(time,userInfo.getCompanyId());
-				if(leaveList!=null && leaveList.size()>0){
-					for(WorkflowLeave w:leaveList){
-						w.setUserName(userMap.get(w.getUserId()));
-					}
-				}
 				if(list!=null && list.size()>0){
 					for(Attendance a:list){
 						if(a.getAttType()==10){//上午签到
@@ -1449,7 +1259,7 @@ public class AttendanceWapAction extends BaseActionSupport{
 				map.put("signList", signList);
 				map.put("lateList", lateList);
 				map.put("goOutList", goOutList);
-				map.put("leaveList", leaveList);
+				map.put("leaveList", null);
 			}
 				
 			Gson json = new Gson();

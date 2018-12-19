@@ -53,11 +53,11 @@
 		      <table width="100%" border="0" cellpadding="0" cellspacing="0"  class="inputTable">
 		        <tbody>
 			        <tr>
-			          <th><label>上午上班时间：</label></th>
+			          <th><label>上班时间：</label></th>
 			          <td><input type="text" class="formText Wdate" value="${vo.commonOn}" id="commonOn" readonly="readonly" onfocus="WdatePicker({onpicked:picked(1),skin:'default',dateFmt:'HH:mm',maxDate:'#F{$dp.$D(\'commonAmOff\')||\'24:00\'}'})"/></td>
 			          <td></td>
 			        </tr>
-			         <tr>
+			        <%--  <tr>
 			          <th><label>上午下班时间：</label></th>
 			          <td><input type="text" class="formText Wdate" value="${vo.commonAmOff}" id="commonAmOff"  readonly="readonly" onfocus="WdatePicker({onpicked:picked(2),skin:'default',dateFmt:'HH:mm',minDate:'#F{$dp.$D(\'commonOn\')}',maxDate:'#F{$dp.$D(\'commonPmOn\')}'})"/></td>
 			          <td></td>
@@ -66,9 +66,9 @@
 			          <th><label>下午上班时间：</label></th>
 			          <td><input type="text" class="formText Wdate" value="${vo.commonPmOn}" id="commonPmOn" readonly="readonly" onfocus="WdatePicker({onpicked:picked(1),skin:'default',dateFmt:'HH:mm',minDate:'#F{$dp.$D(\'commonAmOff\')}',maxDate:'#F{$dp.$D(\'commonOff\')||\'24:00\'}'})"/></td>
 			          <td></td>
-			        </tr>
+			        </tr> --%>
 			        <tr>
-			          <th><label>下午下班时间：</label></th>
+			          <th><label>下班时间：</label></th>
 			          <td><input type="text" class="formText Wdate" value="${vo.commonOff}" id="commonOff"  readonly="readonly" onfocus="WdatePicker({onpicked:picked(2),skin:'default',dateFmt:'HH:mm',minDate:'#F{$dp.$D(\'commonPmOn\')}'})"/></td>
 			          <td></td>
 			        </tr>
@@ -78,7 +78,7 @@
 			          </td>
 			          <td></td>
 			        </tr>
-			        <tr id="mon" style="display: none">
+			        <tr id="mon" >
 			          <th></th>
 			          <td>
 			          		<c:if test="${vo.monRest==0}">
@@ -94,7 +94,7 @@
 			          </td>
 			          <td><a href="javascript:void(0);">更改上下班时间</a></td>
 			        </tr>
-			        <tr id="tues" style="display: none">
+			        <tr id="tues" >
 			          <th></th>
 			          <td>
 			         		<c:if test="${vo.tuesRest==0}">
@@ -110,7 +110,7 @@
 			          </td>
 			          <td><a href="javascript:void(0);">更改上下班时间</a></td>
 			        </tr>
-			        <tr id="wed" style="display: none">
+			        <tr id="wed" >
 			          <th></th>
 			          <td>
 			          		<c:if test="${vo.wedRest==0}">
@@ -126,7 +126,7 @@
 			          </td>
 			          <td><a href="javascript:void(0);">更改上下班时间</a></td>
 			        </tr>
-			        <tr id="thur" style="display: none">
+			        <tr id="thur" >
 			          <th></th>
 			          <td>
 			          		<c:if test="${vo.thurRest==0}">
@@ -142,7 +142,7 @@
 			          </td>
 			          <td><a href="javascript:void(0);">更改上下班时间</a></td>
 			        </tr>
-			        <tr id="fri" style="display: none">
+			        <tr id="fri" >
 			          <th></th>
 			          <td>
 			          		<c:if test="${vo.friRest==0}">
@@ -158,7 +158,7 @@
 			          </td>
 			          <td><a href="javascript:void(0);">更改上下班时间</a></td>
 			        </tr>
-			        <tr id="sat" style="display: none">
+			        <tr id="sat" >
 			          <th></th>
 			          <td>
 			          		<c:if test="${vo.satRest==0}">
@@ -174,7 +174,7 @@
 			          </td>
 			          <td><a href="javascript:void(0);">更改上下班时间</a></td>
 			        </tr>
-			        <tr id="sun" style="display: none">
+			        <tr id="sun" >
 			          <th></th>
 			          <td>
 			          		<c:if test="${vo.sunRest==0}">

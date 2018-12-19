@@ -78,19 +78,19 @@ function submit(){
 		return false;
 	}
 	if(!commonOn){
-		art.dialog.alert("上午上班时间不能为空");
+		art.dialog.alert("上班时间不能为空");
 		return false;
 	}
-	if(!commonAmOff){
+	/*if(!commonAmOff){
 		art.dialog.alert("上午下班时间不能为空");
 		return false;
 	}
 	if(!commonPmOn){
 		art.dialog.alert("下午上班时间不能为空");
 		return false;
-	}
+	}*/
 	if(!commonOff){
-		art.dialog.alert("下午下班时间不能为空");
+		art.dialog.alert("下班时间不能为空");
 		return false;
 	}
 	var param={

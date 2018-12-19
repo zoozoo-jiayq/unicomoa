@@ -94,6 +94,7 @@
 				<entry key="hibernate.use_sql_comments" value="true" />
 				<entry key="hibernate.jdbc.batch_size" value="30" />
 				<entry key="hibernate.jdbc.fetch_size" value="100" />
+				<entry key="hibernate.globally_quoted_identifiers" value="true" />
 				<entry key="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
 				<entry key="hibernate.ejb.metamodel.generation" value="disabled"></entry>
 			</util:map>

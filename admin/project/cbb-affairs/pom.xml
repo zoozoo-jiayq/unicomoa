@@ -9,7 +9,7 @@
 		<repository>
 			<id>nexus-qytx</id>
 			<name>qytx repository</name>
-			<url>http://10.100.6.128:8081/nexus/content/groups/public/</url>
+			<url>http://192.168.1.128:8081/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
   

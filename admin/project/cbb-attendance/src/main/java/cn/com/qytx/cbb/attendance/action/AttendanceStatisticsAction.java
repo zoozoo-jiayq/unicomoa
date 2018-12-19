@@ -1,12 +1,12 @@
 package cn.com.qytx.cbb.attendance.action;
 
 import java.io.OutputStream;
+import java.math.BigDecimal;
 import java.net.URLDecoder;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,10 +24,6 @@ import cn.com.qytx.cbb.attendance.domain.AttendanceDays;
 import cn.com.qytx.cbb.attendance.domain.AttendancePlan;
 import cn.com.qytx.cbb.attendance.service.AttendancePlanService;
 import cn.com.qytx.cbb.attendance.service.IAttendance;
-import cn.com.qytx.cbb.jbpmApp.domain.WorkflowLeave;
-import cn.com.qytx.cbb.jbpmApp.service.IWorkflowLeaveService;
-import cn.com.qytx.cbb.myapply.domain.MyStarted;
-import cn.com.qytx.cbb.myapply.service.IMyStarted;
 import cn.com.qytx.platform.utils.ExportExcel;
 import cn.com.qytx.platform.base.action.BaseActionSupport;
 import cn.com.qytx.platform.base.query.Page;
@@ -48,10 +44,6 @@ public class AttendanceStatisticsAction extends BaseActionSupport{
 	private AttendancePlanService planService;
 	@Resource
 	private IAttendance attendanceService;
-	@Resource(name="workflowLeaveImpl")
-	private IWorkflowLeaveService workflowLeaveImpl;
-	@Autowired
-	private IMyStarted myStartedImpl;	
 	
 	private String startTime;
 	private String endTime;
@@ -111,8 +103,10 @@ public class AttendanceStatisticsAction extends BaseActionSupport{
 							if(userAttendDaysMap.containsKey(userId)){
 								attendDays = userAttendDaysMap.get(userId);
 							}
-							lateDuration = (Integer)map.get("lateDuration");
-							earlyDuration = (Integer)map.get("earlyDuration");
+							BigDecimal lateDurationBD = (BigDecimal)map.get("lateDuration");
+							lateDuration = lateDurationBD!=null?lateDurationBD.intValue():0;
+							BigDecimal earlyDurationBD = (BigDecimal)map.get("earlyDuration");
+							earlyDuration = earlyDurationBD!=null?earlyDurationBD.intValue():0;
 							map.put("lateDurationNum",lateDuration);
 							map.put("earlyDurationNum",earlyDuration);
 							if(lateDuration > 60){
@@ -128,8 +122,10 @@ public class AttendanceStatisticsAction extends BaseActionSupport{
 							Double allLackTimes = 0.0;
 							Integer onDutyLackTimes = 0;
 							Integer offDutyLackTimes = 0;
-							Integer onTimes = (Integer)map.get("onTimes");
-							Integer offTimes = (Integer)map.get("offTimes");
+							BigDecimal onTimesBD = (BigDecimal)map.get("onTimes");
+							BigDecimal offTimesBD = (BigDecimal)map.get("offTimes");
+							Integer onTimes = onTimesBD!=null?onTimesBD.intValue():0;
+							Integer offTimes = offTimesBD!=null?offTimesBD.intValue():0;
 							if(adList!=null&&adList.size()>0){
 								allLackTimes = adList.size() - attendDays;
 								onDutyLackTimes = adList.size() - onTimes;
@@ -499,106 +495,7 @@ public class AttendanceStatisticsAction extends BaseActionSupport{
 	public String leaveList(){
 		try {
 			UserInfo userInfo = this.getLoginUser();
-			List<WorkflowLeave> wflList = workflowLeaveImpl.getWorkflowLeaveList(startTime, endTime, userInfo.getCompanyId(), userId,type);
-			List<Map<String,Object>> mapList = null;
- 			if(wflList!=null&&!wflList.isEmpty()){
- 				mapList = new ArrayList<Map<String,Object>>();
- 				List<AttendancePlan> apList = planService.findAll();
- 				AttendancePlan ap = apList.get(0);
- 				Timestamp onTimes = ap.getCommonOn();
- 				Timestamp offTimes = ap.getCommonOff();
- 				double hourDay = ((double)(offTimes.getTime() - onTimes.getTime()))/(1000*60*60);
- 				Calendar calendarStart = Calendar.getInstance();
- 				Calendar calendarEnd = Calendar.getInstance();
- 				SimpleDateFormat sdfYYYYMMDD = new SimpleDateFormat("yyyy-MM-dd");
- 				SimpleDateFormat sdfYYYYMMDDHHMM = new SimpleDateFormat("yyyy-MM-dd HH:mm");
- 				SimpleDateFormat sdfHHMMSS = new SimpleDateFormat("HH:mm:ss");
- 				double hour = 0.0;
- 				double dayNum = 0.0;
- 				DecimalFormat df = new DecimalFormat("#0.0");
- 				for(WorkflowLeave wfl:wflList){
- 					Map<String,Object> map = new HashMap<String, Object>();
- 					String instanceId = wfl.getInstanceId();
- 					MyStarted myStart = myStartedImpl.findByInstanceId(instanceId);
- 					map.put("title", myStart!=null?myStart.getTitle():"--");
- 					hour = 0.0;
- 					Timestamp startLeaveTime = wfl.getStartLeaveTime();
- 					Timestamp endLeaveTime = wfl.getEndLeaveTime();
- 					map.put("startLeaveTime", sdfYYYYMMDDHHMM.format(startLeaveTime));
- 					map.put("endLeaveTime", sdfYYYYMMDDHHMM.format(endLeaveTime));
- 					String startLeaveTimestr = sdfYYYYMMDD.format(startLeaveTime);
- 					String endLeaveTimestr = sdfYYYYMMDD.format(endLeaveTime);
- 					String startLeaveHHMMSS = sdfHHMMSS.format(startLeaveTime);
- 					String endLeaveHHMMSS = sdfHHMMSS.format(endLeaveTime);
- 					Timestamp newStartLeaveTs = Timestamp.valueOf("1970-01-01 "+startLeaveHHMMSS);
- 					Timestamp newEndLeaveTs = Timestamp.valueOf("1970-01-01 "+endLeaveHHMMSS);
- 					if(!startLeaveTimestr.equals(endLeaveTimestr)){
-						if(newStartLeaveTs.getTime()<onTimes.getTime()){
-							hour += hourDay;
-						}
-						if(newStartLeaveTs.getTime()>=onTimes.getTime()&&newStartLeaveTs.getTime()<=offTimes.getTime()){
-							hour+=(double)(offTimes.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-						}
-						if(newEndLeaveTs.getTime()>=onTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-							hour+=(double)(newEndLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-						}
-						if(newEndLeaveTs.getTime()>offTimes.getTime()){
-							hour += hourDay;
-						}
- 					}else{
-						if(newStartLeaveTs.getTime()<=onTimes.getTime()){
-							if(newEndLeaveTs.getTime()>=onTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-								hour+=(double)(newEndLeaveTs.getTime() - onTimes.getTime())/(1000*60*60);
-							}
-							if(newEndLeaveTs.getTime()>offTimes.getTime()){
-								hour += hourDay;
-							}
-						}
-						
-						if(newStartLeaveTs.getTime()>onTimes.getTime()&&newStartLeaveTs.getTime()<=offTimes.getTime()){
-							if(newEndLeaveTs.getTime()>onTimes.getTime()&&newEndLeaveTs.getTime()<=offTimes.getTime()){
-								hour+=(double)(newEndLeaveTs.getTime() - newStartLeaveTs.getTime())/(1000*60*60);
-							}
-							
-							if(newEndLeaveTs.getTime()>offTimes.getTime()){
-								hour+=(double)(offTimes.getTime() - onTimes.getTime())/(1000*60*60);
-							}
-							
-						}
-				}
- 					calendarStart.setTime(Timestamp.valueOf(startLeaveTimestr+" 00:00:00"));
- 					calendarStart.add(Calendar.DAY_OF_YEAR, 1);
- 					calendarEnd.setTime(Timestamp.valueOf(endLeaveTimestr+" 00:00:00"));
- 					while (calendarStart.before(calendarEnd)) {
- 						calendarStart.add(Calendar.DAY_OF_YEAR, 1);
- 						int week = calendarStart.get(Calendar.WEEK_OF_YEAR);
- 						if(week!=1&&week!=7){
- 							hour += hourDay;
- 						}
- 				    }
- 					
- 					dayNum = hour/hourDay;//将小时换算成天数
-					if(hour>hourDay){
-						if(hour%hourDay>(hourDay/2)){//如果 余下 大于 半天，则按一天计算
-							dayNum+=1;
-						}else if(hour%hourDay>0){//按半天计算
-							dayNum+=0.5;
-						}
-					}
- 					
- 					String dayNumStr = df.format(dayNum);
- 					if(dayNumStr.indexOf(".")>0&&"0".equals(dayNumStr.substring(dayNumStr.indexOf(".")+1))){
- 						dayNumStr = (new Double(dayNum)).intValue()+"";
- 					}
- 					String hourStr = df.format(hour);
- 					if(hourStr.indexOf(".")>0&&"0".equals(hourStr.substring(hourStr.indexOf(".")+1))){
- 						hourStr = (new Double(hour)).intValue()+"";
- 					}
- 					map.put("dayNum", dayNumStr);
- 					map.put("hour", hourStr);
- 					mapList.add(map);
- 				}
- 			}
+			List<Map<String,Object>> mapList = new ArrayList<Map<String,Object>>();
 			Gson gson = new Gson();
 			String gsonStr = gson.toJson(mapList);
 			ajax(gsonStr);

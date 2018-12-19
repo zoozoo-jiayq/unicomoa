@@ -55,18 +55,23 @@ public class OnUserSelectAction extends BaseActionSupport {
 	 * @return
 	 */
 	public String selectUserByType() {
-		List<TreeNode> treeNodes = new ArrayList<TreeNode>(); 
-        // 根据部门选择
-        GroupInfo forkGroup = null;
-        int key = 0 ;
-        if(forkGroup!=null){ 
-            key =  forkGroup.getGroupId(); 
-        }
-        treeNodes = userService.selectUserByGroup(getLoginUser(), forkGroup, "userTree", 1, key,getRequest().getContextPath(),GroupInfo.DEPT);
-        //Gson gson = new Gson();
-        Gson json = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
-        String jsons = json.toJson(treeNodes);
-        ajax(jsons);
+		try{
+			List<TreeNode> treeNodes = new ArrayList<TreeNode>(); 
+	        // 根据部门选择
+	        GroupInfo forkGroup = null;
+	        int key = 0 ;
+	        if(forkGroup!=null){ 
+	            key =  forkGroup.getGroupId(); 
+	        }
+	        treeNodes = userService.selectUserByGroup(getLoginUser(), forkGroup, "userTree", 1, key,getRequest().getContextPath(),GroupInfo.DEPT);
+	        //Gson gson = new Gson();
+	        Gson json = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+	        String jsons = json.toJson(treeNodes);
+	        ajax(jsons);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
         return null;
 	}
 

@@ -241,20 +241,20 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 		
 		SimpleDateFormat sdfHHMM = new SimpleDateFormat("HH:mm:ss");
 		String onTime = sdfHHMM.format(ap.getCommonOn());
-		String amOffTime = sdfHHMM.format(ap.getCommonAmOff());
-		String pmOnTime = sdfHHMM.format(ap.getCommonPmOn());
+		String amOffTime = null;//sdfHHMM.format(ap.getCommonAmOff());
+		String pmOnTime = null;//sdfHHMM.format(ap.getCommonPmOn());
 		String offTime = sdfHHMM.format(ap.getCommonOff());
 		if(attendUserIds!=null){
 			attendUserIds = attendUserIds.substring(1);
 			attendUserIds = attendUserIds.substring(0, attendUserIds.length()-1);
 		}
 		//select create_user_id,CONVERT(varchar(10),create_time,23),count(*) from tb_attendance group by create_user_id,CONVERT(varchar(10),create_time,23) HAVING count(*) = 4;
-		String sqlCondition = "select ug.user_id as userId,ug.group_id as groupId,MIN (ug.user_name) as userName,MIN (ug.group_name) as groupName,COUNT (DISTINCT CONVERT (VARCHAR (50),att.create_time,23)) AS attendDays,SUM (CASE WHEN att.att_state = 2 THEN 1 ELSE 0 END) lateTimes,"
-				+ "SUM (CASE WHEN att.att_state = 2 THEN case when att.att_type=10 then datediff(mi,CONVERT(VARCHAR (50),att.create_time,23)+' "+onTime+"',att.create_time)  else datediff(mi,CONVERT(VARCHAR (50),att.create_time,23)+' "+pmOnTime+"',att.create_time) end ELSE 0 END) AS lateDuration,"
-				+ "SUM (CASE WHEN att.att_state = 3 THEN 1 ELSE 0 END) AS earlyTimes,"
-				+ "SUM (CASE WHEN att.att_state = 3 THEN case when att.att_type=20 then datediff(mi,att.create_time,CONVERT(VARCHAR (50),att.create_time,23)+' "+amOffTime+"') else datediff(mi,att.create_time,CONVERT(VARCHAR (50),att.create_time,23)+' "+offTime+"') end ELSE 0 END) AS earlyDuration,"
-				+ "SUM (CASE WHEN att.att_type = 10 or  att.att_type = 11 THEN 1 ELSE 0 END) AS onTimes,"
-				+ "SUM (CASE WHEN att.att_type = 20 or  att.att_type = 21 THEN 1 ELSE 0 END) AS offTimes from ";
+		String sqlCondition = "select ug.user_id as userId,ug.group_id as groupId,MIN(ug.user_name) as userName,MIN(ug.group_name) as groupName,COUNT(DISTINCT DATE_FORMAT(att.create_time,'%Y-%m-%d')) AS attendDays,SUM(CASE WHEN att.att_state = 2 THEN 1 ELSE 0 END) lateTimes,"
+				+ "SUM(CASE WHEN att.att_state = 2 THEN case when att.att_type=10 then TIMESTAMPDIFF(MINUTE,DATE_FORMAT(att.create_time,'%Y-%m-%d')+' "+onTime+"',att.create_time)  else 0 end ELSE 0 END) AS lateDuration,"
+				+ "SUM(CASE WHEN att.att_state = 3 THEN 1 ELSE 0 END) AS earlyTimes,"
+				+ "SUM(CASE WHEN att.att_state = 3 THEN case when att.att_type=20 then 0 else TIMESTAMPDIFF(MINUTE,DATE_FORMAT(att.create_time,'%Y-%m-%d')+' "+offTime+"',att.create_time) end ELSE 0 END) AS earlyDuration,"
+				+ "SUM(CASE WHEN att.att_type = 10 or  att.att_type = 11 THEN 1 ELSE 0 END) AS onTimes,"
+				+ "SUM(CASE WHEN att.att_type = 20 or  att.att_type = 21 THEN 1 ELSE 0 END) AS offTimes from ";
 		sqlCondition += "(select u.user_id,u.user_name,u.group_id,gi.group_name,gi.order_index as orderIndex  FROM tb_user_info u INNER JOIN tb_group_info gi ON u.group_id = gi.group_id WHERE u.is_delete = 0 and u.group_id is not null and u.company_id="+companyId;
 		if(StringUtils.isNotBlank(attendUserIds)){
 			sqlCondition += " and u.user_id IN ("+attendUserIds+")";
@@ -265,7 +265,7 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 		if(groupId!=null){
 			sqlCondition += " and (gi.path like '"+groupId+",%' or gi.group_id="+groupId+")";
 		}
-		sqlCondition += ") ug LEFT JOIN (select att_1.* from tb_attendance att_1 INNER JOIN tb_attendance_days ad on CONVERT(varchar(100), att_1.create_time, 23) = CONVERT(varchar(100), ad.day, 23) where att_1.company_id="+companyId+" AND ad.week not in (6,7)  ";
+		sqlCondition += ") ug LEFT JOIN (select att_1.* from tb_attendance att_1 INNER JOIN tb_attendance_days ad on DATE_FORMAT(att_1.create_time, '%Y-%m-%d') = DATE_FORMAT(ad.day, '%Y-%m-%d') where att_1.company_id="+companyId+" AND ad.week not in (6,7)  ";
 		if(StringUtils.isNoneBlank(startTime)){
 			sqlCondition += " and att_1.create_time > '"+startTime+" 00:00:00.000'";
 		}
@@ -281,7 +281,6 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 			
 		}
 		sqlCondition += " group by ug.user_id,ug.group_id";
-		sqlCondition += " order by ug.orderIndex asc";
 		String countSqlCondition = "select count(*) from ("+sqlCondition+") n";
 		Object objTotal =  entityManager.createNativeQuery(countSqlCondition).getSingleResult();
 		Integer total = 0;
@@ -296,7 +295,7 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 
 	public List<AttendanceDays> getAttendanceDays(String startTime,
 			String endTime) {
-		String sql = "select day,week from tb_attendance_days where week not in(6,7) and CONVERT(varchar(100), day, 120) >= '"+startTime+"' and CONVERT(varchar(100), day, 23) <= '"+endTime+"'";
+		String sql = "select day,week from tb_attendance_days where week not in(6,7) and DATE_FORMAT(day, '%Y-%m-%d %H:%i:%s') >= '"+startTime+"' and DATE_FORMAT(day, '%Y-%m-%d %H:%i:%s') <= '"+endTime+"'";
 		Query query = entityManager.createNativeQuery(sql);
 		query.unwrap(SQLQuery.class).setResultTransformer(Transformers.aliasToBean(AttendanceDays.class));
 		return query.getResultList();
@@ -311,18 +310,18 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 			attendUserIds = attendUserIds.substring(1);
 			attendUserIds = attendUserIds.substring(0, attendUserIds.length()-1);
 		}
-		String sql="select a.days,a.week,b.att_state as onAttState,CONVERT(varchar(100), b.create_time, 120) as onTime,b.out_of_range as onOutOfRange,b.memo as onMemo,b.[position] as onPosition,c.att_state as offAttState,CONVERT(varchar(100), c.create_time, 120) as offTime,c.out_of_range as offOutOfRange,c.memo as offMemo,c.[position] as offPosition,a.userId,a.userName,a.groupName, "
-				+ " d.att_state AS amOffAttState,CONVERT (VARCHAR (100),d.create_time,120) AS amOffTime,d.out_of_range AS amOffOutOfRange,d.memo AS amOffMemo,d.[position] AS amOffPosition,"
-				+ " e.att_state AS pmOnAttState,CONVERT (VARCHAR (100),e.create_time,120) AS pmOnTime,e.out_of_range AS pmOnOutOfRange,e.memo AS pmOnMemo,e.[position] AS pmOnPosition from"
-				+ " (select CONVERT(varchar(100), m.day, 23) as days,m.week,n.user_name as userName,p.group_name as groupName,n.user_id as userId,p.order_index as orderIndex from tb_attendance_days m,tb_user_info n,tb_group_info p where n.company_id="+companyId;
+		String sql="select a.days,a.week,b.att_state as onAttState,DATE_FORMAT(b.create_time, '%Y-%m-%d %H:%i:%s') AS onTime,b.out_of_range as onOutOfRange,b.memo as onMemo,b.position as onPosition,c.att_state as offAttState,DATE_FORMAT(c.create_time,'%Y-%m-%d %H:%i:%s') AS offTime,c.out_of_range as offOutOfRange,c.memo as offMemo,c.position as offPosition,a.userId,a.userName,a.groupName, "
+				+ " d.att_state AS amOffAttState,DATE_FORMAT(d.create_time, '%Y-%m-%d %H:%i:%s') AS amOffTime,d.out_of_range AS amOffOutOfRange,d.memo AS amOffMemo,d.position AS amOffPosition,"
+				+ " e.att_state AS pmOnAttState,DATE_FORMAT(e.create_time, '%Y-%m-%d %H:%i:%s') AS pmOnTime,e.out_of_range AS pmOnOutOfRange,e.memo AS pmOnMemo,e.position AS pmOnPosition from"
+				+ " (select DATE_FORMAT(m.DAY, '%Y-%m-%d') AS days,m.week,n.user_name as userName,p.group_name as groupName,n.user_id as userId,p.order_index as orderIndex from tb_attendance_days m,tb_user_info n,tb_group_info p where n.company_id="+companyId;
 				if(StringUtils.isNoneBlank(startTime)){
-					sql += "and CONVERT(varchar(100), m.day, 23) >='"+startTime+"'"; 
+					sql += " and DATE_FORMAT(m.DAY, '%Y-%m-%d') >='"+startTime+"'"; 
 				}
 				if(StringUtils.isNoneBlank(endTime)){
-					sql += "and CONVERT(varchar(100), m.day, 23) <='"+endTime+"'";
+					sql += " and DATE_FORMAT(m.DAY, '%Y-%m-%d') <='"+endTime+"'";
 				}
 				if(StringUtils.isNoneBlank(attendUserIds)){
-					sql += "and n.user_id in ("+attendUserIds+")";
+					sql += " and n.user_id in ("+attendUserIds+")";
 				}
 				if(StringUtils.isNoneBlank(searchKey)){
 					sql += " and n.user_name like '%"+searchKey+"%'";
@@ -332,16 +331,16 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 				}
 				sql += "  and n.group_id=p.group_id) a";
 				sql += " left join"
-				+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position],create_user_id from tb_attendance where att_type=10) b"
+				+ " (select DATE_FORMAT(create_time, '%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position,create_user_id from tb_attendance where att_type=10) b"
 				+ " on a.days=b.recordTime and a.userId=b.create_user_id"
 				+ " left JOIN"
-				+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position],create_user_id from tb_attendance where att_type=21) c"
+				+ " (select DATE_FORMAT(create_time, '%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position,create_user_id from tb_attendance where att_type=21) c"
 				+ " on a.days=c.recordTime and a.userId=c.create_user_id "
 				+ " left join"
-				+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position],create_user_id from tb_attendance where att_type=20) d"
+				+ " (select DATE_FORMAT(create_time, '%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position,create_user_id from tb_attendance where att_type=20) d"
 				+ " on a.days=d.recordTime and a.userId=d.create_user_id"
 				+ " left join"
-				+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position],create_user_id from tb_attendance where att_type=11) e"
+				+ " (select DATE_FORMAT(create_time, '%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position,create_user_id from tb_attendance where att_type=11) e"
 				+ " on a.days=e.recordTime and a.userId=e.create_user_id";
 				sql+=" where 1=1";
 				if(state!=null){
@@ -567,7 +566,7 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 	 */
 	public List<AttendanceDays> getAttendanceWeekDays(String startTime,
 			String endTime) {
-		String sql = "select day,week from tb_attendance_days where week  in(6,7) and CONVERT(varchar(100), day, 23) >= '"+startTime+"' and CONVERT(varchar(100), day, 23) <= '"+endTime+"'";
+		String sql = "select day,week from tb_attendance_days where week  in(6,7) and DATE_FORMAT(day, '%Y-%m-%d') >= '"+startTime+"' and DATE_FORMAT(day, '%Y-%m-%d') <= '"+endTime+"'";
 		Query query = entityManager.createNativeQuery(sql);
 		query.unwrap(SQLQuery.class).setResultTransformer(Transformers.aliasToBean(AttendanceDays.class));
 		return query.getResultList();
@@ -581,13 +580,13 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 	 * @return
 	 */
 	public  List<Object[]> findAttendanceByUserId(String userIds,String month,Integer companyId){
-		String sql= " SELECT COUNT(DISTINCT CONVERT(VARCHAR (10),create_time,120)) attendanceDayNum,";
+		String sql= " SELECT COUNT(DISTINCT DATE_FORMAT(day, '%Y-%m-%d %H:%i:%s')) attendanceDayNum,";
 		sql+=" SUM(CASE WHEN att_state = 2 THEN 1 ELSE 0 END )lateNum,SUM(CASE WHEN att_state = 3 THEN 1 ELSE 0 END )leaveEarlyNum,";
 		sql+=" sum(CASE WHEN att_type = 10 THEN 1 ELSE 0 END )amOnNum,sum(CASE WHEN att_type = 11 THEN 1 ELSE 0 END )pmOnNum,";
 		sql+=" sum(CASE WHEN att_type = 20 THEN 1 ELSE 0 END )amOffNum,sum( CASE WHEN att_type = 21 THEN 1 ELSE 0 END)pmOffNum,create_user_id";
 		sql+=" FROM tb_attendance WHERE 1=1";
 		if(StringUtils.isNoneBlank(month)){
-			sql+=" and CONVERT (VARCHAR(7), create_time, 120) = '"+month+"'";
+			sql+=" and DATE_FORMAT(create_time, '%Y-%m') = '"+month+"'";
 		}
 		if(companyId!=null){
 			sql+=" and company_id = "+companyId;
@@ -606,7 +605,7 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 	 * @return
 	 */
 	public List<String> getRecordDaysTime(int userId,String startTime,String endTime){
-		String sql = "select DISTINCT CONVERT(VARCHAR (10),create_time,120) as day from tb_attendance where create_user_id ="+userId;
+		String sql = "select DISTINCT DATE_FORMAT(create_time, '%Y-%m-%d') as day from tb_attendance where create_user_id ="+userId;
 		if(StringUtils.isNoneBlank(startTime)){
 			sql+=" and create_time >='"+startTime+"'";
 		}
@@ -632,7 +631,7 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 	 */
 	public List<Object[]> findMissingCardList(Integer userId,String beginTime, String endTime,Integer companyId){
 		String sql=" select sum(case when att_type=10 then 1 else 0 END) amon ,sum(case when att_type=11 then 1 else 0 END) pmon,";
-		sql+=" sum(case when att_type=20 then 1 else 0 END) amoff,sum(case when att_type=21 then 1 else 0 END) pmoff, CONVERT(VARCHAR (10),create_time,120),create_user_id from tb_attendance where 1=1";
+		sql+=" sum(case when att_type=20 then 1 else 0 END) amoff,sum(case when att_type=21 then 1 else 0 END) pmoff, DATE_FORMAT(create_time, '%Y-%m-%d'),create_user_id from tb_attendance where 1=1";
 		if(userId!=null){
 			sql+=" and create_user_id = "+userId;
 		}
@@ -645,7 +644,7 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 		if(companyId!=null){
 			sql+=" and company_id="+companyId;
 		}
-		sql+=" group by CONVERT(VARCHAR (10),create_time,120),create_user_id";
+		sql+=" group by DATE_FORMAT(create_time, '%Y-%m-%d'),create_user_id";
 		Query query = entityManager.createNativeQuery(sql);
 		return query.getResultList();
 		
@@ -680,12 +679,12 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 	 * @return
 	 */
 	public List<Object[]> findListClockNum(String userIds,String month,Integer companyId){
-		String sql=" select count(create_user_id),create_user_id,COUNT( DISTINCT CONVERT (VARCHAR(10), create_time, 120)) from tb_attendance WHERE 1=1" ;
+		String sql=" select count(create_user_id),create_user_id,COUNT( DISTINCT DATE_FORMAT(create_time, '%Y-%m-%d')) from tb_attendance WHERE 1=1" ;
 		if(StringUtils.isNoneBlank(month)){
 			if(month.length()==7){
-				sql+=" and CONVERT (VARCHAR(7), create_time, 120) = '"+month+"'";
+				sql+=" and DATE_FORMAT(create_time, '%Y-%m') = '"+month+"'";
 			}else{
-				sql+=" and CONVERT (VARCHAR(10), create_time, 120) = '"+month+"'";
+				sql+=" and DATE_FORMAT(create_time, '%Y-%m') = '"+month+"'";
 			}
 			
 		}
@@ -721,7 +720,7 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 	public Map<Integer, Double> getUserAttendDaysMap(String startTime,
 			String endTime, Integer companyId) {
 		//String sql = "select aa.create_user_id, count(*) from (select att.create_user_id ,CONVERT(varchar(100), att.create_time, 23) as recordTime,count(*) as recordNum from tb_attendance att INNER JOIN tb_attendance_days ad on CONVERT(varchar(100), att.create_time, 23) = CONVERT(varchar(100), ad.[day], 23)  where ad.week not in (6,7) ";
-		String sql = "select aa.create_user_id, SUM (case when aa.recordDayNum>0 then 1 else 0 end)  from (select att.create_user_id ,CONVERT(varchar(100), att.create_time, 23) as recordTime,count(*) as recordNum,sum(case when att.att_type=10  then 1 else 0 end) as amRecordNum,sum(case when  att.att_type=21 then 1 else 0 end) as pmRecordNum,SUM (CASE WHEN att.att_type = 10 or att.att_type = 21 THEN 1 ELSE 0 END ) AS recordDayNum from tb_attendance att INNER JOIN tb_attendance_days ad on CONVERT(varchar(100), att.create_time, 23) = CONVERT(varchar(100), ad.[day], 23) where ad.week not in (6,7) ";
+		String sql = "select aa.create_user_id, SUM(case when aa.recordDayNum>0 then 1 else 0 end)  from (select att.create_user_id ,DATE_FORMAT(att.create_time, '%Y-%m-%d') as recordTime,count(*) as recordNum,sum(case when att.att_type=10  then 1 else 0 end) as amRecordNum,sum(case when  att.att_type=21 then 1 else 0 end) as pmRecordNum,SUM(CASE WHEN att.att_type = 10 or att.att_type = 21 THEN 1 ELSE 0 END ) AS recordDayNum from tb_attendance att INNER JOIN tb_attendance_days ad on DATE_FORMAT(att.create_time, '%Y-%m-%d') = DATE_FORMAT(ad.day, '%Y-%m-%d') where ad.week not in (6,7) ";
 		if(companyId!=null){
 			sql += " and att.company_id = "+companyId;
 		}
@@ -731,7 +730,7 @@ public class AttendanceDao extends BaseDao<Attendance, Integer> implements Seria
 		if(StringUtils.isNoneBlank(endTime)){
 			sql+=" and att.create_time <='"+endTime+" 23:59:59.000'";
 		}
-		sql += " group by att.create_user_id,CONVERT(varchar(100), att.create_time, 23) ) aa where aa.amRecordNum>0 or aa.pmRecordNum>0 group by aa.create_user_id ";
+		sql += " group by att.create_user_id,DATE_FORMAT(att.create_time, '%Y-%m-%d %H:%i:%s') ) aa where aa.amRecordNum>0 or aa.pmRecordNum>0 group by aa.create_user_id ";
 		//sql += " group by att.create_user_id,CONVERT(varchar(100), att.create_time, 23) HAVING COUNT(*)=4) aa group by aa.create_user_id ";
 		List<Object[]> list = super.entityManager.createNativeQuery(sql).getResultList();
 		Map<Integer,Double> userMap = new HashMap<Integer, Double>();

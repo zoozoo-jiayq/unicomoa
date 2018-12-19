@@ -7,7 +7,7 @@
 		<version>1.12-SNAPSHOT</version>
 	</parent>
 
-	<modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion> 
 
 	<groupId>cn.com.qytx</groupId>
 	<artifactId>xmjcyOA</artifactId>
@@ -39,35 +39,14 @@
 		        <artifactId>maven-war-plugin</artifactId>  
 		        <configuration>  
 		          <overlays>  
-		            <overlay>  
-	  					<id>platform-workflow</id>
-		            </overlay>
 		            <overlay>
   						<id>cbb-notify</id>
 		            </overlay>
-		            <overlay>
-						<id>cbb-daily</id>
-		            </overlay>
-		            <!--  <overlay>
-						<id>cbb-calendar</id>
-		            </overlay> -->
 		             <overlay>
 						<id>cbb-taskManager</id>
 		            </overlay>
 		             <overlay>
-						<id>cbb-onlineExam</id>
-		            </overlay>
-		             <overlay>
-						<id>cbb-news</id>
-		            </overlay>
-		             <overlay>
 						<id>cbb-attendance</id>
-		            </overlay>
-		             <overlay>
-						<id>cbb-question</id>
-		            </overlay>
-		             <overlay>
-						<id>cbb-salary</id>
 		            </overlay>
 		          </overlays>  
 		        </configuration>  
@@ -113,7 +92,7 @@
 			<version>4.0.2</version>
 		</dependency>
 		
-		<!-- 依赖工作流  begin-->
+		<!-- 依赖工作流  begin
 		<dependency>
 		  <groupId>cn.com.qytx</groupId>
 		  <artifactId>platform-workflow</artifactId>
@@ -126,7 +105,7 @@
 		  <artifactId>platform-workflow</artifactId>
 		  <version>3.1.1</version>
 		  <type>war</type>
-		</dependency>
+		</dependency>-->
 	<!-- 依赖工作流 end -->
 		
 		<dependency>
@@ -158,21 +137,8 @@
 		<type>war</type>
 		</dependency>
 		
-		<!-- <dependency>
-		 <groupId>cn.com.qytx</groupId>
-  		 <artifactId>cbb-calendar</artifactId>
-  		 <version>4.0.0</version>
-		  <scope>provided</scope>
-		  <type>jar</type>
-		</dependency>
-		<dependency>
-		<groupId>cn.com.qytx</groupId>
-  	    <artifactId>cbb-calendar</artifactId>
-  		<version>4.0.0</version>
-		  <type>war</type>
-		</dependency> -->
 		
-		<dependency>
+		 <dependency>
 		  <groupId>cn.com.qytx</groupId>
 		  <artifactId>cbb-taskManager</artifactId>
 		  <version>3.0.9</version>
@@ -182,31 +148,8 @@
 		  <artifactId>cbb-taskManager</artifactId>
 		  <version>3.0.9</version>
 		  <type>war</type>
-		</dependency>
-		<!-- <dependency>
-		  <groupId>cn.com.qytx</groupId>
-		  <artifactId>cbb-onlineExam</artifactId>
-		  <version>4.0.1</version>
-		</dependency>
-		<dependency>
-		  <groupId>cn.com.qytx</groupId>
-		  <artifactId>cbb-onlineExam</artifactId>
-		  <version>4.0.0</version>
-		  <type>war</type>
-		</dependency> -->
+		</dependency> 
 		
-		<!-- 新闻 -->
-		<dependency>
-		  <groupId>cn.com.qytx</groupId>
-		  <artifactId>cbb-news</artifactId>
-		  <version>4.0.0</version>
-		</dependency>
-		<dependency>
-		  <groupId>cn.com.qytx</groupId>
-		  <artifactId>cbb-news</artifactId>
-		  <version>4.0.0</version>
-		  <type>war</type>
-		</dependency>
 		
 		<!-- 考勤 -->
 		<dependency>
@@ -221,113 +164,6 @@
 		  <type>war</type>
 		</dependency>
 		
-		<!-- 问卷 -->
-		<dependency>
-		  <groupId>cn.com.qytx</groupId>
-		  <artifactId>cbb-question</artifactId>
-		  <version>4.0.0</version>
-		</dependency>
-		<dependency>
-		  <groupId>cn.com.qytx</groupId>
-		  <artifactId>cbb-question</artifactId>
-		  <version>4.0.0</version>
-		  <type>war</type>
-		</dependency>
-		
-		<!-- 工资条 -->
-		<dependency>
-			<groupId>cn.com.qytx</groupId>
-  			<artifactId>cbb-salary</artifactId>
-  			<version>1.0.0</version>
-  			<type>jar</type>
-  			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>cn.com.qytx</groupId>
-  			<artifactId>cbb-salary</artifactId>
-  			<version>1.0.0</version>
-  			<type>war</type>
-		</dependency>
-		
-		<!-- 工作日志 -->
-		<dependency>
-			<groupId>cn.com.qytx</groupId>
-  			<artifactId>cbb-worklog</artifactId>
-  			<version>1.0.0-SNAPSHOT</version>
-  			<type>jar</type>
-		</dependency>
-		
-		<!-- 工作日志 -->
-		<dependency>
-			<groupId>cn.com.qytx</groupId>
-  			<artifactId>cbb-task</artifactId>
-  			<version>1.0.0-SNAPSHOT</version>
-  			<type>jar</type>
-		</dependency>
-		
-		<!-- 资产 -->
-		<dependency>
-			<groupId>cn.com.qytx</groupId>
-  			<artifactId>cbb-capital</artifactId>
-  			<version>1.0.0-SNAPSHOT</version> 
-  			<type>jar</type> 
-		</dependency>
-		<dependency>
-			<groupId>cn.com.qytx</groupId>
-  			<artifactId>cbb-capital</artifactId>
-  			<version>1.0.0-SNAPSHOT</version>
-  			<type>war</type>
-		</dependency>
-		<!-- 会议 -->
-		<dependency>
-			<groupId>cn.com.qytx</groupId>
-  			<artifactId>cbb-meeting</artifactId>
-  			<version>1.0.0-SNAPSHOT</version> 
-  			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>cn.com.qytx</groupId>
-  			<artifactId>cbb-meeting</artifactId>
-  			<version>1.0.0-SNAPSHOT</version>
-  			<type>war</type>
-		</dependency>
-		<!-- 绩效考核
-		<dependency>
-			<groupId>cn.com.qytx</groupId>
-  			<artifactId>cbb-performance</artifactId>
-  			<version>1.0.0-SNAPSHOT</version> 
-  			<type>jar</type>
-		</dependency> -->
-		
-		
-		<!-- 依赖车辆管理  begin-->
-		<dependency>
-		  <groupId>cn.com.qytx</groupId>
-		  <artifactId>cbb-car</artifactId>
-		  <version>1.0.0-SNAPSHOT</version>
-		  <scope>provided</scope>
-		  <type>jar</type>
-		</dependency>
-		<dependency>
-		<groupId>cn.com.qytx</groupId>
-		<artifactId>cbb-car</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-		<type>war</type>
-		</dependency>
-	<!-- 依赖车辆管理 end -->
-	
-	
-	<dependency>
-		  <groupId>cn.com.qytx</groupId>
-		  <artifactId>cbb-meeting-sign</artifactId>
-		  <version>1.0.0</version>
-		</dependency>
-		<dependency>
-		  <groupId>cn.com.qytx</groupId>
-		  <artifactId>cbb-meeting-sign</artifactId>
-		  <version>1.0.0</version>
-		  <type>war</type>
-		</dependency>
 		
 		<!-- guava -->
 		<dependency>
@@ -654,12 +490,13 @@
             </exclusions>
         </dependency>
 
-		 <dependency>
+		<!--  <dependency>
             <groupId>org.jbpm.jbpm4</groupId>
-            <artifactId>jbpm-api</artifactId>
+            <artifactId>
+</artifactId>
             <version>4.4</version>
-        </dependency>
-        <dependency>
+        </dependency> -->
+        <!-- <dependency>
             <groupId>org.jbpm.jbpm4</groupId>
             <artifactId>jbpm-bpmn</artifactId>
             <version>4.4</version>
@@ -690,7 +527,7 @@
             <groupId>org.jbpm.jbpm4</groupId>
             <artifactId>jbpm-jpdl</artifactId>
             <version>4.4</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
@@ -800,7 +637,7 @@
 			<groupId>cn.com.qytx</groupId>
 			<artifactId>cbb-apply</artifactId>
 			<version>4.0.1</version>
-		</dependency>
+		</dependency> 
 		<dependency>
 		  <groupId>cn.com.qytx</groupId>
 		  <artifactId>cbb-oAuth</artifactId>
