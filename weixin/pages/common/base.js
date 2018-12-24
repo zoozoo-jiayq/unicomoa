@@ -14,9 +14,11 @@ module.exports = {
     Page(defaultargs);
   },
   REQ: function(arg) {
-    wx.showLoading({
-      title: '数据处理中',
-    })
+  if (!arg.isShowLoading){
+      wx.showLoading({
+        title: '数据处理中',
+      })
+    }
     arg.url = CONFIG.server + arg.url;
     arg.complete = function() {
       wx.hideLoading()

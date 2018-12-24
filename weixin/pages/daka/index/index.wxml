@@ -1,39 +1,39 @@
-<view class="fullbg">
+<view class="fullbg" wx:if="{{isHasPlan}}">
   <view class="bg">
     <view class="clock">
       <view class="clockcontent">
-        <view class="time">15:00</view>
-        <view class="week">11/15周四</view>
-      </view>
+        <view class="time">{{time}}<span style="font-size:14px;margin-left:5px;">{{seconds}}</span></view>
+        <view class="week">{{day}}{{week}}</view>
+      </view> 
     </view>
     <view class="btngroup">
-      <button class="btn" data-type="am" bindtap='daka'>上班</button>
-      <button class="btn" data-type="pm" bindtap="daka">下班</button>
+      <button class="btn" data-type="am" bindtap='daka' disabled='{{signInButton}}'>上班</button>
+      <button class="btn" data-type="pm" bindtap="daka" disabled='{{signOutButton}}'>下班</button>
     </view>
     <view class="addr">
       <image class="dingwei" src="../../../imgs/dingwei.png"></image>
-      中国市解放路设计费生理上的离开飞机上了的房间
+       {{address}}
     </view>
     <span class="viewlog" bindtap="view">查看</span>
   </view>
   <view>
-    <wux-wing-blank size="default">
-      <wux-card title="上班打卡">
-        <view slot="body">卡片内容</view>
-        <view slot="footer">尾部内容</view>
-      </wux-card>
-    </wux-wing-blank>
-    <view style="height:5px;"></view>
-    <wux-wing-blank size="default">
-      <wux-card title="下班打卡" extra="迟到/早退/正常">
+    <wux-wing-blank size="default" wx:for="{{attList}}" wx:for-item="item" wx:for-index="idx">
+      <wux-card title="{{item.attType==10?'上班打卡':'下班打卡'}}" extra="{{item.attState==1?'正常':(item.attState==2?'迟到':(item.attState==7?'休息':'早退'))}}">
         <view slot="body">
-          打卡时间：2018-12-13
+          打卡时间：{{item.createTime}}
           <span class="redaka">重新打卡</span>  
         </view>
-        <view slot="footer">打卡地点：水电费水电费胜多负少的</view>
+        <view slot="footer">打卡地点：{{item.position}}</view>
       </wux-card>
+       <view style="height:5px;"></view>
     </wux-wing-blank>
+   <wux-wing-blank style='text-align:center;padding-top:10%;display:block' wx:if="{{!attList}}">
+      今日您还没有打卡，请尽快打卡吧 
+   </wux-wing-blank> 
   </view>
+</view>
+<view class="fullbg" wx:if="{{!isHasPlan}}" style='text-align:center;padding-top:50%'>
+  暂无考勤计划
 </view>
 <wux-dialog id="wux-dialog" />
   <wux-dialog id="wux-dialog--alert" />
