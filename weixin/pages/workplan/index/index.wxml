@@ -19,6 +19,9 @@
           <image src="../../../imgs/timezone.png"></image>
         </view>
       </view>
+      <view wx:if="{{list.length==0}}" class="noplan">
+        <image src="../../../imgs/nodata.png" />暂无计划!
+      </view>
     </wux-cell-group>
   </view>
   <image src="../../../imgs/add.png" class="add" bindtap='addPlan'></image>

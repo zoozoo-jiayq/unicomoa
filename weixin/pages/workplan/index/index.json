@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "工作计划",
   "usingComponents":{
     "wux-calendar-plain":"../../../wux/calendar-plain/index",
     "wux-cell-group": "../../../wux/cell-group/index",

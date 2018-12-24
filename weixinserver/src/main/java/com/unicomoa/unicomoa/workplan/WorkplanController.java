@@ -31,9 +31,9 @@ public class WorkplanController extends BaseController {
 	private WorkPlanService workPlanService;
 	
 	@RequestMapping("/list")
-	public Object mylist(int userId) {
+	public Object mylist(int userId,String selectedDate) {
 		Sort sort = new Sort(Direction.DESC,"id");
-		List<WorkPlan> plans = workPlanService.findByCreaterIDAndDayStr(userId, DateUtils.date2Str(new Date(System.currentTimeMillis()), "yyyy-MM-dd"),sort);
+		List<WorkPlan> plans = workPlanService.findByCreaterIDAndDayStr(userId, selectedDate,sort);
 		return SUCCESS(plans);
 	}
 	

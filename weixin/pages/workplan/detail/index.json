@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "任务登记",
   "usingComponents": {
     "wux-card": "../../../wux/card/index",
         "wux-row": "../../../wux/row/index",

@@ -3,7 +3,7 @@ const { $wuxCalendarPlain } = require( '../../../wux/index')
 const { formatDate} = require("../../../utils/util")
 PG({
   data: {
-    selectedDate: "sdfooosf",
+    selectedDate: "",
     list:[],
     userId:1
   },
@@ -23,6 +23,7 @@ PG({
       direction: 'vertical',
       onChange: (values, displayValues) => {
         this.setData({"selectedDate":displayValues})
+        this.refresh()
       },
     })
     this.refresh();
@@ -39,7 +40,7 @@ PG({
   },
   list(cb){
     REQ({
-      url:"/workplan/list?userId="+this.data.userId,
+      url: "/workplan/list?userId=" + this.data.userId + "&selectedDate=" + this.data.selectedDate,
       success:(res)=>{
         if(res.data.result == "success"){
           var data = res.data.data;

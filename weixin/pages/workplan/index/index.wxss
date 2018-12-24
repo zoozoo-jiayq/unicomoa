@@ -49,3 +49,16 @@
   top:50%;
   transform: translateY(-50%);
 }
+.noplan{
+  text-align: center;
+  font-size: 16px;
+  color:#aeaeae;
+  line-height: 40px;
+  position: relative;
+}
+.noplan image{
+  width:40px;
+  height:40px;
+  display:inline-block;
+  vertical-align: middle;
+}

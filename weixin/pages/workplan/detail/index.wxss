@@ -5,12 +5,16 @@
 }
 .content{
   color:#aeaeae;
-
 }
 .line{
   height: 10px;
   width: 100%;
   background-color: #eee
+}
+.btngroup button{
+  display: inline-block;
+  width: 45vw;
+  margin:2vw;
 }
 .btn{
   background-color: #1296db;
@@ -20,4 +24,33 @@
 .btn_hover{
   background-color: #1296db;
   color:#fff  
+}
+.progress{
+  margin:0 10px;
+  border-left: 1px solid #eee;
+  border-top: 1px solid #eee;
+  padding:5px 10px;
+  position: relative;
+}
+.block{
+  display: inline-block;
+}
+.progress .operationer{
+    width: 50%;
+}
+
+.progress .img image{
+  width: 50px;
+  height: 50px;
+  margin:5px;
+}
+.progress .step{
+  width: 6px;
+  height: 6px;
+  border:2px solid #1296db;
+  background-color: #fff;
+  border-radius:6px; 
+  position: absolute;
+  top:-5px;
+  left:-5px;
 }
