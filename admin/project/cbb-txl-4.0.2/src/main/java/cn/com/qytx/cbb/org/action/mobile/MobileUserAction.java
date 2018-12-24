@@ -3,6 +3,7 @@ package cn.com.qytx.cbb.org.action.mobile;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -104,6 +105,27 @@ public class MobileUserAction extends BaseActionSupport {
 		Gson gson = new Gson();
 		String data = gson.toJson(result);
 		ajax("100||"+data);
+		return null;
+	}
+	
+	
+	/**
+	 * @throws Exception 
+	 * 功能：根据部门选择人员
+	 * @param
+	 * @return
+	 * @throws   
+	 */
+	public String selectUserList() {
+		try{
+			UserInfo u = userService.findOne(userId);
+			Integer companyId = u.getCompanyId();
+			List<Map<String,Object>> userListMap = userService.selectUserMap(companyId);
+			Gson gson = new Gson();
+			ajax("100||"+gson.toJson(userListMap));
+		}catch(Exception e){
+			ajax("102||系统繁忙,请稍后重试");
+		}
 		return null;
 	}
 	

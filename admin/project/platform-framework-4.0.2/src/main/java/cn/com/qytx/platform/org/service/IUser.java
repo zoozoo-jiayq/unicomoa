@@ -493,4 +493,6 @@ public interface IUser extends BaseService<UserInfo> {
 	 * @param orderIndex
 	 */
 	public void updateUserOrderIndex(int userId,int orderIndex);
+	
+	public List<Map<String,Object>> selectUserMap(Integer companyId);
 }

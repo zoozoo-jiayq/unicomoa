@@ -102,8 +102,8 @@ public class NewAttendanceWapAction extends BaseActionSupport {
 					result.put("rest", "0");//是否需要休息
 					//当天需要考勤
 					result.put("onTime", format.format(plan.getCommonOn()));
-					result.put("amOffTime", format.format(plan.getCommonAmOff()));
-					result.put("pmOnTime",format.format(plan.getCommonPmOn()));
+					/*result.put("amOffTime", format.format(plan.getCommonAmOff()));
+					result.put("pmOnTime",format.format(plan.getCommonPmOn()));*/
 					result.put("offTime", format.format(plan.getCommonOff()));
 					Method onMethod =clazz.getDeclaredMethod("get"+week+"On");
 					if(onMethod.invoke(plan)!=null){
@@ -340,6 +340,23 @@ public class NewAttendanceWapAction extends BaseActionSupport {
 				return;
 			}
 			Map<String, Object> map = planService.getRecordReport(userId, year+"-"+month,companyId);
+			if(map!=null){
+				List<Map<String, Object>> listMap = (List<Map<String, Object>>)map.get("list");
+				if(listMap != null && !listMap.isEmpty()){
+					for(Map<String,Object> attMap : listMap){
+						String offTime = (String)attMap.get("offTime");
+						if(StringUtils.isNoneBlank(offTime)){
+							offTime = offTime.substring(11,16);
+						}
+						String onTime = (String)attMap.get("onTime");
+						if(StringUtils.isNoneBlank(onTime)){
+							onTime = onTime.substring(11,16);
+						}
+						attMap.put("offTime", offTime);
+						attMap.put("onTime", onTime);
+					}
+				}
+			}
 			Gson json = new Gson();
 			ajax("100||"+json.toJson(map));
 		} catch (Exception e) {

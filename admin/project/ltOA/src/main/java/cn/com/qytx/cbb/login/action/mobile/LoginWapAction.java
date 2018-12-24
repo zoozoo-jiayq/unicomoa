@@ -70,7 +70,7 @@ public class LoginWapAction extends BaseActionSupport {
 		try {
 			LOGGER.info("\n-->Wap客户端登录请求开始");
 			if (StringUtils.isEmpty(userName) || StringUtils.isEmpty(passWord)) {
-				ajax("用户名或密码为空");
+				ajax("101||用户名或密码为空");
 				return null;
 			}
 			String msg = goLogin(userName, passWord);
