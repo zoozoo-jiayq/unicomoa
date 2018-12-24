@@ -1,26 +1,26 @@
 <view class="hd">
-  <image class="arrarow" style="left:-50px;" src="../../../imgs/left.png"/>
+  <image class="arrarow" style="left:-50px;" src="../../../imgs/left.png" id="reduce" bindtap='changeMonth'/>
   <view class="hdtext">
-    2018年11月
+    {{year}}年{{month}}月
   </view>
-  <image class="arrarow" style="left:50px" src="../../../imgs/right.png"/>
+  <image class="arrarow" style="left:50px" src="../../../imgs/right.png" id="add" bindtap='changeMonth'/>
 </view>
 <view style="text-align:center">
     <view class="grid">
         <view class="tag">正常考勤</view>
-        <view class="content">0天</view>
+        <view class="content">{{normalCounts}}天</view>
     </view>
     <view class="grid">
         <view class="tag">迟到</view>
-        <view class="content">1次</view>
+        <view class="content">{{lateCounts}}次</view>
     </view>
     <view class="grid">
         <view class="tag">早退</view>
-        <view class="content">1次</view>
+        <view class="content">{{leaveCounts}}次</view>
     </view>
     <view class="grid">
         <view class="tag">缺卡</view>
-        <view class="content">20次</view>
+        <view class="content">{{lackCounts}}次</view>
     </view>
 </view>
 <view>
@@ -29,24 +29,13 @@
         <view class="tablehead">上班</view>
         <view class="tablehead">下班</view>
     </view>
-    <view class="listcontent">
-      <view class="list">12日(周一)</view>
-        <view class="list">缺卡</view>
-        <view class="list">15:00</view>
+    <view class="listcontent" wx:for="{{attList}}" wx:for-item="item" wx:for-index="idx">
+      <view class="list">{{item.recordTime}}</view>
+        <view class="list">{{item.onTime}}{{item.onAttState==1?'正常':(item.onAttState==2?'迟到':((item.onAttState==5?'休息':(item.onAttState==7?'加班':'缺卡'))))}}</view>
+        <view class="list">{{item.offTime}}{{item.offAttState==1?'正常':(item.offAttState==3?'早退':(item.offAttState==5?'休息':(item.offAttState==7?'加班':'缺卡')))}}</view>
     </view>
-    <view class="listcontent">
-      <view class="list">12日(周一)</view>
-        <view class="list">缺卡</view>
-        <view class="list">15:00</view>
-    </view>
-    <view class="listcontent">
-      <view class="list">12日(周一)</view>
-        <view class="list">缺卡</view>
-        <view class="list">15:00</view>
-    </view>
-    <view class="listcontent">
-      <view class="list">12日(周一)</view>
-        <view class="list">缺卡</view>
-        <view class="list">15:00</view>
+    <view style='text-align:center;margin-top:10px' wx:if="{{attList.length==0}}">
+        本月暂无考勤记录 
     </view>
 </view>
+

@@ -60,7 +60,9 @@ public class AttendanceRegisterAction extends BaseActionSupport{
 			Date date=new Date();
 			//日期 -年月日
 			SimpleDateFormat sdf1=new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat sdfMMDD=new SimpleDateFormat("MM/dd");
 			String date1=sdf1.format(date);
+			String dateMMDD=sdfMMDD.format(date);
 			//日期-日
 			SimpleDateFormat sdf2=new SimpleDateFormat("dd");
 			String date2=sdf2.format(date);
@@ -112,7 +114,7 @@ public class AttendanceRegisterAction extends BaseActionSupport{
 				canDo=0;
 			}
 					
-			String dateStr=date1+">"+date2+">"+date3+">"+date4+">"+h_m+">"+seconds+">"+canDo;
+			String dateStr=date1+">"+date2+">"+date3+">"+date4+">"+h_m+">"+seconds+">"+canDo+">"+dateMMDD;
 			Gson gson=new Gson();			
 			String gsonStr=gson.toJson(dateStr);
 			out.print(gsonStr);			

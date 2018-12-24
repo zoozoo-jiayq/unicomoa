@@ -59,20 +59,20 @@ public class AttendancePlanDao extends BaseDao<AttendancePlan, Integer> implemen
 		SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 		String today=dayFormat.format(new Date());
-		String sql="select a.days,a.week,b.att_state as onAttState,CONVERT(varchar(100), b.create_time, 120) as onTime,b.out_of_range as onOutOfRange,b.memo as onMemo,b.[position] as onPosition,c.att_state as offAttState,CONVERT(varchar(100), c.create_time, 120) as offTime,c.out_of_range as offOutOfRange,c.memo as offMemo,c.[position] as offPosition, "
-				+ " d.att_state AS pmOnAttState,CONVERT(varchar(100), d.create_time, 120) as pmOnTime,d.out_of_range AS pmOnOutOfRange,d.memo AS pmOnMemo,d.[position] AS pmOnPosition,e.att_state AS amOffAttState,CONVERT(varchar(100), e.create_time, 120) as amOffTime,e.out_of_range AS amOffOutOfRange,e.memo AS amOffMemo,e.[position] AS amOffPosition from"
-				+ " (select CONVERT(varchar(100), day, 23) as days,week from tb_attendance_days where CONVERT(varchar(100), day, 23) like '"+month+"%' and CONVERT(varchar(100), day, 23) <='"+today+"') a"
+		String sql="select a.days,a.week,b.att_state as onAttState,DATE_FORMAT(b.create_time,'%Y-%m-%d %H:%i:%s') AS onTime,b.out_of_range as onOutOfRange,b.memo as onMemo,b.position as onPosition,c.att_state as offAttState,DATE_FORMAT(c.create_time,'%Y-%m-%d %H:%i:%s') AS offTime,c.out_of_range as offOutOfRange,c.memo as offMemo,c.position as offPosition, "
+				+ " d.att_state AS pmOnAttState,DATE_FORMAT(d.create_time,'%Y-%m-%d %H:%i:%s') AS pmOnTime,d.out_of_range AS pmOnOutOfRange,d.memo AS pmOnMemo,d.position AS pmOnPosition,e.att_state AS amOffAttState,DATE_FORMAT(e.create_time,'%Y-%m-%d %H:%i:%s') AS amOffTime,e.out_of_range AS amOffOutOfRange,e.memo AS amOffMemo,e.position AS amOffPosition from"
+				+ " (select DATE_FORMAT(DAY,'%Y-%m-%d') AS days,week from tb_attendance_days where DATE_FORMAT(DAY,'%Y-%m-%d') like '"+month+"%' and DATE_FORMAT(DAY,'%Y-%m-%d') <='"+today+"') a"
 				+ " left join"
-				+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position] from tb_attendance where create_user_id="+userId+" and att_type=10) b"
+				+ " (select DATE_FORMAT(create_time,'%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position from tb_attendance where create_user_id="+userId+" and att_type=10) b"
 				+ " on a.days=b.recordTime"
 				+ " left JOIN"
-				+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position] from tb_attendance where create_user_id="+userId+" and att_type=21) c"
+				+ " (select DATE_FORMAT(create_time,'%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position from tb_attendance where create_user_id="+userId+" and att_type=21) c"
 				+ " on a.days=c.recordTime "
 				+ " left JOIN"
-				+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position] from tb_attendance where create_user_id="+userId+" and att_type=11) d"
+				+ " (select DATE_FORMAT(create_time,'%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position from tb_attendance where create_user_id="+userId+" and att_type=11) d"
 				+ " on a.days=d.recordTime "
 				+ " left JOIN"
-				+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position] from tb_attendance where create_user_id="+userId+" and att_type=20) e"
+				+ " (select DATE_FORMAT(create_time,'%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position from tb_attendance where create_user_id="+userId+" and att_type=20) e"
 				+ " on a.days=e.recordTime "
 				+ "order by a.days desc";
 		List<Object[]> list = super.entityManager.createNativeQuery(sql).getResultList();
@@ -202,7 +202,7 @@ public class AttendancePlanDao extends BaseDao<AttendancePlan, Integer> implemen
 								}
 							}*/
 							
-							if(map.get("onAttState").equals("1") && map.get("amOffAttState").equals("1")&&map.get("pmOnAttState").equals("1")&&map.get("offAttState").equals("1") ){//正常日打卡
+							if(map.get("onAttState").equals("1") &&map.get("offAttState").equals("1") ){//正常日打卡
 								normalCounts++;
 							}
 						}
@@ -214,12 +214,12 @@ public class AttendancePlanDao extends BaseDao<AttendancePlan, Integer> implemen
 			}
 		}
 		int lateCounts= 0;
-		Object c1=super.entityManager.createNativeQuery("select count(*) from tb_attendance where create_user_id="+userId+" and att_state=2 and CONVERT(varchar(100), create_time, 23) like '"+month+"%'").getSingleResult();
+		Object c1=super.entityManager.createNativeQuery("select count(*) from tb_attendance where create_user_id="+userId+" and att_state=2 and DATE_FORMAT(create_time,'%Y-%m-%d') like '"+month+"%'").getSingleResult();
 		if(c1!=null){
 			lateCounts= Integer.valueOf(c1.toString());
 		}
 		int leaveCounts= 0;
-		Object c2=super.entityManager.createNativeQuery("select count(*) from tb_attendance where create_user_id="+userId+" and att_state=3 and CONVERT(varchar(100), create_time, 23) like '"+month+"%'").getSingleResult();
+		Object c2=super.entityManager.createNativeQuery("select count(*) from tb_attendance where create_user_id="+userId+" and att_state=3 and DATE_FORMAT(create_time,'%Y-%m-%d') like '"+month+"%'").getSingleResult();
 		if(c2!=null){
 			leaveCounts= Integer.valueOf(c2.toString());
 		}
@@ -319,21 +319,21 @@ public class AttendancePlanDao extends BaseDao<AttendancePlan, Integer> implemen
 			SimpleDateFormat timeSDF2=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String monthStr = new SimpleDateFormat("yyyy-MM").format(sdf.parse(month));
 			String today=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-			String sql="select a.days,a.week,b.att_state as onAttState,CONVERT(varchar(100), b.create_time, 120) as onTime,b.out_of_range as onOutOfRange,b.memo as onMemo,b.[position] as onPosition,c.att_state as offAttState,CONVERT(varchar(100), c.create_time, 120) as offTime,c.out_of_range as offOutOfRange,c.memo as offMemo,c.[position] as offPosition,a.userId,a.userName,a.groupName, "
-					+ " d.att_state AS amOffAttState,CONVERT (VARCHAR (100),d.create_time,120) AS amOffTime,d.out_of_range AS amOffOutOfRange,d.memo AS amOffMemo,d.[position] AS amOffPosition,"
-					+ " e.att_state AS pmOnAttState,CONVERT (VARCHAR (100),e.create_time,120) AS pmOnTime,e.out_of_range AS pmOnOutOfRange,e.memo AS pmOnMemo,e.[position] AS pmOnPosition from"
-					+ " (select CONVERT(varchar(100), m.day, 23) as days,m.week,n.user_name as userName,p.group_name as groupName,n.user_id as userId,p.order_index as orderIndex from tb_attendance_days m,tb_user_info n,tb_group_info p where CONVERT(varchar(100), m.day, 23) like '"+monthStr+"%' and CONVERT(varchar(100), m.day, 23) <='"+today+"' and n.company_id='"+companyId+"' and n.group_id=p.group_id) a"
+			String sql="select a.days,a.week,b.att_state as onAttState,DATE_FORMAT(b.create_time,'%Y-%m-%d %H:%i:%s') AS onTime,b.out_of_range as onOutOfRange,b.memo as onMemo,b.position as onPosition,c.att_state as offAttState,DATE_FORMAT(c.create_time,'%Y-%m-%d %H:%i:%s') AS offTime,c.out_of_range as offOutOfRange,c.memo as offMemo,c.position as offPosition,a.userId,a.userName,a.groupName, "
+					+ " d.att_state AS amOffAttState,DATE_FORMAT(d.create_time,'%Y-%m-%d %H:%i:%s') AS amOffTime,d.out_of_range AS amOffOutOfRange,d.memo AS amOffMemo,d.position AS amOffPosition,"
+					+ " e.att_state AS pmOnAttState,DATE_FORMAT(e.create_time,'%Y-%m-%d %H:%i:%s') AS pmOnTime,e.out_of_range AS pmOnOutOfRange,e.memo AS pmOnMemo,e.position AS pmOnPosition from"
+					+ " (select DATE_FORMAT(m.day,'%Y-%m-%d') as days,m.week,n.user_name as userName,p.group_name as groupName,n.user_id as userId,p.order_index as orderIndex from tb_attendance_days m,tb_user_info n,tb_group_info p where DATE_FORMAT(m.day,'%Y-%m-%d') like '"+monthStr+"%' and DATE_FORMAT(m.day,'%Y-%m-%d') <='"+today+"' and n.company_id='"+companyId+"' and n.group_id=p.group_id) a"
 					+ " left join"
-					+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position],create_user_id from tb_attendance where att_type=10) b"
+					+ " (select DATE_FORMAT(create_time,'%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position,create_user_id from tb_attendance where att_type=10) b"
 					+ " on a.days=b.recordTime and a.userId=b.create_user_id"
 					+ " left JOIN"
-					+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position],create_user_id from tb_attendance where att_type=21) c"
+					+ " (select DATE_FORMAT(create_time,'%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position,create_user_id from tb_attendance where att_type=21) c"
 					+ " on a.days=c.recordTime and a.userId=c.create_user_id "
 					+ " left join"
-					+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position],create_user_id from tb_attendance where att_type=20) d"
+					+ " (select DATE_FORMAT(create_time,'%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position,create_user_id from tb_attendance where att_type=20) d"
 					+ " on a.days=d.recordTime and a.userId=d.create_user_id"
 					+ " left join"
-					+ " (select CONVERT(varchar(100), create_time, 23) as recordTime,create_time,att_state,out_of_range,memo,[position],create_user_id from tb_attendance where att_type=11) e"
+					+ " (select DATE_FORMAT(create_time,'%Y-%m-%d') AS recordTime,create_time,att_state,out_of_range,memo,position,create_user_id from tb_attendance where att_type=11) e"
 					+ " on a.days=e.recordTime and a.userId=e.create_user_id"
 					+ " order by a.orderIndex asc,a.userId asc,a.days asc";
 			List<Object[]> list = super.entityManager.createNativeQuery(sql).getResultList();

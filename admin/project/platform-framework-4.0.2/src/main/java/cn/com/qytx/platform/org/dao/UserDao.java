@@ -12,6 +12,8 @@ import java.util.Map;
 import javax.persistence.Query;
 
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.SQLQuery;
+import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
 import cn.com.qytx.platform.base.dao.BaseDao;
@@ -1244,5 +1246,15 @@ public class UserDao<T extends UserInfo>  extends BaseDao<UserInfo, Integer> imp
 	    	return super.companyId(companyId).unDeleted().findAll(hql, sort,"%"+searchKey+"%","%"+searchKey+"%");
     	}
     }
+  
+  @SuppressWarnings("unchecked")
+  public List<Map<String,Object>> selectUserMap(Integer companyId){
+	  String sql = "select u.user_id as userId,u.user_name as userName,g.group_id as groupId,g.group_name as groupName from tb_user_info u inner join tb_group_info g on u.group_id = g.group_id where u.is_delete=0 and u.company_id="+companyId;
+	  sql += " order by g.group_id asc";
+	  Query query = entityManager.createNativeQuery(sql);
+      query.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
+	  return (List<Map<String,Object>>)query.getResultList();
+  } 
+  
 }
 

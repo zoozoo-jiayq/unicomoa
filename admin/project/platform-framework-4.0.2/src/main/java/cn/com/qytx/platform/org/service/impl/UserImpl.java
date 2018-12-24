@@ -1251,4 +1251,9 @@ public class UserImpl   extends BaseServiceImpl<UserInfo> implements IUser {
 		// TODO Auto-generated method stub
 		return userDao.searchUserListByNameAndPhone(companyId, searchkey);
 	}
+
+	@Override
+	public List<Map<String, Object>> selectUserMap(Integer companyId) {
+		return userDao.selectUserMap(companyId);
+	}
 }

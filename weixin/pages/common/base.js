@@ -54,7 +54,6 @@ module.exports = {
       realarg.success = function(res) {
         resolve(res);
       }
-      console.log(realarg);
       wx.uploadFile(realarg)
     });
   }
