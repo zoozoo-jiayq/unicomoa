@@ -3,7 +3,7 @@
 	debug="false">
 
 	<contextName>MsgA</contextName>
-	<property name="logback.logdir" value="." />
+	<property name="logback.logdir" value="./log" />
 	<property name="logback.appname" value="unicomoa" />
 
 	<!-- ConsoleAppender 控制台输出日志 -->

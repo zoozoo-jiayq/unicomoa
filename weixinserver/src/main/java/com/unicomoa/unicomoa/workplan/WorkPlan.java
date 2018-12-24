@@ -38,6 +38,28 @@ public class WorkPlan extends BaseModel {
 	
 	@Column(name="day_str")
 	private String dayStr;
+	
+	@Column(name="state")
+	private int state;
+	
+	@Column(name="realTarget")
+	private int realTarget;
+
+	public int getRealTarget() {
+		return realTarget;
+	}
+
+	public void setRealTarget(int realTarget) {
+		this.realTarget = realTarget;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
 
 	public String getDayStr() {
 		return dayStr;

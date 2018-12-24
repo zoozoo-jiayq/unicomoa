@@ -61,7 +61,6 @@ PG({
         },
       ],
       onConfirm: (value, index, options) => {
-        console.log('onConfirm', value, index, options)
         if (index !== -1) {
           this.setValue("canyurenIds", value);
           this.setValue("canyurennames", index.map((n) => options[n].title))
@@ -112,13 +111,12 @@ PG({
     REQ({
       method: "post",
       url: "/workplan/add",
-      data: this.data.workplan,
-      success: function(res) {
-        if (res.data.result == "success") {
-          wx.switchTab({
-            url: '../index/index',
-          })
-        }
+      data: this.data.workplan
+    }).then(res=>{
+      if (res.data.result == "success") {
+        wx.switchTab({
+          url: '../index/index',
+        })
       }
     })
 

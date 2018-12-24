@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,10 +26,13 @@ import com.unicomoa.unicomoa.utils.Variant;
 
 @RestController
 @RequestMapping("/workplan")
+@CrossOrigin
 public class WorkplanController extends BaseController {
 
 	@Resource
 	private WorkPlanService workPlanService;
+	@Resource
+	private WorkPlanProgressService workPlanProgressService;
 	
 	@RequestMapping("/list")
 	public Object mylist(int userId,String selectedDate) {
@@ -40,7 +44,11 @@ public class WorkplanController extends BaseController {
 	@RequestMapping("/detail")
 	public Object detail(int id) {
 		WorkPlan plan = workPlanService.findById(id).get();
-		return SUCCESS(plan);
+		List<WorkPlanProgress> progress = workPlanProgressService.findByWorkPlanId(id);
+		Map<String,Object> r = new HashMap<String,Object>();
+		r.put("plan", plan);
+		r.put("progress", progress);
+		return SUCCESS(r);
 	}
 	
 	@RequestMapping("/add")
@@ -79,7 +87,42 @@ public class WorkplanController extends BaseController {
 		wp.setCreaterName(Variant.valueOf(request.get("createrName")).stringValue());
 		wp.setCreateTime(new Timestamp(System.currentTimeMillis()));
 		wp.setDayStr(DateUtils.date2Str(new Date(System.currentTimeMillis()), "yyyy-MM-dd"));
+		wp.setState(Constant.WORK_PLAN_STATE_GOING);
 		workPlanService.save(wp);
+		return SUCCESS();
+	}
+	
+	@RequestMapping("/progress")
+	public Object progress(@RequestBody Map<String,Object> req) {
+		int id = Variant.valueOf(req.get("id")).intValue(0);
+		String content = Variant.valueOf(req.get("content")).stringValue("");
+		int userId = Variant.valueOf(req.get("userId")).intValue(0);
+		String userName = Variant.valueOf(req.get("userName")).stringValue("");
+		List<String> imgs = Variant.valueOf(req.get("imgsresult")).listValue(); 
+		WorkPlanProgress workPlanProgress = new WorkPlanProgress();
+		workPlanProgress.setWorkPlanId(id);
+		workPlanProgress.setContent(content);
+		workPlanProgress.setCreaterId(userId);
+		workPlanProgress.setCreateTime(new Timestamp(System.currentTimeMillis()));
+		workPlanProgress.setImgs(new Gson().toJson(imgs));
+		workPlanProgress.setUserId(userId);
+		workPlanProgress.setUserName(userName);
+		workPlanProgressService.save(workPlanProgress);
+		return SUCCESS();
+	}
+	
+	@RequestMapping("/end")
+	public Object end(int id) {
+		WorkPlan wp = workPlanService.findById(id).get();
+		wp.setState(Constant.WORK_PLAN_STATE_END);
+		workPlanService.save(wp);
+		return SUCCESS();
+	}
+	
+	@RequestMapping("/del")
+	public Object del(int id) {
+		workPlanService.deleteById(id);
+		workPlanProgressService.deleteAll(workPlanProgressService.findByWorkPlanId(id));
 		return SUCCESS();
 	}
 }

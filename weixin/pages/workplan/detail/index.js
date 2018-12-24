@@ -1,17 +1,12 @@
 const { PG,REQ } = require("../../common/base.js")
-
+const CONFIG = require("../../common/config.js")
 Page({
 
   data: {
     id:null,
     plan:{},
-    processs:[{
-      title:"张三",
-      content:"dsgsdvfs"
-    }, {
-        title: "张三",
-        content: "sdjflsdjflsd"
-      }]
+    progress:[],
+    server:CONFIG.server
   },
   onLoad: function (options) {
     this.setData({
@@ -29,26 +24,52 @@ Page({
   refresh(cb){
     REQ({
       url:"/workplan/detail?id="+this.data.id,
-      success:(res)=>{
-        if(res.data.result == "success"){
-          var data = res.data.data;
-          var canyureninfo = data.canyuren;
-          canyureninfo = JSON.parse(canyureninfo);
-          canyureninfo = canyureninfo.map(e=>{
-            return e.name;
-          }).join(",");
-          data.canyuren = canyureninfo;
-          this.setData({
-            plan:data
-          })
-        }
+    }).then(res=>{
+      if (res.data.result == "success") {
+        this.setData({
+          progress: res.data.data.progress
+        })
+        var data = res.data.data.plan;
+        var canyureninfo = data.canyuren;
+        canyureninfo = JSON.parse(canyureninfo);
+        canyureninfo = canyureninfo.map(e => {
+          return e.name;
+        }).join(",");
+        data.canyuren = canyureninfo;
+        this.setData({
+          plan: data
+        })
       }
+      cb?cb():null;
     })
   },
-  progress(){
+  goprogress(){
     wx.navigateTo({
-      url: '../progress/index',
+      url: '../progress/index?id='+this.data.id,
+    })
+  },
+  domore(){
+    var self = this;
+    wx.showActionSheet({
+      itemList: ["结束计划","删除计划"],
+      itemColor: "#1296db",
+      success(res){
+        var promise = null;
+        if(res.tapIndex == 0){
+          promise = REQ({
+            url:"/workplan/end?id="+self.data.id
+          })
+        }else if(res.tapIndex == 1){
+          promise = REQ({
+            url:"/workplan/del?id="+self.data.id
+          })
+        }
+        promise.then(res=>{
+          wx.switchTab({
+            url: '../index/index',
+          })
+        })
+      }
     })
   }
-
 })

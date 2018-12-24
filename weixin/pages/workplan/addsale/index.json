@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText":"考勤打卡",
+  "navigationBarTitleText":"登记计划",
   "usingComponents": {
     "wux-card": "../../../wux/card/index",
     "wux-cell-group": "../../../wux/cell-group/index",

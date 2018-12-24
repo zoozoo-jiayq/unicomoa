@@ -5,18 +5,21 @@
     <wux-cell-group title="我的计划">
       <view class="list" wx:for="{{list}}" data-id="{{item.id}}" bindtap='godetail'>
         <view class="leftcell block">
-            <view class="mid" wx:if="{{item.oneDay}}">全天</view>
-            <view class="mid" wx:else>
-                <view>上午:{{item.startTime}}</view>
-                <view>下午:{{item.endTime}}</view>
+            <view   wx:if="{{item.oneDay}}">全天</view>
+            <view   wx:else>
+                <view>AM:{{item.startTime}}</view>
+                <view>PM:{{item.endTime}}</view>
             </view>
         </view>
         <view class="rightcell block">
             <view class="content">{{item.content}}</view>
-            <view class="canyuren">参与人：{{item.canyuren}}</view>
+            <view class="canyuren">参与人：{{item.canyuren}}</view>     
         </view>
         <view class="arrarow block">
-          <image src="../../../imgs/timezone.png"></image>
+    
+          <view class="block state {{item.state==2?'end':''}}" >{{item.state == 1?'进行中':'结束'}}</view>
+          <image class="block" src="../../../imgs/timezone.png"></image>
+         
         </view>
       </view>
       <view wx:if="{{list.length==0}}" class="noplan">

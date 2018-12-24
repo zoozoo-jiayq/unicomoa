@@ -17,15 +17,45 @@ module.exports = {
     wx.showLoading({
       title: '数据处理中',
     })
-    arg.url = CONFIG.server + arg.url;
-    arg.complete = function() {
-      wx.hideLoading()
-    }
-    arg.fail = function() {
-      wx.showToast({
-        title: "服务异常,请稍后重试!"
-      })
-    }
-    wx.request(arg)
+    var realarg = arg;
+    return new Promise((resolve, reject) => {
+      realarg.url = CONFIG.server + arg.url;
+      realarg.complete = function() {
+        wx.hideLoading()
+      }
+      realarg.fail = function() {
+        wx.showToast({
+          title: "服务异常,请稍后重试!"
+        })
+        reject();
+      }
+      realarg.success = function(res) {
+        resolve(res);
+      }
+      wx.request(realarg)
+    });
+  },
+  UPLOAD: function(arg) {
+    wx.showLoading({
+      title: '文件上传中',
+    })
+    var realarg = arg;
+    realarg.url = CONFIG.server + arg.url;
+    return new Promise((resolve, reject) => {
+      realarg.complete = function() {
+        wx.hideLoading();
+      }
+      realarg.fail = function() {
+        wx.showToast({
+          title: '服务异常,请稍后重试!',
+        })
+        reject();
+      }
+      realarg.success = function(res) {
+        resolve(res);
+      }
+      console.log(realarg);
+      wx.uploadFile(realarg)
+    });
   }
 }

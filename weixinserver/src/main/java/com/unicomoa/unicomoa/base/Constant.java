@@ -13,4 +13,6 @@ public interface Constant {
 		this.put("other", 3);
 	}};
 	
+	public final int WORK_PLAN_STATE_GOING = 1;
+	public final int WORK_PLAN_STATE_END = 2;
 }

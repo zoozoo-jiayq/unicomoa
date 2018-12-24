@@ -40,7 +40,7 @@
               <view>完成目标:</view>
             </wux-col>
             <wux-col>
-              <view class="content">10人</view>
+              <view class="content">{{plan.realTarget}}人</view>
             </wux-col>
           </wux-row>
         </view>
@@ -49,33 +49,25 @@
     <view class="line"></view>
     <wux-wing-blank size="default">
       <wux-card bordered="{{ true }}" title="执行记录" class="rowheight">
-        <view slot="body" >
-          <view class="progress">
-            <view class="step"></view>
-            <view class="operationer block">张三</view>
-            <view class="time block">2018-12-19 12:30</view>
-            <view class="content">活动线程已经打好</view>
-            <view class="img">
-                <image class="block" src="../../../imgs/add.png"></image>
-                <image class="block" src="../../../imgs/adduser.png"></image>
-            </view>
+        <view slot="body">
+          <view  class="noplan" wx:if="{{progress.length == 0}}">
+            <image src="../../../imgs/nodata.png" />暂无记录!
           </view>
-          <view class="progress">
-          <view class="step"></view>
-            <view class="operationer block">张三</view>
-            <view class="time block">2018-12-19 12:30</view>
-            <view class="content">活动线程已经打好</view>
+          <view class="progress" wx:for="{{progress}}" >
+            <view class="step"></view>
+            <view class="operationer block">{{item.userName}}</view>
+            <view class="time block">{{item.createTime}}</view>
+            <view class="content">{{item.content}}</view>
             <view class="img">
-                <image class="block" src="../../../imgs/add.png"></image>
-                <image class="block" src="../../../imgs/adduser.png"></image>
+              <image wx:for="{{item.imgUrls}}" wx:for-item="img" class="block" src="{{server+'/view'+img}}"></image>
             </view>
           </view>
         </view>
       </wux-card>
     </wux-wing-blank>
-    <view class="btngroup">
-      <button bindtap='progress' style="" class='btn' hover-class='btn_hover'>执行进度</button>
-      <button>更多操作</button>
+    <view class="btngroup" wx:if="{{plan.state == 1}}">
+      <button bindtap='goprogress'   class='btn' hover-class='btn_hover'>执行进度</button>
+      <button bindtap='domore'>更多操作</button>
     </view>
   </view>
 </view>

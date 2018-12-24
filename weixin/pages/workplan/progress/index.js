@@ -1,18 +1,26 @@
-// pages/workplan/progress/index.js
-Page({
+const {PG,REQ,UPLOAD} = require("../../common/base.js")
+
+PG({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id: null,
+    content:null,
+    userId:1,
+    userName:"zhangsan",
+    imgs:[],
+    imgsresult:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id: options.id
+    })
   },
 
   /**
@@ -21,46 +29,81 @@ Page({
   onReady: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  delimg(e){
+      var file = e.currentTarget.dataset["file"];
+      var imgs = this.data.imgs;
+      var result = [];
+      for(var i=0; i<imgs.length; i++){
+          if(imgs[i] != file){
+              result.push(imgs[i])
+          }
+      }
+      this.setData({
+        imgs:result
+      })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  chooseimg(){
+    var self = this;
+    wx.chooseImage({
+      success(res){
+        const tempFilePaths = res.tempFilePaths
+        self.setData({
+          imgs:tempFilePaths
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  changeContent(e){
+      this.setData({
+        content:e.detail.value
+      })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  uploadImg(fileIter,cb){
+      var f = fileIter.next();
+      if(f){
+        UPLOAD({
+          url: "/upload",
+          filePath: f,
+          name: "file",
+        }).then(res=>{
+          var d = JSON.parse(res.data);
+          if(d.result == "success"){
+            var r = this.data.imgsresult;
+            r.push(d.data);
+            this.setData({
+              imgsresult:r
+            })
+          }
+          this.uploadImg(fileIter,cb)
+        })
+      }else{
+        cb()
+      }
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  submitA(){
+    var fileIter = {
+      data: this.data.imgs,
+      index:0,
+      next:function(){
+        return this.data[this.index++];
+      }
+    }
+    this.uploadImg(fileIter, ()=>{
+        REQ({
+          url:"/workplan/progress",
+          method:"post",
+          data:{
+            id: this.data.id,
+            content: this.data.content,
+            userId: this.data.userId,
+            userName:this.data.userName,
+            imgsresult: this.data.imgsresult
+          }
+        }).then(res=>{
+         wx.navigateTo({
+           url: '../detail/index?id='+this.data.id,
+         })
+        })
+    })
   }
 })

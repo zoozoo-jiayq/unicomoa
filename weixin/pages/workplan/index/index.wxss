@@ -10,44 +10,52 @@
   cursor: pointer
 }
 .list{
-  padding: 5px 10px;
+  padding: 3px 10px;
   border-bottom: 1px solid #eee;
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 .block{
   display: inline-block;
 }
 .leftcell{
   font-size:12px;
-  width:70px;
+  width:20%;
   line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .rightcell{
-
+  width:60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .content{
   font-size:16px;
   line-height: 28px;
+  white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
 }
 .canyuren{
   font-size: 12px;
   line-height: 20px;
   color:#aeaeae;
+  white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
 }
 .arrarow{
-  position: absolute;
-  top:50%;
-  transform: translateY(-50%);
-  right:10px;
+  width:20%;
+  display: flex;
 }
 .arrarow image{
-  width:25px;
+  width:20px;
   height:30px;
+  margin:auto auto;
 }
-.mid{
-  position: absolute;
-  top:50%;
-  transform: translateY(-50%);
+.arrarow .state{
+  font-size: 12px;
+  margin:auto auto;
 }
 .noplan{
   text-align: center;
@@ -61,4 +69,7 @@
   height:40px;
   display:inline-block;
   vertical-align: middle;
+}
+.end{
+  color:#aeaeae;
 }

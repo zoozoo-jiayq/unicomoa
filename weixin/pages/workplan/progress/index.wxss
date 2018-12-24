@@ -13,3 +13,22 @@
   background-color: #1296db;
   color:#fff  
 }
+.imggroup{
+  position: relative;
+}
+.img{
+  width:80px;
+  height:80px;
+  margin:10px;
+}
+.block{
+  display: inline-block;
+}
+.del{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top:-5px;
+    right:-5px;
+    z-index: 1    
+}
