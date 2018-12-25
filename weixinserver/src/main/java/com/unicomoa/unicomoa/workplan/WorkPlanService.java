@@ -27,4 +27,8 @@ public class WorkPlanService extends BaseServiceProxy<WorkPlan> {
 	public List<WorkPlan> findByCreaterIDAndDayStr(int createrId,String dayStr,Sort sort){
 		return workPlanRepository.findByCreaterIdAndDayStr(createrId, dayStr,sort);
 	}
+	
+	public void updateTarget(int id) {
+		workPlanRepository.updateTarget(id);
+	}
 }

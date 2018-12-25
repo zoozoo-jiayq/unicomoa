@@ -14,6 +14,8 @@ public class CustomerController extends BaseController {
 
 	@Resource
 	private CustomerService customerService;
+	@Resource
+	private WorkPlanService workPlanService;
 	
 	@RequestMapping("/index")
 	public Object index(ModelMap model,int id) {
@@ -24,6 +26,7 @@ public class CustomerController extends BaseController {
 	@RequestMapping(value="/save")
 	public Object save(Customer customer) {
 		customerService.save(customer);
+		workPlanService.updateTarget(customer.getWorkPlanId());
 		return "/success";
 	}
 }
