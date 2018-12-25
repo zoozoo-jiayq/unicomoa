@@ -41,7 +41,7 @@
             </wux-col>
             <wux-col>
               <view class="content block">{{plan.realTarget}}人</view>
-              <view class="block" bindtap='qrcode' style="margin-left:30px;color:#1296db;">查看营销二维码</view>
+              <view wx:if="{{plan.state == 1}}" class="block" bindtap='qrcode' style="margin-left:30px;color:#1296db;">查看营销二维码</view>
             </wux-col>
           </wux-row>
         </view>
