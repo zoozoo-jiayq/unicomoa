@@ -6,11 +6,16 @@ Page({
     id:null,
     plan:{},
     progress:[],
-    server:CONFIG.server
+    server:CONFIG.server,
+    qrcodeurl:null,
+    showdialog:false
   },
   onLoad: function (options) {
     this.setData({
       id:options.id
+    })
+    this.setData({
+      qrcodeurl:CONFIG.server+"/customer/index?id="+this.data.id
     })
     this.refresh();
   },
@@ -46,6 +51,16 @@ Page({
   goprogress(){
     wx.navigateTo({
       url: '../progress/index?id='+this.data.id,
+    })
+  },
+  qrcode(){
+      this.setData({
+        showdialog:true
+      })
+  },
+  hidedialog(){
+    this.setData({
+      showdialog:false
     })
   },
   domore(){

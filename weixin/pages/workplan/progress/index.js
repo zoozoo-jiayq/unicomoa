@@ -81,6 +81,20 @@ PG({
       }
   },
   submitA(){
+    if(!this.data.content){
+      wx.showToast({
+        title: '处理结果不能为空',
+        icon:"none"
+      })
+      return ;
+    }
+    if (!this.data.imgs || this.data.imgs.length == 0 ){
+      wx.showToast({
+        title: '图片不能为空',
+        icon:"none"
+      })
+      return ;
+    }
     var fileIter = {
       data: this.data.imgs,
       index:0,

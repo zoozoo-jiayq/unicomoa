@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>填写信息</title>
+<style type="text/css">
+	body{
+		background-color: #fff;
+	}
+	.content{
+		padding:5px;
+		font-size:18px;
+		line-height: 30px;
+		
+	}
+	.row{
+		padding: 10px 10px;
+		border-bottom: 1px solid #eee;
+	}
+	.row label{
+		display:inline-block;
+		width:60px;
+		text-align: right;
+	}
+	.row input{
+		display:inline-block;
+		margin:5px;
+		padding:5px;
+		border:none;
+		font-size:16px;
+		text-align: right;
+	}
+	.radiogroup{
+		display: inline-block;
+		text-align: right;
+		width:200px;
+	}
+	.btn{
+		background-color: #1296db;
+		color:#fff;
+		border:0;
+		border-radius: 5px;
+		padding: 10px 20px;
+		font-size: 16px;
+		width:95%;
+	}
+	.errtip{
+		width: 100%;
+		text-align: center;
+		font-size: 14px;
+		padding: 10px;
+		background-color: #df3d2f;
+		color:#fff;
+		display: none;
+	}	
+</style>
+</head>
+<body>
+<div class="errtip" id="usernametip">姓名不能为空!</div>
+<div class="errtip" id="phonetip">电话不能为空!</div>
+	<form action="/customer/save" method="post" id="form">
+	<input type="hidden" name="workPlanId" value="${id}"/>
+	<div class="content">
+		<div class="row">
+			<label>性别:</label>
+			<div class="radiogroup">
+			<input type="radio" name="sex" checked="checked" value="1"/>男<input type="radio"  name="sex" value="0" />女
+			</div>
+		</div>
+		<div class="row">
+			<label><span style="color: red">*</span>姓名:</label><input name="username" id="username" type="text" placeholder="请输入姓名"/>
+		</div>
+		<div class="row">
+			<label><span style="color:red">*</span>电话:</label><input type="text" name="phone" id="phone" placeholder="请输入联系方式" />
+		</div>
+		<div class="row">
+			<label>备注:</label><input type="text" name="remark" placeholder="请输入备注信息" />
+		</div>
+	</div>
+		<div  style="border-bottom:0;text-align: center;width: 100%;margin-top:30px;">
+			<button type="button" class="btn" onclick="submitA()">提交</button>
+		</div>
+	</form>
+	
+</body>
+<script type="text/javascript">
+	function submitA(){
+		var username = document.getElementById("username").value;
+		var phone = document.getElementById("phone").value;
+		if(!username){
+			document.getElementById("usernametip").style.display = "block";
+			setTimeout(function(){
+				document.getElementById("usernametip").style.display = "none"; 
+			},1500)
+			return;
+		}
+		if(!phone){
+			document.getElementById("phonetip").style.display = "block";
+			setTimeout(function(){
+				document.getElementById("phonetip").style.display = "none"; 
+			},1500)
+			return;
+		}
+		document.getElementById("form").submit();
+	}
+</script>
+</html>

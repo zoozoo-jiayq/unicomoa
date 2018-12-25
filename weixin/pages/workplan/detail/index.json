@@ -5,6 +5,7 @@
         "wux-row": "../../../wux/row/index",
         "wux-col": "../../../wux/col/index",
         "wux-steps": "../../../wux/steps/index",
-        "wux-step": "../../../wux/step/index"
+        "wux-step": "../../../wux/step/index",
+        "wux-qrcode": "../../../wux/qrcode/index"
   }
 }

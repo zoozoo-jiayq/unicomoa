@@ -2,11 +2,12 @@
   <view style="padding:10px">
     <wux-cell-group>
       <wux-cell hover-class="none">
-        <wux-textarea hasCount rows="3" cursorSpacing="80" placeholder="填写处理结果..." bind:change="changeContent" />
+        <wux-textarea hasCount rows="3" cursorSpacing="80" placeholder="请填写处理结果..." bind:change="changeContent" />
       </wux-cell>
     </wux-cell-group>
     <view style="height:10px"></view>
     <view>
+      <view style="font-size:12px;color:#aeaeae;line-height:30px;">请选择图片:</view>
       <view class="block imggroup"  wx:for="{{imgs}}">
         <image class="img selectedimg" src="{{item}}"></image>
         <image src="../../../imgs/del.png" class="del" data-file="{{item}}" bindtap='delimg'></image>

@@ -125,4 +125,6 @@ public class WorkplanController extends BaseController {
 		workPlanProgressService.deleteAll(workPlanProgressService.findByWorkPlanId(id));
 		return SUCCESS();
 	}
+	
+
 }
