@@ -1,11 +1,20 @@
-const {PG,REQ} = require("../../common/base.js")
+const { PG, REQ, loginUser} = require("../../common/base.js")
 const { $wuxCalendarPlain } = require( '../../../wux/index')
 const { formatDate} = require("../../../utils/util")
 PG({
   data: {
     selectedDate: formatDate(new Date()),
     list:[],
-    userId:1
+    userId:null
+  },
+  onLoad(){
+    var u = loginUser();
+    if(u){
+      this.setData({
+        userId:u.userId
+      })
+    }
+    console.log(u)
   },
   addPlan(){
     wx.navigateTo({

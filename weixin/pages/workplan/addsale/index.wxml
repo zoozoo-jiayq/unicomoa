@@ -55,25 +55,7 @@
       <image src="../../../imgs/timezone.png" class="middleimage"></image>
     </wux-cell>
   </wux-cell-group>
-  <view class="line"></view>
-  <wux-cell-group title="请选择参与人">
-    <wux-cell extra="{{ workplan.canyurennames }}" bind:click="showSelectUser">
-      <image src="../../../imgs/adduser.png" style="width:30px;height:30px"></image>
-    </wux-cell>
-  </wux-cell-group>
-
-  <view class="line"></view>
-  <wux-cell-group>
-    <wux-cell hover-class="none">
-      <wux-input placeholder="请输入活动地址" bind:change="inputAddr"  />
-    </wux-cell>
-  </wux-cell-group>
-  <view class="line"></view>
-  <wux-cell-group>
-    <wux-cell hover-class="none">
-      <wux-textarea hasCount rows="3" bind:change="inputContent"   cursorSpacing="80" placeholder="请输入工作计划..." />
-    </wux-cell>
-  </wux-cell-group>
+  
   <view class="line"></view>
   <wux-cell-group>
     <wux-cell title="营销目标" hover-class="none">
@@ -81,6 +63,27 @@
     </wux-cell>
   </wux-cell-group>
   <view class="line"></view>
-  <wux-select id="selectUser" />
+  <wux-cell-group title="请选择参与人">
+    <wux-cell extra="{{ workplan.canyurennames }}" bind:click="showSelectUser">
+      <image src="../../../imgs/adduser.png" style="width:30px;height:30px"></image>
+    </wux-cell>
+  </wux-cell-group>
+   <view class="line"></view>
+  <wux-cell-group>
+    <wux-cell hover-class="none">
+      <wux-input placeholder="请输入活动地址" bind:change="inputAddr"  />
+    </wux-cell>
+  </wux-cell-group>
+  
+  <view class="line"></view>
+  <wux-cell-group>
+    <wux-cell hover-class="none" wx:if="{{showtextarea}}">
+      <!-- <wux-textarea hasCount rows="3" bind:change="inputContent"   cursorSpacing="80" placeholder="请输入工作计划..." /> -->
+      <textarea placeholder='请输入工作计划...' bindinput='inputContent'></textarea>
+    </wux-cell>
+  </wux-cell-group>
   <button class='btn' hover-class='btn_hover' bindtap='submit'>提交</button>
+</view>
+<view calss="dialog">
+  <wux-select id="selectUser" />
 </view>

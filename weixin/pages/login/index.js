@@ -5,12 +5,11 @@ const CONFIG = require("../common/config_1.js")
 Page({
   data: {
     remembered: false,
-    username:"15512345679",
-    password:"123456"
+    username:"",
+    password:""
   },
   onLoad: function (options) {
     var userInfo = loginUser();
-    console.log(userInfo)
     if (userInfo && userInfo.userId){
       wx.switchTab({
         url: '../workplan/index/index',

@@ -1,4 +1,4 @@
-const {PG,REQ,UPLOAD} = require("../../common/base.js")
+const { PG, REQ, UPLOAD, loginUser} = require("../../common/base.js")
 
 PG({
 
@@ -8,8 +8,8 @@ PG({
   data: {
     id: null,
     content:null,
-    userId:1,
-    userName:"zhangsan",
+    userId:null,
+    userName:null,
     imgs:[],
     imgsresult:[]
   },
@@ -21,6 +21,13 @@ PG({
     this.setData({
       id: options.id
     })
+    var u = loginUser();
+    if(u){
+      this.setData({
+        userId:u.userId,
+        userName:u.userName
+      })
+    }
   },
 
   /**
