@@ -1,7 +1,7 @@
 // pages/login/index.js
 
-const { PG, REQ, loginUser } = require("../common/base.js")
-const CONFIG = require("../common/config.js")
+const { PG, REQ, loginUser } = require("../common/base_1.js")
+const CONFIG = require("../common/config_1.js")
 Page({
   data: {
     remembered: false,

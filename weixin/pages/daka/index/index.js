@@ -1,6 +1,6 @@
 import { $wuxDialog } from '../../../wux/index'
-const { PG, REQ, loginUser } = require("../../common/base.js")
-const CONFIG = require("../../common/config.js")
+const { PG, REQ, loginUser } = require("../../common/base_1.js")
+const CONFIG = require("../../common/config_1.js")
 var bmap = require('../../common/bmap-wx.js');
 var wxMarkerData = []; //定位成功回调对象
 Page({
