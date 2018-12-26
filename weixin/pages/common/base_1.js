@@ -1,4 +1,4 @@
-const CONFIG = require("./config.js")
+const CONFIG = require("./config_1.js")
 module.exports = {
   PG: function(args) {
     var defaultargs = {

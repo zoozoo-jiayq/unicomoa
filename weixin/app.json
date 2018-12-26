@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/daka/index/index",
     "pages/login/index",
     "pages/workplan/index/index",
+    "pages/daka/index/index",
     "pages/workplan/progress/index",
     "pages/workplan/detail/index",
     "pages/workplan/addsale/index",

@@ -1,6 +1,6 @@
 <view class="page__bd">
   <image style="width:100%;margin-bottom:20px" src="../../imgs/login-bg.png"></image>
-  <!--<view style="text-align:center;margin-bottom:10px;">登录</view>-->
+  <view style="text-align:center;margin-bottom:10px;">登录</view>
   <wux-cell-group>
     <wux-cell hover-class="none">
       <wux-input placeholder='请输入用户名' maxlength='25' bind:change="bindUserName" >

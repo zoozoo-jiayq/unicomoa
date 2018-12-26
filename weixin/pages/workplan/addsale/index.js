@@ -1,14 +1,6 @@
-const {
-  PG,
-  REQ
-} = require("../../common/base.js")
-const {
-  formatDate
-} = require("../../../utils/util")
-const {
-  $wuxSelect
-} = require('../../../wux/index')
-
+const { PG,REQ} = require("../../common/base.js")
+const { formatDate} = require("../../../utils/util")
+const {$wuxSelect} = require('../../../wux/index')
 PG({
   data: {
     spinning: false,
@@ -119,6 +111,5 @@ PG({
         })
       }
     })
-
   }
 })
