@@ -1,17 +1,20 @@
 // pages/login/index.js
 
-const {
-  PG,
-  REQ
-} = require("../common/base.js")
-
-
-PG({
-
+const { PG, REQ, loginUser } = require("../common/base.js")
+const CONFIG = require("../common/config.js")
+Page({
   data: {
     remembered: false,
     username:"",
     password:""
+  },
+  onLoad: function (options) {
+    var userInfo = loginUser();
+    if (userInfo != null && userInfo.userId!=''){
+      wx.switchTab({
+        url: '../workplan/index/index',
+      })
+    }
   },
   remember(e){
     if(e.detail.value && e.detail.value[0] == '1'){
@@ -59,30 +62,26 @@ PG({
     if (!flag) {
       return;
     }
-    REQ({
+  REQ({
       method: "post",
-      url: "/wap/loginAjax.action?userName=" + this.data.username + "&passWord=" +    this.data.password,
-      data: { userName: this.data.username, passWord:this.data.password},
-      success: function (res) {
-        console.log(res.data);
-        var resArr = res.data.split("||");
-        var status = resArr[0];
-        if (status=="100"){
-          var userInfoText = resArr[1];
-          var userInfo = JSON.parse(userInfoText);
-          console.log(userInfo.userId);
-          wx.setStorageSync('userInfo', userInfo);
-          //userInfo = wx.getStorageSync('userInfo')
-
-          wx.switchTab({
-            url: '../workplan/index/index',
-          })
-        }else{
-          wx.showToast({
-            title: resArr[1],
-            icon: "none"
-          })
-        }
+      url: "/wap/loginAjax.action?userName=" + this.data.username + "&passWord=" + this.data.password,
+      data: { userName: this.data.username, passWord: this.data.password }
+    }).then(res => {
+      console.log(res.data);
+      var resArr = res.data.split("||");
+      var status = resArr[0];
+      if (status == "100") {
+        var userInfoText = resArr[1];
+        var userInfo = JSON.parse(userInfoText);
+        wx.setStorageSync('userInfo', userInfo);
+        wx.switchTab({
+          url: '../workplan/index/index',
+        })
+      } else {
+        wx.showToast({
+          title: resArr[1],
+          icon: "none"
+        })
       }
     })
   }

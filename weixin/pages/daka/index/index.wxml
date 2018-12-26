@@ -21,13 +21,13 @@
       <wux-card title="{{item.attType==10?'上班打卡':'下班打卡'}}" extra="{{item.attState==1?'正常':(item.attState==2?'迟到':(item.attState==7?'休息':'早退'))}}">
         <view slot="body">
           打卡时间：{{item.createTime}}
-          <span class="redaka">重新打卡</span>  
+          <span class="redaka" data-type="{{item.attType==10?'am':'pm'}}" bindtap='daka'>重新打卡</span>  
         </view>
         <view slot="footer">打卡地点：{{item.position}}</view>
       </wux-card>
        <view style="height:5px;"></view>
     </wux-wing-blank>
-   <wux-wing-blank style='text-align:center;padding-top:10%;display:block' wx:if="{{!attList}}">
+   <wux-wing-blank style='text-align:center;padding-top:10%;display:block' wx:if="{{attList.length==0}}">
       今日您还没有打卡，请尽快打卡吧 
    </wux-wing-blank> 
   </view>

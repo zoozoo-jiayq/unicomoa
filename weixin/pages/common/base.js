@@ -14,9 +14,11 @@ module.exports = {
     Page(defaultargs);
   },
   REQ: function(arg) {
-    wx.showLoading({
-      title: '数据处理中',
-    })
+    if (arg.isShowLoading!=1){
+      wx.showLoading({
+        title: '数据处理中',
+      })
+    }
     var realarg = arg;
     return new Promise((resolve, reject) => {
       realarg.url = CONFIG.server + arg.url;
@@ -56,5 +58,8 @@ module.exports = {
       }
       wx.uploadFile(realarg)
     });
+  },
+  loginUser:function(){
+    return wx.getStorageSync('userInfo');
   }
 }

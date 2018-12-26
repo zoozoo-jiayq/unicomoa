@@ -1,11 +1,9 @@
 import { $wuxDialog } from '../../../wux/index'
-const {
-  PG,
-  REQ
-} = require("../../common/base.js")
+const { PG, REQ, loginUser } = require("../../common/base.js")
+const CONFIG = require("../../common/config.js")
 var bmap = require('../../common/bmap-wx.js');
 var wxMarkerData = []; //定位成功回调对象
-PG({
+Page({
   data: {
     dakaType:null,
     seconds: 0,
@@ -52,22 +50,21 @@ PG({
   },
   getServiceTime:function(obj){//获取服务器时间和日期及星期
     REQ({
-      isShowLoading:1,
+      isShowLoading: 1,
       method: "post",
       url: "/attendance/getServiceTime.action?_clientType=wap",
       data: {},
-      success: function (res) {
-        var result = res.data;
-        if(result != ""){ 
-          var timeArr = result.split(">");
-          obj.setData({
-            week: timeArr[2],
-            date: timeArr[0],
-            day : timeArr[7],
-            time:timeArr[4],
-            seconds:timeArr[5]
-          })
-        }
+    }).then(res => {
+      var result = res.data;
+      if (result != "") {
+        var timeArr = result.split(">");
+        obj.setData({
+          week: timeArr[2],
+          date: timeArr[0],
+          day: timeArr[7],
+          time: timeArr[4],
+          seconds: timeArr[5]
+        })
       }
     })
   },
@@ -100,48 +97,41 @@ PG({
     });
   },
   initAttendance: function (obj) {//加载考勤数据
+    var userInfo = loginUser();
     REQ({
-      isShowLoading: 1,
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "post",
       url: "/attWap/init.action?_clientType=wap",
-      data: { userId: 12,companyId:1},
-      success: function (res) {
-        var result = res.data; 
-        console.log(result);
-        if (result != "") { 
-          var resArr = res.data.split("||");
-          var status = resArr[0];
-          if (status == "100") {
-            var attendance = JSON.parse(resArr[1]);
-            var hasPlan = attendance.hasPlan;
+      data: { userId: userInfo.userId, companyId: userInfo.companyId },
+    }).then(res => {
+      var result = res.data;
+      console.log(result);
+      if (result != "") {
+        var resArr = res.data.split("||");
+        var status = resArr[0];
+        if (status == "100") {
+          var attendance = JSON.parse(resArr[1]);
+          var hasPlan = attendance.hasPlan;
+          obj.setData({
+            setLongitude: attendance.longitude,
+            setLatitude: attendance.latitude,
+            range: attendance.range,
+            attList: attendance.list
+          });
+          if (hasPlan != "1") {
             obj.setData({
-              setLongitude: attendance.longitude,
-              setLatitude: attendance.latitude,
-              range: attendance.range,
-              attList:attendance.list
+              isHasPlan: false
             });
-            if (hasPlan != "1") { 
-               obj.setData({
-                 isHasPlan: false
-              });
-              return;
-            }
-            var signIn = attendance.signIn;
-            var signOut = attendance.signOut;
-            if (signIn=="1"){
-              obj.setData({
-                signInButton: false
-              });
-            }
-            if (signOut == "1") {
-              obj.setData({
-                signOutButton: false
-              });
-            }
+            return;
           }
+          var signIn = attendance.signIn;
+          var signOut = attendance.signOut;
+            obj.setData({
+              signInButton: signIn == "1" ? false : true,
+              signOutButton: signOut == "1" ? false : true 
+            });
         }
       }
     })
@@ -150,6 +140,17 @@ PG({
     this.getServiceTime(this);
   } ,
   onLoad: function () { 
+    var userInfo = wx.getStorageSync('userInfo');
+    if (userInfo == null || userInfo.userId == '') {
+      wx.showToast({
+        title: '用户名不能为空',
+        icon: "none"
+      });
+      wx.switchTab({
+        url: '../../login/index'
+      })
+      return;
+    }
     this.getServiceTime(this);
     this.initAttendance(this); 
     this.getLocation(this); 
@@ -189,35 +190,37 @@ PG({
         if (that.data.dakaType == "pm"){
           attType = 21;
         }
+        var userInfo = loginUser();
         var paramData = {
-          userId: 12,
-          companyId: 1,
+          userId: userInfo.userId,
+          companyId: userInfo.companyId,
           position:that.data.address,
           longitude: that.data.longitude,
           latitude: that.data.latitude,
           attType: attType,
           outOfRange: that.data.outOfRange
         };
-         REQ({
+        REQ({
             header: {
               "Content-Type": "application/x-www-form-urlencoded"
             },
             method: "post",
             url: "/attWap/saveRecord.action?_clientType=wap",
             data: paramData,
-            success: function (res) {  
-              var result = res.data;
-              console.log(result);
-              if (result != "") {
-                var resArr = res.data.split("||");
-                var status = resArr[0];
-                if (status == "100") {
-                  alert('打卡成功！');
-                  that.initAttendance(that); 
-                }
+          }).then(res => {
+            var result = res.data;
+            console.log(result);
+            if (result != "") {
+              var resArr = res.data.split("||");
+              var status = resArr[0]; 
+              if (status == "100") {
+                alert('打卡成功！');
+                that.initAttendance(that);
               }
             }
           })
+
+
         },
       },
       {

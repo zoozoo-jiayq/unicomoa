@@ -31,8 +31,8 @@
     </view>
     <view class="listcontent" wx:for="{{attList}}" wx:for-item="item" wx:for-index="idx">
       <view class="list">{{item.recordTime}}</view>
-        <view class="list">{{item.onTime}}{{item.onAttState==1?'正常':(item.onAttState==2?'迟到':((item.onAttState==5?'休息':(item.onAttState==7?'加班':'缺卡'))))}}</view>
-        <view class="list">{{item.offTime}}{{item.offAttState==1?'正常':(item.offAttState==3?'早退':(item.offAttState==5?'休息':(item.offAttState==7?'加班':'缺卡')))}}</view>
+        <view class="list">{{item.onTime}}{{item.onAttState==1?'正常':(item.onAttState==2?'迟到':((item.onAttState==5?'缺卡':(item.onAttState==7?'加班':'缺卡'))))}}</view>
+        <view class="list">{{item.offTime}}{{item.offAttState==1?'正常':(item.offAttState==3?'早退':(item.offAttState==5?'缺卡':(item.offAttState==7?'加班':'缺卡')))}}</view>
     </view>
     <view style='text-align:center;margin-top:10px' wx:if="{{attList.length==0}}">
         本月暂无考勤记录 

@@ -1,9 +1,6 @@
-const {
-  PG,
-  REQ
-} = require("../../common/base.js")
-// pages/daka/view/index.js
-PG({
+const { PG, REQ, loginUser } = require("../../common/base.js")
+const CONFIG = require("../../common/config.js")
+Page({
   /**
    * 页面的初始数据
    */
@@ -26,31 +23,33 @@ PG({
       },
       method: "post",
       url: "/attWap/recordReport.action?_clientType=wap",
-      data: paramData,
-      success: function (res) {
-        var result = res.data;
-        if (result != "") {
-         console.log(result);
-         var resArr = result.split("||");
-         var status = resArr[0];
-         if (status == "100") {
-           var attendance = JSON.parse(resArr[1]);
-           obj.setData({
-             normalCounts: attendance.normalCounts,
-             lateCounts: attendance.lateCounts,
-             lackCounts: attendance.lackCounts,
-             leaveCounts: attendance.leaveCounts,
-             attList: attendance.list
-           });
-         }else{
-           wx.showToast({
-             title: resArr[0],
-             icon: "none"
-           });
-         }
+      data: paramData
+    }).then(res => {
+      var result = res.data;
+      if (result != "") {
+        console.log(result);
+        var resArr = result.split("||");
+        var status = resArr[0];
+        if (status == "100") {
+          var attendance = JSON.parse(resArr[1]);
+          obj.setData({
+            normalCounts: attendance.normalCounts,
+            lateCounts: attendance.lateCounts,
+            lackCounts: attendance.lackCounts,
+            leaveCounts: attendance.leaveCounts,
+            attList: attendance.list
+          });
+        } else {
+          wx.showToast({
+            title: resArr[0],
+            icon: "none"
+          });
         }
       }
     })
+
+
+
   },
   /**
    * 生命周期函数--监听页面加载
