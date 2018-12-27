@@ -1,4 +1,4 @@
-const { PG,REQ } = require("../../common/base.js")
+const { PG, REQ, loginUser} = require("../../common/base.js")
 const CONFIG = require("../../common/config.js")
 Page({
 

@@ -1,9 +1,20 @@
-const { PG,REQ} = require("../../common/base.js")
-const { formatDate} = require("../../../utils/util")
-const {$wuxSelect} = require('../../../wux/index')
+const {
+  PG,
+  REQ,
+  loginUser
+} = require("../../common/base.js")
+const BASE1 = require("../../common/base_1.js")
+const {
+  formatDate
+} = require("../../../utils/util")
+const {
+  $wuxSelect
+} = require('../../../wux/index')
 PG({
   data: {
     spinning: false,
+    users:[],
+    showtextarea:true,
     workplan: {
       planType: "sale",
       beginDate: formatDate(new Date()),
@@ -11,9 +22,27 @@ PG({
       endDate: formatDate(new Date()),
       endTime: "18:00",
       target: 15,
-      createrId: 1,
-      createrName: "张三"
+      createrId: null,
+      createrName: null
     }
+  },
+  onLoad:function() {
+    var u = loginUser();
+    var wp = this.data.workplan;
+    wp.createrId = u.userId;
+    wp.createrName = u.userName;
+    this.setData({
+      workplan:wp
+    })
+    BASE1.REQ({
+      url:'/mobileUser/select!selectUserList.action?_clientType=wap&userId='+u.userId
+    }).then(res=>{
+      var data = res.data.substring(5);
+      data = JSON.parse(data);
+      this.setData({
+        users:data
+      })
+    })
   },
   setValue(key, value) {
     var wp = this.data.workplan;
@@ -41,18 +70,23 @@ PG({
     this.setValue("endTime", e.detail.value)
   },
   showSelectUser() {
+    this.setData({
+      showtextarea:false
+    })
+    var os = [];
+    for(var i=0; i<this.data.users.length; i++){
+      os.push({
+        title:this.data.users[i].userName,
+        value:this.data.users[i].userId+""      
+      })
+    }
     $wuxSelect('#selectUser').open({
       multiple: true,
-      options: [{
-          title: '画画',
-          value: '1',
-        },
-        {
-          title: '打球',
-          value: '2',
-        },
-      ],
+      options: os,
       onConfirm: (value, index, options) => {
+        this.setData({
+          showtextarea:true
+        })
         if (index !== -1) {
           this.setValue("canyurenIds", value);
           this.setValue("canyurennames", index.map((n) => options[n].title))
@@ -74,21 +108,21 @@ PG({
     if (!wp.canyurenIds) {
       wx.showToast({
         title: '参与人不能为空',
-        icon:"none"
+        icon: "none"
       });
       return false;
     }
-    if(!wp.addr){
+    if (!wp.addr) {
       wx.showToast({
         title: '活动地址不能为空',
-        icon:"none"
+        icon: "none"
       })
       return false;
     }
-    if(!wp.content){
+    if (!wp.content) {
       wx.showToast({
         title: '工作计划不能为空',
-        icon:"none"
+        icon: "none"
       })
       return false;
     }
@@ -97,14 +131,14 @@ PG({
   },
   submit() {
     var flag = this.check();
-    if(!flag){
+    if (!flag) {
       return;
     }
     REQ({
       method: "post",
       url: "/workplan/add",
       data: this.data.workplan
-    }).then(res=>{
+    }).then(res => {
       if (res.data.result == "success") {
         wx.switchTab({
           url: '../index/index',
