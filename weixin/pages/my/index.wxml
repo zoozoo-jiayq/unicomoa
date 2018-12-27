@@ -17,7 +17,7 @@
 <view class="line"></view>
 <view class="row">
  <image src="../../imgs/quit.png" class="arraow" style="left:20px;width:30px;height:30px;"/>
-  <view style="line-height:50px;margin-left:60px;" data-type="quit" bindtap='logOut'>
+  <view style="line-height:50px;margin-left:60px;" data-type="quit" bindtap='logout'>
     退出登录
   </view>
   <image src="../../imgs/rightarr.png" class="arraow"/>
