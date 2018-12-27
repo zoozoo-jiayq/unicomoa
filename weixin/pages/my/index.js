@@ -1,11 +1,12 @@
-// pages/my/index.js
+import { $wuxDialog } from '../../wux/index'
+const { PG, REQ } = require("../common/base_1.js")
+const CONFIG = require("../common/config_1.js")
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    dataType:''
   },
 
   /**
@@ -62,5 +63,39 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  logOut(e) {
+    this.custom()
+  },
+  custom() {
+    const alert = (content) => {
+      $wuxDialog('#wux-dialog--alert').alert({
+        resetOnClose: true,
+        title: '提示',
+        content: content
+      })
+    }
+    var that = this;
+    $wuxDialog().open({
+      resetOnClose: true,
+      title: '退出登录',
+      content: '确定要退出登录吗?',
+      buttons: [{
+        text: '确定',
+        type: 'primary',
+        onTap(e) {
+          wx.removeStorage({
+            key: 'userInfo',
+            success: function (res) {
+              console.log(res.data)
+            }
+          })
+        }
+      },
+      {
+        text: '取消',
+      },
+      ]
+    })
   }
 })
