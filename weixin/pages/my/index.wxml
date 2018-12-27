@@ -1,10 +1,9 @@
 <view class="row1">
-  <view class="head">佳伟</view>
+  <view class="head">{{userInfo.userName}}</view>
   <view class="info">
-    <view>谢佳伟</view>
-    <view style="font-size:12px;color:#aeaeae;">技术部</view>
+    <view>{{userInfo.userName}}</view>
+    <view style="font-size:12px;color:#aeaeae;">{{userInfo.groupName}}</view>
   </view>
-  <image src="../../imgs/rightarr.png" class="arraow"/>
 </view>
 <view class="line"></view>
 <view class="row">
