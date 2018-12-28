@@ -86,13 +86,40 @@ Component({
             const weeks = this.setWeekHeader()
             const months = this.setMonthsHTML()
             const monthsTranslate = this.setMonthsTranslate()
-
             if (typeof this.fns.onMonthAdd === 'function') {
                 months.forEach((month) => this.fns.onMonthAdd.call(this, month))
             }
-
+            this.setData({
+              spread:'false'
+            })
+            var rowidx = 0;
+          var cumonth = months[1].items;
+            for(var i=0; i<cumonth.length; i++){
+                var row = cumonth[i];
+                var flag = false;
+                for(var r in row){
+                    if(row[r].year == new Date().getFullYear() && row[r].month == new Date().getMonth() && row[r].day == new Date().getDate()){
+                      rowidx = i;
+                      flag = true;
+                      break;
+                    }
+                }
+                if(flag){
+                  break;
+                }
+            }
+            this.setData({
+              rowidx: rowidx
+            })
             return this.$$setData({ weeks, months, monthsTranslate, wrapperTranslate: '' }).then(() => this.$$setData({...this.updateCurrentMonthYear() }))
         },
+      spread(e){
+        const dataset = e.currentTarget.dataset
+        var spread = dataset.spread;
+        this.setData({
+          spread:spread=='true'?'false':'true'
+        })
+      },
         /**
          * 设置月份的位置信息
          * @param {Number} translate 
@@ -222,6 +249,10 @@ Component({
                 const dateMonth = dataset.month
                 const dateDay = dataset.day
                 const dateType = dataset.type
+                const rowindex = dataset.rowIndex
+                this.setData({
+                  rowidx:rowindex
+                })
 
                 if (dateType.selected && !this.data.multiple) return false
                 if (dateType.disabled) return false
@@ -644,19 +675,16 @@ Component({
             if (this.data.multiple) {
                 let arrValues = this.data.value || []
                 let inValuesIndex = -1
-
                 for (let i = 0; i < arrValues.length; i++) {
                     if (isSameDate(value, arrValues[i])) {
                         inValuesIndex = i
                     }
                 }
-
                 if (inValuesIndex === -1) {
                     arrValues.push(value)
                 } else {
                     arrValues.splice(inValuesIndex, 1)
                 }
-
                 this.setValue(arrValues)
             } else {
                 this.setValue([value])

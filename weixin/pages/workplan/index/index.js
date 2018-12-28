@@ -14,7 +14,6 @@ PG({
         userId:u.userId
       })
     }
-    console.log(u)
   },
   addPlan(){
     wx.navigateTo({

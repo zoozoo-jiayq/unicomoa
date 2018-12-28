@@ -1,5 +1,5 @@
 
-    <view class="wux-class wux-calendar {{ direction ? 'wux-calendar--' + direction : '' }}">
+    <view class="wux-class wux-calendar {{ direction ? 'wux-calendar--' + direction : '' }} {{spread=='false'?'spread':''}}">
         <view class="wux-calendar__content">
             <view class="wux-calendar__hd" wx:if="{{ toolbar }}">
                 <view class="wux-calendar__toolbar">
@@ -33,17 +33,23 @@
                 </view>
                 <view class="wux-calendar__months">
                     <view class="wux-calendar__months-content" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" style="{{ wrapperTranslate }}">
-                        <block wx:for="{{ months }}" wx:for-item="month" wx:key="">
+                        <block wx:for="{{ months }}"  wx:for-item="month" wx:key="">
                             <view data-year="{{ month.year }}" data-month="{{ month.month }}" class="wux-calendar__month {{ index === 0 ? 'wux-calendar__month--prev' : index === 1 ? 'wux-calendar__month--current' : 'wux-calendar__month--next' }}" style="{{ monthsTranslate[index] }}">
-                                <block wx:for="{{ month.items }}" wx:for-item="row" wx:key="">
-                                    <view class="wux-calendar__days">
-                                        <block wx:for="{{ row }}" wx:for-item="col" wx:key="">
-                                            <view data-year="{{ col.year }}" data-month="{{ col.month }}" data-day="{{ col.day }}" data-date="{{ col.date }}" data-type="{{ col.type }}" class="wux-calendar__day {{ col.type.prev ? 'wux-calendar__day--prev' : '' }} {{ col.type.next ? 'wux-calendar__day--next' : '' }} {{ col.type.today ? 'wux-calendar__day--today' : '' }} {{ col.type.selected ? 'wux-calendar__day--selected' : '' }} {{ col.type.weekend ? 'wux-calendar__day--weekend' : '' }} {{ col.type.disabled ? 'wux-calendar__day--disabled' : '' }}" bindtap="onDayClick">
+                                <block wx:for="{{ month.items }}" wx:for-index="rowindex" wx:if="{{(spread=='false' && rowindex ==rowidx) || spread=='true'}}" wx:for-item="row" wx:key="">
+                                    <view class="wux-calendar__days {{spread=='false'?'spreadcontent':''}}">
+                                        <block wx:for="{{ row }}" wx:for-index="_index"  wx:for-item="col" wx:key="">
+                                            <view data-year="{{ col.year }}"  data-row-index="{{rowindex}}" data-month="{{ col.month }}" data-day="{{ col.day }}" data-date="{{ col.date }}" data-type="{{ col.type }}" class="wux-calendar__day {{ col.type.prev ? 'wux-calendar__day--prev' : '' }} {{ col.type.next ? 'wux-calendar__day--next' : '' }} {{ col.type.today ? 'wux-calendar__day--today' : '' }} {{ col.type.selected ? 'wux-calendar__day--selected' : '' }} {{ col.type.weekend ? 'wux-calendar__day--weekend' : '' }} {{ col.type.disabled ? 'wux-calendar__day--disabled' : '' }}" bindtap="onDayClick">
                                                 <text class="wux-calendar__text">{{ col.day }}</text>
                                             </view>
                                         </block>
                                     </view>
                                 </block>
+                              <view style="width:100%;text-align:center;padding:5px" wx:if="{{spread=='true'}}" data-spread="true" bindtap='spread'>
+                                <image src="../../imgs/up.png" style='width:25px;height:15px;'></image>
+                              </view>
+                              <view style="width:100%;text-align:center;padding:5px" wx:if="{{spread=='false'}}" data-spread="false" bindtap='spread'>
+                                <image src="../../imgs/down.png" style='width:25px;height:15px;'></image>
+                              </view>
                             </view>
                         </block>
                     </view>
