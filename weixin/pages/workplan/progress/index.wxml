@@ -14,6 +14,10 @@
       </view>
       <image src="../../../imgs/adduser.png" class="img" bindtap='chooseimg'></image>
     </view>
+    <view >
+      <image src="../../../imgs/loca.png" style="width:13px;height:15px;display:inline-block"></image>
+      <view style="display:inline-block;margin-left:5px;color:#aeaeae;font-size:12px">{{address}}</view>
+    </view>
     <button class='btn' hover-class='btn_hover' bindtap='submitA'>提交</button>
   </view>
 </view>

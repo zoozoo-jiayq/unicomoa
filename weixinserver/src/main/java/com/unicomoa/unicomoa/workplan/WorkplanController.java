@@ -99,6 +99,7 @@ public class WorkplanController extends BaseController {
 		int userId = Variant.valueOf(req.get("userId")).intValue(0);
 		String userName = Variant.valueOf(req.get("userName")).stringValue("");
 		List<String> imgs = Variant.valueOf(req.get("imgsresult")).listValue(); 
+		String address = Variant.valueOf(req.get("address")).stringValue("");
 		WorkPlanProgress workPlanProgress = new WorkPlanProgress();
 		workPlanProgress.setWorkPlanId(id);
 		workPlanProgress.setContent(content);
@@ -107,6 +108,7 @@ public class WorkplanController extends BaseController {
 		workPlanProgress.setImgs(new Gson().toJson(imgs));
 		workPlanProgress.setUserId(userId);
 		workPlanProgress.setUserName(userName);
+		workPlanProgress.setAddress(address);
 		workPlanProgressService.save(workPlanProgress);
 		return SUCCESS();
 	}

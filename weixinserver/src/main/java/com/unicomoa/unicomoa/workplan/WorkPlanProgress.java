@@ -29,6 +29,17 @@ public class WorkPlanProgress extends BaseModel {
 	@Column(name="imgs")
 	private String imgs;
 	
+	@Column(name="address")
+	private String address;
+	
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	@Transient
 	private List<String> imgUrls;
 

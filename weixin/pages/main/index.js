@@ -1,5 +1,6 @@
 // pages/main/index.js
-Page({
+const {PG} = require("../common/base.js");
+PG({
 
   /**
    * 页面的初始数据
