@@ -63,6 +63,19 @@ Page({
       showdialog:false
     })
   },
+  preview(e){
+    var url = e.currentTarget.dataset.url;
+    this.setData({
+      preview:true,
+      previewurl:url
+    })
+  },
+  hideimg(){
+    this.setData({
+      preview:false,
+      previewurl:null
+    })
+  },
   domore(){
     var self = this;
     wx.showActionSheet({

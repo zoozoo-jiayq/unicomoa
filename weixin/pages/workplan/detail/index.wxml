@@ -60,7 +60,7 @@
             <view class="time block">{{item.createTime}}</view>
             <view class="content">{{item.content}}</view>
             <view class="img">
-              <image wx:for="{{item.imgUrls}}" wx:for-item="img" class="block" src="{{server+'/view'+img}}"></image>
+              <image wx:for="{{item.imgUrls}}" data-url="{{server+'/view'+img}}" wx:for-item="img" class="block" src="{{server+'/view'+img}}" bindtap='preview'></image>
             </view>
           </view>
         </view>
@@ -77,4 +77,8 @@
   <view class="qrcontent">
     <wux-qrcode id="qrcode" wux-class="qrcode" data="{{ qrcodeurl }}" width="200" height="200" />
   </view>
+</view>
+<view wx:if="{{preview}}" class="bgcontainer" >
+  <view class="bg" bindtap='hideimg'></view>
+  <image class="bgimg" src="{{previewurl}}" mode="aspectFill" style="" ></image>
 </view>

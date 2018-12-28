@@ -2,7 +2,10 @@
   <wux-calendar-plain id="wux-calendar-plain"></wux-calendar-plain>
   <view class="page__bd" style="position:relative">
     <image bindtap='search' style="width:25px;height:25px;position:absolute;right:10px;top:8px;display:none;" src="../../../imgs/filter.png"></image>
-    <wux-cell-group title="我的计划">
+    <view style="color:#aeaeae;font-size:12px;line-height:20px;padding-left:10px;padding-bottom:5px;border-bottom:1px solid #eee;display:flex;align-content:center">
+    <image src="../../../imgs/work.png" style="width:20px;height:20px;display:inline-block;"></image>
+    我的计划
+    </view>
       <view class="list" wx:for="{{list}}" data-id="{{item.id}}" bindtap='godetail'>
         <view class="leftcell block">
             <view   wx:if="{{item.oneDay}}">全天</view>
@@ -25,7 +28,6 @@
       <view wx:if="{{list.length==0}}" class="noplan">
         <image src="../../../imgs/nodata.png" />暂无计划!
       </view>
-    </wux-cell-group>
   </view>
   <image src="../../../imgs/add.png" class="add" bindtap='addPlan'></image>
 </view>
