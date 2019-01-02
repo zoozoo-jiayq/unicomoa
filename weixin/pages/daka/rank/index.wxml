@@ -1,0 +1,20 @@
+<view class="hd">
+  <view class="tui-picker-content">
+  <view class="tui-picker-name">日期选择器（选择年月日）</view>
+  <picker mode="date" value="{{date}}" start="2017-10-01" end="2017-10-08" bindchange="changeDate">
+    <view class="tui-picker-detail">
+      {{date}}
+    </view>
+  </picker>
+</view>
+</view>
+<view>
+    <view class="listcontent" >
+      <view class="list">1111</view>
+      <view class="list">22222</view>
+    </view>
+    <view style='text-align:center;margin-top:10px' wx:if="{{attList.length==0}}">
+        本月暂无考勤记录 
+    </view>
+</view>
+

@@ -23,7 +23,8 @@ Page({
     markers: [],
     isHasPlan:true,
     outOfRange:0,
-    attList:null 
+    attList:null,
+    refreshTimeInterval:null
   }, 
   calDistance: function (obj){//计算两者之间距离 判断是否为外勤打卡
     var range = obj.data.range;
@@ -70,10 +71,10 @@ Page({
   },
   getLocation:function(obj){//获取地理位置
     var that = obj;
-    var BMap = new bmap.BMapWX({
+    var BMap = new bmap.BMapWX({ 
       ak: '4rUyHiV7zfCtfqTg7v27b7nIYZqhv2ND'
     });
-    var fail = function (data) {
+    var fail = function (data) { 
       console.log(data);
     };
     var success = function (data) {
@@ -154,12 +155,22 @@ Page({
     this.getServiceTime(this);
     this.initAttendance(this); 
     this.getLocation(this); 
-    setInterval(this.refreshTime, 1000);
+    this.setData({
+      refreshTimeInterval:setInterval(this.refreshTime, 1000)
+    });
+  },
+  onUnload:function() {
+    clearInterval(this.data.refreshTimeInterval);
   },
   view(){
       wx.navigateTo({ 
         url: '../view/index'
       })
+  },
+  rank() {
+    wx.navigateTo({
+      url: '../rank/index'
+    })
   },
   daka(e){//考勤打卡
     this.setData({
@@ -228,7 +239,7 @@ Page({
       },
       ],
     })
-  },
+  }
 })
 
 

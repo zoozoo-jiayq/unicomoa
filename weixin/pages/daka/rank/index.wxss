@@ -1,0 +1,51 @@
+.arrarow{
+  width:50px;
+  height:50px;
+  position: relative;
+}
+.hd{
+  background-color: rgb(242,242,242);
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+}
+.hdtext{
+  display: inline;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%)
+}
+.grid{
+  display: inline-block;
+  width: 24vw;
+  border-right: 1px solid #eee;
+  margin:5px 0;
+}
+.tag{
+  color:#aeaeae;
+  margin-bottom: 5px;
+}
+.head{
+  background-color: #eee;
+  text-align: center;
+}
+.tablehead{
+  display: inline-block;
+  width: 33vw;
+  margin:5px 0;
+  line-height: 40px;
+  color:rgb(86,183,163);
+}
+.listcontent{
+  text-align: center;
+}
+.list{
+  display: inline-block;
+  width: 33vw;
+  margin:3px 0;
+  line-height: 40px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}

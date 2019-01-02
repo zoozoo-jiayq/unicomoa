@@ -14,7 +14,8 @@
       <image class="dingwei" src="../../../imgs/dingwei.png"></image>
        {{address}}
     </view>
-    <span class="viewlog" bindtap="view">查看</span>
+    <span class="viewlog" bindtap="view" style="left:72vw">统计</span>
+    <span class="viewlog" bindtap="rank" style="left:74vw">排行榜</span>
   </view>
   <view>
     <wux-wing-blank size="default" wx:for="{{attList}}" wx:for-item="item" wx:for-index="idx">

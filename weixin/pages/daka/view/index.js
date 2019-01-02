@@ -16,7 +16,11 @@ Page({
       attList: null
   },
   loadAttendance:function(obj){
-    var paramData = { userId: 12, companyId: 1, year: obj.data.year, month: obj.data.month};
+    var month = obj.data.month;
+    if (month<10){
+      month = "0"+month;
+    }
+    var paramData = { userId: 12, companyId: 1, year: obj.data.year, month: month};
     REQ({
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -47,9 +51,6 @@ Page({
         }
       }
     })
-
-
-
   },
   /**
    * 生命周期函数--监听页面加载
@@ -145,14 +146,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.loadAttendance(this);
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.loadAttendance(this);
   },
 
   /**

@@ -8,15 +8,15 @@
 <view class="line"></view>
 <view class="row">
   <image src="../../imgs/pwd.png" class="arraow" style="left:20px;width:30px;height:30px;"/>
-  <view style="line-height:50px;margin-left:60px;">
+  <view style="line-height:50px;margin-left:60px;"> 
     修改密码
   </view>
   <image src="../../imgs/rightarr.png" class="arraow"/>
 </view>
 <view class="line"></view>
-<view class="row">
+<view class="row" data-type="quit" bindtap='logout'>
  <image src="../../imgs/quit.png" class="arraow" style="left:20px;width:30px;height:30px;"/>
-  <view style="line-height:50px;margin-left:60px;" data-type="quit" bindtap='logout'>
+  <view style="line-height:50px;margin-left:60px;" >
     退出登录
   </view>
   <image src="../../imgs/rightarr.png" class="arraow"/>

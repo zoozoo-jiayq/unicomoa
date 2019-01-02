@@ -62,6 +62,7 @@ Page({
     if (!flag) {
       return;
     }
+    var wxUser = wx.getStorageSync('wxUser')||{};
   REQ({
       method: "post",
       url: "/wap/loginAjax.action?userName=" + this.data.username + "&passWord=" + this.data.password,
