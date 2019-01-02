@@ -32,6 +32,21 @@ public class WorkPlanProgress extends BaseModel {
 	@Column(name="address")
 	private String address;
 	
+	@Column(name="complete_state")
+	private int completeState;
+	
+	public int getCompleteState() {
+		return completeState;
+	}
+
+	public void setCompleteState(int completeState) {
+		this.completeState = completeState;
+	}
+
+	public void setImgUrls(List<String> imgUrls) {
+		this.imgUrls = imgUrls;
+	}
+
 	public String getAddress() {
 		return address;
 	}

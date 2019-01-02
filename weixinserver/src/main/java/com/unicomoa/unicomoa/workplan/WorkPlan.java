@@ -1,10 +1,13 @@
 package com.unicomoa.unicomoa.workplan;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.unicomoa.unicomoa.base.BaseModel;
 
@@ -44,6 +47,17 @@ public class WorkPlan extends BaseModel {
 	
 	@Column(name="realTarget")
 	private int realTarget;
+
+	@Transient
+	private Map<String,String> showTime;
+
+	public Map<String, String> getShowTime() {
+		return showTime;
+	}
+
+	public void setShowTime(Map<String, String> showTime) {
+		this.showTime = showTime;
+	}
 
 	public int getRealTarget() {
 		return realTarget;
@@ -132,5 +146,4 @@ public class WorkPlan extends BaseModel {
 	public void setTarget(int target) {
 		this.target = target;
 	}
-	
 }

@@ -12,10 +12,10 @@ import com.unicomoa.unicomoa.base.BaseRepository;
 
 @Repository
 public interface WorkPlanRepository extends BaseRepository<WorkPlan> {
-
-	public List<WorkPlan> findByCreaterIdAndDayStr(int createrId,String dayStr,Sort sort);
 	
 	@Modifying
 	@Query("update WorkPlan set realTarget = realTarget+1 where id =:id")
 	public void updateTarget(@Param("id")int id);
+
+	public List<WorkPlan> findByCreaterIdAndDayStrLike(int createrId,String dayStr,Sort sort);
 }

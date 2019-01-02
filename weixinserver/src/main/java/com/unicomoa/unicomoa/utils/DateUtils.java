@@ -1,6 +1,7 @@
 package com.unicomoa.unicomoa.utils;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -141,4 +142,23 @@ public class DateUtils
     	long interval = (end.getTime() - begin.getTime())/1000;
     	return interval;
     }
-}
+    
+    //计算两个日期间的间隔天数，首尾日期都计算入内
+    public static int diffDate(Date startTime,Date endTime) {
+    	Calendar start = Calendar.getInstance();
+    	start.setTime(startTime);
+    	Calendar end = Calendar.getInstance();
+    	end.setTime(endTime);
+    	
+    	//同一年，直接相减
+    	int sd = start.get(Calendar.DAY_OF_YEAR);
+    	int ed = end.get(Calendar.DAY_OF_YEAR);
+    	if(start.get(Calendar.YEAR) == end.get(Calendar.YEAR)) {
+    		return ed-sd+1;
+    	}else {//跨年，只允许跨一年
+    		int sdy = start.getMaximum(Calendar.DAY_OF_YEAR)-sd;
+    		int edy = ed;
+    		return sdy+edy;
+    	}
+    }
+  }

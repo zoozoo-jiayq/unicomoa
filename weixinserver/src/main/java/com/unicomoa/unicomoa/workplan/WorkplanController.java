@@ -1,9 +1,10 @@
 package com.unicomoa.unicomoa.workplan;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -21,8 +22,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.Gson;
 import com.unicomoa.unicomoa.base.BaseController;
 import com.unicomoa.unicomoa.base.Constant;
+import com.unicomoa.unicomoa.base.GlobalConfig;
 import com.unicomoa.unicomoa.utils.DateUtils;
 import com.unicomoa.unicomoa.utils.Variant;
+import com.unicomoa.unicomoa.wx.TemplateMsgService;
 
 @RestController
 @RequestMapping("/workplan")
@@ -33,11 +36,34 @@ public class WorkplanController extends BaseController {
 	private WorkPlanService workPlanService;
 	@Resource
 	private WorkPlanProgressService workPlanProgressService;
+	@Resource
+	private TemplateMsgService templateMsgService;
+	@Resource
+	private GlobalConfig config;
 	
 	@RequestMapping("/list")
 	public Object mylist(int userId,String selectedDate) {
 		Sort sort = new Sort(Direction.DESC,"id");
-		List<WorkPlan> plans = workPlanService.findByCreaterIDAndDayStr(userId, selectedDate,sort);
+		List<WorkPlan> plans = workPlanService.findByCreaterIDAndDayStr(userId, "%"+selectedDate+"%",sort);
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+		plans.forEach(wp->{
+			Map<String,String> map = new HashMap<String,String>();
+			Calendar now = Calendar.getInstance();
+			Date startDate = wp.getStartTime();
+			Date endDate = wp.getEndTime();
+			map.put("start", "00:00");
+			map.put("end", "24:00");
+			map.put("fullday", "true");
+			if(startDate.getYear()+1900 == now.get(Calendar.YEAR) && startDate.getMonth() == now.get(Calendar.MONTH) && startDate.getDate() == now.get(Calendar.DAY_OF_MONTH)) {
+				map.put("start", sdf.format(wp.getStartTime()));
+				map.put("fullday", "false");
+			}
+			if(endDate.getYear()+1900 == now.get(Calendar.YEAR) && endDate.getMonth()==now.get(Calendar.MONTH)&&endDate.getDate()==now.get(Calendar.DAY_OF_MONTH)) {
+				map.put("end", sdf.format(wp.getEndTime()));
+				map.put("fullday", "false");
+			}
+			wp.setShowTime(map);
+		});
 		return SUCCESS(plans);
 	}
 	
@@ -86,9 +112,29 @@ public class WorkplanController extends BaseController {
 		wp.setCreaterId(Variant.valueOf(request.get("createrId")).intValue(0));
 		wp.setCreaterName(Variant.valueOf(request.get("createrName")).stringValue());
 		wp.setCreateTime(new Timestamp(System.currentTimeMillis()));
-		wp.setDayStr(DateUtils.date2Str(new Date(System.currentTimeMillis()), "yyyy-MM-dd"));
+		
+		int diffdate = DateUtils.diffDate(wp.getStartTime(), wp.getEndTime());
+		String dayStr = "";
+		for(int i=0; i<diffdate; i++) {
+			Calendar sdate = Calendar.getInstance();
+			sdate.setTime(wp.getStartTime());
+			sdate.add(Calendar.DATE, i);
+			dayStr+=DateUtils.date2Str(new Date(sdate.getTimeInMillis()), "yyyyMMdd");
+		}
+		wp.setDayStr(dayStr);
+		
 		wp.setState(Constant.WORK_PLAN_STATE_GOING);
 		workPlanService.save(wp);
+		
+		//推送通知
+		String formid = (String) request.get("formid");
+		Map<String,Object> data = new HashMap<String, Object>();//返回的服务通知显示内容
+		data.put("keyword1", msgRet(DateUtils.date2Str(wp.getStartTime(), "yyyy-MM-dd HH:mm")+"至"+DateUtils.date2Str(wp.getEndTime(), "yyyy-MM-dd HH:mm")));
+		data.put("keyword2", msgRet(wp.getContent()));
+		data.put("keyword3", msgRet("地址:"+wp.getAddr()+",营销目标:"+wp.getTarget()));
+		data.put("keyword4", msgRet(canyurennames));
+		
+		templateMsgService.sendMsg("", config.getTemplateId(), formid, data);
 		return SUCCESS();
 	}
 	
@@ -100,6 +146,7 @@ public class WorkplanController extends BaseController {
 		String userName = Variant.valueOf(req.get("userName")).stringValue("");
 		List<String> imgs = Variant.valueOf(req.get("imgsresult")).listValue(); 
 		String address = Variant.valueOf(req.get("address")).stringValue("");
+		boolean completeState = Variant.valueOf(req.get("completeState")).booleanValue(false);
 		WorkPlanProgress workPlanProgress = new WorkPlanProgress();
 		workPlanProgress.setWorkPlanId(id);
 		workPlanProgress.setContent(content);
@@ -109,6 +156,7 @@ public class WorkplanController extends BaseController {
 		workPlanProgress.setUserId(userId);
 		workPlanProgress.setUserName(userName);
 		workPlanProgress.setAddress(address);
+		workPlanProgress.setCompleteState(completeState?1:0);
 		workPlanProgressService.save(workPlanProgress);
 		return SUCCESS();
 	}
@@ -128,5 +176,10 @@ public class WorkplanController extends BaseController {
 		return SUCCESS();
 	}
 	
+	private Map<String, Object> msgRet(Object data){
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("value", data);
+		return map;
+	}
 
 }

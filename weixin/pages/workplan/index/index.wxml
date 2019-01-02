@@ -8,10 +8,10 @@
     </view>
       <view class="list" wx:for="{{list}}" data-id="{{item.id}}" bindtap='godetail'>
         <view class="leftcell block">
-            <view   wx:if="{{item.oneDay}}">全天</view>
+            <view   wx:if="{{item.oneDay || item.showTime.fullday=='true'}}">全天</view>
             <view   wx:else>
-                <view>AM:{{item.startTime}}</view>
-                <view>PM:{{item.endTime}}</view>
+                <view>起:{{item.showTime.start}}</view>
+                <view>止:{{item.showTime.end}}</view>
             </view>
         </view>
         <view class="rightcell block">

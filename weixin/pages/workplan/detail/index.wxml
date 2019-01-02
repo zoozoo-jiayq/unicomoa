@@ -56,7 +56,7 @@
           </view>
           <view class="progress" wx:for="{{progress}}">
             <view class="step"></view>
-            <view class="operationer block">{{item.userName}}</view>
+            <view class="operationer block">{{item.userName}}({{item.completeState==1?"完成":"未完成"}})</view>
             <view class="time block">{{item.createTime}}</view>
             <view class="content">{{item.content}}</view>
             <view class="img">
