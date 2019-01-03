@@ -23,7 +23,8 @@ PG({
       endTime: "18:00",
       target: 15,
       createrId: null,
-      createrName: null
+      createrName: null,
+      formid:null
     }
   },
   onLoad:function() {
@@ -44,6 +45,7 @@ PG({
       })
     })
   },
+
   setValue(key, value) {
     var wp = this.data.workplan;
     wp[key] = value;
@@ -129,15 +131,17 @@ PG({
     return true;
 
   },
-  submit() {
+  formSubmit(e) {
     var flag = this.check();
     if (!flag) {
       return;
     }
+    var wp = this.data.workplan;
+    wp.formid = e.detail.value;
     REQ({
       method: "post",
       url: "/workplan/add",
-      data: this.data.workplan
+      data: wp
     }).then(res => {
       if (res.data.result == "success") {
         wx.switchTab({

@@ -2,7 +2,7 @@
 const ENV = "dev";
 const CONFIG = {
   dev:{
-    server:"http://47.92.159.206:9988" 
+    server:"http://192.168.1.112:9988" 
   },
   prod:{
   }

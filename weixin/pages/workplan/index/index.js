@@ -32,7 +32,7 @@ PG({
       direction: 'vertical',
       onChange: (values, displayValues) => {
         if(displayValues && displayValues.length>0){
-          this.setData({"selectedDate":displayValues})
+          this.setData({"selectedDate":displayValues[0]})
           this.refresh()
         }
       },
@@ -51,7 +51,7 @@ PG({
   },
   list(cb){
     REQ({
-      url: "/workplan/list?userId=" + this.data.userId + "&selectedDate=" + this.data.selectedDate,
+      url: "/workplan/list?userId=" + this.data.userId + "&selectedDate=" + this.data.selectedDate.replace(/-/g,""),
     }).then(res=>{
       if (res.data.result == "success") {
         var data = res.data.data;
@@ -62,8 +62,6 @@ PG({
             return e.name;
           });
           d.canyuren = names;
-          d.startTime = d.startTime.split(" ")[1];
-          d.endTime = d.endTime.split(" ")[1];
         })
         this.setData({
           list: data

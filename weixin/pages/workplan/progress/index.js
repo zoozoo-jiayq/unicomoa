@@ -6,7 +6,6 @@ const {
 } = require("../../common/base.js")
 var bmap = require('../../common/bmap-wx.js');
 PG({
-
   /**
    * 页面的初始数据
    */
@@ -17,7 +16,8 @@ PG({
     userName: null,
     imgs: [],
     imgsresult: [],
-    address:null
+    address:null,
+    completeState:false
   },
 
   /**
@@ -105,6 +105,11 @@ PG({
       cb()
     }
   },
+  changeComplete(e){
+      this.setData({
+        completeState:e.detail.value
+      })
+  },
   submitA() {
     if (!this.data.content) {
       wx.showToast({
@@ -137,7 +142,8 @@ PG({
           userId: this.data.userId,
           userName: this.data.userName,
           imgsresult: this.data.imgsresult,
-          address:this.data.address
+          address:this.data.address,
+          completeState: this.data.completeState
         }
       }).then(res => {
         wx.navigateTo({
