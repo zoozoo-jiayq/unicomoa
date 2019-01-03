@@ -137,7 +137,8 @@ PG({
       return;
     }
     var wp = this.data.workplan;
-    wp.formid = e.detail.value;
+    // wp.formid = e.detail.value;
+    // console.log(e.detail.value);
     REQ({
       method: "post",
       url: "/workplan/add",

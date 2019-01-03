@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>填写信息</title>
+<style type="text/css">
+	body{
+		background-color: #fff;
+	}
+	.content{
+		padding:5px;
+		font-size:18px;
+		line-height: 30px;
+		
+	}
+	img{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		margin:10px 5px;
+	}
+	.btn{
+		background-color: #1296db;
+		color:#fff;
+		border:0;
+		border-radius: 5px;
+		padding: 10px 20px;
+		font-size: 16px;
+		width:95%;
+	}
+	.errtip{
+		width: 100%;
+		text-align: center;
+		font-size: 14px;
+		padding: 10px;
+		background-color: #df3d2f;
+		color:#fff;
+		display: none;
+	}	
+	.wjx{
+		width: 30px;
+		height: 30px;
+	}
+</style>
+</head>
+<body>
+<div class="errtip" id="usernametip">姓名不能为空!</div>
+<div class="errtip" id="phonetip">电话不能为空!</div>
+	<form action="/visit/save" method="post" id="form">
+	<input type="hidden" name="progressId" value="${id}"/>
+	<input type="hidden" name="manyidu" id="manyidu"/>
+	<div class="content">
+		<div class="row">
+			<span>服务满意度:</span>
+			<div>
+				<img alt="" src="/wujiaoxing.png" onclick="selectWjx(0)">
+				<img alt="" src="/wujiaoxing.png" onclick="selectWjx(1)">
+				<img alt="" src="/wujiaoxing.png" onclick="selectWjx(2)">
+				<img alt="" src="/wujiaoxing.png" onclick="selectWjx(3)">
+				<img alt="" src="/wujiaoxing.png" onclick="selectWjx(4)">
+			</div>
+		</div>
+		<div class="row">
+			<textarea name="remark" rows="10" style="width: 100%;padding: 5px;" placeholder="填写建议和不足吧"></textarea>
+		</div>
+	</div>
+		<div  style="border-bottom:0;text-align: center;width: 100%;margin-top:30px;">
+			<button type="button" class="btn" onclick="submitA()">提交</button>
+		</div>
+	</form>
+	
+</body>
+<script type="text/javascript">
+	var manyidu = [false,false,false,false,false];
+	function submitA(){
+		var myd = 0;
+		for(var i=0; i<manyidu.length; i++){
+			if(manyidu[i]){
+				myd++;
+			}
+		}
+		document.getElementById("manyidu").value = myd;
+		document.getElementById("form").submit();
+	}
+	function selectWjx(idx){
+		var els = document.getElementsByTagName("img");
+		manyidu[idx] = !manyidu[idx];
+		console.log(manyidu[idx])
+		if(manyidu[idx]){
+			els[idx].src="/wjx.png";
+		}else{
+			els[idx].src="/wujiaoxing.png";
+		}
+	}
+</script>
+</html>

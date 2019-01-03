@@ -99,7 +99,7 @@
 .bg{
    position: absolute;
    width:100vw;
-   height: 100vh;
+   height: 150vh;
    background-color: #000;
    opacity: 0.3;
    z-index: 1;

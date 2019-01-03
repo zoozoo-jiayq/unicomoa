@@ -2,7 +2,7 @@
   "pages": [
     "pages/login/index",
     "pages/workplan/index/index",
-	"pages/daka/index/index",
+    "pages/daka/index/index",
     "pages/daka/rank/index",
     "pages/daka/view/index",
     "pages/workplan/progress/index",
@@ -10,8 +10,8 @@
     "pages/workplan/addsale/index",
     "pages/my/index",
     "pages/main/index",
-    "pages/workplan/search/index"
-  
+    "pages/workplan/search/index",
+    "pages/workplan/addvisit/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,7 +29,6 @@
         "selectedIconPath": "imgs/workplan.png",
         "text": "计划"
       },
-    
       {
         "pagePath": "pages/main/index",
         "iconPath": "imgs/work1.png",

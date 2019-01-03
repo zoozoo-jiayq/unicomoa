@@ -57,8 +57,8 @@
     </wux-cell>
   </wux-cell-group>
 
-  <view class="line"></view>
-  <wux-cell-group>
+  <view class="line" wx:if="{{workplan.planType=='sale'}}"></view>
+  <wux-cell-group wx:if="{{workplan.planType=='sale'}}">
     <wux-cell title="营销目标" hover-class="none">
       <wux-input-number default-value="{{workplan.target}}" slot="footer" color="positive" bind:change="changeTarget" />
     </wux-cell>

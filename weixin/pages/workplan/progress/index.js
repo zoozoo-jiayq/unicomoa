@@ -17,7 +17,7 @@ PG({
     imgs: [],
     imgsresult: [],
     address:null,
-    completeState:false
+    completeState:true
   },
 
   /**

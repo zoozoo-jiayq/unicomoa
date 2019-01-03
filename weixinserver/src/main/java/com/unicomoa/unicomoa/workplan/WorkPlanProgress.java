@@ -35,6 +35,28 @@ public class WorkPlanProgress extends BaseModel {
 	@Column(name="complete_state")
 	private int completeState;
 	
+	@Transient
+	private int myd;
+	
+	@Transient
+	private String remark;
+	
+	public int getMyd() {
+		return myd;
+	}
+
+	public void setMyd(int myd) {
+		this.myd = myd;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
 	public int getCompleteState() {
 		return completeState;
 	}

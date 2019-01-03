@@ -40,6 +40,8 @@ public class WorkplanController extends BaseController {
 	private TemplateMsgService templateMsgService;
 	@Resource
 	private GlobalConfig config;
+	@Resource
+	private VisitorMydService mydService;
 	
 	@RequestMapping("/list")
 	public Object mylist(int userId,String selectedDate) {
@@ -71,6 +73,19 @@ public class WorkplanController extends BaseController {
 	public Object detail(int id) {
 		WorkPlan plan = workPlanService.findById(id).get();
 		List<WorkPlanProgress> progress = workPlanProgressService.findByWorkPlanId(id);
+		if(plan.getPlanType() == 2) {//拜访
+			List<VisitorMyd> mydlist = mydService.findByWorkPlanId(plan.getId());
+			if(mydlist!=null) {
+				for(VisitorMyd myd:mydlist) {
+					for(WorkPlanProgress p:progress) {
+						if(myd.getProgressId() == p.getId()) {
+							p.setMyd(myd.getManyidu());
+							p.setRemark(myd.getRemark());
+						}
+					}
+				}
+			}
+		}
 		Map<String,Object> r = new HashMap<String,Object>();
 		r.put("plan", plan);
 		r.put("progress", progress);
@@ -127,14 +142,14 @@ public class WorkplanController extends BaseController {
 		workPlanService.save(wp);
 		
 		//推送通知
-		String formid = (String) request.get("formid");
-		Map<String,Object> data = new HashMap<String, Object>();//返回的服务通知显示内容
-		data.put("keyword1", msgRet(DateUtils.date2Str(wp.getStartTime(), "yyyy-MM-dd HH:mm")+"至"+DateUtils.date2Str(wp.getEndTime(), "yyyy-MM-dd HH:mm")));
-		data.put("keyword2", msgRet(wp.getContent()));
-		data.put("keyword3", msgRet("地址:"+wp.getAddr()+",营销目标:"+wp.getTarget()));
-		data.put("keyword4", msgRet(canyurennames));
-		
-		templateMsgService.sendMsg("", config.getTemplateId(), formid, data);
+//		String formid = (String) request.get("formid");
+//		Map<String,Object> data = new HashMap<String, Object>();//返回的服务通知显示内容
+//		data.put("keyword1", msgRet(DateUtils.date2Str(wp.getStartTime(), "yyyy-MM-dd HH:mm")+"至"+DateUtils.date2Str(wp.getEndTime(), "yyyy-MM-dd HH:mm")));
+//		data.put("keyword2", msgRet(wp.getContent()));
+//		data.put("keyword3", msgRet("地址:"+wp.getAddr()+",营销目标:"+wp.getTarget()));
+//		data.put("keyword4", msgRet(canyurennames));
+//		
+//		templateMsgService.sendMsg("", config.getTemplateId(), formid, data);
 		return SUCCESS();
 	}
 	

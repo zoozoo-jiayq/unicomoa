@@ -19,7 +19,7 @@
       <view style="display:inline-block;margin-left:5px;color:#aeaeae;font-size:12px">{{address}}</view>
     </view>
     <wux-cell-group>
-      <wux-cell title="完成情况">
+      <wux-cell title="完成进度">
                     <wux-switch name="positive" slot="footer" color="positive" value="{{ completeState }}" bind:change="changeComplete" />
                 </wux-cell>
     </wux-cell-group>
