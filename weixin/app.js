@@ -1,8 +1,9 @@
 //app.js
+const CONFIG = require("./pages/common/config.js");
 App({
   globalData: {
-    appid: '1wqas2342dasaqwe2323424ac23qwe',//appid需自己提供，此处的appid我随机编写
-    secret: 'e0dassdadef2424234209bwqqweqw123ccqwa',//secret需自己提供，此处的secret我随机编写
+    appid: CONFIG.appid,//appid需自己提供，此处的appid我随机编写
+    secret: CONFIG.appsecret,//secret需自己提供，此处的secret我随机编写
   },
   onLaunch: function () {
     // 展示本地存储能力
