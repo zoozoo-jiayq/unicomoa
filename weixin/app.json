@@ -2,13 +2,13 @@
   "pages": [
     "pages/login/index",
     "pages/workplan/index/index",
-    "pages/daka/index/index",
+	"pages/daka/index/index",
+    "pages/daka/rank/index",
+    "pages/daka/view/index",
     "pages/workplan/progress/index",
     "pages/workplan/detail/index",
     "pages/workplan/addsale/index",
     "pages/my/index",
-    "pages/daka/view/index",
-   
     "pages/main/index",
     "pages/workplan/search/index"
   
