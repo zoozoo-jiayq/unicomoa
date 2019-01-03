@@ -65,8 +65,8 @@ Page({
     var wxUser = wx.getStorageSync('wxUser')||{};
   REQ({
       method: "post",
-      url: "/wap/loginAjax.action?userName=" + this.data.username + "&passWord=" + this.data.password,
-      data: { userName: this.data.username, passWord: this.data.password }
+    url: "/wap/loginAjax.action?userName=" + this.data.username + "&passWord=" + this.data.password + "&signName=" + wxUser.openid,
+    data: { userName: this.data.username, passWord: this.data.password, signName: wxUser.openid }
     }).then(res => {
       console.log(res.data);
       var resArr = res.data.split("||");
