@@ -39,11 +39,13 @@ Page({
         })
         var data = res.data.data.plan;
         var canyureninfo = data.canyuren;
-        canyureninfo = JSON.parse(canyureninfo);
-        canyureninfo = canyureninfo.map(e => {
-          return e.name;
-        }).join(",");
-        data.canyuren = canyureninfo;
+        if(canyureninfo){
+          canyureninfo = JSON.parse(canyureninfo);
+          canyureninfo = canyureninfo.map(e => {
+            return e.name;
+          }).join(",");
+          data.canyuren = canyureninfo;
+        }
         this.setData({
           plan: data
         })

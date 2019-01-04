@@ -107,14 +107,14 @@ PG({
   },
   check() {
     var wp = this.data.workplan;
-    if (!wp.canyurenIds) {
+    if (!wp.canyurenIds && (wp.planType!='other')) {
       wx.showToast({
         title: '参与人不能为空',
         icon: "none"
       });
       return false;
     }
-    if (!wp.addr) {
+    if (!wp.addr && (wp.planType!='other')) {
       wx.showToast({
         title: '活动地址不能为空',
         icon: "none"

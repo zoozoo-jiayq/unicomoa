@@ -16,7 +16,7 @@
         </view>
         <view class="rightcell block">
             <view class="content">{{item.content}}</view>
-            <view class="canyuren">参与人：{{item.canyuren}}</view>     
+            <view class="canyuren" wx:if="{{item.canyuren}}">参与人：{{item.canyuren}}</view>     
         </view>
         <view class="arrarow block">
     

@@ -63,14 +63,14 @@
       <wux-input-number default-value="{{workplan.target}}" slot="footer" color="positive" bind:change="changeTarget" />
     </wux-cell>
   </wux-cell-group>
-  <view class="line"></view>
-  <wux-cell-group title="请选择参与人">
+  <view class="line" wx:if="{{workplan.planType!='other'}}"></view>
+  <wux-cell-group title="请选择参与人" wx:if="{{workplan.planType!='other'}}">
     <wux-cell extra="{{ workplan.canyurennames }}" bind:click="showSelectUser">
       <image src="../../../imgs/adduser.png" style="width:30px;height:30px"></image>
     </wux-cell>
   </wux-cell-group>
-  <view class="line"></view>
-  <wux-cell-group>
+  <view class="line" wx:if="{{workplan.planType!='other'}}"></view>
+  <wux-cell-group wx:if="{{workplan.planType!='other'}}">
     <wux-cell hover-class="none">
       <wux-input placeholder="请输入活动地址" bind:change="inputAddr" />
     </wux-cell>

@@ -5,13 +5,23 @@
         <view slot="body">
           <wux-row class="rowheight">
             <wux-col span="3">
+              <view>计划类型:</view>
+            </wux-col>
+            <wux-col>
+              <view class="content" wx:if="{{plan.planType==1}}">营销活动</view>
+              <view class="content" wx:if="{{plan.planType==2}}">外出拜访</view>
+              <view class="content" wx:if="{{plan.planType==3}}">其它</view>
+            </wux-col>
+          </wux-row>
+          <wux-row class="rowheight">
+            <wux-col span="3">
               <view>执行时间:</view>
             </wux-col>
             <wux-col>
               <view class="content">{{plan.startTime}}至{{plan.endTime}}</view>
             </wux-col>
           </wux-row>
-          <wux-row class="rowheight">
+          <wux-row class="rowheight" wx:if="{{plan.addr}}">
             <wux-col span="3">
               <view>活动地址:</view>
             </wux-col>
@@ -19,7 +29,7 @@
               <view class="content">{{plan.addr}}</view>
             </wux-col>
           </wux-row>
-          <wux-row class="rowheight">
+          <wux-row class="rowheight" wx:if="{{plan.canyuren}}">
             <wux-col span="3">
               <view>参与人:</view>
             </wux-col>
@@ -67,7 +77,7 @@
               <view style="display:inline-block;margin-left:5px;color:#aeaeae;font-size:12px">{{item.address}}</view>
             </view>
             <view wx:if="{{plan.planType==2}}">
-            <view wx:if="{{!item.myd}}" style="color:#1296db" bindtap='qrcode' data-pid="{{item.id}}">
+            <view wx:if="{{!item.myd && plan.state == 1}}" style="color:#1296db" bindtap='qrcode' data-pid="{{item.id}}">
               客户扫码评价
             </view>
             <view wx:if="{{item.myd}}">

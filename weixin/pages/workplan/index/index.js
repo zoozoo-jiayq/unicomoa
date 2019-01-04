@@ -57,11 +57,13 @@ PG({
         var data = res.data.data;
         data.forEach(d => {
           var canyureninfo = d.canyuren;
-          canyureninfo = JSON.parse(canyureninfo);
-          var names = canyureninfo.map(e => {
-            return e.name;
-          });
-          d.canyuren = names;
+          if(canyureninfo){
+            canyureninfo = JSON.parse(canyureninfo);
+            var names = canyureninfo.map(e => {
+              return e.name;
+            });
+            d.canyuren = names;
+          }
         })
         this.setData({
           list: data
