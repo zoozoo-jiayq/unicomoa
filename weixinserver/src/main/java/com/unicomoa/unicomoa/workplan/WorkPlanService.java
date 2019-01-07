@@ -31,4 +31,8 @@ public class WorkPlanService extends BaseServiceProxy<WorkPlan> {
 	public void updateTarget(int id) {
 		workPlanRepository.updateTarget(id);
 	}
+	
+	public List<WorkPlan> findByDayStr(String dayStr,Sort sort){
+		return workPlanRepository.findByDayStrLike(dayStr, sort);
+	}
 }

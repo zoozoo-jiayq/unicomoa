@@ -1,0 +1,108 @@
+<view class="page">
+  <view class="page__bd">
+    <wux-wing-blank size="default">
+      <wux-card bordered="{{ false }}" title="{{plan.content}}">
+        <view slot="body">
+          <wux-row class="rowheight">
+            <wux-col span="3">
+              <view>计划类型:</view>
+            </wux-col>
+            <wux-col>
+              <view class="content" wx:if="{{plan.planType==1}}">营销活动</view>
+              <view class="content" wx:if="{{plan.planType==2}}">外出拜访</view>
+              <view class="content" wx:if="{{plan.planType==3}}">其它</view>
+            </wux-col>
+          </wux-row>
+          <wux-row class="rowheight">
+            <wux-col span="3">
+              <view>执行时间:</view>
+            </wux-col>
+            <wux-col>
+              <view class="content">{{plan.startTime}}至{{plan.endTime}}</view>
+            </wux-col>
+          </wux-row>
+          <wux-row class="rowheight" wx:if="{{plan.addr}}">
+            <wux-col span="3">
+              <view>活动地址:</view>
+            </wux-col>
+            <wux-col>
+              <view class="content">{{plan.addr}}</view>
+            </wux-col>
+          </wux-row>
+          <wux-row class="rowheight" wx:if="{{plan.canyuren}}">
+            <wux-col span="3">
+              <view>参与人:</view>
+            </wux-col>
+            <wux-col>
+              <view class="content">{{plan.canyuren}}</view>
+            </wux-col>
+          </wux-row>
+          <wux-row class="rowheight" wx:if="{{plan.planType==1}}">
+            <wux-col span="3">
+              <view>营销目标:</view>
+            </wux-col>
+            <wux-col>
+              <view class="content">{{plan.target}}人</view>
+            </wux-col>
+          </wux-row>
+          <wux-row class="rowheight" wx:if="{{plan.planType==1}}">
+            <wux-col span="3">
+              <view>完成目标:</view>
+            </wux-col>
+            <wux-col>
+              <view class="content block">{{plan.realTarget}}人</view>
+              <view wx:if="{{plan.state == 1}}" class="block" bindtap='qrcode' style="margin-left:30px;color:#1296db;">查看营销二维码</view>
+            </wux-col>
+          </wux-row>
+        </view>
+      </wux-card>
+    </wux-wing-blank>
+    <view class="line"></view>
+    <wux-wing-blank size="default">
+      <wux-card bordered="{{ true }}" title="执行记录" class="rowheight">
+        <view slot="body">
+          <view class="noplan" wx:if="{{progress.length == 0}}">
+            <image src="../../../imgs/nodata.png" />暂无记录!
+          </view>
+          <view class="progress" wx:for="{{progress}}">
+            <view class="step"></view>
+            <view class="operationer block">{{item.userName}}({{item.completeState==1?"完成":"未完成"}})</view>
+            <view class="time block">{{item.createTime}}</view>
+            <view class="content">{{item.content}}</view>
+            <view class="img">
+              <image wx:for="{{item.imgUrls}}" data-url="{{server+'/view'+img}}" wx:for-item="img" class="block" src="{{server+'/view'+img}}" bindtap='preview'></image>
+            </view>
+            <view >
+              <image src="../../../imgs/loca.png" style="width:13px;height:15px;display:inline-block"></image>
+              <view style="display:inline-block;margin-left:5px;color:#aeaeae;font-size:12px">{{item.address}}</view>
+            </view>
+            <view wx:if="{{plan.planType==2}}">
+            <view wx:if="{{!item.myd && plan.state == 1}}" style="color:#1296db" bindtap='qrcode' data-pid="{{item.id}}">
+              客户扫码评价
+            </view>
+            <view wx:if="{{item.myd}}">
+                <view>客户评价-{{item.myd}}星：</view>
+                <view>{{item.remark}}</view>
+            </view>
+            </view>
+          </view>
+        </view>
+      </wux-card>
+    </wux-wing-blank>
+    <!-- <view class="btngroup" wx:if="{{plan.state == 1}}">
+      <button bindtap='goprogress' class='btn' hover-class='btn_hover'>执行进度</button>
+      <button bindtap='domore'>更多操作</button>
+    </view> -->
+  </view>
+</view>
+<!--营销二维码-->
+<view class="dialog" wx:if="{{showdialog}}">
+  <view class="bg" bindtap='hidedialog'></view>
+  <view class="qrcontent">
+    <wux-qrcode id="qrcode" wux-class="qrcode" data="{{ qrcodeurl }}" width="200" height="200" />
+  </view>
+</view>
+<view wx:if="{{preview}}" class="bgcontainer" >
+  <view class="bg" bindtap='hideimg'></view>
+  <image class="bgimg" src="{{previewurl}}" mode="aspectFill" style="" ></image>
+</view>

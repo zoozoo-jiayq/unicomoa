@@ -18,4 +18,6 @@ public interface WorkPlanRepository extends BaseRepository<WorkPlan> {
 	public void updateTarget(@Param("id")int id);
 
 	public List<WorkPlan> findByCreaterIdAndDayStrLike(int createrId,String dayStr,Sort sort);
+	
+	public List<WorkPlan> findByDayStrLike(String dayStr,Sort sort);
 }

@@ -5,6 +5,7 @@
         <wux-grids >
             <wux-grid thumb="../../imgs/workplan.png" label="工作计划" bindtap="goworkplan" />
             <wux-grid thumb="../../imgs/kaoqindaka.png" label="考勤打卡" bindtap="godaka" />
+            <wux-grid thumb="../../imgs/allplan.png" label="全员计划" bindtap="goallplan"/>
             <wux-grid thumb="../../imgs/zengjia.png" label="更多" bindtap="godaka" />
         </wux-grids>
 </view>

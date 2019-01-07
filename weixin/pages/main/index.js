@@ -17,5 +17,10 @@ PG({
     wx.navigateTo({
       url: '../daka/index/index',
     })
+  },
+  goallplan(){
+    wx.navigateTo({
+      url: '../workplanall/index/index',
+    })
   }
 })

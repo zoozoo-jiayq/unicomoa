@@ -44,9 +44,14 @@ public class WorkplanController extends BaseController {
 	private VisitorMydService mydService;
 	
 	@RequestMapping("/list")
-	public Object mylist(int userId,String selectedDate) {
+	public Object mylist(Integer userId,String selectedDate) {
 		Sort sort = new Sort(Direction.DESC,"id");
-		List<WorkPlan> plans = workPlanService.findByCreaterIDAndDayStr(userId, "%"+selectedDate+"%",sort);
+		List<WorkPlan> plans = null;
+		if(userId!=null && userId>0) {
+			plans = workPlanService.findByCreaterIDAndDayStr(userId, "%"+selectedDate+"%",sort);
+		}else {
+			plans = workPlanService.findByDayStr("%"+selectedDate+"%", sort);
+		}
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 		plans.forEach(wp->{
 			Map<String,String> map = new HashMap<String,String>();

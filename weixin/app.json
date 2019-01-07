@@ -11,7 +11,9 @@
     "pages/my/index",
     "pages/main/index",
     "pages/workplan/search/index",
-    "pages/workplan/addvisit/index"
+    "pages/workplan/addvisit/index",
+    "pages/workplanall/index/index",
+    "pages/workplanall/detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

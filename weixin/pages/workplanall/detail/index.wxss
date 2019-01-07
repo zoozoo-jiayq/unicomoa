@@ -1,0 +1,115 @@
+/* pages/workplan/detail/index.wxss */
+.rowheight{
+  line-height: 25px;
+  font-size: 12px;
+}
+.content{
+  color:#aeaeae;
+}
+.line{
+  height: 10px;
+  width: 100%;
+  background-color: #eee
+}
+.btngroup button{
+  display: inline-block;
+  width: 45vw;
+  margin:2vw;
+}
+.btn{
+  background-color: #1296db;
+  color:#fff;
+  margin-top:30px;
+}
+.btn_hover{
+  background-color: #1296db;
+  color:#fff  
+}
+.progress{
+  margin:0 10px;
+  border-left: 1px solid #eee;
+  border-top: 1px solid #eee;
+  padding:5px 10px;
+  position: relative;
+}
+.block{
+  display: inline-block;
+}
+.progress .operationer{
+    width: 50%;
+}
+
+.progress .img image{
+  width: 50px;
+  height: 50px;
+  margin:5px;
+}
+.progress .step{
+  width: 6px;
+  height: 6px;
+  border:2px solid #1296db;
+  background-color: #fff;
+  border-radius:6px; 
+  position: absolute;
+  top:-5px;
+  left:-5px;
+}
+.noplan{
+  text-align: center;
+  font-size: 16px;
+  color:#aeaeae;
+  line-height: 40px;
+  position: relative;
+}
+.noplan image{
+  width:40px;
+  height:40px;
+  display:inline-block;
+  vertical-align: middle;
+}
+.dialog{
+
+}
+.bg{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.4;
+  z-index: 1;
+}
+.qrcontent{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding: 15px;
+  z-index: 2;
+  background-color: #fff;
+}
+.bgcontainer{
+  position: absolute;
+  width:100vw;
+  height:100vh;
+  top:0;
+  left:0;
+}
+.bg{
+   position: absolute;
+   width:100vw;
+   height: 150vh;
+   background-color: #000;
+   opacity: 0.3;
+   z-index: 1;
+}
+.bgimg{
+  position: absolute;
+  top:25%;
+  z-index: 2;
+  width:100%
+}
+.loca{
+  
+}
